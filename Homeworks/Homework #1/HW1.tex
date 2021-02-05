@@ -1,0 +1,179 @@
+\documentclass[11pt, reqno]{amsart}
+\usepackage[margin=1in]{geometry}    
+\geometry{letterpaper}       
+%\geometry{landscape}                % Activate for for rotated page geometry
+\usepackage[parfill]{parskip}    % Activate to begin paragraphs with an empty line rather than an indent
+\usepackage{amsfonts, amscd, amssymb, amsthm, amsmath}
+\usepackage{pdfsync}  %leaves makers for tex searching
+\usepackage{enumerate}
+\usepackage[pdftex,bookmarks]{hyperref}
+
+
+
+%%% Theorems %%%--------------------------------------------------------- 
+\theoremstyle{plain}
+	\newtheorem{thm}{Theorem}[section]
+	\newtheorem{lemma}[thm]{Lemma}
+	\newtheorem{prop}[thm]{Proposition}
+	\newtheorem{cor}[thm]{Corollary}
+\theoremstyle{definition}
+	\newtheorem*{defn}{Definition}
+	\newtheorem{remark}[thm]{Remark}
+\theoremstyle{example}
+	\newtheorem*{example}{Example}
+
+
+%%% Environments %%%--------------------------------------------------------- 
+\newenvironment{ans}{\medskip \paragraph*{\emph{Answer}.}}{\hfill \break  $~\!\!$ \dotfill \medskip }
+\newenvironment{sketch}{\medskip \paragraph*{\emph{Proof sketch}.}}{ \medskip }
+\newenvironment{summary}{\medskip \paragraph*{\emph{Summary}.}}{  \hfill \break  \rule{1.5cm}{0.4pt} \medskip }
+\newcommand\Ans[1]{\hfill \emph{Answer:} {#1}}
+
+
+%%% Pictures %%%--------------------------------------------------------- 
+%%% If you need to draw pictures, tikzpicture is one good option. Here are some basic things I always use:
+%\usepackage{tikz}
+%\tikzstyle{V}=[draw, fill =black, circle, inner sep=0pt, minimum size=2pt]
+%\newcommand\TikZ[1]{\begin{matrix}\begin{tikzpicture}#1\end{tikzpicture}\end{matrix}}
+
+
+
+%%% Color  %%%---------------------------------------------------------
+\usepackage{color}
+\newcommand{\NOTE}[1]{{\color{blue}#1}}
+\newcommand{\MOVED}[1]{{\color{gray}#1}}
+
+
+%%% Alphabets %%%---------------------------------------------------------
+%%% Some shortcuts for my commonly used special alphabets and characters.
+\def\cA{\mathcal{A}}\def\cB{\mathcal{B}}\def\cC{\mathcal{C}}\def\cD{\mathcal{D}}\def\cE{\mathcal{E}}\def\cF{\mathcal{F}}\def\cG{\mathcal{G}}\def\cH{\mathcal{H}}\def\cI{\mathcal{I}}\def\cJ{\mathcal{J}}\def\cK{\mathcal{K}}\def\cL{\mathcal{L}}\def\cM{\mathcal{M}}\def\cN{\mathcal{N}}\def\cO{\mathcal{O}}\def\cP{\mathcal{P}}\def\cQ{\mathcal{Q}}\def\cR{\mathcal{R}}\def\cS{\mathcal{S}}\def\cT{\mathcal{T}}\def\cU{\mathcal{U}}\def\cV{\mathcal{V}}\def\cW{\mathcal{W}}\def\cX{\mathcal{X}}\def\cY{\mathcal{Y}}\def\cZ{\mathcal{Z}}
+
+\def\AA{\mathbb{A}} \def\BB{\mathbb{B}} \def\CC{\mathbb{C}} \def\DD{\mathbb{D}} \def\EE{\mathbb{E}} \def\FF{\mathbb{F}} \def\GG{\mathbb{G}} \def\HH{\mathbb{H}} \def\II{\mathbb{I}} \def\JJ{\mathbb{J}} \def\KK{\mathbb{K}} \def\LL{\mathbb{L}} \def\MM{\mathbb{M}} \def\NN{\mathbb{N}} \def\OO{\mathbb{O}} \def\PP{\mathbb{P}} \def\QQ{\mathbb{Q}} \def\RR{\mathbb{R}} \def\SS{\mathbb{S}} \def\TT{\mathbb{T}} \def\UU{\mathbb{U}} \def\VV{\mathbb{V}} \def\WW{\mathbb{W}} \def\XX{\mathbb{X}} \def\YY{\mathbb{Y}} \def\ZZ{\mathbb{Z}}  
+
+\def\fa{\mathfrak{a}} \def\fb{\mathfrak{b}} \def\fc{\mathfrak{c}} \def\fd{\mathfrak{d}} \def\fe{\mathfrak{e}} \def\ff{\mathfrak{f}} \def\fg{\mathfrak{g}} \def\fh{\mathfrak{h}} \def\fj{\mathfrak{j}} \def\fk{\mathfrak{k}} \def\fl{\mathfrak{l}} \def\fm{\mathfrak{m}} \def\fn{\mathfrak{n}} \def\fo{\mathfrak{o}} \def\fp{\mathfrak{p}} \def\fq{\mathfrak{q}} \def\fr{\mathfrak{r}} \def\fs{\mathfrak{s}} \def\ft{\mathfrak{t}} \def\fu{\mathfrak{u}} \def\fv{\mathfrak{v}} \def\fw{\mathfrak{w}} \def\fx{\mathfrak{x}} \def\fy{\mathfrak{y}} \def\fz{\mathfrak{z}}
+\def\fgl{\mathfrak{gl}}  \def\fsl{\mathfrak{sl}}  \def\fso{\mathfrak{so}}  \def\fsp{\mathfrak{sp}}  
+\def\GL{\mathrm{GL}} \def\SL{\mathrm{SL}}  \def\SP{\mathrm{SL}}
+
+\def\<{\langle} \def\>{\rangle}
+\def\ad{\mathrm{ad}} 
+\def\Aut{\mathrm{Aut}}
+\def\dim{\mathrm{dim}} 
+\def\End{\mathrm{End}} 
+\def\ev{\mathrm{ev}} 
+\def\half{\hbox{$\frac12$}}
+\def\Hom{\mathrm{Hom}} 
+\def\id{\mathrm{id}} 
+\def\qtr{\mathrm{qtr}} 
+\def\tr{\mathrm{tr}} 
+\def\sgn{\mathrm{sgn}}
+\def\vep{\varepsilon}
+\def\f{\varphi}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\def\HW{1}
+\def\DUE{2/12/2021}
+
+\title[Homework \HW]{Homework \HW \\
+Math B4900\\
+\small Due: \DUE}
+\author{}
+%\date{}                                           % Activate to display a given date or no date
+
+\begin{document}
+\maketitle %%% COMMENT THIS OUT and UNCOMMENT the following to give yourself a good assignment header:
+%\begin{flushright}
+%YOUR NAME HERE\\
+%Math B4900\\
+%Homework \HW\\
+%\DUE
+%\end{flushright}
+
+
+\begin{enumerate}[1.]
+\item \textbf{Class sums.}
+Let $R$ be a commutative ring with $1$, and let $G$ be a finite group. Before starting, review our work considering groups acting on themselves by conjugation (Section 4.3 in D\&F). In particular, the conjugacy classes of group elements partition the group. For example, in $S_n$, the conjugacy classes are in bijection with cycle type; in $S_3$ in particular, the classes are 
+$$\{1\}, \quad \{(12), (13), (23)\}, \quad \text{ and } \quad \{(123), (132)\}.$$
+\begin{enumerate}[(a)]
+\item In $RG$, a \emph{class sum} corresponding to a conjugacy class 
+$$\cK_g = \{h \in G ~|~ h = aga^{-1} \text{ for some }a \in G\} \qquad  \text{is}  \qquad 
+	\kappa_g = \sum_{h \in \cK_g} h.$$
+ For example, the class sums in $RS_3$ are 
+$$\kappa_1 = 1, \quad \kappa_{(12)} = (12) + (13) +  (23), \quad  \text{ and } \quad 
+	\kappa_{(123)} = (123) + (132).$$
+Compute the class sums in $RD_8$ and $RA_4$. 
+
+\item For each of the class sums $\kappa$ in $RD_8$, compute $r\kappa r^{-1}$ and $s \kappa s^{-1}$. Use your results to argue that $g \kappa = \kappa g$ for all $g \in D_8$. 
+
+\item \textbf{Claim:} the center of the group algebra $RG$ is the $R$-span of the class sums of $G$,
+$$Z(RG) = R\{\kappa_g ~|~ g \in G\}  = \{ r_1 \kappa_1 + \cdots r_\ell \kappa_\ell ~|~ r _i \in R\},$$
+where $\kappa_1, \dots, \kappa_\ell$ denote the $\ell$ class sums of $G$. 
+
+Let's prove it:
+\begin{enumerate}[(i)]
+\item For each $g \in G$, show  that for all $h \in G$, we have $h \kappa_g h^{-1} = \kappa_g$. Conclude that $a \kappa_g = \kappa_g a$ for all $a \in RG$ (showing that $\kappa_g \in Z(RG)$). 
+\item Use the previous part to show that $r_1 \kappa_1 + \cdots r_\ell \kappa_\ell \in  Z(RG)$ for all $r_i \in R$ (showing that $R\{\kappa_i ~|~ i = 1, \dots \ell\} \subseteq Z(RG)$). 
+\item Conversely, show that for $a = \sum_{g \in G} s_g g \in RG$, if $h a h^-1 = a$ for all $h \in G$, then $s_g = s_{g'}$ whenever $g$ is conjugate to $g$ (i.e.\ the coefficients are constant across conjugacy classes). {[Hint: Start one at a time: if $h a h^-1 = a$, then compare both sides to get $s_g = s_{h^{-1}gh}$. Try on your examples in part (b) to get started if you need help.]}
+
+\item Let $a \in RG$. Show that if $ha = ah$ for all $h \in G$, then $ba = ab$ for all $b \in RG$. 
+\end{enumerate}
+\item Let $F$ be a field with $n! \ne 0$ in $F$.\footnote{As usual, as an element of $F$, $n!$ means $1+ 1+ \cdots 1$ ($n!$ terms).} Show that 
+$$e_+ = \sum_{\sigma \in S_n} \sigma \qquad \text{ and } \qquad e_- = \sum_{\sigma \in S_n} \sgn(\sigma) \sigma$$ are essential idempotents in $F S_n$ and are central, and compute the corresponding (pure) idempotents. {[\emph{Hint:} Do $e_+$ first, using the fact that any group acts transitively on itself by left multiplication. For $e_-$, do some small examples first, and modify your proof for $e_+$ appropriately.]}
+\end{enumerate}
+
+\item \textbf{Vector spaces.} $U, V$, and $W$ denote vector spaces over a common field $F$; $\f$ and $\psi$ denote linear transformations; $\cA$, $\cB$, and $\cC$ denote bases; $A, B$, and $C$ denote matrices in $M_n(F)$. 
+\begin{enumerate}[(a)]
+\item Let $\f:V \to V$ be a linear map. An element $v \in V$ satisfying $\f(v) = \lambda v$ for some $\lambda \in F$ is called a \emph{weight vector} of \emph{weight $\lambda$} (otherwise known as an \emph{eigenvector} of \emph{eigenvalue} $\lambda$). More restrictively, element $\lambda \in F$ is called a \emph{weight} or \emph{eigenvalue} of $\f$ if it is the weight of some non-zero weight vector of $\f$. Given a weight of $\f$, the \emph{weight space} of $V$ associated to $\lambda$ is 
+$$V_\lambda = \{ v\in V ~|~ \f(v) = \lambda v\}$$
+(the set of weight vectors in $V$ of weight $\lambda$). 
+
+\medskip
+
+Show that $V_\lambda$ is a subspace of $V$. 
+
+
+\item Check briefly that $\f(v) = \lambda v$ is equivalent to $(\f - \lambda\cdot \id)(v) = 0$. 
+\item Given a weight $\lambda$ of $\f$, the \emph{generalized weight space} associated to $\lambda$ is 
+$$V^\lambda = \{ v \in V ~|~ (\f - \lambda \cdot \id)^m(v) = 0 \text{ for some } m \in \ZZ_{>0}\}.\footnote{Here, $\psi^m$ means $\psi\circ \psi \circ \cdots \circ \psi$ ($m$ terms).}$$
+
+\begin{enumerate}[(i)]
+\item Let 
+$$A = \begin{pmatrix} 2 & 1 & 0 \\ 0 & 2 & 0\\ 0&0 & 3\end{pmatrix} \quad \text{ and } \quad 
+	v = \begin{pmatrix}0\\1\\0\end{pmatrix}.$$
+	Check that $v \in V^2$ but $v \notin V_2$. 
+\item Briefly argue that $V_\lambda \subseteq V^\lambda$.
+\item Show that $V^\lambda$ is a subspace of $V$. \\
+	{[\emph{Hint:} If $(\f - \lambda \cdot \id)^m (v) = 0$, then $(\f - \lambda \cdot \id)^n v = 0$ for all integers $n \ge m$.]}
+
+
+\end{enumerate}
+
+
+
+\end{enumerate}
+\end{enumerate}
+
+\vfill
+
+
+\hrule
+\emph{\small To receive credit for this assignment, include the following in your solutions [edited appropriately]:}
+
+\smallskip
+
+\textbf{Academic integrity statement:} I \emph{[violated/did not violate]} the CUNY Academic Integrity Policy in completing this assignment. \hfill \emph{[enter your full name as a digital signature here]}
+
+
+\medskip
+
+\NOTE{For example:\\
+\textbf{Academic integrity statement:} I \emph{did not violate} the CUNY Academic Integrity Policy in completing this assignment. \hfill \emph{Zajj B. Daugherty}}
+\medskip
+\hrule
+
+\vfill
+
+
+\end{document}
