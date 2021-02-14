@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.21 (MiKTeX 21.1) (preloaded format=pdflatex 2021.2.4)  4 FEB 2021 16:56
+This is pdfTeX, Version 3.14159265-2.6-1.40.21 (MiKTeX 21.1) (preloaded format=pdflatex 2021.2.4)  14 FEB 2021 01:08
 entering extended mode
 **./HW1.tex
 (HW1.tex
@@ -423,18 +423,18 @@ ii
 \makeMPintoPDFobject=\count288
 \everyMPtoPDFconversion=\toks35
 ) [1{C:/Users/chris/AppData/Local/MiKTeX/pdftex/config/pdftex.map}] [2]
-(HW1.aux)
+[3] [4] [5] (HW1.aux)
 Package rerunfilecheck Info: File `HW1.out' has not changed.
 (rerunfilecheck)             Checksum: D41D8CD98F00B204E9800998ECF8427E;0.
  ) 
 Here is how much of TeX's memory you used:
- 7539 strings out of 479618
- 109536 string characters out of 2865027
- 421190 words of memory out of 3000000
- 24416 multiletter control sequences out of 15000+200000
- 411576 words of font info for 58 fonts, out of 3000000 for 9000
+ 7545 strings out of 479618
+ 109579 string characters out of 2865027
+ 426190 words of memory out of 3000000
+ 24415 multiletter control sequences out of 15000+200000
+ 411268 words of font info for 57 fonts, out of 3000000 for 9000
  1302 hyphenation exceptions out of 8191
- 82i,18n,88p,616b,450s stack positions out of 5000i,500n,10000p,200000b,50000s
+ 82i,20n,88p,616b,687s stack positions out of 5000i,500n,10000p,200000b,50000s
 <C:/Users/chris/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/
 cmbx10.pfb><C:/Users/chris/AppData/Local/Programs/MiKTeX/fonts/type1/public/ams
 fonts/cm/cmex10.pfb><C:/Users/chris/AppData/Local/Programs/MiKTeX/fonts/type1/p
@@ -452,10 +452,11 @@ sfonts/cm/cmsy6.pfb><C:/Users/chris/AppData/Local/Programs/MiKTeX/fonts/type1/p
 ublic/amsfonts/cm/cmsy8.pfb><C:/Users/chris/AppData/Local/Programs/MiKTeX/fonts
 /type1/public/amsfonts/cm/cmsy9.pfb><C:/Users/chris/AppData/Local/Programs/MiKT
 eX/fonts/type1/public/amsfonts/cm/cmti10.pfb><C:/Users/chris/AppData/Local/Prog
-rams/MiKTeX/fonts/type1/public/amsfonts/symbols/msbm10.pfb>
-Output written on HW1.pdf (2 pages, 184799 bytes).
+rams/MiKTeX/fonts/type1/public/amsfonts/symbols/msam10.pfb><C:/Users/chris/AppD
+ata/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/symbols/msbm10.pfb>
+Output written on HW1.pdf (5 pages, 200956 bytes).
 PDF statistics:
- 103 PDF objects out of 1000 (max. 8388607)
- 21 named destinations out of 1000 (max. 500000)
+ 124 PDF objects out of 1000 (max. 8388607)
+ 28 named destinations out of 1000 (max. 500000)
  1 words of extra memory for PDF output out of 10000 (max. 10000000)
 
