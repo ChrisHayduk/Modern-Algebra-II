@@ -165,16 +165,42 @@ Let's prove it:
 \item For each $g \in G$, show  that for all $h \in G$, we have $h \kappa_g h^{-1} = \kappa_g$. Conclude that $a \kappa_g = \kappa_g a$ for all $a \in RG$ (showing that $\kappa_g \in Z(RG)$). 
 
 \begin{proof}
-Let $g \in G$ and suppose $\kappa_g$ is the class sum of $g$. Then $\kappa_g = g_1 + g_2 + \cdots + g_k$ for $g_1, \ldots, g_k \in \cK_g$. Now fix $h \in G$. Then we have,
+Let $g \in G$ and suppose $\kappa_g$ is the class sum of $g$. Then $\kappa_g = g + g_1 + \cdots + g_k$ for $g, g_1, \ldots, g_k \in \cK_g$. Now fix $h \in G$. Then we have,
 \begin{align*}
-h\kappa_gh^{-1} &= h(g_1 + g_2 + \cdots + g_k)h^{-1}
+h\kappa_gh^{-1} &= h(g + g_1 + \cdots + g_k)h^{-1}\\
+&= hgh^{-1} + hg_1h^{-1} + \cdots + hg_kh^{-1}
 \end{align*}
+
+Since $R$ is commutative, we have,
+\begin{align*}
+h\kappa_gh^{-1} &= hgh^{-1} + hg_1h^{-1} + \cdots hg_kh^{-1}\\
+&= h(gh^{-1}) + h(g_1h^{-1}) + \cdots + h(g_kh^{-1})\\
+&= hh^{-1}g + hh^{-1}g_1 + \cdots + hh^{-1}g_k\\
+&= 1g + 1g_1 + \cdots + 1g_k\\
+&= g + g_1 + \cdots + g_k\\
+&= \kappa_g
+\end{align*}
+
+Since $g, h \in G$ were arbitrary, this holds for all such $g, h \in G$ as required.\\
+
+Now fix $a \in RG$. Then $a = a_1g_1 + a_2g_2 + \cdots + a_ng_n$ for $a_i \in R$, $g_j \in G$.
 \end{proof}
 
 \item Use the previous part to show that $r_1 \kappa_1 + \cdots r_\ell \kappa_\ell \in  Z(RG)$ for all $r_i \in R$ (showing that $R\{\kappa_i ~|~ i = 1, \dots \ell\} \subseteq Z(RG)$). 
 
 \begin{proof}
-By part $(i)$, we have that for each $g \in G$, $\kappa_g \in Z(RG)$.
+By part $(i)$, we have that for each $g \in G$, $\kappa_g \in Z(RG)$. Hence, $a\kappa_g = \kappa_g a$ for all $a \in RG$. So let us consider,
+\begin{align*}
+a(r_1\kappa_1 + \cdots + r_{\ell}\kappa_{\ell}) &= ar_1\kappa_1 + \cdots + ar_{\ell}\kappa_{\ell}\\
+\end{align*}
+
+Since $R$ is commutative and $\kappa_g \in Z(RG)$ for all $g$, we have,
+\begin{align*}
+ar_1\kappa_1 + \cdots + ar_{\ell}\kappa_{\ell} &= r_1\kappa_1a + \cdots + r_{\ell}\kappa_{\ell}a\\
+&= (r_1\kappa_1 + \cdots + r_{\ell}\kappa_{\ell})a
+\end{align*}
+
+As a result, $(r_1\kappa_1 + \cdots + r_{\ell}\kappa_{\ell}) \in Z(RG)$.
 \end{proof}
 
 \item Conversely, show that for $a = \sum_{g \in G} s_g g \in RG$, if $h a h^-1 = a$ for all $h \in G$, then $s_g = s_{g'}$ whenever $g$ is conjugate to $g$ (i.e.\ the coefficients are constant across conjugacy classes). {[Hint: Start one at a time: if $h a h^-1 = a$, then compare both sides to get $s_g = s_{h^{-1}gh}$. Try on your examples in part (b) to get started if you need help.]}
@@ -186,7 +212,13 @@ By part $(i)$, we have that for each $g \in G$, $\kappa_g \in Z(RG)$.
 \item Let $a \in RG$. Show that if $ha = ah$ for all $h \in G$, then $ba = ab$ for all $b \in RG$. 
 
 \begin{proof}
+Let $a \in RG$ and suppose $ha = ah$ for all $h \in G$. Let $b \in RG$ and let us write $b$ as  $b = b_1g_1 + b_2g_2 + \cdots + b_ng_n$ for $b_i \in R$, $g_j \in G$ with $1 \leq i, j \leq n$. Let us also write $a \in RG$ as $a = a_1g_1 + a_2g_2 + \cdots + a_ng_n$ for $a_i \in R$, $g_j \in G$ with $1 \leq i, j \leq n$.  Then we have,
+\begin{align*}
+ba &= (b_1g_1 + b_2g_2 + \cdots + b_ng_n) \cdot (a_1g_1 + a_2g_2 + \cdots + a_ng_n)\\
+&= \sum_{g_i g_j = g_k} a_i b_jg_k
+\end{align*}
 
+We have that $ha = ah$ for all $h \in G$ and that 
 \end{proof}
 
 \end{enumerate}
