@@ -1,0 +1,254 @@
+\documentclass[11pt, reqno]{amsart}
+\usepackage[margin=1in]{geometry}    
+\geometry{letterpaper}       
+%\geometry{landscape}                % Activate for for rotated page geometry
+\usepackage[parfill]{parskip}    % Activate to begin paragraphs with an empty line rather than an indent
+\usepackage{amsfonts, amscd, amssymb, amsthm, amsmath}
+\usepackage{pdfsync}  %leaves makers for tex searching
+\usepackage{enumerate}
+\usepackage[pdftex,bookmarks]{hyperref}
+
+
+
+%%% Theorems %%%--------------------------------------------------------- 
+\theoremstyle{plain}
+	\newtheorem{thm}{Theorem}[section]
+	\newtheorem{lemma}[thm]{Lemma}
+	\newtheorem{prop}[thm]{Proposition}
+	\newtheorem{cor}[thm]{Corollary}
+\theoremstyle{definition}
+	\newtheorem*{defn}{Definition}
+	\newtheorem{remark}[thm]{Remark}
+\theoremstyle{example}
+	\newtheorem*{example}{Example}
+
+
+%%% Environments %%%--------------------------------------------------------- 
+\newenvironment{ans}{\medskip \paragraph*{\emph{Answer}.}}{\hfill \break  $~\!\!$ \dotfill \medskip }
+\newenvironment{sketch}{\medskip \paragraph*{\emph{Proof sketch}.}}{ \medskip }
+\newenvironment{summary}{\medskip \paragraph*{\emph{Summary}.}}{  \hfill \break  \rule{1.5cm}{0.4pt} \medskip }
+\newcommand\Ans[1]{\hfill \emph{Answer:} {#1}}
+
+
+%%% Pictures %%%--------------------------------------------------------- 
+%%% If you need to draw pictures, tikzpicture is one good option. Here are some basic things I always use:
+%\usepackage{tikz}
+%\tikzstyle{V}=[draw, fill =black, circle, inner sep=0pt, minimum size=2pt]
+%\newcommand\TikZ[1]{\begin{matrix}\begin{tikzpicture}#1\end{tikzpicture}\end{matrix}}
+
+
+
+%%% Color  %%%---------------------------------------------------------
+\usepackage{color}
+\newcommand{\NOTE}[1]{{\color{blue}#1}}
+\newcommand{\MOVED}[1]{{\color{gray}#1}}
+
+
+%%% Alphabets %%%---------------------------------------------------------
+%%% Some shortcuts for my commonly used special alphabets and characters.
+\def\cA{\mathcal{A}}\def\cB{\mathcal{B}}\def\cC{\mathcal{C}}\def\cD{\mathcal{D}}\def\cE{\mathcal{E}}\def\cF{\mathcal{F}}\def\cG{\mathcal{G}}\def\cH{\mathcal{H}}\def\cI{\mathcal{I}}\def\cJ{\mathcal{J}}\def\cK{\mathcal{K}}\def\cL{\mathcal{L}}\def\cM{\mathcal{M}}\def\cN{\mathcal{N}}\def\cO{\mathcal{O}}\def\cP{\mathcal{P}}\def\cQ{\mathcal{Q}}\def\cR{\mathcal{R}}\def\cS{\mathcal{S}}\def\cT{\mathcal{T}}\def\cU{\mathcal{U}}\def\cV{\mathcal{V}}\def\cW{\mathcal{W}}\def\cX{\mathcal{X}}\def\cY{\mathcal{Y}}\def\cZ{\mathcal{Z}}
+
+\def\AA{\mathbb{A}} \def\BB{\mathbb{B}} \def\CC{\mathbb{C}} \def\DD{\mathbb{D}} \def\EE{\mathbb{E}} \def\FF{\mathbb{F}} \def\GG{\mathbb{G}} \def\HH{\mathbb{H}} \def\II{\mathbb{I}} \def\JJ{\mathbb{J}} \def\KK{\mathbb{K}} \def\LL{\mathbb{L}} \def\MM{\mathbb{M}} \def\NN{\mathbb{N}} \def\OO{\mathbb{O}} \def\PP{\mathbb{P}} \def\QQ{\mathbb{Q}} \def\RR{\mathbb{R}} \def\SS{\mathbb{S}} \def\TT{\mathbb{T}} \def\UU{\mathbb{U}} \def\VV{\mathbb{V}} \def\WW{\mathbb{W}} \def\XX{\mathbb{X}} \def\YY{\mathbb{Y}} \def\ZZ{\mathbb{Z}}  
+
+\def\fa{\mathfrak{a}} \def\fb{\mathfrak{b}} \def\fc{\mathfrak{c}} \def\fd{\mathfrak{d}} \def\fe{\mathfrak{e}} \def\ff{\mathfrak{f}} \def\fg{\mathfrak{g}} \def\fh{\mathfrak{h}} \def\fj{\mathfrak{j}} \def\fk{\mathfrak{k}} \def\fl{\mathfrak{l}} \def\fm{\mathfrak{m}} \def\fn{\mathfrak{n}} \def\fo{\mathfrak{o}} \def\fp{\mathfrak{p}} \def\fq{\mathfrak{q}} \def\fr{\mathfrak{r}} \def\fs{\mathfrak{s}} \def\ft{\mathfrak{t}} \def\fu{\mathfrak{u}} \def\fv{\mathfrak{v}} \def\fw{\mathfrak{w}} \def\fx{\mathfrak{x}} \def\fy{\mathfrak{y}} \def\fz{\mathfrak{z}}
+\def\fgl{\mathfrak{gl}}  \def\fsl{\mathfrak{sl}}  \def\fso{\mathfrak{so}}  \def\fsp{\mathfrak{sp}}  
+\def\GL{\mathrm{GL}} \def\SL{\mathrm{SL}}  \def\SP{\mathrm{SL}}
+
+\def\<{\langle} \def\>{\rangle}
+\def\ad{\mathrm{ad}} 
+\def\Aut{\mathrm{Aut}}
+\def\dim{\mathrm{dim}} 
+\def\End{\mathrm{End}} 
+\def\ev{\mathrm{ev}} 
+\def\half{\hbox{$\frac12$}}
+\def\Hom{\mathrm{Hom}} 
+\def\id{\mathrm{id}} 
+\def\qtr{\mathrm{qtr}} 
+\def\tr{\mathrm{tr}} 
+\def\sgn{\mathrm{sgn}}
+\def\vep{\varepsilon}
+\def\f{\varphi}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\def\HW{2}
+\def\DUE{2/19/2021}
+
+\title[Homework \HW]{Homework \HW \\
+Math B4900\\
+\small Due: \DUE}
+\author{}
+%\date{}                                           % Activate to display a given date or no date
+
+\begin{document}
+%\maketitle %%% COMMENT THIS OUT and UNCOMMENT the following to give yourself a good assignment header:
+\begin{flushright}
+Chris Hayduk\\
+Math B4900\\
+Homework \HW\\
+\DUE
+\end{flushright}
+
+Let $F$ denote a field, and $V$ denote a vector space over $F$ of dimension $n$. Fix $\cE = \{e_1, \dots, e_n\}$ an ordered basis of $V$, and use that basis to identify $V$ with $F^n$ or $M_{n,1}(F)$ and $V^*$ with $F^n$ or $M_{1,n}(F)$ as needed, and to identify $\End(V)$ with $M_n(F)$. 
+
+
+\medskip
+
+See page 2 for hints.
+
+\begin{enumerate}[1.]
+\item \textbf{Bilinear forms.} Let $\<,\>_J: V \times V \to F$ associated to a matrix $J$. 
+\begin{enumerate}
+\item\label{hint1} In lecture exercises, we proved that if $J$ is symmetric, then so is $\<,\>_J$. \\
+Prove the converse: if $\<,\>_J$ is symmetric, then so is $J$. 
+
+\begin{proof}
+Suppose that $\<, \>_J$ is symmetric. Then we have that, for $u, v \in V$,
+\begin{align*}
+\<u, v\>_J &= u^tJv\\
+&= v^tJu\\
+&= \<v, u\>_J
+\end{align*}
+
+Recall that $J$ is symmetric if $J = J^t$. That is, for every $m, n$, we have $j_{mn} = j_{nm}$. Let us now employ $e_m, e_n \in V$ in order to show this. We have that,
+\begin{align*}
+\<e_m, e_n\>_J &= e_m^t J e_n\\
+&= j_{mn}
+\end{align*}
+
+But, since $\<, \>_J$ is symmetric, we know that,
+\begin{align*}
+\<e_m, e_n\>_J &= j_{mn}\\
+&= \<e_n, e_m\>_J\\
+&= e_n^t J e^m\\
+&= j_{nm}
+\end{align*}
+
+Since $m, n$ were arbitrary, this holds for every entry of $J$ and hence $J$ is symmetric.
+\end{proof}
+
+\item\label{hint2} Prove that $\<,\>_J$ is nondegenerate if and only if $J$ is invertible. 
+
+\begin{proof}
+Suppose $\<,\>_J$ is nondegenerate.\\
+
+Suppose $J$ is invertible.
+\end{proof}
+
+\end{enumerate}
+\item\label{hint3}  \textbf{Trace form.} Define $\<, \>: M_n(F) \times M_n(F) \to F$ by $\<A,B\> = \tr(AB)$. Briefly verify that this is a symmetric bilinear form. Then prove that $\<,\>$ is nondegenerate.
+
+\begin{proof}
+Fix $A, B \in M_n(F)$. Then we have,
+\begin{align*}
+\<A, B\> &= tr(AB)\\
+&= \sum_{i=1}^n AB_{ii}\\
+&= \sum_{i=1}^n \sum_{k=1}^n a_{ik}b_{ki}
+\end{align*}
+
+and,
+\begin{align*}
+\<B, A\> &= tr(BA)\\
+&= \sum_{i=1}^n BA_{ii}\\
+&= \sum_{i=1}^n \sum_{k=1}^n b_{ik}a_{ki}
+\end{align*}
+
+
+\end{proof}
+
+\item \textbf{Determinants.} Recall that the determinant function $\det : M_n(F) \to F$ is defined by 
+$$\det((\alpha_{i,j})) = \sum_{\sigma \in S_n} \sgn(\sigma) \alpha_{1,\sigma(1)}\alpha_{2,\sigma(2)} \cdots \alpha_{n,\sigma(n)}.$$
+
+\begin{enumerate}[(a)]
+\item Use this definition to verify that $\det(I_n) = 1$, where $I_n$ is the identity matrix. 
+\begin{proof}
+Note that for $I_n$, we have that $\alpha_{ii} = 1$ for all $1 \leq i \leq n$ and $\alpha_{ij} = 0$ for all $i \neq j$. Hence, in the above definition of the determinant, we must have that the only non-zero term in the summation is the one corresponding to the identity $\sigma = 1$. This gives us,
+\begin{align*}
+\det(I_n) &= \sgn(1)\alpha_{1,1}\alpha_{2,2}\cdots\alpha_{n,n}\\
+&= 1 \cdot 1 \cdot 1 \cdots 1\\
+&= 1
+\end{align*}
+\end{proof}
+
+\item Use this definition to show that if, for some fixed $i$, $\alpha_{i,1} = \alpha_{i,2} = \cdots = \alpha_{i,n} = 0$, then $\det((\alpha_{i,j})) = 0$. 
+\begin{proof}
+Suppose that, for some $i \in \ZZ$ such that $1 \leq i \leq n$, we have that $\alpha_{i,1} = \alpha_{i,2} = \cdots = \alpha_{i,n} = 0$. Now fix some $\sigma \in S_n$ and let us denote $\sigma(i) = j$ for some $j \in \ZZ$ such that $1 \leq j \leq n$. We can see from the previous statements that,
+\begin{align*}
+\alpha_{i, \sigma(i)} &= \alpha_{i,j}\\
+&= 0
+\end{align*}
+
+Hence, in the definition of the determinant, we have,
+\begin{align*}
+\det((\alpha_{i,j})) &= \sum_{\sigma \in S_n} \sgn(\sigma) \alpha_{1,\sigma(1)}\alpha_{2,\sigma(2)} \cdots \alpha_{i, \sigma(i)} \cdots \alpha_{n,\sigma(n)}\\
+&= \sum_{\sigma \in S_n} \sgn(\sigma) \alpha_{1,\sigma(1)}\alpha_{2,\sigma(2)} \cdots 0 \cdots \alpha_{n,\sigma(n)}\\
+&= 0
+\end{align*}
+
+as required.
+\end{proof}
+\item Show that, for any $A \in \GL_n(F)$, we have $\det(A^{-1}) = \det(A)^{-1}$ , and that $\det(B) = \det(A B A^{-1})$. Conclude that determinant is independent of change of basis, so that 
+$$\det: \End(V) \to F \quad \text{ defined by } \quad \det(\f) = \det(M_\cB^\cB(\f))$$
+is well-defined. You may use the facts established in our worksheet about determinants.
+\begin{proof}
+Let $A \in \GL_n(F)$. Then $A$ is invertible with inverse $A^{-1}$. But $A^{-1}$ is also invertible with inverse $A$, so $A^{-1} \in \GL_n(F)$. Hence, by fact (2) we have $\det(A^{-1}), \det(A)^{-1} \neq 0$. Furthermore, since $\GL_n(F) \subset M_n(F)$, we have that $A, A^{-1} \in M_n(F)$ and so we can apply fact (3). Thus, we have that,
+\begin{align*}
+\det(AA^{-1}) &= \det(I_n)\\
+&= 1\\
+&= \det(A)\det(A^{-1})
+\end{align*}
+
+Since $\det(A)\det(A^{-1}) = 1$, we have that $\det(A^{-1}) = \det(A)^{-1}$.\\
+
+Now let $B \in \GL_n(F)$. Consider $\det(ABA^{-1})$ and using fact (3) along with the associativity of matrix multiplication, we get,
+\begin{align*}
+\det((AB)A^{-1}) &= \det(AB)\det(A^{-1})\\
+&= \det(A)\det(B)\det(A^{-1})
+\end{align*}
+
+By our initial derivation, we have that $\det(A^{-1}) = \det(A)^{-1}$ and so, by the fact that $F$ is a field and hence commutative, we have,
+\begin{align*}
+\det((AB)A^{-1}) &= \det(A)\det(B)\det(A^{-1})\\
+&= \det(A)\det(B)\det(A)^{-1}\\
+&= \det(A)\det(A)^{-1}\det(B)\\
+&= 1 \cdot \det(B)\\
+&= \det(B)
+\end{align*}
+\end{proof}
+\item Pick one of facts (1), (2), or (3) from p.\ 4 of the Lecture 4 worksheet, and spell out the details (more so than the proof sketches already given in the worksheet). Cite your sources. 
+\begin{proof}
+Fact (2)\\
+
+Let $A \in M_n(F)$. Suppose $A \in \GL_n$. Then $A$ is invertible and thus the columns of $A$ are linearly independent. Hence, by fact 1, $\det(A) \neq 0$.\\
+
+Now suppose $\det(A) \neq 0$. Then again by fact (1), we have that the columns of $A$ are linearly independent. Hence, $A$ is invertible and $A \in \GL_n$ as required.
+\end{proof}
+\end{enumerate}
+\end{enumerate}
+
+\vfill
+
+
+\hrule
+\emph{\small To receive credit for this assignment, include the following in your solutions [edited appropriately]:}
+
+\smallskip
+
+\textbf{Academic integrity statement:} I \emph{did not violate} the CUNY Academic Integrity Policy in completing this assignment. \hfill \emph{Christopher Hayduk}
+
+\medskip
+\hrule
+
+\vfill
+
+\pagebreak
+
+\textbf{Some hints.}
+\begin{enumerate}
+\item[\ref{hint1}:] Consider $e_i^t J e_j$.
+\item[\ref{hint2}:] If $\<V,u\>=0$ for some $u \in V$, then in particular, $\<e_i, u\>=0$ for all $i$ (and similarly the coordinates reversed). Try to avoid ``proof by contradiction''--you don't need it! 
+\item[\ref{hint3}:] Let $A \in M_n(F)$ be a non-zero matrix, and let $\alpha_{i,j}$ be a non-zero entry in $A$. For each such $A$, what is your goal? (Go back to the definition of degenerate for the answer.)
+\end{enumerate}
+\end{document}

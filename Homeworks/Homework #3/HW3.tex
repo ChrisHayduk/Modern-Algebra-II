@@ -1,0 +1,187 @@
+\documentclass[11pt, reqno]{amsart}
+\usepackage[margin=1in]{geometry}    
+\geometry{letterpaper}       
+%\geometry{landscape}                % Activate for for rotated page geometry
+\usepackage[parfill]{parskip}    % Activate to begin paragraphs with an empty line rather than an indent
+\usepackage{amsfonts, amscd, amssymb, amsthm, amsmath}
+\usepackage{pdfsync}  %leaves makers for tex searching
+\usepackage{enumerate}
+\usepackage[pdftex,bookmarks]{hyperref}
+
+
+
+%%% Theorems %%%--------------------------------------------------------- 
+\theoremstyle{plain}
+	\newtheorem{thm}{Theorem}[section]
+	\newtheorem{lemma}[thm]{Lemma}
+	\newtheorem{prop}[thm]{Proposition}
+	\newtheorem{cor}[thm]{Corollary}
+\theoremstyle{definition}
+	\newtheorem*{defn}{Definition}
+	\newtheorem{remark}[thm]{Remark}
+\theoremstyle{example}
+	\newtheorem*{example}{Example}
+
+
+%%% Environments %%%--------------------------------------------------------- 
+\newenvironment{ans}{\medskip \paragraph*{\emph{Answer}.}}{\hfill \break  $~\!\!$ \dotfill \medskip }
+\newenvironment{sketch}{\medskip \paragraph*{\emph{Proof sketch}.}}{ \medskip }
+\newenvironment{summary}{\medskip \paragraph*{\emph{Summary}.}}{  \hfill \break  \rule{1.5cm}{0.4pt} \medskip }
+\newcommand\Ans[1]{\hfill \emph{Answer:} {#1}}
+
+
+%%% Pictures %%%--------------------------------------------------------- 
+%%% If you need to draw pictures, tikzpicture is one good option. Here are some basic things I always use:
+%\usepackage{tikz}
+%\tikzstyle{V}=[draw, fill =black, circle, inner sep=0pt, minimum size=2pt]
+%\newcommand\TikZ[1]{\begin{matrix}\begin{tikzpicture}#1\end{tikzpicture}\end{matrix}}
+
+
+
+%%% Color  %%%---------------------------------------------------------
+\usepackage{color}
+\newcommand{\NOTE}[1]{{\color{blue}#1}}
+\newcommand{\blue}[1]{{\color{blue}#1}}
+\newcommand{\red}[1]{{\color{red}#1}}
+\newcommand{\MOVED}[1]{{\color{gray}#1}}
+
+
+%%% Alphabets %%%---------------------------------------------------------
+%%% Some shortcuts for my commonly used special alphabets and characters.
+\def\cA{\mathcal{A}}\def\cB{\mathcal{B}}\def\cC{\mathcal{C}}\def\cD{\mathcal{D}}\def\cE{\mathcal{E}}\def\cF{\mathcal{F}}\def\cG{\mathcal{G}}\def\cH{\mathcal{H}}\def\cI{\mathcal{I}}\def\cJ{\mathcal{J}}\def\cK{\mathcal{K}}\def\cL{\mathcal{L}}\def\cM{\mathcal{M}}\def\cN{\mathcal{N}}\def\cO{\mathcal{O}}\def\cP{\mathcal{P}}\def\cQ{\mathcal{Q}}\def\cR{\mathcal{R}}\def\cS{\mathcal{S}}\def\cT{\mathcal{T}}\def\cU{\mathcal{U}}\def\cV{\mathcal{V}}\def\cW{\mathcal{W}}\def\cX{\mathcal{X}}\def\cY{\mathcal{Y}}\def\cZ{\mathcal{Z}}
+
+\def\AA{\mathbb{A}} \def\BB{\mathbb{B}} \def\CC{\mathbb{C}} \def\DD{\mathbb{D}} \def\EE{\mathbb{E}} \def\FF{\mathbb{F}} \def\GG{\mathbb{G}} \def\HH{\mathbb{H}} \def\II{\mathbb{I}} \def\JJ{\mathbb{J}} \def\KK{\mathbb{K}} \def\LL{\mathbb{L}} \def\MM{\mathbb{M}} \def\NN{\mathbb{N}} \def\OO{\mathbb{O}} \def\PP{\mathbb{P}} \def\QQ{\mathbb{Q}} \def\RR{\mathbb{R}} \def\SS{\mathbb{S}} \def\TT{\mathbb{T}} \def\UU{\mathbb{U}} \def\VV{\mathbb{V}} \def\WW{\mathbb{W}} \def\XX{\mathbb{X}} \def\YY{\mathbb{Y}} \def\ZZ{\mathbb{Z}}  
+
+\def\fa{\mathfrak{a}} \def\fb{\mathfrak{b}} \def\fc{\mathfrak{c}} \def\fd{\mathfrak{d}} \def\fe{\mathfrak{e}} \def\ff{\mathfrak{f}} \def\fg{\mathfrak{g}} \def\fh{\mathfrak{h}} \def\fj{\mathfrak{j}} \def\fk{\mathfrak{k}} \def\fl{\mathfrak{l}} \def\fm{\mathfrak{m}} \def\fn{\mathfrak{n}} \def\fo{\mathfrak{o}} \def\fp{\mathfrak{p}} \def\fq{\mathfrak{q}} \def\fr{\mathfrak{r}} \def\fs{\mathfrak{s}} \def\ft{\mathfrak{t}} \def\fu{\mathfrak{u}} \def\fv{\mathfrak{v}} \def\fw{\mathfrak{w}} \def\fx{\mathfrak{x}} \def\fy{\mathfrak{y}} \def\fz{\mathfrak{z}}
+\def\fgl{\mathfrak{gl}}  \def\fsl{\mathfrak{sl}}  \def\fso{\mathfrak{so}}  \def\fsp{\mathfrak{sp}}  
+\def\GL{\mathrm{GL}} \def\SL{\mathrm{SL}}  \def\SP{\mathrm{SL}}
+
+\def\<{\langle} \def\>{\rangle}
+\def\({\<\!\<}\def\){\>\!\>}
+\def\ad{\mathrm{ad}} 
+\def\Aut{\mathrm{Aut}}
+\def\dim{\mathrm{dim}} 
+\def\End{\mathrm{End}} 
+\def\ev{\mathrm{ev}} 
+\def\half{\hbox{$\frac12$}}
+\def\Hom{\mathrm{Hom}} 
+\def\hgt{\mathrm{ht}} 
+\def\id{\mathrm{id}} 
+\def\qtr{\mathrm{qtr}} 
+\def\tr{\mathrm{tr}} 
+\def\sgn{\mathrm{sgn}}
+\def\vep{\varepsilon}
+\def\f{\varphi}
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\def\HW{3}
+\def\DUE{2/26/2021}
+
+\title[Homework \HW]{Homework \HW \\
+Math B4900\\
+\small Due: \DUE}
+\author{}
+%\date{}                                           % Activate to display a given date or no date
+
+\begin{document}
+%\maketitle %%% COMMENT THIS OUT and UNCOMMENT the following to give yourself a good assignment header:
+\begin{flushright}
+Chris Hayduk\\
+Math B4900\\
+Homework \HW\\
+\DUE
+\end{flushright}
+
+
+
+\begin{enumerate}[1.]
+\item Prove that for finite dimensional vector spaces $U$ and $V$ over $F$, and $\f \in \End(U)$, $\psi \in \End(V)$, we have 
+$$\det( \f \oplus \psi) = \det(\f)\det(\psi).$$
+{[Hint: Explain why $(\f \oplus \id)(\id \oplus \psi) = \f \oplus \psi$ and $\det(\f \oplus \id)= \det(\f)$. Recall that while determinant is independent of choice of basis, choosing a basis helps us actually compute it.]}
+
+
+\item  Let $X \in M_n(\CC)$, let $\Lambda$ be the set of eigenvalues for $X$, and let $m_\lambda$ be the multiplicity of $\lambda \in \Lambda$. For any of the following, do not assume that $X$ is in Jordan form, but you may use the \emph{existence} of Jordan form over $\CC$.
+\begin{enumerate}[(i)]
+\item Show that $\{\lambda^k ~|~ \lambda \in \Lambda\}$ are the eigenvalues of $X^k$.
+\item If $X^k = I$, what are the possible eigenvalues of $X$?
+\item Show 
+$$\tr(X) = \sum_{\lambda \in \Lambda} \lambda m_\lambda
+	\quad \text{ and } \quad 
+	\det(X) = \prod _{\lambda \in \Lambda} \lambda^{m_\lambda}.$$
+\end{enumerate}
+
+\item Let $F$ be a field. The \emph{(first) Weyl algebra} $W$ is the $F$-algebra \emph{generated by $a$ and $b$}, with the \emph{relation} 
+\begin{equation}ba = ab - 1. \label{relation}\end{equation}
+Specifically, this means start with the (free) monoid generated by $a$ and $b$,
+$$\(a, b\) = \{1, a, b, a^2, ab, b^2, a^3, a^2b, aba, ab^2, ba^2, bab, \cdots\},\footnote{Being the monoid generated by $a$ and $b$, rather than the group generated by $a$ and $b$, means that we don't include \textbf{inverses} by default.}$$
+use it to build the \emph{monoid algebra} (just like the group algebra, only spanned by a monoid)
+$$F\(a, b\) = \left\{\left.\sum_{{w \in \(a, b\) \atop \text{(fin.)}}}\alpha_w w ~\right|~ \alpha_w \in F\right\},$$   
+and finally, impose the additional relation $ba = ab - 1$ (which is equivalent to taking a quotient by the principal ideal $(ab-ba-1)$). Some examples of elements of this algebra include 
+$$1, \quad 32 + a - 17 ab, \quad \text{ and } \quad a+ a^2 + a^{52} - b - 8 abab^{10}.$$
+However, in the presence of the relation \eqref{relation}, there may be more than one way to write any given element (i.e.\ $\(a, b\)$ is a basis of $F\(a, b\)$ and spans $W$, but is not a basis of $W$ because it's not linearly independent). For example, 
+\begin{equation}\label{simplification}
+ba = ab - 1 \quad \text{ and } \quad bab = (ba)b = (ab - 1)b = ab^2 - b.
+\end{equation}
+\pagebreak 
+
+\begin{enumerate}[(a)]
+\item \textbf{Claim:} $W$ is spanned (over $F$) by the set $S= \{a^mb^n ~|~ m,n \in \ZZ_{\ge 0}\}$.\footnote{In fact, $S$ is a basis, but I won't make you prove linear independence.}
+
+\smallskip 
+
+The main idea of the proof is that we can use the the relation \eqref{relation} to rewrite any element of $W$ as a linear combination of terms of the form  $a^m b^n$ (where $a^0 = b^0 = 1$), just like we did in \eqref{simplification}.
+
+\begin{enumerate}[(i)]
+\item Rewrite $aba$, $a^2 b ab$, and $ab^2a$ as a linear combination of terms of the form  $a^m b^n$.
+
+\item For any word $w \in \(a,b\)$, define the \emph{length} $\ell(w)$  as the number of terms in $w$; e.g.\ $\ell(aba) = \ell(b^2 a) = 3$, $\ell(1) = 0$. Define the \emph{height} $\hgt(w)$ as the sum over the $b$'s in $w$ of the number of $a$'s their right:
+ for example, 
+ $$\hgt(a^7ba^2ba) = 3 + 1 = 4,  \quad \hgt(bab) = 1 + 0, \quad  \text{and} \quad  \hgt(1) = 0.\footnote{In $a^7\blue{b}\red{a^2}b\red{a}$, the first $b$ has 3 $a$'s to its right in total, even though they're separated by another $b$.}$$    
+
+Verify that in each step of moving $b$'s to the right in your calculations in part (i) (i.e.\ replacing `$ba$' with `$ab - 1$' and expanding) that lengths of the corresponding terms weakly decreased and the heights strictly decreased. 
+
+
+\item Prove the claim.  \\
+{[Hint: 
+Since $W$ is spanned by $\(a,b\)$, it suffices to show that any element $w \in \(a,b\)$ can be expressed as a linear combination of terms in $S$ of length less than or equal to the length $\ell(w)$. Prove this by induction on $\ell(w)$ and $\hgt(w)$. Be careful not to get too bogged down in the details though!]}
+\end{enumerate}
+
+\item The definition of the Weyl algebra was motivated by studying endomorphisms polynomials, $\End(F[x]) = \End_F(F[x])$ (thinking of $F[x]$ as a vector space over $F$, not as a ring). In particular, define 
+$$L: F[x] \to F[x] \quad \text{ by } \quad f(x) \mapsto xf(x)$$
+and 
+$$D: F[x] \to F[x] \quad \text{ by } \quad f(x) \mapsto f'(x) := \frac{d}{dx} f(x)$$
+($L$ for ``left multiplication'' and $D$ for ``derivative''). 
+\begin{enumerate}[(i)]
+\item Verify that $L$ and $D$ are both elements of $\End(F[x])$. {[Again, we're thinking of $F[x]$ as a vector space, not as a ring, so your job is to prove that these are both linear.]}
+\item Show that $\f: W \to \End(F[x])$ defined by $a \mapsto D$ and $b \mapsto L$ is an $F$-algebra homomorphism.\footnote{What is more is that $\f$ is an isomorphism in the case where $F$ is of characteristic $0$. This, together with part (a), proves that $\End_F(F[x])$ is equal to the set of operators of the form $\displaystyle \sum_{\begin{matrix}f \in F[x] \\ n \in \ZZ_{\ge 0} \\ \text{(fin)}\end{matrix}} f(L)D^n$.} {[Hint: As usual, if you want to show two maps in $\End(F[x])$ are equal, the best way to do this is point-wise, i.e.\ by applying them to the same polynomial.]}
+
+
+\end{enumerate}
+
+
+
+
+\end{enumerate}
+\end{enumerate}
+
+\vfill
+
+
+\hrule
+\emph{\small To receive credit for this assignment, include the following in your solutions [edited appropriately]:}
+
+\smallskip
+
+\textbf{Academic integrity statement:} I \emph{[violated/did not violate]} the CUNY Academic Integrity Policy in completing this assignment. \hfill \emph{[enter your full name as a digital signature here]}
+
+\medskip
+\hrule
+
+\vfill
+
+
+\end{document}
