@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.21 (MiKTeX 21.1) (preloaded format=pdflatex 2021.2.4)  18 FEB 2021 18:40
+This is pdfTeX, Version 3.14159265-2.6-1.40.21 (MiKTeX 21.1) (preloaded format=pdflatex 2021.2.4)  26 FEB 2021 23:50
 entering extended mode
 **./HW3.tex
 (HW3.tex
@@ -307,8 +307,7 @@ tex.def
 File: l3backend-pdftex.def 2021-01-09 L3 backend support: PDF output (pdfTeX)
 \l__kernel_color_stack_int=\count279
 \l__pdf_internal_box=\box50
-)
-No file HW3.aux.
+) (HW3.aux)
 \openout1 = `HW3.aux'.
 
 LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 90.
@@ -328,6 +327,7 @@ LaTeX Font Info:    ... okay on input line 90.
 LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 90.
 LaTeX Font Info:    ... okay on input line 90.
 LaTeX Font Info:    Trying to load font information for U+msa on input line 90.
+
 
 (C:\Users\chris\AppData\Local\Programs\MiKTeX\tex/latex/amsfonts\umsa.fd
 File: umsa.fd 2013/01/14 v3.01 AMS symbols A
@@ -403,6 +403,7 @@ Package: gettitlestring 2019/12/15 v1.6 Cleanup title references (HO)
 LaTeX Info: Redefining \ref on input line 90.
 LaTeX Info: Redefining \pageref on input line 90.
 LaTeX Info: Redefining \nameref on input line 90.
+ (HW3.out) (HW3.out)
 \@outlinefile=\write4
 \openout4 = `HW3.out'.
 
@@ -421,47 +422,29 @@ ii
 \MPnumerator=\count287
 \makeMPintoPDFobject=\count288
 \everyMPtoPDFconversion=\toks35
-)
+) [1{C:/Users/chris/AppData/Local/MiKTeX/pdftex/config/pdftex.map}]
 
 Package amsmath Warning: Foreign command \atop;
 (amsmath)                \frac or \genfrac should be used instead
-(amsmath)                 on input line 122.
+(amsmath)                 on input line 168.
 
+[2] [3]
+Underfull \hbox (badness 10000) in paragraph at lines 236--237
 
-LaTeX Warning: Reference `relation' on page 1 undefined on input line 125.
+ []
 
-[1{C:/Users/chris/AppData/Local/MiKTeX/pdftex/config/pdftex.map}]
-
-LaTeX Warning: Reference `relation' on page 2 undefined on input line 136.
-
-
-LaTeX Warning: Reference `simplification' on page 2 undefined on input line 136
-.
-
-[2] (HW3.aux)
-
-LaTeX Warning: There were undefined references.
-
-
-LaTeX Warning: Label(s) may have changed. Rerun to get cross-references right.
-
-
-Package rerunfilecheck Warning: File `HW3.out' has changed.
-(rerunfilecheck)                Rerun to get outlines right
-(rerunfilecheck)                or use package `bookmark'.
-
-Package rerunfilecheck Info: Checksums for `HW3.out':
-(rerunfilecheck)             Before: <no file>
-(rerunfilecheck)             After:  D41D8CD98F00B204E9800998ECF8427E;0.
+[4] [5] (HW3.aux)
+Package rerunfilecheck Info: File `HW3.out' has not changed.
+(rerunfilecheck)             Checksum: D41D8CD98F00B204E9800998ECF8427E;0.
  ) 
 Here is how much of TeX's memory you used:
- 7540 strings out of 479618
- 109370 string characters out of 2865027
- 422091 words of memory out of 3000000
+ 7552 strings out of 479618
+ 109649 string characters out of 2865027
+ 423284 words of memory out of 3000000
  24421 multiletter control sequences out of 15000+200000
  411576 words of font info for 58 fonts, out of 3000000 for 9000
  1302 hyphenation exceptions out of 8191
- 82i,18n,88p,630b,536s stack positions out of 5000i,500n,10000p,200000b,50000s
+ 82i,19n,88p,630b,679s stack positions out of 5000i,500n,10000p,200000b,50000s
 <C:/Users/chris/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/
 cmbx10.pfb><C:/Users/chris/AppData/Local/Programs/MiKTeX/fonts/type1/public/ams
 fonts/cm/cmbx9.pfb><C:/Users/chris/AppData/Local/Programs/MiKTeX/fonts/type1/pu
@@ -481,11 +464,12 @@ fonts/type1/public/amsfonts/cm/cmsy6.pfb><C:/Users/chris/AppData/Local/Programs
 /MiKTeX/fonts/type1/public/amsfonts/cm/cmsy8.pfb><C:/Users/chris/AppData/Local/
 Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy9.pfb><C:/Users/chris/AppDat
 a/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmti10.pfb><C:/Users/chr
-is/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/symbols/msbm10.pfb
->
-Output written on HW3.pdf (2 pages, 205226 bytes).
+is/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/symbols/msam10.pfb
+><C:/Users/chris/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/symb
+ols/msbm10.pfb>
+Output written on HW3.pdf (5 pages, 223879 bytes).
 PDF statistics:
- 114 PDF objects out of 1000 (max. 8388607)
- 22 named destinations out of 1000 (max. 500000)
+ 137 PDF objects out of 1000 (max. 8388607)
+ 28 named destinations out of 1000 (max. 500000)
  1 words of extra memory for PDF output out of 10000 (max. 10000000)
 
