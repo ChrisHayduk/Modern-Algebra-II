@@ -1,0 +1,399 @@
+\documentclass[11pt, reqno]{amsart}
+\usepackage[margin=1in]{geometry}    
+\geometry{letterpaper}       
+%\geometry{landscape}                % Activate for for rotated page geometry
+\usepackage[parfill]{parskip}    % Deactivate to begin paragraphs with an indent rather than an empty line
+\usepackage{amsfonts, amscd, amssymb, amsthm, amsmath}
+\usepackage{pdfsync}  %leaves makers for tex searching
+\usepackage{enumerate}
+\usepackage{multicol}
+\usepackage[pdftex,bookmarks]{hyperref}
+
+
+
+
+%%% Theorems %%%--------------------------------------------------------- 
+\theoremstyle{plain}
+	\newtheorem{thm}{Theorem}[section]
+	\newtheorem{lemma}[thm]{Lemma}
+	\newtheorem{prop}[thm]{Proposition}
+	\newtheorem{cor}[thm]{Corollary}
+\theoremstyle{definition}
+	\newtheorem*{defn}{Definition}
+	\newtheorem{remark}{Remark}
+\theoremstyle{example}
+	\newtheorem*{example}{Example}
+
+
+%%% Environments %%%--------------------------------------------------------- 
+\newenvironment{ans}{\color{black}\medskip \paragraph*{\emph{Answer}.}}{\hfill \break  $~\!\!$ \dotfill \medskip }
+\newenvironment{sketch}{\medskip \paragraph*{\emph{Proof sketch}.}}{ \medskip }
+\newenvironment{summary}{\medskip \paragraph*{\emph{Summary}.}}{  \hfill \break  \rule{1.5cm}{0.4pt} \medskip }
+\newcommand\Ans[1]{\color{black}\hfill \emph{Answer:} {#1}}
+
+
+%%% Pictures %%%--------------------------------------------------------- 
+%%% If you need to draw pictures, tikzpicture is one good option. Here are some basic things I always use:
+\usepackage{tikz}
+\usetikzlibrary{arrows}
+\tikzstyle{V}=[draw, fill =black, circle, inner sep=0pt, minimum size=2pt]
+\newcommand\TikZ[1]{\begin{matrix}\begin{tikzpicture}#1\end{tikzpicture}\end{matrix}}
+
+
+
+%%% Color  %%%---------------------------------------------------------
+\usepackage{color}
+\newcommand{\blue}[1]{{\color{blue}#1}}
+\newcommand{\NOTE}[1]{{\color{blue}#1}}
+\newcommand{\MOVED}[1]{{\color{gray}#1}}
+
+
+%%% Alphabets %%%---------------------------------------------------------
+%%% Some shortcuts for my commonly used special alphabets and characters.
+\def\cA{\mathcal{A}}\def\cB{\mathcal{B}}\def\cC{\mathcal{C}}\def\cD{\mathcal{D}}\def\cE{\mathcal{E}}\def\cF{\mathcal{F}}\def\cG{\mathcal{G}}\def\cH{\mathcal{H}}\def\cI{\mathcal{I}}\def\cJ{\mathcal{J}}\def\cK{\mathcal{K}}\def\cL{\mathcal{L}}\def\cM{\mathcal{M}}\def\cN{\mathcal{N}}\def\cO{\mathcal{O}}\def\cP{\mathcal{P}}\def\cQ{\mathcal{Q}}\def\cR{\mathcal{R}}\def\cS{\mathcal{S}}\def\cT{\mathcal{T}}\def\cU{\mathcal{U}}\def\cV{\mathcal{V}}\def\cW{\mathcal{W}}\def\cX{\mathcal{X}}\def\cY{\mathcal{Y}}\def\cZ{\mathcal{Z}}
+
+\def\AA{\mathbb{A}} \def\BB{\mathbb{B}} \def\CC{\mathbb{C}} \def\DD{\mathbb{D}} \def\EE{\mathbb{E}} \def\FF{\mathbb{F}} \def\GG{\mathbb{G}} \def\HH{\mathbb{H}} \def\II{\mathbb{I}} \def\JJ{\mathbb{J}} \def\KK{\mathbb{K}} \def\LL{\mathbb{L}} \def\MM{\mathbb{M}} \def\NN{\mathbb{N}} \def\OO{\mathbb{O}} \def\PP{\mathbb{P}} \def\QQ{\mathbb{Q}} \def\RR{\mathbb{R}} \def\SS{\mathbb{S}} \def\TT{\mathbb{T}} \def\UU{\mathbb{U}} \def\VV{\mathbb{V}} \def\WW{\mathbb{W}} \def\XX{\mathbb{X}} \def\YY{\mathbb{Y}} \def\ZZ{\mathbb{Z}}  
+
+\def\fa{\mathfrak{a}} \def\fb{\mathfrak{b}} \def\fc{\mathfrak{c}} \def\fd{\mathfrak{d}} \def\fe{\mathfrak{e}} \def\ff{\mathfrak{f}} \def\fg{\mathfrak{g}} \def\fh{\mathfrak{h}} \def\fj{\mathfrak{j}} \def\fk{\mathfrak{k}} \def\fl{\mathfrak{l}} \def\fm{\mathfrak{m}} \def\fn{\mathfrak{n}} \def\fo{\mathfrak{o}} \def\fp{\mathfrak{p}} \def\fq{\mathfrak{q}} \def\fr{\mathfrak{r}} \def\fs{\mathfrak{s}} \def\ft{\mathfrak{t}} \def\fu{\mathfrak{u}} \def\fv{\mathfrak{v}} \def\fw{\mathfrak{w}} \def\fx{\mathfrak{x}} \def\fy{\mathfrak{y}} \def\fz{\mathfrak{z}}
+\def\fgl{\mathfrak{gl}}  \def\fsl{\mathfrak{sl}}  \def\fso{\mathfrak{so}}  \def\fsp{\mathfrak{sp}}  
+\def\GL{\mathrm{GL}} \def\SL{\mathrm{SL}}  \def\SP{\mathrm{SL}}
+
+\def\<{\langle} \def\>{\rangle}
+\usepackage{mathabx}
+\def\acts{\lefttorightarrow}
+\def\ad{\mathrm{ad}} 
+\def\Aut{\mathrm{Aut}}
+\def\Ann{\mathrm{Ann}}
+\def\dim{\mathrm{dim}} 
+\def\End{\mathrm{End}} 
+\def\ev{\mathrm{ev}} 
+\def\Fr{\mathcal{F}\mathrm{r}}
+\def\half{\hbox{$\frac12$}}
+\def\Hom{\mathrm{Hom}} 
+\def\id{\mathrm{id}} 
+\def\sgn{\mathrm{sgn}}  
+\def\supp{\mathrm{supp}}  
+\def\Tor{\mathrm{Tor}}
+\def\tr{\mathrm{tr}} 
+\def\vep{\varepsilon}
+\def\f{\varphi}
+
+
+\def\Obj{\mathrm{Obj}}
+\def\normeq{\unlhd}
+\def\Set{{\cS\mathrm{et}}}
+\def\Fin{{\cF\mathrm{inSet}}}
+\def\Set{{\cS\mathrm{et}}}
+\def\Grp{{\cG\mathrm{rp}}}
+\def\Ab{{\cA\mathrm{b}}}
+\def\Mod{{\cM\mathrm{od}}}
+\def\ab{\mathrm{ab}}
+\def\lcm{\mathrm{lcm}}
+\def\ZZn{\ZZ/n\ZZ}
+
+
+\newcommand{\ProblemID}[2]{{\def\arraystretch{1.5}
+	\begin{tabular}{|lr|}\hline
+	Problem: & \bf #1\\\hline
+	No.\ stars:& \bf #2\\\hline\end{tabular}}}
+
+
+\newcommand{\Rubric}[1]{$~$\\\vfill \hfill{\def\arraystretch{1.75}\begin{tabular} {|c|c|} \hline
+#1 & Points Possible  \\ \hline \hline
+complete & \hspace{3mm} 0 \hspace{3mm} 1 \hspace{3mm} 2 \hspace{3mm} 
+			3 \hspace{3mm} 4 \hspace{3mm} 5 \hspace{3mm} \\ \hline
+mathematically valid & \hspace{3mm} 0 \hspace{3mm} 1 \hspace{3mm} 2 \hspace{3mm} 
+			3 \hspace{3mm} 4 \hspace{3mm} 5 \hspace{3mm} \\ \hline
+readable/fluent & \hspace{3mm} 0 \hspace{3mm} 1 \hspace{3mm} 2 \hspace{3mm} 
+			3 \hspace{3mm} 4 \hspace{3mm} 5 \hspace{3mm} \\ \hline
+Total:& \qquad\qquad\qquad(out of 15)\\
+\hline
+\end{tabular}}
+\pagebreak}
+
+\title{Proof portfolio draft, round 2 -- \IDNUMBER}
+\author{}
+\usepackage{fancyhdr}
+\pagestyle{fancy}
+\fancyhf{}
+\rhead{\IDNUMBER}
+\lhead{Proof portfolio \NUMBER}
+\rfoot{\thepage}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+\def\IDNUMBER{5514}%replace "YOUR-ID-NUMBER" with the ID number given to you by Prof Daugherty (NOT your CCNY emplid, or any other number).
+\def\NUMBER{1}%replace NUMBER with 1, 2, or final as appropriate
+\def\DUEDATE{03/07/2021}%replace DUE-DATE with the due date
+
+
+\begin{document}
+\begin{flushright}
+\fbox{ID: {\bf \IDNUMBER}}\\\smallskip
+Math B4900\\
+Proof portfolio \NUMBER\\ 
+\DUEDATE 
+\end{flushright}
+\medskip
+\hrule
+\medskip
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%% Copy and past one of these %%%%%%%%%
+%%%%%%%%% for each problem you rewrite %%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+\hbox{\begin{minipage}{5in}
+\noindent {\bf Statement:} 
+Let $F$ be a field and $V$ be a vector space over $F$. Fix $\f \in \End(V)$. For $\lambda \in F$, prove that the weight space $V_\lambda$ and the generalized weight space $V^\lambda$ are both subspaces of $V$. 
+\end{minipage} \hspace{.3in} {\begin{minipage}{1.1in}
+\ProblemID
+		{1C}%PUT PROBLEM NUMBER HERE, e.g. 4A in place of 0X.
+		{2}%PUT NUMBER OF STARS HERE, e.g. 2 in place of 0.
+\end{minipage}}}
+
+\begin{proof}
+Let $F$ be a field and $V$ be a vector space over $F$. Fix $\lambda \in F$. By definition, every $v \in V_{\lambda}$ is also an element of $V$. Hence, we have $V_{\lambda} \subset V$. Now observe that $\lambda 0 = 0$ for any $\lambda \in F$. Hence, $0 \in V_{\lambda}$ and thus $V_\lambda$ is non-empty. Now, by the submodule criterion, we just need to show that $x + ry \in V_{\lambda}$ for all $r \in F$ and for all $x, y \in V_{\lambda}$. Let us start by applying $\varphi$ to this element and using the properties of the linearity of $\varphi$,
+\begin{align*}
+\varphi(x + ry) &= \varphi(x) + r\varphi(y)\\
+&= \lambda x + r \lambda y\\
+&= \lambda (x + ry)
+\end{align*}
+
+Hence, $x + ry \in V_{\lambda}$ and so $V_{\lambda}$ is a subspace of $V$.\\
+
+By definition, every $v \in V^{\lambda}$ is also an element of $V$. Hence, we have $V^{\lambda} \subset V$. Now observe that, for any $\lambda \in F$,
+\begin{align*}
+&\f(v) = \lambda 0 = 0v = 0\\
+\iff &(\f - \lambda \cdot \id)(0) = 0
+\end{align*} 
+
+Hence, $0 \in V^{\lambda}$ and thus $V^\lambda$ is non-empty. Again, by the submodule criterion, we just need to show that $x + ry \in V^{\lambda}$ for all $r \in F$ and for all $x, y \in V^{\lambda}$. Since, $x, y \in V^{\lambda}$, we have that 
+\begin{align*}
+(\f - \lambda \cdot \id)^{\ell}(x) &= 0\\
+(\f - \lambda \cdot \id)^{m}(y) &= 0
+\end{align*}
+
+Let $k = \max\{\ell, m\}$. Then by the fact that if $(\f - \lambda \cdot \id)^m (v) = 0$, then $(\f - \lambda \cdot \id)^n v = 0$ for all integers $n \ge m$ and by the fact that linear combinations and compositions of linear functions are linear, we have that,
+\begin{align*}
+(\f - \lambda \cdot \id)^k (x + ry) &= (\f - \lambda \cdot \id)^k(x) + r (\f - \lambda \cdot \id)^k(y)\\
+&= 0 + r0\\
+&= 0
+\end{align*}
+
+Hence, $x + ry \in V^{\lambda}$ and so $V^{\lambda}$ is also a subspace of $V$.
+\end{proof}
+
+\Rubric{}
+
+\newpage
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%% Copy and past one of these %%%%%%%%%
+%%%%%%%%% for each problem you rewrite %%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+\hbox{\begin{minipage}{5in}
+\noindent {\bf Statement:} 
+Define $\<, \>: M_n(F) \times M_n(F) \to F$ by $\<A,B\> = \tr(AB)$. Show that $\<,\>$ is symmetric and nondegenerate.
+\end{minipage} \hspace{.3in} {\begin{minipage}{1.1in}
+\ProblemID
+		{2A.II}%PUT PROBLEM NUMBER HERE, e.g. 4A in place of 0X.
+		{2}%PUT NUMBER OF STARS HERE, e.g. 2 in place of 0.
+\end{minipage}}}
+
+\begin{proof}
+Fix $A, B \in M_n(F)$. Then we have,
+\begin{align*}
+\<A, B\> &= tr(AB)\\
+&= \sum_{i=1}^n AB_{ii}\\
+&= \sum_{i=1}^n \sum_{k=1}^n a_{ik}b_{ki}\\
+&= \sum_{i=1}^n a_{i1}b_{1i} + a_{i2}b_{2i} + \cdots + a_{in}b_{ni}\\
+&= a_{11}b_{11} + a_{12}b_{21} + \cdots + a_{1n}b_{n1} + a_{21}b_{12} + a_{22}b_{22} + \cdots + a_{2n}b_{n2} + \cdots + a_{n1}b_{1n} + a_{n2}b_{2n} + \cdots + a_{nn}b_{nn}
+\end{align*}
+
+and,
+\begin{align*}
+\<B, A\> &= tr(BA)\\
+&= \sum_{i=1}^n BA_{ii}\\
+&= \sum_{i=1}^n \sum_{k=1}^n b_{ik}a_{ki}\\
+&= \sum_{i=1}^n b_{i1}a_{1i} + b_{i2}a_{2i} + \cdots + b_{in}a_{ni}\\
+&= b_{11}a_{11} + b_{12}a_{21} + \cdots + b_{1n}a_{n1} + b_{21}a_{12} + b_{22}a_{22} + \cdots + b_{2n}a_{n2} + \cdots + b_{n1}a_{1n} + b_{n2}a_{2n} + \cdots + b_{nn}a_{nn}
+\end{align*}
+
+Note from the above two expressions, we can see that each term in $tr(BA)$ appears in $tr(AB)$, just with the order of $a$ and $b$  switched. Since $F$ is a field, we have that multiplication is commutative and so, since the terms are the same in each expanded addition, we must have that $$tr(AB) = tr(BA)$$ Hence, trace is symmetric.\\
+
+Now we want to show that trace is a bilinear form. Let us fix $\alpha \in F$. We have that,
+\begin{align*}
+\< \alpha A, B \> &= tr(\alpha A B)\\
+&= \sum_{i=1}^n \sum_{k=1}^n (\alpha a_{ik})b_{ki}\\
+&= \alpha \sum_{i=1}^n \sum_{k=1}^n  a_{ik}b_{ki}\\
+&= \alpha tr(AB)\\
+&= \alpha \< A, B\>
+\end{align*}
+
+Moreover, we have that,
+\begin{align*}
+\< \alpha A, B \> &= tr(\alpha A B)\\
+&= \sum_{i=1}^n \sum_{k=1}^n (\alpha a_{ik})b_{ki}\\
+&= \sum_{i=1}^n \sum_{k=1}^n  a_{ik}(\alpha b_{ki})\\
+&= tr(A(\alpha B))\\
+&= \<A, \alpha B\>
+\end{align*}
+
+Now in addition to $A$ and $B$, let us fix $A', B' \in M_n(F)$. Then we have,
+\begin{align*}
+\<A + A', B\> &= tr((A+A')B)\\
+&= tr(AB + A'B)\\
+&= \sum_{i=1}^n \sum_{k=1}^n \left( a_{ik}b_{ki} + a'_{ik}b_{ki} \right)\\
+&= \sum_{i=1}^n \sum_{k=1}^n a_{ik}b_{ki} + \sum_{i=1}^n \sum_{k=1}^n a'_{ik}b_{ki}\\
+&= tr(AB) + tr(A'B)\\
+&= \<A, B\> + \<A', B\>
+\end{align*}
+
+In addition,
+\begin{align*}
+\<A, B + B'\> &= tr(A(B+B'))\\
+&= tr(AB + AB')\\
+&= \sum_{i=1}^n \sum_{k=1}^n \left( a_{ik}b_{ki} + a_{ik}b'_{ki} \right)\\
+&= \sum_{i=1}^n \sum_{k=1}^n a_{ik}b_{ki} + \sum_{i=1}^n \sum_{k=1}^n a_{ik}b'_{ki}\\
+&= tr(AB) + tr(AB')\\
+&= \<A, B\> + \<A, B'\>
+\end{align*}
+
+Thus, we have shown that trace is a symmetric bilinear form. Now we must show that it is nondegenerate. Fix $A \in M_n(F)$ and suppose $$\<A, B\> = 0$$ for all $B \in M_n(F)$. Then we have,
+\begin{align*}
+\<A, B\> &= tr(AB)\\
+&= \sum_{i=1}^n AB_{ii}\\
+&= \sum_{i=1}^n \sum_{k=1}^n a_{ik}b_{ki}\\
+&= \sum_{i=1}^n a_{i1}b_{1i} + a_{i2}b_{2i} + \cdots + a_{in}b_{ni}\\
+&= a_{11}b_{11} + a_{12}b_{21} + \cdots + a_{1n}b_{n1} + a_{21}b_{12} + a_{22}b_{22} + \cdots + a_{2n}b_{n2} + \cdots + a_{n1}b_{1n} + a_{n2}b_{2n} + \cdots + a_{nn}b_{nn}\\
+&= 0
+\end{align*}
+
+The above expression implies that every term of the form $a_{ij}b_{jk} = 0$. Since this holds for all $B \in M_n(F)$, we can assume that our matrix $B$ has every entry greater than $0$. Then, the fact that $a_{ij}b_{jk} = 0$ for every $1 \leq i,j,k \leq n$ implies that $a_{ij} = 0$ for all $i, j$. Hence, $\<A, B\> = 0$ for all $B \in M_n(F)$ if and only if $A = \mathbf{0}$\\
+
+Similarly, fix $B \in M_n(F)$ and suppose $$\<A, B\> = 0$$ for all $A \in M_n(F)$. Then we have,
+\begin{align*}
+\<A, B\> &= tr(AB)\\
+&= \sum_{i=1}^n AB_{ii}\\
+&= \sum_{i=1}^n \sum_{k=1}^n a_{ik}b_{ki}\\
+&= \sum_{i=1}^n a_{i1}b_{1i} + a_{i2}b_{2i} + \cdots + a_{in}b_{ni}\\
+&= a_{11}b_{11} + a_{12}b_{21} + \cdots + a_{1n}b_{n1} + a_{21}b_{12} + a_{22}b_{22} + \cdots + a_{2n}b_{n2} + \cdots + a_{n1}b_{1n} + a_{n2}b_{2n} + \cdots + a_{nn}b_{nn}\\
+&= 0
+\end{align*}
+
+The above expression implies that every term of the form $a_{ij}b_{jk} = 0$. Since this holds for all $A \in M_n(F)$, we can assume that our matrix $A$ has every entry greater than $0$. Then, the fact that $a_{ij}b_{jk} = 0$ for every $1 \leq i,j,k \leq n$ implies that $b_{jk} = 0$ for all $i, j$. Hence, $\<A, B\> = 0$ for all $A \in M_n(F)$ if and only if $B = \mathbf{0}$\\
+
+As a result, we have now shown that trace a symmetric, nondegenerate bilinear form.
+\end{proof}
+
+\Rubric{}
+
+\newpage
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%% Copy and past one of these %%%%%%%%%
+%%%%%%%%% for each problem you rewrite %%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+\hbox{\begin{minipage}{5in}
+\noindent {\bf Statement:} 
+Use the definition of determinant to verify that $\det(I_n) = 1$, where $I_n$ is the identity matrix in $M_n(F)$.  
+\end{minipage} \hspace{.3in} {\begin{minipage}{1.1in}
+\ProblemID
+		{2B}%PUT PROBLEM NUMBER HERE, e.g. 4A in place of 0X.
+		{1}%PUT NUMBER OF STARS HERE, e.g. 2 in place of 0.
+\end{minipage}}}
+
+\begin{proof}
+Recall that the determinant function $\det : M_n(F) \to F$ is defined by 
+$$\det((\alpha_{i,j})) = \sum_{\sigma \in S_n} \sgn(\sigma) \alpha_{1,\sigma(1)}\alpha_{2,\sigma(2)} \cdots \alpha_{n,\sigma(n)}.$$
+
+Note that for $I_n$, we have that $\alpha_{ii} = 1$ for all $1 \leq i \leq n$ and $\alpha_{ij} = 0$ for all $i \neq j$. Hence, in the above definition of the determinant, we must have that the only non-zero term in the summation is the one corresponding to the identity $\sigma = 1$. This gives us,
+\begin{align*}
+\det(I_n) &= \sgn(1)\alpha_{1,1}\alpha_{2,2}\cdots\alpha_{n,n}\\
+&= 1 \cdot 1 \cdot 1 \cdots 1\\
+&= 1
+\end{align*}
+\end{proof}
+
+\Rubric{}
+
+\newpage
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%% Copy and past one of these %%%%%%%%%
+%%%%%%%%% for each problem you rewrite %%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+\hbox{\begin{minipage}{5in}
+\noindent {\bf Statement:} 
+Prove that determinant is invariant under change of basis. {[The details required in this proof are outlined in Homework 2; be sure to hit all the beats highlighted in that problem statement.]} 
+\end{minipage} \hspace{.3in} {\begin{minipage}{1.1in}
+\ProblemID
+		{2C}%PUT PROBLEM NUMBER HERE, e.g. 4A in place of 0X.
+		{2}%PUT NUMBER OF STARS HERE, e.g. 2 in place of 0.
+\end{minipage}}}
+
+\begin{proof}
+Let $A \in \GL_n(F)$. Then $A$ is invertible with inverse $A^{-1}$. But $A^{-1}$ is also invertible with inverse $A$, so $A^{-1} \in \GL_n(F)$. Hence, by fact (2) we have $\det(A^{-1}), \det(A)^{-1} \neq 0$. Furthermore, since $\GL_n(F) \subset M_n(F)$, we have that $A, A^{-1} \in M_n(F)$ and so we can apply fact (3). Thus, we have that,
+\begin{align*}
+\det(AA^{-1}) &= \det(I_n)\\
+&= 1\\
+&= \det(A)\det(A^{-1})
+\end{align*}
+
+Since $\det(A)\det(A^{-1}) = 1$, we have that $\det(A^{-1}) = \det(A)^{-1}$.\\
+
+Now let $B \in \GL_n(F)$. Consider $\det(ABA^{-1})$ and using fact (3) along with the associativity of matrix multiplication, we get,
+\begin{align*}
+\det((AB)A^{-1}) &= \det(AB)\det(A^{-1})\\
+&= \det(A)\det(B)\det(A^{-1})
+\end{align*}
+
+By our initial derivation, we have that $\det(A^{-1}) = \det(A)^{-1}$ and so, by the fact that $F$ is a field and hence commutative, we have,
+\begin{align*}
+\det((AB)A^{-1}) &= \det(A)\det(B)\det(A^{-1})\\
+&= \det(A)\det(B)\det(A)^{-1}\\
+&= \det(A)\det(A)^{-1}\det(B)\\
+&= 1 \cdot \det(B)\\
+&= \det(B)
+\end{align*}
+
+\textbf{FINISH THIS PROOF}
+\end{proof}
+
+\Rubric{}
+
+\newpage
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%% Copy and past one of these %%%%%%%%%
+%%%%%%%%% for each problem you rewrite %%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+\hbox{\begin{minipage}{5in}
+\noindent {\bf Statement:} 
+Prove that determinant is invariant under change of basis. {[The details required in this proof are outlined in Homework 2; be sure to hit all the beats highlighted in that problem statement.]} 
+\end{minipage} \hspace{.3in} {\begin{minipage}{1.1in}
+\ProblemID
+		{3B}%PUT PROBLEM NUMBER HERE, e.g. 4A in place of 0X.
+		{1}%PUT NUMBER OF STARS HERE, e.g. 2 in place of 0.
+\end{minipage}}}
+
+\begin{proof}
+
+\end{proof}
+
+\Rubric{}
+
+\end{document}
