@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.22 (MiKTeX 21.2) (preloaded format=pdflatex 2021.3.4)  6 MAR 2021 00:08
+This is pdfTeX, Version 3.141592653-2.6-1.40.22 (MiKTeX 21.2) (preloaded format=pdflatex 2021.3.4)  7 MAR 2021 16:30
 entering extended mode
 **"./Proof Portfolio 1 - 5514.tex"
 (Proof Portfolio 1 - 5514.tex
@@ -1256,12 +1256,12 @@ Overfull \hbox (1.97462pt too wide) in paragraph at lines 343--344
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 354--355
+Underfull \hbox (badness 10000) in paragraph at lines 361--362
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 374--374
+Underfull \hbox (badness 10000) in paragraph at lines 387--387
 
  []
 
@@ -1279,12 +1279,29 @@ Package fancyhdr Warning: \footskip is too small (12.0pt):
 (fancyhdr)                \setlength{\footskip}{13.0pt}.
 
 [8]
-Overfull \hbox (1.83775pt too wide) in paragraph at lines 390--391
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+
+
+Package fancyhdr Warning: \headheight is too small (8.0pt): 
+(fancyhdr)                Make it at least 13.0pt, for example:
+(fancyhdr)                \setlength{\headheight}{13.0pt}.
+(fancyhdr)                You might also make \topmargin smaller to compensate:
+
+(fancyhdr)                \addtolength{\topmargin}{-5.0pt}.
+
+
+Package fancyhdr Warning: \footskip is too small (12.0pt): 
+(fancyhdr)                Make it at least 13.0pt, for example:
+(fancyhdr)                \setlength{\footskip}{13.0pt}.
+
+[9]
+Overfull \hbox (1.83775pt too wide) in paragraph at lines 406--407
 [][][][] 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 397--397
+Underfull \hbox (badness 10000) in paragraph at lines 442--442
 
  []
 
@@ -1301,19 +1318,36 @@ Package fancyhdr Warning: \footskip is too small (12.0pt):
 (fancyhdr)                Make it at least 13.0pt, for example:
 (fancyhdr)                \setlength{\footskip}{13.0pt}.
 
-[9] (Proof Portfolio 1 - 5514.aux)
+[10]
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+
+
+Package fancyhdr Warning: \headheight is too small (8.0pt): 
+(fancyhdr)                Make it at least 13.0pt, for example:
+(fancyhdr)                \setlength{\headheight}{13.0pt}.
+(fancyhdr)                You might also make \topmargin smaller to compensate:
+
+(fancyhdr)                \addtolength{\topmargin}{-5.0pt}.
+
+
+Package fancyhdr Warning: \footskip is too small (12.0pt): 
+(fancyhdr)                Make it at least 13.0pt, for example:
+(fancyhdr)                \setlength{\footskip}{13.0pt}.
+
+[11] (Proof Portfolio 1 - 5514.aux)
 Package rerunfilecheck Info: File `"Proof Portfolio 1 - 5514".out' has not chan
 ged.
 (rerunfilecheck)             Checksum: D41D8CD98F00B204E9800998ECF8427E;0.
  ) 
 Here is how much of TeX's memory you used:
- 22091 strings out of 479334
- 384392 string characters out of 2873605
- 678870 words of memory out of 3000000
+ 22093 strings out of 479334
+ 384406 string characters out of 2873605
+ 678874 words of memory out of 3000000
  38994 multiletter control sequences out of 15000+200000
  416775 words of font info for 73 fonts, out of 3000000 for 9000
  1302 hyphenation exceptions out of 8191
- 113i,32n,116p,639b,510s stack positions out of 5000i,500n,10000p,200000b,50000s
+ 113i,32n,116p,667b,510s stack positions out of 5000i,500n,10000p,200000b,50000s
  <C:\Users\chris\AppData\Local\MiKTeX\fonts/pk/ljfour/public/mathabx/dpi600\m
 atha8.pk> <C:\Users\chris\AppData\Local\MiKTeX\fonts/pk/ljfour/public/mathabx/d
 pi657\mathx10.pk> <C:\Users\chris\AppData\Local\MiKTeX\fonts/pk/ljfour/public/m
@@ -1321,11 +1355,13 @@ athabx/dpi657\matha10.pk><C:/MiKTeX/fonts/type1/public/amsfonts/cm/cmbx10.pfb><
 C:/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi10.pfb><C:/MiKTeX/fonts/type1/publ
 ic/amsfonts/cm/cmmi6.pfb><C:/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi8.pfb><C
 :/MiKTeX/fonts/type1/public/amsfonts/cm/cmr10.pfb><C:/MiKTeX/fonts/type1/public
-/amsfonts/cm/cmr8.pfb><C:/MiKTeX/fonts/type1/public/amsfonts/cm/cmti10.pfb><C:/
-MiKTeX/fonts/type1/public/amsfonts/symbols/msam10.pfb>
-Output written on "Proof Portfolio 1 - 5514.pdf" (9 pages, 124941 bytes).
+/amsfonts/cm/cmr8.pfb><C:/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy10.pfb><C:/
+MiKTeX/fonts/type1/public/amsfonts/cm/cmti10.pfb><C:/MiKTeX/fonts/type1/public/
+amsfonts/symbols/msam10.pfb><C:/MiKTeX/fonts/type1/public/amsfonts/symbols/msbm
+10.pfb>
+Output written on "Proof Portfolio 1 - 5514.pdf" (11 pages, 141217 bytes).
 PDF statistics:
- 122 PDF objects out of 1000 (max. 8388607)
- 10 named destinations out of 1000 (max. 500000)
+ 140 PDF objects out of 1000 (max. 8388607)
+ 12 named destinations out of 1000 (max. 500000)
  13 words of extra memory for PDF output out of 10000 (max. 10000000)
 

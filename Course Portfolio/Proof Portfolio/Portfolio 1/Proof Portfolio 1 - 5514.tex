@@ -344,7 +344,14 @@ Prove that determinant is invariant under change of basis. {[The details require
 \end{minipage}}}
 
 \begin{proof}
-Let $A \in \GL_n(F)$. Then $A$ is invertible with inverse $A^{-1}$. But $A^{-1}$ is also invertible with inverse $A$, so $A^{-1} \in \GL_n(F)$. Hence, by fact (2) we have $\det(A^{-1}), \det(A)^{-1} \neq 0$. Furthermore, since $\GL_n(F) \subset M_n(F)$, we have that $A, A^{-1} \in M_n(F)$ and so we can apply fact (3). Thus, we have that,
+Note that for $I_n$, we have that $\alpha_{ii} = 1$ for all $1 \leq i \leq n$ and $\alpha_{ij} = 0$ for all $i \neq j$. Hence, in the definition of the determinant, we must have that the only non-zero term in the summation is the one corresponding to the identity $\sigma = 1$. This gives us,
+\begin{align*}
+\det(I_n) &= \sgn(1)\alpha_{1,1}\alpha_{2,2}\cdots\alpha_{n,n}\\
+&= 1 \cdot 1 \cdot 1 \cdots 1\\
+&= 1
+\end{align*}
+
+Now let $A \in \GL_n(F)$. Then $A$ is invertible with inverse $A^{-1}$. But $A^{-1}$ is also invertible with inverse $A$, so $A^{-1} \in \GL_n(F)$. Hence, by fact (2) on the Lecture 4 worksheet, we have $\det(A^{-1}), \det(A)^{-1} \neq 0$. Furthermore, since $\GL_n(F) \subset M_n(F)$, we have that $A, A^{-1} \in M_n(F)$ and so we can apply fact (3) from the Lecture 4 worksheet. Thus, we have that,
 \begin{align*}
 \det(AA^{-1}) &= \det(I_n)\\
 &= 1\\
@@ -368,7 +375,13 @@ By our initial derivation, we have that $\det(A^{-1}) = \det(A)^{-1}$ and so, by
 &= \det(B)
 \end{align*}
 
-\textbf{FINISH THIS PROOF}
+Thus, if we let $A$ be the matrix of the determinant under basis $\mathcal{A}$, and let $P$ be the change of basis matrix from $\mathcal{A}$ to some basis $\mathcal{B}$. Then $P^{-1}AP = B$, where $B$ is the matrix of the determinant under basis $\mathcal{B}$. However, from the above we get,
+\begin{align*}
+\det(P^{-1}AP) &= \det(A)\\
+&= \det(B)
+\end{align*}
+
+Hence, the determinant is invariant under change of basis.
 \end{proof}
 
 \Rubric{}
@@ -383,7 +396,10 @@ By our initial derivation, we have that $\det(A^{-1}) = \det(A)^{-1}$ and so, by
 
 \hbox{\begin{minipage}{5in}
 \noindent {\bf Statement:} 
-Prove that determinant is invariant under change of basis. {[The details required in this proof are outlined in Homework 2; be sure to hit all the beats highlighted in that problem statement.]} 
+Let $X \in M_n(\CC)$, let $\Lambda$ be the set of eigenvalues for $X$, and let $m_\lambda$ be the multiplicity of $\lambda \in \Lambda$. Show 
+$$\tr(X) = \sum_{\lambda \in \Lambda} \lambda m_\lambda
+	\quad \text{ and } \quad 
+	\det(X) = \prod _{\lambda \in \Lambda} \lambda^{m_\lambda}.$$
 \end{minipage} \hspace{.3in} {\begin{minipage}{1.1in}
 \ProblemID
 		{3B}%PUT PROBLEM NUMBER HERE, e.g. 4A in place of 0X.
@@ -391,7 +407,36 @@ Prove that determinant is invariant under change of basis. {[The details require
 \end{minipage}}}
 
 \begin{proof}
+Since $\CC$ is an algebraically closed field and $X \in M_n(\CC)$, we have that there is some $J$ in Jordan canonical form such that $J \sim X$. That is, there is some choice of basis under which $X$ can be written in Jordan canonical form. Trace is invariant under choice of basis, so we have that $\tr(X) = \tr(J)$. Note that in Jordan canonical form, the eigenvalues of $X$ are placed along the diagonal. Thus, the diagonal of $J$ contains all of the eigenvalues of $X$. Moreover, the multiplicity of an eigenvalue is given by the number of rows in which it appears in the matrix $J$. Hence, we must have that,
+\begin{align*}
+\tr(X) &= \tr(J)\\
+&= \sum_{\lambda \in \Lambda} \lambda m_{\lambda}
+\end{align*}
 
+as required.
+
+
+Similarly to the above, we have $\det(X) = \det(J)$. Now consider the characteristic polynomial of $J$. This is given by,
+
+\begin{align*}
+c_J(x) &= \det(J - x \cdot \id)\\
+&= \prod_{\lambda \in \Lambda} (\lambda - x)^{m_{\lambda}}
+\end{align*}
+
+If we plug in $0$ for $x$, we get,
+\begin{align*}
+c_J(0) &= \det(J - 0 \cdot \id)\\
+&= \det(J)\\
+&= \prod_{\lambda \in \Lambda} (\lambda)^{m_{\lambda}}
+\end{align*}
+
+Hence, we have that,
+\begin{align*}
+\det(X) &= \det(J)\\
+&= \prod_{\lambda \in \Lambda} (\lambda)^{m_{\lambda}}
+\end{align*}
+
+as required.
 \end{proof}
 
 \Rubric{}
