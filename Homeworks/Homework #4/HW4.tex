@@ -1,0 +1,231 @@
+\documentclass[11pt, reqno]{amsart}
+\usepackage[margin=1in]{geometry}    
+\geometry{letterpaper}       
+%\geometry{landscape}                % Activate for for rotated page geometry
+\usepackage[parfill]{parskip}    % Activate to begin paragraphs with an empty line rather than an indent
+\usepackage{amsfonts, amscd, amssymb, amsthm, amsmath}
+\usepackage{pdfsync}  %leaves makers for tex searching
+\usepackage{enumerate}
+\usepackage[pdftex,bookmarks]{hyperref}
+
+
+
+%%% Theorems %%%--------------------------------------------------------- 
+\theoremstyle{plain}
+	\newtheorem{thm}{Theorem}[section]
+	\newtheorem{lemma}[thm]{Lemma}
+	\newtheorem{prop}[thm]{Proposition}
+	\newtheorem{cor}[thm]{Corollary}
+\theoremstyle{definition}
+	\newtheorem*{defn}{Definition}
+	\newtheorem{remark}[thm]{Remark}
+\theoremstyle{example}
+	\newtheorem*{example}{Example}
+
+
+%%% Environments %%%--------------------------------------------------------- 
+\newenvironment{ans}{\medskip \paragraph*{\emph{Answer}.}}{\hfill \break  $~\!\!$ \dotfill \medskip }
+\newenvironment{sketch}{\medskip \paragraph*{\emph{Proof sketch}.}}{ \medskip }
+\newenvironment{summary}{\medskip \paragraph*{\emph{Summary}.}}{  \hfill \break  \rule{1.5cm}{0.4pt} \medskip }
+\newcommand\Ans[1]{\hfill \emph{Answer:} {#1}}
+
+
+%%% Pictures %%%--------------------------------------------------------- 
+%%% If you need to draw pictures, tikzpicture is one good option. Here are some basic things I always use:
+\usepackage{tikz}
+\usetikzlibrary{arrows}
+\usetikzlibrary{shapes}
+\tikzstyle{V}=[draw, fill =black, circle, inner sep=0pt, minimum size=2pt]
+\newcommand\TikZ[1]{\begin{matrix}\begin{tikzpicture}#1\end{tikzpicture}\end{matrix}}
+
+
+
+
+
+%%% Color  %%%---------------------------------------------------------
+\usepackage{color}
+\newcommand{\NOTE}[1]{{\color{blue}#1}}
+\newcommand{\blue}[1]{{\color{blue}#1}}
+\newcommand{\red}[1]{{\color{red}#1}}
+\newcommand{\MOVED}[1]{{\color{gray}#1}}
+
+
+%%% Alphabets %%%---------------------------------------------------------
+%%% Some shortcuts for my commonly used special alphabets and characters.
+\def\cA{\mathcal{A}}\def\cB{\mathcal{B}}\def\cC{\mathcal{C}}\def\cD{\mathcal{D}}\def\cE{\mathcal{E}}\def\cF{\mathcal{F}}\def\cG{\mathcal{G}}\def\cH{\mathcal{H}}\def\cI{\mathcal{I}}\def\cJ{\mathcal{J}}\def\cK{\mathcal{K}}\def\cL{\mathcal{L}}\def\cM{\mathcal{M}}\def\cN{\mathcal{N}}\def\cO{\mathcal{O}}\def\cP{\mathcal{P}}\def\cQ{\mathcal{Q}}\def\cR{\mathcal{R}}\def\cS{\mathcal{S}}\def\cT{\mathcal{T}}\def\cU{\mathcal{U}}\def\cV{\mathcal{V}}\def\cW{\mathcal{W}}\def\cX{\mathcal{X}}\def\cY{\mathcal{Y}}\def\cZ{\mathcal{Z}}
+
+\def\AA{\mathbb{A}} \def\BB{\mathbb{B}} \def\CC{\mathbb{C}} \def\DD{\mathbb{D}} \def\EE{\mathbb{E}} \def\FF{\mathbb{F}} \def\GG{\mathbb{G}} \def\HH{\mathbb{H}} \def\II{\mathbb{I}} \def\JJ{\mathbb{J}} \def\KK{\mathbb{K}} \def\LL{\mathbb{L}} \def\MM{\mathbb{M}} \def\NN{\mathbb{N}} \def\OO{\mathbb{O}} \def\PP{\mathbb{P}} \def\QQ{\mathbb{Q}} \def\RR{\mathbb{R}} \def\SS{\mathbb{S}} \def\TT{\mathbb{T}} \def\UU{\mathbb{U}} \def\VV{\mathbb{V}} \def\WW{\mathbb{W}} \def\XX{\mathbb{X}} \def\YY{\mathbb{Y}} \def\ZZ{\mathbb{Z}}  
+
+\def\fa{\mathfrak{a}} \def\fb{\mathfrak{b}} \def\fc{\mathfrak{c}} \def\fd{\mathfrak{d}} \def\fe{\mathfrak{e}} \def\ff{\mathfrak{f}} \def\fg{\mathfrak{g}} \def\fh{\mathfrak{h}} \def\fj{\mathfrak{j}} \def\fk{\mathfrak{k}} \def\fl{\mathfrak{l}} \def\fm{\mathfrak{m}} \def\fn{\mathfrak{n}} \def\fo{\mathfrak{o}} \def\fp{\mathfrak{p}} \def\fq{\mathfrak{q}} \def\fr{\mathfrak{r}} \def\fs{\mathfrak{s}} \def\ft{\mathfrak{t}} \def\fu{\mathfrak{u}} \def\fv{\mathfrak{v}} \def\fw{\mathfrak{w}} \def\fx{\mathfrak{x}} \def\fy{\mathfrak{y}} \def\fz{\mathfrak{z}}
+\def\fgl{\mathfrak{gl}}  \def\fsl{\mathfrak{sl}}  \def\fso{\mathfrak{so}}  \def\fsp{\mathfrak{sp}}  
+\def\GL{\mathrm{GL}} \def\SL{\mathrm{SL}}  \def\SP{\mathrm{SL}}
+
+\def\<{\langle} \def\>{\rangle}
+\def\({\<\!\<}\def\){\>\!\>}
+\def\ad{\mathrm{ad}} 
+\def\Aut{\mathrm{Aut}}
+\def\dim{\mathrm{dim}} 
+\def\End{\mathrm{End}} 
+\def\ev{\mathrm{ev}} 
+\def\half{\hbox{$\frac12$}}
+\def\img{\mathrm{img}}
+\def\Hom{\mathrm{Hom}} 
+\def\Fn{\mathrm{Fn}} 
+\def\hgt{\mathrm{ht}} 
+\def\id{\mathrm{id}} 
+\def\qtr{\mathrm{qtr}} 
+\def\tr{\mathrm{tr}} 
+\def\Tor{\mathrm{Tor}} 
+\def\sgn{\mathrm{sgn}}
+\def\vep{\varepsilon}
+\def\f{\varphi}
+
+% Arrows:
+\newcommand\xdhrightarrow[2][]{%
+  \mathrel{\ooalign{$\xrightarrow[#1\mkern4mu]{#2\mkern4mu}$\cr%
+  \hidewidth$\rightarrow\mkern4mu$}}
+}
+%\newcommand\dhrightarrow{%
+%  \mathrel{\ooalign{$\rightarrow$\cr%
+%  $\mkern3.5mu\rightarrow$}}
+%}
+\def\dhrightarrow{\twoheadrightarrow}
+\def\dhleftarrow{\twoheadleftarrow}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\def\HW{4}
+\def\DUE{3/14/2021}
+
+\title[Homework \HW]{Homework \HW \\
+Math B4900\\
+\small Due: \DUE}
+\author{}
+%\date{}                                           % Activate to display a given date or no date
+
+\begin{document}
+\maketitle %%% COMMENT THIS OUT and UNCOMMENT the following to give yourself a good assignment header:
+%\begin{flushright}
+%YOUR NAME HERE\\
+%Math B4900\\
+%Homework \HW\\
+%\DUE
+%\end{flushright}
+
+
+Let $A$ be a ring with 1, and let $M$ be an $A$-module.
+\begin{enumerate}[1.]
+\item Let $z$ be a central element of $A$. Show that $zM$ is a submodule of $M$ and that $\f: M \to M$ defined by $m \mapsto zm$ is an $A$-module endomorphism.
+
+\item Let $I$ be an ideal of $A$. Show that 
+$$IM = \left\{ \left. \sum_{\text{fin.}} \alpha m_\alpha ~\right|~ \alpha \in I, m_\alpha \in M\right\}$$
+is a submodule of $M$. Give an example where $IM = M$ and an example where $0 \ne IM \subsetneq M$ Finally, give an example showing that if $B$ is a subring of $A$, then $BM$ is not necessarily a submodule of $M$.
+
+\item Let $\f: M \to N$ be an $A$-module homomorphism. Prove that $\ker(\f)$ is a submodule of $M$ and $\img(\f)$ is a submodule of $N$. Further, show that if $M$ and $N$ are simple, then either $\f = 0$ or  $\f$ is an isomorphism. {[You may use anything that we have already proven for groups (since $M$ and $N$ are also additive groups.]}
+
+\item Let $X$ and $Y$ be submodules of $M$. Show that
+$$0 \hookrightarrow X \cap Y \xrightarrow{f: x \mapsto (x,x)} 
+	X \oplus Y \xrightarrow{g: (x,y) \mapsto x + y} X + Y \to 0$$
+is a short exact sequence of $A$-modules. 
+
+\item Let 
+$$0 \hookrightarrow X \xrightarrow{f} Y \xrightarrow{g} Z \to 0 \quad \text{and} \quad 
+ 	0 \hookrightarrow X' \xrightarrow{f'} Y' \xrightarrow{g'} Z' \to 0$$
+	be short exact sequences. A collection of homomorphisms 
+	$$\alpha: X \to X', \quad \beta: Y \to Y', \quad \text{ and } \gamma: Z \to Z'$$
+is a \emph{homomorphism of exact sequences} if the following diagram commutes:
+\begin{equation}\label{SEShom}
+\TikZ{[yscale=1.5, xscale=3]
+\node (0') at (.3, 1) {$0$};
+\node (0R') at (3.7, 1) {$0$};
+\node (X') at (1,1) {$X'$}; 
+\node (Y') at (2,1) {$Y'$}; 
+\node (Z') at (3,1) {$Z'$}; 
+\node (0) at (.3, 2) {$0$};
+\node (0R) at (3.7, 2) {$0$};
+\node (X) at (1,2) {$X$}; 
+\node (Y) at (2,2) {$Y$}; 
+\node (Z) at (3,2) {$Z$}; 
+\foreach \x/\y in {X/\alpha,Y/\beta,Z/\gamma} {\draw [->] (\x) to node[left]{$\y$}
+%	node[sloped, above]{$\sim$} 
+	(\x');}
+\draw[right hook-latex] (0) to (X);
+\draw[right hook-latex] (0') to (X');
+\draw[->] (X) to node[above] {$f$} (Y);
+\draw[->] (Y) to node[above] {$g$} (Z);
+\draw[->] (X') to node[below] {$f'$} (Y');
+\draw[->] (Y') to node[below] {$g$} (Z');
+\draw[->] (Z) to (0R); \draw[->] (Z') to (0R');
+}
+\end{equation}
+If $\alpha, \beta$, and $\gamma$ are isomorphisms, then this is an \emph{isomorphism} or \emph{equivalence of exact sequences}.
+
+\pagebreak
+
+\begin{enumerate}
+\item Fill in the unknown modules and homomorphisms to make the following diagram into a homomorphism of short exact sequences
+
+$$
+\TikZ{[yscale=1.5, xscale=3]
+\node (0') at (.3, 1) {$0$};
+\node (0R') at (3.7, 1) {$0$};
+\node[draw, circle] (X') at (1,1) {?}; 
+\node (Y') at (2,1) {$\ZZ$}; 
+\node (Z') at (3,1) {$\ZZ/2\ZZ$}; 
+\node (0) at (.3, 2) {$0$};
+\node (0R) at (3.7, 2) {$0$};
+\node[draw, circle]  (X) at (1,2) {?}; 
+\node (Y) at (2,2) {$\ZZ$}; 
+\node(Z) at (3,2) {$\ZZ/6\ZZ$}; 
+\draw [->] (X) to node[left, outer sep=3pt, draw, rounded corners] {?} (X');
+\draw [->] (Y) to node[left]{$*3$}(Y');
+\draw [->] (Z) to node[left, outer sep=3pt, draw, rounded corners] {?} (Z');
+\draw[right hook-latex] (0) to (X);
+\draw[right hook-latex] (0') to (X');
+\draw[->] (X) to node [above, outer sep=3pt, draw, rounded corners] {?}  (Y);
+\draw[->] (Y) to node[above] {$\pi$} (Z);
+\draw[->] (X') to node[below, outer sep=3pt, draw, rounded corners] {?} (Y');
+\draw[->] (Y') to node[below] {$\pi$} (Z');
+\draw[->] (Z) to (0R); \draw[->] (Z') to (0R');
+}
+$$
+
+\item If you have a homomorphism of short exact sequences as in \eqref{SEShom}, and you know something about the properties of $\alpha$, $\beta$, or $\gamma$, what else (if anything) can you infer about the other two? Namely, fill in the blank (briefly justifying your answers):
+
+\begin{center}
+\emph{If  ($\alpha/\beta/\gamma$) is (injective/surjective/bijective), then...}
+
+{\def\arraystretch{1.3}\begin{tabular}{|c||c|c|c|}\hline
+ & injective & surjective & bijective\\\hline\hline
+ $\alpha$ &&&\\\hline
+ $\beta$ && (e.g.\ \emph{$\gamma$ is surjective})&\\\hline
+ $\gamma$ &&& \\\hline
+\end{tabular}}
+\end{center}
+
+{[For example, if $\beta$ is surjective, then you can infer that $\gamma$ is surjective, but nothing can be said about $\alpha$. (Why?)
+]}
+
+
+\end{enumerate}
+\end{enumerate}
+
+\vfill
+
+
+\hrule
+\emph{\small To receive credit for this assignment, include the following in your solutions [edited appropriately]:}
+
+\smallskip
+
+\textbf{Academic integrity statement:} I \emph{[violated/did not violate]} the CUNY Academic Integrity Policy in completing this assignment. \hfill \emph{[enter your full name as a digital signature here]}
+
+\medskip
+\hrule
+
+\vfill
+
+
+\end{document}
