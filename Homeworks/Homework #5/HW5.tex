@@ -1,0 +1,332 @@
+\documentclass[11pt, reqno]{amsart}
+\usepackage[margin=1in]{geometry}    
+\geometry{letterpaper}       
+%\geometry{landscape}                % Activate for for rotated page geometry
+\usepackage[parfill]{parskip}    % Activate to begin paragraphs with an empty line rather than an indent
+\usepackage{amsfonts, amscd, amssymb, amsthm, amsmath}
+\usepackage{pdfsync}  %leaves makers for tex searching
+\usepackage{enumerate}
+\usepackage[pdftex,bookmarks]{hyperref}
+
+
+
+%%% Theorems %%%--------------------------------------------------------- 
+\theoremstyle{plain}
+	\newtheorem{thm}{Theorem}[section]
+	\newtheorem{lemma}[thm]{Lemma}
+	\newtheorem{prop}[thm]{Proposition}
+	\newtheorem{cor}[thm]{Corollary}
+\theoremstyle{definition}
+	\newtheorem*{defn}{Definition}
+	\newtheorem{remark}[thm]{Remark}
+\theoremstyle{example}
+	\newtheorem*{example}{Example}
+
+
+%%% Environments %%%--------------------------------------------------------- 
+\newenvironment{ans}{\medskip \paragraph*{\emph{Answer}.}}{\hfill \break  $~\!\!$ \dotfill \medskip }
+\newenvironment{sketch}{\medskip \paragraph*{\emph{Proof sketch}.}}{ \medskip }
+\newenvironment{summary}{\medskip \paragraph*{\emph{Summary}.}}{  \hfill \break  \rule{1.5cm}{0.4pt} \medskip }
+\newcommand\Ans[1]{\hfill \emph{Answer:} {#1}}
+
+
+%%% Pictures %%%--------------------------------------------------------- 
+%%% If you need to draw pictures, tikzpicture is one good option. Here are some basic things I always use:
+\usepackage{tikz}
+\usetikzlibrary{arrows}
+\usetikzlibrary{shapes}
+\tikzstyle{V}=[draw, fill =black, circle, inner sep=0pt, minimum size=2pt]
+\newcommand\TikZ[1]{\begin{matrix}\begin{tikzpicture}#1\end{tikzpicture}\end{matrix}}
+
+
+
+
+
+%%% Color  %%%---------------------------------------------------------
+\usepackage{color}
+\newcommand{\NOTE}[1]{{\color{blue}#1}}
+\newcommand{\blue}[1]{{\color{blue}#1}}
+\newcommand{\red}[1]{{\color{red}#1}}
+\newcommand{\MOVED}[1]{{\color{gray}#1}}
+
+
+%%% Alphabets %%%---------------------------------------------------------
+%%% Some shortcuts for my commonly used special alphabets and characters.
+\def\cA{\mathcal{A}}\def\cB{\mathcal{B}}\def\cC{\mathcal{C}}\def\cD{\mathcal{D}}\def\cE{\mathcal{E}}\def\cF{\mathcal{F}}\def\cG{\mathcal{G}}\def\cH{\mathcal{H}}\def\cI{\mathcal{I}}\def\cJ{\mathcal{J}}\def\cK{\mathcal{K}}\def\cL{\mathcal{L}}\def\cM{\mathcal{M}}\def\cN{\mathcal{N}}\def\cO{\mathcal{O}}\def\cP{\mathcal{P}}\def\cQ{\mathcal{Q}}\def\cR{\mathcal{R}}\def\cS{\mathcal{S}}\def\cT{\mathcal{T}}\def\cU{\mathcal{U}}\def\cV{\mathcal{V}}\def\cW{\mathcal{W}}\def\cX{\mathcal{X}}\def\cY{\mathcal{Y}}\def\cZ{\mathcal{Z}}
+
+\def\AA{\mathbb{A}} \def\BB{\mathbb{B}} \def\CC{\mathbb{C}} \def\DD{\mathbb{D}} \def\EE{\mathbb{E}} \def\FF{\mathbb{F}} \def\GG{\mathbb{G}} \def\HH{\mathbb{H}} \def\II{\mathbb{I}} \def\JJ{\mathbb{J}} \def\KK{\mathbb{K}} \def\LL{\mathbb{L}} \def\MM{\mathbb{M}} \def\NN{\mathbb{N}} \def\OO{\mathbb{O}} \def\PP{\mathbb{P}} \def\QQ{\mathbb{Q}} \def\RR{\mathbb{R}} \def\SS{\mathbb{S}} \def\TT{\mathbb{T}} \def\UU{\mathbb{U}} \def\VV{\mathbb{V}} \def\WW{\mathbb{W}} \def\XX{\mathbb{X}} \def\YY{\mathbb{Y}} \def\ZZ{\mathbb{Z}}  
+
+\def\fa{\mathfrak{a}} \def\fb{\mathfrak{b}} \def\fc{\mathfrak{c}} \def\fd{\mathfrak{d}} \def\fe{\mathfrak{e}} \def\ff{\mathfrak{f}} \def\fg{\mathfrak{g}} \def\fh{\mathfrak{h}} \def\fj{\mathfrak{j}} \def\fk{\mathfrak{k}} \def\fl{\mathfrak{l}} \def\fm{\mathfrak{m}} \def\fn{\mathfrak{n}} \def\fo{\mathfrak{o}} \def\fp{\mathfrak{p}} \def\fq{\mathfrak{q}} \def\fr{\mathfrak{r}} \def\fs{\mathfrak{s}} \def\ft{\mathfrak{t}} \def\fu{\mathfrak{u}} \def\fv{\mathfrak{v}} \def\fw{\mathfrak{w}} \def\fx{\mathfrak{x}} \def\fy{\mathfrak{y}} \def\fz{\mathfrak{z}}
+\def\fgl{\mathfrak{gl}}  \def\fsl{\mathfrak{sl}}  \def\fso{\mathfrak{so}}  \def\fsp{\mathfrak{sp}}  
+\def\GL{\mathrm{GL}} \def\SL{\mathrm{SL}}  \def\SP{\mathrm{SL}}
+
+\def\<{\langle} \def\>{\rangle}
+\def\({\<\!\<}\def\){\>\!\>}
+\def\ad{\mathrm{ad}} 
+\def\Aut{\mathrm{Aut}}
+\def\dim{\mathrm{dim}} 
+\def\End{\mathrm{End}} 
+\def\ev{\mathrm{ev}} 
+\def\half{\hbox{$\frac12$}}
+\def\img{\mathrm{img}}
+\def\Hom{\mathrm{Hom}} 
+\def\Fn{\mathrm{Fn}} 
+\def\Fr{\mathcal{F}\mathrm{r}}
+\def\hgt{\mathrm{ht}} 
+\def\id{\mathrm{id}} 
+\def\qtr{\mathrm{qtr}} 
+\def\sgn{\mathrm{sgn}}
+\def\supp{\mathrm{supp}}
+\def\tr{\mathrm{tr}} 
+\def\Tor{\mathrm{Tor}} 
+\def\vep{\varepsilon}
+\def\f{\varphi}
+
+% Arrows:
+\newcommand\xdhrightarrow[2][]{%
+  \mathrel{\ooalign{$\xrightarrow[#1\mkern4mu]{#2\mkern4mu}$\cr%
+  \hidewidth$\rightarrow\mkern4mu$}}
+}
+%\newcommand\dhrightarrow{%
+%  \mathrel{\ooalign{$\rightarrow$\cr%
+%  $\mkern3.5mu\rightarrow$}}
+%}
+\def\dhrightarrow{\twoheadrightarrow}
+\def\dhleftarrow{\twoheadleftarrow}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\def\HW{5}
+\def\DUE{3/21/2021}
+
+\title[Homework \HW]{Homework \HW \\
+Math B4900\\
+\small Due: \DUE}
+\author{}
+%\date{}                                           % Activate to display a given date or no date
+
+\begin{document}
+%\maketitle %%% COMMENT THIS OUT and UNCOMMENT the following to give yourself a good assignment header:
+\begin{flushright}
+Chris Hayduk\\
+Math B4900\\
+Homework \HW\\
+\DUE
+\end{flushright}
+
+
+
+\begin{enumerate}[1.]
+\item Let $A$ be a ring with 1, and let $X$, $Y$, and $Z$ be $A$-modules. In class, we showed that if $0 \hookrightarrow X \xrightarrow{f} Y \xrightarrow{g} Z \to 0$ is a split sequence, then so is $\Hom_A(*,M)$ of this sequence for any $A$-module $M$. Complete the proof of that theorem by showing that  $\Hom_A(M,*)$ of this sequence is split for any $A$-module $M$, i.e.
+$$0 \hookrightarrow \Hom_A(M,X) \xrightarrow{F} \Hom_A(M, Y) \xrightarrow{G} \Hom_A(M,Z) \to 0$$
+is a split exact sequence, where $F(\f) = f \circ \f$ and $G(\f) = g \circ \f$. {[You may use any other propositions or theorems from class, even if we didn't explicitly prove the cases you need.]}
+
+\begin{proof}
+By Proposition 2.2 in Section 3 of Lang, we have that,
+\begin{align*}
+0 \hookrightarrow \Hom_A(M,X) \xrightarrow{F} \Hom_A(M, Y) \xrightarrow{G} \Hom_A(M,Z)
+\end{align*}
+
+is exact. Moreover, we can assert that 
+\begin{align*}
+0 \hookrightarrow \Hom_A(M,X) \xrightarrow{F} \Hom_A(M, Y) \xrightarrow{G} \Hom_A(M,Z) \hookrightarrow 0
+\end{align*}
+
+is a short exact sequence because $\text{Im}(G) = \Hom_A(M,Z)$ and $\ker(0) = \Hom_A(M,Z)$. Now define $\mu: \Hom_A(M,Z) \to \Hom_A(M, Y)$ by $\mu(\varphi) = \varphi^{-1} \circ g^{-1}$ and define $\lambda: \Hom_A(M, Y) \to \Hom_A(M,X)$ by $\lambda(\varphi) = \varphi^{-1} \circ f^{-1}$. Then 
+\begin{align*}
+G\mu &= g \circ \varphi \circ \varphi^{-1} \circ g^{-1}\\
+&= \id
+\end{align*}
+
+and 
+\begin{align*}
+\lambda f &= \varphi^{-1} \circ f^{-1} \circ f \circ \varphi\\
+&= \id
+\end{align*}
+
+Hence, by the Proposition from Lecture 10 part B, we have that our short exact sequence is also split, with $\mu$ and $\lambda$ as the splitting homomorphisms.
+\end{proof}
+
+\item Completely decompose the left-regular representation of $\CC S_2$ using the central elements $z_1 = \half(1+x)$ and $z_2 = \half(1-x)$, where $x = (12)$. {[You'll need to check that $z_1$ and $z_2$ are actually the tools you need. You'll also need to check that the result \emph{is} actually a \emph{complete} decomposition.]}
+
+\begin{proof}
+Observe that,
+\begin{align*}
+z_1z_2 &= \frac{1}{2}(1+x) \cdot \frac{1}{2}(1-x)\\
+&= \frac{1}{4} - \frac{1}{4} x \cdot x\\
+&= \frac{1}{4} - \frac{1}{4} \cdot 1\\
+&= 0
+\end{align*}
+
+and,
+\begin{align*}
+z_2z_1 &= \frac{1}{2}(1-x) \cdot \frac{1}{2}(1+x)\\
+&= \frac{1}{4} - \frac{1}{4} x \cdot x\\
+&= \frac{1}{4} - \frac{1}{4} \cdot 1\\
+&= 0
+\end{align*}
+
+Moreover, we have that, $$z_1 = \frac{1}{2}(\kappa_1 + \kappa_{(12)})$$ and $$z_2 = \frac{1}{2}(\kappa_1 - \kappa_{(12)})$$ Hence, $z_1, z_2 \in Z(\CC S_2)$. Now fix some $\sigma \in S_2$ and $x \in z_1M$. Then $x = z_1 m$ for some $m \in M$ and,
+\begin{align*}
+\sigma x &= \sigma (z_1 m)\\
+&= (\sigma z_1)m\\
+&= z_1 m\\
+&= x
+\end{align*}
+
+Now instead fix $x \in z_2 M$. Then $x = z_2 m$ for some $m \in M$ and,
+\begin{align*}
+\sigma x &= \sigma (z_2 m)\\
+&= (\sigma z_2)m\\
+&= \sgn(\sigma) z_2 m\\
+&= \sgn(\sigma) x
+\end{align*}
+
+Now let us define,
+\begin{align*}
+\varphi_1: &M \to M\\
+&m \mapsto z_1 m
+\end{align*}
+
+and 
+\begin{align*}
+\varphi_2: &M \to M\\
+&m \mapsto z_2 m
+\end{align*}
+
+Then we have,
+\begin{align*}
+(\varphi_1 + \varphi_2)(m) &= z_1 m + z_2 m\\
+&= (z_1 + z_2) m\\
+&= (\frac{1}{2}(1+x) + \frac{1}{2}(1-x)) m\\
+&= (\frac{1}{2} + \frac{1}{2} x + \frac{1}{2} - \frac{1}{2}x) m\\
+&= (1)m\\
+&= m
+\end{align*}
+
+Hence, $\varphi_1 + \varphi_2$ maps $m \mapsto m$ and so $\varphi_1 + \varphi_2 = \id_M$. Moreover,
+
+\begin{align*}
+\varphi_1 \varphi_2 &= z_1 m z_2 m\\
+&= z_1 z_2 m m\\
+&= 0
+\end{align*}
+
+Similarly,
+\begin{align*}
+\varphi_2 \varphi_1 = 0
+\end{align*}
+
+\end{proof}
+
+\item Consider $A = \CC D_8$ and recall that the conjugacy classes of $D_8$ are given by 
+$$\{1\}, \quad \{r^2\}, \quad \{r, r^3\}, \quad \{s, r^2 s\}, \quad \text{ and } \quad \{rs, r^3s\}.$$
+Let $\cR = \{1, r^2, r, s, rs\}$ be our favorite set of representatives of these classes, so that $\{\kappa_g~|~ g \in \cR\}$ is a basis of the center of $\CC D_8$ (where $\kappa_g$ is the class sum corresponding to $g$.
+
+For $i = 1, \dots, 5$, define
+$$z_i = \frac{1}{8}\sum_{ g \in \cR} \chi_i(g) \kappa_g,$$
+where $\chi_i$ is given by the following table.
+\begin{equation}\label{D8table}
+\begin{array}{|c||c|c|c|c|c|}\hline
+\chi_i(g) & 1 & r^2 & r & s & rs \\\hline\hline
+\chi_1 	& 1 & 1 & 1 & 1 & 1 \\\hline
+\chi_2 	& 1 & 1 & -1 & 1 & -1\\\hline
+\chi_3	& 1 & 1 & -1 & -1 & 1\\\hline
+\chi_4	& 1 & 1 & 1 & -1 & -1\\\hline
+\chi_5 	& 2 & -2 & 0 & 0 & 0\\\hline
+\end{array}
+\end{equation}
+For example, 
+\begin{align*}
+z_2 &= \frac{1}{8}(\kappa_1 + \kappa_{r^2} - \kappa_r + \kappa_s - \kappa_{rs})\\
+	&= \frac{1}{8}(1 + r_2 - r - r^3 + s + r^2s - rs - r^3s).
+	\end{align*}
+Since $z_i \in \CC\{\kappa_g ~|~ g \in \cR\}$, it is immediate that the $z_i$ are all central.
+
+\begin{enumerate}
+\item Verify that $z_1 + \cdots + z_5 = 1$.
+
+\begin{ans}
+We have that,
+\begin{align*}
+z_1 + z_2 + z_3 + z_4 + z_5 &= \frac{1}{8}(\kappa_1 + \kappa_{r^2} + \kappa_r + \kappa_s + \kappa_{rs}\\
+&+ \kappa_1 + \kappa_{r^2} - \kappa_r + \kappa_s - \kappa_{rs}\\
+&+ \kappa_1 + \kappa_{r^2} - \kappa_r - \kappa_s + \kappa_{rs}\\
+&+ \kappa_1 + \kappa_{r^2} + \kappa_r - \kappa_s - \kappa_{rs}\\
+&+ 4\kappa_1 - 4\kappa_{r^2})\\
+&= \frac{1}{8}(1 + r^2 + r + s + rs\\
+&+ 1 + r^2 - r + s - rs\\
+&+ 1 + r^2 - r - s + rs\\
+&+ 1 + r^2 + r - s - rs\\
+&+ 4 - 4r^2)\\
+&= \frac{1}{8}(8)\\
+&= 1
+\end{align*}
+\end{ans}
+
+\item Compare the values in the first 4 rows of the table in \eqref{D8table} to the 1-dimensional representations that we classified in Lecture 7, Exercise B \# 2 (which generalized the computation that we did on p.\ 5 of the Lecture 7 notes). Now, for each $i = 1, \dots, 5$, extend $\chi_i$ to a function (not a homomorphism) $\chi_i: D_8 \to \CC$ by defining 
+$$\chi_i(h) = \chi_i(g) \quad \text{ whenever $h$ is conjugate to $g$.}$$
+(For example, $\chi_2(r^3) = \chi_2(r) = -1$ since $r^3$ is in the same conjugacy class as $r$. This is well-defined since the conjugacy classes partition $D_8$. We call $\chi_i$ a \emph{class function}.)
+
+\medskip
+
+Verify that, as functions $D_8 \to \CC^\times$, we have 
+$$\chi_1 = \rho_{+,+}, \quad \chi_2 = \rho_{-,+}, \quad \chi_3 = \rho_{-,-}, \quad \text{ and } \quad \chi_4 = \rho_{+,-},$$
+but that $\chi_5$ isn't a homomorphism. (Careful! You can't assume that the $\chi_i$ are homomorphisms for $i = 1, \dots, 4$.)
+\begin{ans}
+We have that $\chi_1(r) = 1$ and $\chi_1(s) = 1$, which matches $\rho_{+,+}$\\
+
+We have that $\chi_2(r) = -1$ and $\chi_2(s) = 1$, which matches $\rho_{-,+}$\\
+
+We have that $\chi_3(r) = -1$ and $\chi_3(s) = -1$, which matches $\rho_{-,-}$\\
+
+And we have that $\chi_4(r) = 1$ and $\chi_4(s) = -1$, which matches $\rho_{-,-}$
+\end{ans}
+
+\item Show that for any $h \in D_8$ and $i = 1, 2, 3$, or $4$, we have 
+$$h \cdot z_i = \chi_i(h) z_i.$$
+{[\emph{Hint:} Use the previous problem. Note that just as with $S_3$, when you act on any $\sum_{g \in D_8} \alpha_g g \in \CC D_8$ by some $h \in D_8$, you're just permuting the terms---the work that you have to do is in keeping track of where the coefficients end up in that permutation. If you're lost, I highly recommend trying the examples of $h = r, s$, or $rs$ acting on $z_2$. Just like with $\sgn: S_3 \to \CC$, you'll want to establish the fact that $\rho_{\epsilon_1, \epsilon_2}$ is a homomorphism (for $\epsilon_1, \epsilon_2 = \pm$), and that $\rho_{\epsilon_1, \epsilon_2}(h^-1) = \rho_{\epsilon_1, \epsilon_2}(h)^{-1} = \rho_{\epsilon_1, \epsilon_2}(h)$ for all $h \in D_8$.]}
+
+
+\item Verify that $z_i z_j = 0$ for all $i \ne j$.\\
+{[\emph{Hint:} Use the previous problem. It may be helpful to fill out the rest of the table
+$$\begin{array}{|c||c|c|c|c|c|c|c|c|}\hline
+\chi_i(g) & 1 & r^2 & r & r^3 &  s & r^2 s &  rs & r^3 s\\\hline\hline
+\chi_1 	& 1 & 1 & 1 && 1 && 1 &\\\hline
+\chi_2 	& 1 & 1 & -1 && 1 && -1 &\\\hline
+\chi_3	& 1 & 1 & -1 && -1 && 1 &\\\hline
+\chi_4	& 1 & 1 & 1 && -1 && -1 &\\\hline
+\chi_5 	& 2 & -2 & 0 && 0 && 0 &\\\hline
+\end{array}$$
+for your own uses and consider the dot product of rows---but you'll need to convince yourself (and your reader!), using the previous parts, that the dot product of rows is interesting.]}
+
+\item Decompose the left regular module for $\CC D_8$ using $z_1, \dots, z_5$. {[This will not be a complete decomposition--no worries.]}
+\end{enumerate}
+
+
+\end{enumerate}
+
+
+
+
+
+
+\vfill
+
+
+\hrule
+\emph{\small To receive credit for this assignment, include the following in your solutions [edited appropriately]:}
+
+\smallskip
+
+\textbf{Academic integrity statement:} I \emph{did not violate} the CUNY Academic Integrity Policy in completing this assignment. \hfill \emph{Christopher Hayduk}
+
+\medskip
+\hrule
+
+\vfill
+
+
+\end{document}
