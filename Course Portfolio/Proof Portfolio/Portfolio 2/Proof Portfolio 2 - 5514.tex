@@ -1,0 +1,302 @@
+\documentclass[11pt, reqno]{amsart}
+\usepackage[margin=1in]{geometry}    
+\geometry{letterpaper}       
+%\geometry{landscape}                % Activate for for rotated page geometry
+\usepackage[parfill]{parskip}    % Deactivate to begin paragraphs with an indent rather than an empty line
+\usepackage{amsfonts, amscd, amssymb, amsthm, amsmath}
+\usepackage{pdfsync}  %leaves makers for tex searching
+\usepackage{enumerate}
+\usepackage{multicol}
+\usepackage[pdftex,bookmarks]{hyperref}
+
+
+
+
+%%% Theorems %%%--------------------------------------------------------- 
+\theoremstyle{plain}
+	\newtheorem{thm}{Theorem}[section]
+	\newtheorem{lemma}[thm]{Lemma}
+	\newtheorem{prop}[thm]{Proposition}
+	\newtheorem{cor}[thm]{Corollary}
+\theoremstyle{definition}
+	\newtheorem*{defn}{Definition}
+	\newtheorem{remark}{Remark}
+\theoremstyle{example}
+	\newtheorem*{example}{Example}
+
+
+%%% Environments %%%--------------------------------------------------------- 
+\newenvironment{ans}{\color{black}\medskip \paragraph*{\emph{Answer}.}}{\hfill \break  $~\!\!$ \dotfill \medskip }
+\newenvironment{sketch}{\medskip \paragraph*{\emph{Proof sketch}.}}{ \medskip }
+\newenvironment{summary}{\medskip \paragraph*{\emph{Summary}.}}{  \hfill \break  \rule{1.5cm}{0.4pt} \medskip }
+\newcommand\Ans[1]{\color{black}\hfill \emph{Answer:} {#1}}
+
+
+%%% Pictures %%%--------------------------------------------------------- 
+%%% If you need to draw pictures, tikzpicture is one good option. Here are some basic things I always use:
+\usepackage{tikz}
+\usetikzlibrary{arrows}
+\tikzstyle{V}=[draw, fill =black, circle, inner sep=0pt, minimum size=2pt]
+\newcommand\TikZ[1]{\begin{matrix}\begin{tikzpicture}#1\end{tikzpicture}\end{matrix}}
+
+
+
+%%% Color  %%%---------------------------------------------------------
+\usepackage{color}
+\newcommand{\blue}[1]{{\color{blue}#1}}
+\newcommand{\NOTE}[1]{{\color{blue}#1}}
+\newcommand{\MOVED}[1]{{\color{gray}#1}}
+
+
+%%% Alphabets %%%---------------------------------------------------------
+%%% Some shortcuts for my commonly used special alphabets and characters.
+\def\cA{\mathcal{A}}\def\cB{\mathcal{B}}\def\cC{\mathcal{C}}\def\cD{\mathcal{D}}\def\cE{\mathcal{E}}\def\cF{\mathcal{F}}\def\cG{\mathcal{G}}\def\cH{\mathcal{H}}\def\cI{\mathcal{I}}\def\cJ{\mathcal{J}}\def\cK{\mathcal{K}}\def\cL{\mathcal{L}}\def\cM{\mathcal{M}}\def\cN{\mathcal{N}}\def\cO{\mathcal{O}}\def\cP{\mathcal{P}}\def\cQ{\mathcal{Q}}\def\cR{\mathcal{R}}\def\cS{\mathcal{S}}\def\cT{\mathcal{T}}\def\cU{\mathcal{U}}\def\cV{\mathcal{V}}\def\cW{\mathcal{W}}\def\cX{\mathcal{X}}\def\cY{\mathcal{Y}}\def\cZ{\mathcal{Z}}
+
+\def\AA{\mathbb{A}} \def\BB{\mathbb{B}} \def\CC{\mathbb{C}} \def\DD{\mathbb{D}} \def\EE{\mathbb{E}} \def\FF{\mathbb{F}} \def\GG{\mathbb{G}} \def\HH{\mathbb{H}} \def\II{\mathbb{I}} \def\JJ{\mathbb{J}} \def\KK{\mathbb{K}} \def\LL{\mathbb{L}} \def\MM{\mathbb{M}} \def\NN{\mathbb{N}} \def\OO{\mathbb{O}} \def\PP{\mathbb{P}} \def\QQ{\mathbb{Q}} \def\RR{\mathbb{R}} \def\SS{\mathbb{S}} \def\TT{\mathbb{T}} \def\UU{\mathbb{U}} \def\VV{\mathbb{V}} \def\WW{\mathbb{W}} \def\XX{\mathbb{X}} \def\YY{\mathbb{Y}} \def\ZZ{\mathbb{Z}}  
+
+\def\fa{\mathfrak{a}} \def\fb{\mathfrak{b}} \def\fc{\mathfrak{c}} \def\fd{\mathfrak{d}} \def\fe{\mathfrak{e}} \def\ff{\mathfrak{f}} \def\fg{\mathfrak{g}} \def\fh{\mathfrak{h}} \def\fj{\mathfrak{j}} \def\fk{\mathfrak{k}} \def\fl{\mathfrak{l}} \def\fm{\mathfrak{m}} \def\fn{\mathfrak{n}} \def\fo{\mathfrak{o}} \def\fp{\mathfrak{p}} \def\fq{\mathfrak{q}} \def\fr{\mathfrak{r}} \def\fs{\mathfrak{s}} \def\ft{\mathfrak{t}} \def\fu{\mathfrak{u}} \def\fv{\mathfrak{v}} \def\fw{\mathfrak{w}} \def\fx{\mathfrak{x}} \def\fy{\mathfrak{y}} \def\fz{\mathfrak{z}}
+\def\fgl{\mathfrak{gl}}  \def\fsl{\mathfrak{sl}}  \def\fso{\mathfrak{so}}  \def\fsp{\mathfrak{sp}}  
+\def\GL{\mathrm{GL}} \def\SL{\mathrm{SL}}  \def\SP{\mathrm{SL}}
+
+\def\<{\langle} \def\>{\rangle}
+\usepackage{mathabx}
+\def\acts{\lefttorightarrow}
+\def\ad{\mathrm{ad}} 
+\def\Aut{\mathrm{Aut}}
+\def\Ann{\mathrm{Ann}}
+\def\dim{\mathrm{dim}} 
+\def\End{\mathrm{End}} 
+\def\ev{\mathrm{ev}} 
+\def\Fr{\mathcal{F}\mathrm{r}}
+\def\half{\hbox{$\frac12$}}
+\def\Hom{\mathrm{Hom}} 
+\def\id{\mathrm{id}} 
+\def\sgn{\mathrm{sgn}}  
+\def\supp{\mathrm{supp}} 
+\def\img{\mathrm{img}}  
+\def\Tor{\mathrm{Tor}}
+\def\tr{\mathrm{tr}} 
+\def\vep{\varepsilon}
+\def\f{\varphi}
+
+
+\def\Obj{\mathrm{Obj}}
+\def\normeq{\unlhd}
+\def\Set{{\cS\mathrm{et}}}
+\def\Fin{{\cF\mathrm{inSet}}}
+\def\Set{{\cS\mathrm{et}}}
+\def\Grp{{\cG\mathrm{rp}}}
+\def\Ab{{\cA\mathrm{b}}}
+\def\Mod{{\cM\mathrm{od}}}
+\def\ab{\mathrm{ab}}
+\def\lcm{\mathrm{lcm}}
+\def\ZZn{\ZZ/n\ZZ}
+
+
+\newcommand{\ProblemID}[2]{{\def\arraystretch{1.5}
+	\begin{tabular}{|lr|}\hline
+	Problem: & \bf #1\\\hline
+	No.\ stars:& \bf #2\\\hline\end{tabular}}}
+
+
+\newcommand{\Rubric}[1]{$~$\\\vfill \hfill{\def\arraystretch{1.75}\begin{tabular} {|c|c|} \hline
+#1 & Points Possible  \\ \hline \hline
+complete & \hspace{3mm} 0 \hspace{3mm} 1 \hspace{3mm} 2 \hspace{3mm} 
+			3 \hspace{3mm} 4 \hspace{3mm} 5 \hspace{3mm} \\ \hline
+mathematically valid & \hspace{3mm} 0 \hspace{3mm} 1 \hspace{3mm} 2 \hspace{3mm} 
+			3 \hspace{3mm} 4 \hspace{3mm} 5 \hspace{3mm} \\ \hline
+readable/fluent & \hspace{3mm} 0 \hspace{3mm} 1 \hspace{3mm} 2 \hspace{3mm} 
+			3 \hspace{3mm} 4 \hspace{3mm} 5 \hspace{3mm} \\ \hline
+Total:& \qquad\qquad\qquad(out of 15)\\
+\hline
+\end{tabular}}
+\pagebreak}
+
+\title{Proof portfolio draft, round 2 -- \IDNUMBER}
+\author{}
+\usepackage{fancyhdr}
+\pagestyle{fancy}
+\fancyhf{}
+\rhead{\IDNUMBER}
+\lhead{Proof portfolio \NUMBER}
+\rfoot{\thepage}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+\def\IDNUMBER{5514}%replace "YOUR-ID-NUMBER" with the ID number given to you by Prof Daugherty (NOT your CCNY emplid, or any other number).
+\def\NUMBER{2}%replace NUMBER with 1, 2, or final as appropriate
+\def\DUEDATE{4/11/2021}%replace DUE-DATE with the due date
+
+
+\begin{document}
+\begin{flushright}
+\fbox{ID: {\bf \IDNUMBER}}\\\smallskip
+Math B4900\\
+Proof portfolio \NUMBER\\ 
+\DUEDATE 
+\end{flushright}
+\medskip
+\hrule
+\medskip
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%% Copy and past one of these %%%%%%%%%
+%%%%%%%%% for each problem you rewrite %%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+\hbox{\begin{minipage}{5in}
+\noindent {\bf Statement:} 
+Let $z$ be a central element of $A$. Show that $zM$ is a submodule of $M$ and that $\f: M \to M$ defined by $m \mapsto zm$ is an $A$-module endomorphism.
+\end{minipage} \hspace{.3in} {\begin{minipage}{1.1in}
+\ProblemID
+		{4AI}%PUT PROBLEM NUMBER HERE, e.g. 4A in place of 0X.
+		{1}%PUT NUMBER OF STARS HERE, e.g. 2 in place of 0.
+\end{minipage}}}
+
+\begin{proof}
+Suppose $A$ is a ring with $1$, $z$ is a central element of $A$ and $M$ is an $A$ module. We will first show that $zM$ is a submodule of $M$ using the submodule criterion. First, let us show that $zM \subset M$. Fix $x \in zM$. By the definition of $zM$, we must have that $x = zm$ for some $m \in M$. Since $M$ is an $A$ module, we have that it is closed under action by the ring elements, and so $zm \in M$. Thus, $zM \subset M$.\\
+
+Second, let us show that $zM$ is non-empty. Since $M$ is an $A$ module, it must be non-empty, and so there exists $m \in M$. Moreover, $am$ is defined for all $a \in A$ and $m \in M$. In particular, $zm$ is defined with our choice of $z$ and $m$, and so $zm \in zM$ and so $zM \neq \emptyset$.\\
+
+Lastly, fix $x, y \in zM$ and $a \in A$. We can write $x = zm_1, y = zm_2$ for some $m_1, m_2 \in M$. Hence, using the properties of $M$ as a module of $A$ and $z$ as a central element of $A$, we have,
+\begin{align*}
+x + ay &= zm_1 + a(zm_2)\\
+&= zm_1 + z(am_2)\\
+&= z(m_1 + am_2) \in zM
+\end{align*}
+
+Thus, we have shown that $zM$ is a submodule of $M$. Now consider $\varphi: M \to M$ defined by $m \mapsto zm$. As we have shown above, $zm$ is defined for every $m \in M$ and $zm \in M$ for all $m \in M$. Hence, $\varphi$ is well-defined and does indeed map from $M \to M$. Now we will show that it is an endomorphism on $M$. Let $x, y \in M$ and $a \in A$,
+\begin{align*}
+\varphi(ax + y) &= z(ax + y)\\
+&= z(ax) + zy\\
+&= a(zx) + zy\\
+&= a\varphi(x) + \varphi(y)
+\end{align*}
+
+Hence, $\varphi$ is an endomorphism on $M$ as required.
+\end{proof}
+
+\Rubric{}
+
+\newpage
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\hbox{\begin{minipage}{5in}
+\noindent {\bf Statement:} 
+Let $X$ and $Y$ be submodules of $M$. Show that
+$$0 \hookrightarrow X \cap Y \xrightarrow{f: x \mapsto (x,-x)} 
+	X \oplus Y \xrightarrow{g: (x,y) \mapsto x + y} X + Y \to 0$$
+is a short exact sequence of $A$-modules.
+\end{minipage} \hspace{.3in} {\begin{minipage}{1.1in}
+\ProblemID
+		{4C}%PUT PROBLEM NUMBER HERE, e.g. 4A in place of 0X.
+		{1}%PUT NUMBER OF STARS HERE, e.g. 2 in place of 0.
+\end{minipage}}}
+
+\begin{proof}
+We must verify that $f$ is injective, $g$ is surjective, and $\img(f) = \ker(g)$. First, suppose $f(x_1) = f(x_2)$. Then $(x_1, -x_1) = (x_2, -x_2)$, which implies that $x_1 = x_2$ and $x_2 = -x_2$. Hence, we have that $f(x_1) = f(x_2)$ implies $x_1 = x_2$, and so $f$ is injective. Now fix $z \in X+Y$. Observe that by the definition of $X + Y$, $z = x_1 + y_1$ for some $x_1 \in X$ and $y_1 \in Y$. Since $X \oplus Y = \{(x, y) \ : \ x \in X, y \in Y\}$, we must have that $(x_1, y_1) \in X \oplus Y$ and hence $g(x_1, y_1) = x_1 + y_1 = z$, as required. Thus, $g$ is surjective.\\
+
+Now note that $\img(f) = \{(x, -x) \ : \ x \in X \cap Y\}$. We have that $\ker(g) = \{(x,y) \ : \ x \in X, y \in Y, y = -x\}$. Hence, every element in $\img(f)$ is of the form $(x, -x)$ and so $g(\img(f)) = 0$, which gives us that $\img(f) \subset \ker(g)$. In addition, since $Y$ is a submodule of $M$ and hence must be an abelian group under addition, if $y = -x$, then we must also have that $x \in Y$. Thus, every element $(x, y) \in \ker(g)$ as defined previously must be such that $x \in X \cap Y$ and $(x, y) = (x, -x)$. Thus, $\ker(g) \subset \img(f)$ and so $\img(f) = \ker(g)$. Hence, we have that this is a short exact sequence, as required.
+\end{proof}
+
+\newpage
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\hbox{\begin{minipage}{5in}
+\noindent {\bf Statement:} 
+Prove that $\Hom_A(*,M)$ is an exact functor. Namely, show that if $0 \hookrightarrow X \xrightarrow{f} Y \xrightarrow{g} Z \to 0$ is a split exact sequence of $A$-modules, then so is 
+$$0 \hookrightarrow \Hom_A(M,X) \xrightarrow{F} \Hom_A(M, Y) \xrightarrow{G} \Hom_A(M,Z) \to 0,$$
+where $F(\f) = f \circ \f$ and $G(\f) = g \circ \f$. {[You may use any other propositions or theorems from Lecture 10 or before.]}
+\end{minipage} \hspace{.3in} {\begin{minipage}{1.1in}
+\ProblemID
+		{5A}%PUT PROBLEM NUMBER HERE, e.g. 4A in place of 0X.
+		{2}%PUT NUMBER OF STARS HERE, e.g. 2 in place of 0.
+\end{minipage}}}
+
+\begin{proof}
+By Proposition 2.2 in Section 3 of Lang, we have that,
+\begin{align*}
+0 \hookrightarrow \Hom_A(M,X) \xrightarrow{F} \Hom_A(M, Y) \xrightarrow{G} \Hom_A(M,Z)
+\end{align*}
+
+is exact. Moreover, we can assert that 
+\begin{align*}
+0 \hookrightarrow \Hom_A(M,X) \xrightarrow{F} \Hom_A(M, Y) \xrightarrow{G} \Hom_A(M,Z) \hookrightarrow 0
+\end{align*}
+
+is a short exact sequence because $\text{Im}(G) = \Hom_A(M,Z)$ and $\ker(0) = \Hom_A(M,Z)$. Now define $\mu: \Hom_A(M,Z) \to \Hom_A(M, Y)$ by $\mu(\varphi) = \varphi^{-1} \circ g^{-1}$ and define $\lambda: \Hom_A(M, Y) \to \Hom_A(M,X)$ by $\lambda(\varphi) = \varphi^{-1} \circ f^{-1}$. Then 
+\begin{align*}
+G\mu &= g \circ \varphi \circ \varphi^{-1} \circ g^{-1}\\
+&= \id
+\end{align*}
+
+and 
+\begin{align*}
+\lambda f &= \varphi^{-1} \circ f^{-1} \circ f \circ \varphi\\
+&= \id
+\end{align*}
+
+Hence, by the Proposition from Lecture 10 part B, we have that our short exact sequence is also split, with $\mu$ and $\lambda$ as the splitting homomorphisms.
+\end{proof}
+
+\newpage
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\hbox{\begin{minipage}{5in}
+\noindent {\bf Statement:} 
+Let $A$ be a ring with $1$, and let $M$ be an $A-$module. Prove that $M$ is simple if and only if $Am = M$ for any non-zero $m \in M$. 
+\end{minipage} \hspace{.3in} {\begin{minipage}{1.1in}
+\ProblemID
+		{6A}%PUT PROBLEM NUMBER HERE, e.g. 4A in place of 0X.
+		{2}%PUT NUMBER OF STARS HERE, e.g. 2 in place of 0.
+\end{minipage}}}
+
+\begin{proof}
+Suppose $M$ is simple. Then the only submodules of $M$ are $0$ and itself. By the footnote on Homework 6, we have that $Am$ is a submodule of $M$. Since $M$ is simple, we have that either $Am = 0$ and $Am = M$. However, we know that $m \neq 0$. Since $A$ is a ring with $1$, we have that $1m = m \in Am$ and so $Am \neq 0$. Thus, we must have that $Am = m$ for any non-zero $m \in M$.\\
+
+Now suppose that $Am = M$ for any non-zero $m \in M$. Let $N \subset M$ be a submodule and suppose $N \neq 0$. Thus there is some $m \in N \setminus \{0\} \subset M \setminus \{0\}$ . Now since $Am = M$ for every non-zero $m \in M$, we must have that $Am = M$ for this particular choice of $m$. Since $N$ is a submodule and closed under the action of $A$ on $N$, we must have that $N = M$. Thus, $M$ is simple.
+\end{proof}
+
+\newpage
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\hbox{\begin{minipage}{5in}
+\noindent {\bf Statement:} 
+Show that if $A$ is a commutative ring with 1, that $A^m \cong A^n$ if and only if $n=m$.
+\end{minipage} \hspace{.3in} {\begin{minipage}{1.1in}
+\ProblemID
+		{6C}%PUT PROBLEM NUMBER HERE, e.g. 4A in place of 0X.
+		{2}%PUT NUMBER OF STARS HERE, e.g. 2 in place of 0.
+\end{minipage}}}
+
+\begin{proof}
+Suppose $A$ is is a commutative ring with $1$ and suppose that $A^m \cong A^n$. Let $I$ be a maximal ideal of $A$. Since $A^m \cong A^n$, we have that $IA^m \cong IA^n$, and so $A^m/IA^m \cong A^n/IA^n$. Moreover, from Q3 on Homework 6, we have that,
+\begin{align*}
+A^m/IA^m &\cong \oplus_{b \in \mathcal{B}} Ab/Ib\\
+A^n/IA^n &\cong \oplus_{c \in \mathcal{C}} Ac/Ic
+\end{align*}
+
+Thus, we have that $\oplus_{b \in \mathcal{B}} Ab/Ib \cong \oplus_{c \in \mathcal{C}} Ac/Ic$.\\
+
+Since $I$ is a maximal ideal of $A$, by Proposition 12 in Section 7.4, we have that $Ab/Ib$ and $Ac/Ic$ are fields for every $b,c$.\\
+
+Now suppose $n = m$. Then we must have $A^m = A^n$ and so $A^m \cong A^n$ by the identity map.
+\end{proof}
+
+\end{document}

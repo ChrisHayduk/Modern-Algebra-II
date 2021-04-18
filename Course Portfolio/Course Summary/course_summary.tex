@@ -1,0 +1,382 @@
+\documentclass[11pt, reqno]{amsart}
+\usepackage[margin=1in]{geometry}    
+\geometry{letterpaper}       
+%\geometry{landscape}                % Activate for for rotated page geometry
+\usepackage[parfill]{parskip}    % Deactivate to begin paragraphs with an indent rather than an empty line
+\usepackage{amsfonts, amscd, amssymb, amsthm, amsmath}
+\usepackage{pdfsync}  %leaves makers for tex searching
+\usepackage{enumerate}
+\usepackage{multicol}
+\usepackage[pdftex,bookmarks]{hyperref}
+\usepackage{enumitem}
+
+
+\setlength\parindent{0pt}
+
+%%% Theorems %%%--------------------------------------------------------- 
+\theoremstyle{plain}
+	\newtheorem{thm}{Theorem}[section]
+	\newtheorem{lemma}[thm]{Lemma}
+	\newtheorem{prop}[thm]{Proposition}
+	\newtheorem{cor}[thm]{Corollary}
+\theoremstyle{definition}
+	\newtheorem*{defn}{Definition}
+	\newtheorem{remark}{Remark}
+\theoremstyle{example}
+	\newtheorem*{example}{Example}
+
+
+%%% Environments %%%--------------------------------------------------------- 
+\newenvironment{ans}{\color{black}\medskip \paragraph*{\emph{Answer}.}}{\hfill \break  $~\!\!$ \dotfill \medskip }
+\newenvironment{sketch}{\medskip \paragraph*{\emph{Proof sketch}.}}{ \medskip }
+\newenvironment{summary}{\medskip \paragraph*{\emph{Summary}.}}{  \hfill \break  \rule{1.5cm}{0.4pt} \medskip }
+\newcommand\Ans[1]{\color{black}\hfill \emph{Answer:} {#1}}
+
+
+%%% Pictures %%%--------------------------------------------------------- 
+%%% If you need to draw pictures, tikzpicture is one good option. Here are some basic things I always use:
+\usepackage{tikz}
+\usetikzlibrary{arrows}
+\tikzstyle{V}=[draw, fill =black, circle, inner sep=0pt, minimum size=2pt]
+\newcommand\TikZ[1]{\begin{matrix}\begin{tikzpicture}#1\end{tikzpicture}\end{matrix}}
+
+
+
+%%% Color  %%%---------------------------------------------------------
+\usepackage{color}
+\newcommand{\blue}[1]{{\color{blue}#1}}
+\newcommand{\NOTE}[1]{{\color{blue}#1}}
+\newcommand{\MOVED}[1]{{\color{gray}#1}}
+
+
+%%% Alphabets %%%---------------------------------------------------------
+%%% Some shortcuts for my commonly used special alphabets and characters.
+\def\cA{\mathcal{A}}\def\cB{\mathcal{B}}\def\cC{\mathcal{C}}\def\cD{\mathcal{D}}\def\cE{\mathcal{E}}\def\cF{\mathcal{F}}\def\cG{\mathcal{G}}\def\cH{\mathcal{H}}\def\cI{\mathcal{I}}\def\cJ{\mathcal{J}}\def\cK{\mathcal{K}}\def\cL{\mathcal{L}}\def\cM{\mathcal{M}}\def\cN{\mathcal{N}}\def\cO{\mathcal{O}}\def\cP{\mathcal{P}}\def\cQ{\mathcal{Q}}\def\cR{\mathcal{R}}\def\cS{\mathcal{S}}\def\cT{\mathcal{T}}\def\cU{\mathcal{U}}\def\cV{\mathcal{V}}\def\cW{\mathcal{W}}\def\cX{\mathcal{X}}\def\cY{\mathcal{Y}}\def\cZ{\mathcal{Z}}
+
+\def\AA{\mathbb{A}} \def\BB{\mathbb{B}} \def\CC{\mathbb{C}} \def\DD{\mathbb{D}} \def\EE{\mathbb{E}} \def\FF{\mathbb{F}} \def\GG{\mathbb{G}} \def\HH{\mathbb{H}} \def\II{\mathbb{I}} \def\JJ{\mathbb{J}} \def\KK{\mathbb{K}} \def\LL{\mathbb{L}} \def\MM{\mathbb{M}} \def\NN{\mathbb{N}} \def\OO{\mathbb{O}} \def\PP{\mathbb{P}} \def\QQ{\mathbb{Q}} \def\RR{\mathbb{R}} \def\SS{\mathbb{S}} \def\TT{\mathbb{T}} \def\UU{\mathbb{U}} \def\VV{\mathbb{V}} \def\WW{\mathbb{W}} \def\XX{\mathbb{X}} \def\YY{\mathbb{Y}} \def\ZZ{\mathbb{Z}}  
+
+\def\fa{\mathfrak{a}} \def\fb{\mathfrak{b}} \def\fc{\mathfrak{c}} \def\fd{\mathfrak{d}} \def\fe{\mathfrak{e}} \def\ff{\mathfrak{f}} \def\fg{\mathfrak{g}} \def\fh{\mathfrak{h}} \def\fj{\mathfrak{j}} \def\fk{\mathfrak{k}} \def\fl{\mathfrak{l}} \def\fm{\mathfrak{m}} \def\fn{\mathfrak{n}} \def\fo{\mathfrak{o}} \def\fp{\mathfrak{p}} \def\fq{\mathfrak{q}} \def\fr{\mathfrak{r}} \def\fs{\mathfrak{s}} \def\ft{\mathfrak{t}} \def\fu{\mathfrak{u}} \def\fv{\mathfrak{v}} \def\fw{\mathfrak{w}} \def\fx{\mathfrak{x}} \def\fy{\mathfrak{y}} \def\fz{\mathfrak{z}}
+\def\fgl{\mathfrak{gl}}  \def\fsl{\mathfrak{sl}}  \def\fso{\mathfrak{so}}  \def\fsp{\mathfrak{sp}}  
+\def\GL{\mathrm{GL}} \def\SL{\mathrm{SL}}  \def\SP{\mathrm{SL}}
+
+\def\<{\langle} \def\>{\rangle}
+\usepackage{mathabx}
+\def\acts{\lefttorightarrow}
+\def\ad{\mathrm{ad}} 
+\def\Aut{\mathrm{Aut}}
+\def\Ann{\mathrm{Ann}}
+\def\dim{\mathrm{dim}} 
+\def\End{\mathrm{End}} 
+\def\ev{\mathrm{ev}} 
+\def\Fr{\mathcal{F}\mathrm{r}}
+\def\half{\hbox{$\frac12$}}
+\def\Hom{\mathrm{Hom}} 
+\def\id{\mathrm{id}} 
+\def\sgn{\mathrm{sgn}}  
+\def\supp{\mathrm{supp}}  
+\def\Tor{\mathrm{Tor}}
+\def\tr{\mathrm{tr}} 
+\def\vep{\varepsilon}
+\def\f{\varphi}
+
+
+\def\Obj{\mathrm{Obj}}
+\def\normeq{\unlhd}
+\def\Set{{\cS\mathrm{et}}}
+\def\Fin{{\cF\mathrm{inSet}}}
+\def\Set{{\cS\mathrm{et}}}
+\def\Grp{{\cG\mathrm{rp}}}
+\def\Ab{{\cA\mathrm{b}}}
+\def\Mod{{\cM\mathrm{od}}}
+\def\ab{\mathrm{ab}}
+\def\lcm{\mathrm{lcm}}
+\def\ZZn{\ZZ/n\ZZ}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\def\HW{5}
+\def\DUE{04/06/2021}
+
+\title[Homework \HW]{Homework \HW \\
+Math A4900/44900\\
+\small Due: \DUE}
+\author{}
+
+\begin{document}
+%\maketitle %%% COMMENT THIS LINE OUT (add a % to the beginning of the line) and UNCOMMENT the following (delete the % symbols) to give yourself a good assignment header:
+\begin{flushright}
+Chris Hayduk\\
+Math B4900\\
+Course Summary: First Draft\\
+\DUE
+\end{flushright}
+
+\section{Introduction}
+
+Building upon last semester's topics, we begin this semester by extending many of the same notions of group actions to ring theory. Modules allow us to study the behavior of rings acting on an abelian group, similarly to groups acting on sets. Modules provide us with a generalization of the notion of vector spaces, which we can recover by restricting ourselves to only considering fields acting on abelian groups. This gives us a nice link between the more abstract topics of module theory and the more foundational topics which we have studied in linear algebra. In fact, we discuss several of these topics, such as determinants and trace of matrices, while using the more advanced machinery developed throughout our study of abstract algebra. Lastly, moving into Lang's \textit{Algebra}, we make many of the ideas surrounding modules even more rigorous. In addition, we introduce the idea of exact sequences and short exact sequences, which provide us with theorems to discuss relations between modules.
+
+\newpage
+
+\section{Topics}
+
+\subsection{Introduction to Module Theory}
+
+\subsubsection{Basic Definitions and Examples}
+
+Modules allow us to extend our notion of group actions to rings. We can think of modules as the algebraic objects which rings act on, which can be seen in the following definition \cite[\S 10.1, p. 337]{dummit}:
+
+\par
+\textbf{Definition.} Let $R$ be a ring (not necessarily commutative nor with $1$). A left $R$-module or a left module over $R$ is a set $M$ together with
+\begin{enumerate}
+\item a binary operation $+$ on $M$ under which $M$ is an abelian group, and
+\item an action of $R$ on $M$ (that is a map $R \times M \to M$) denoted by $rm$, for all $r \in R$ and for all $m \in M$ which satisfies
+\begin{enumerate}[label=\alph*)]
+\item $(r+s)m = rm + sm$ for all $r, s \in R, m \in M$
+\item $(rs)m = r(sm)$ for all $r,s \in R, m \in M$
+\item $r(m + n) = rm + rn$ for all $r \in R, m, n \in M$\\
+
+If the ring $R$ has a $1$ we impose the additional axiom
+\item $1m = m$ for all $m \in M$
+\end{enumerate}
+\end{enumerate}
+
+Now that we have our definition of modules, it is natural to consider an analogy to ``subsets'' in the context of modules \cite[\S 10.1, p. 337]{dummit}:
+
+\par
+\textbf{Definition.} Let $R$ be a ring and let $M$ be an $R$-module. An $R$-submodule of $M$ is a subgroup $N$ of $M$ which is closed under the action of ring elements, i.e., $rn \in N$, for all $r \in R, n \in N$
+
+Hence, a submodule of $M$ is a subset of $M$ which is itself a module under the operations. Similar to the subgroup criterion, we can condense this definition for submodules into two easily verifiable conditions \cite[\S 10.1, p. 342]{dummit}:
+
+\par
+\textbf{Proposition.} Let $R$ be a ring and let $M$ be an $R$-module. A subset $N$ of $M$ is a submodule of $M$ if and only if
+\begin{enumerate}
+\item $N \neq \emptyset$
+\item $x + ry \in N$ for all $r \in R$ and for all $x, y \in N$
+\end{enumerate}
+
+\subsubsection{Quotient Modules and Module Homomorphisms}
+
+Now that we have discussed modules and submodules, we can also extend the notion of quotient groups and quotient rings to modules. We begin with the following definition \cite[\S 10.2, p. 345]{dummit}:
+
+\par
+\textbf{Definition.} Let $R$ be a ring and let $M$ and $N$ be $R$-modules.
+\begin{enumerate}
+\item A map $\varphi: M \to N$ is an $R$-module homomorphism if its respects the $R$-module structures of $M$ and $N$, i.e.
+\begin{enumerate}[label=\alph*)]
+\item $\varphi(x + y) = \varphi(x) + \varphi(y)$, for all $x, y \in M$ and
+\item $\varphi(rx) = r\varphi(x)$ for all $r \in R, x \in M$
+\end{enumerate}
+
+\item An $R$-module homomorphism is an isomorphism (of $R$-modules) if it is both injective and surjective. The modules $M$ and $N$ are said to be isomorphic, denoted $M \cong N$, if there is some $R$-module isomorphism $\varphi: M \to N$
+\item If $\varphi: M \to N$ is an $R$-module homomorphism, let ker $\varphi = \{m \in M \ | \ \varphi(m) = 0\}$ (the kernel of $\varphi$) and let $\varphi(M) = \{n \in N \ | \ n = \varphi(m) \text{ for some } m \in M\}$ (the image of $\varphi$, as usual)
+
+\item Let $M$ and $N$ be $R$-modules and define $\text{Hom}_R(M,N)$ to be the set of all $R$-module homomorphisms from $M$ to $N$
+\end{enumerate}
+
+The above definition allows us to extend our vocabulary regarding homomorphisms and isomorphisms from groups and rings to modules as well. This will be an important building block for constructing quotient modules, as we recall from last semester that quotient groups had a very strong connection with the kernels of homomorphisms between groups.
+
+\par
+Now similarly, to the submodule criterion, let us state a proposition that makes it much easier to verify if a map is an $R$-module homomorphism \cite[\S 10.2, p. 346]{dummit}:
+
+\par
+\textbf{Proposition.} Let $M, N$ and $L$ be $R$-modules
+\begin{enumerate}
+\item A map $\varphi: M \to N$ is an $R$-module homomorphism if and only if $\varphi(rx + y) =r\varphi(x) + \varphi(y)$ for all $x, y \in M$ and all $r \in R$
+\item Let $\varphi, \psi$ be elements of $Hom_R(M,N)$. Define $\varphi + \psi$ by
+\begin{align*}
+(\varphi + \psi)(m) = \varphi(m) + \psi(m)
+\end{align*}
+for all $m \in M$. Then $\varphi + \psi \in Hom_R(M, N)$ and with this operation $Hom_R(M, N)$ is an abelian group. If $R$ is a commutative ring than for $r \in R$ define $r\varphi$ by 
+\begin{align*}
+(r\varphi)(m) = r(\varphi(m))
+\end{align*}
+
+for all $m \in M$. Then $r\varphi \in Hom_R(M, N)$ and with this action of the commutative ring $R$ the abelian group $Hom_R(M, N)$ is an $R$-module
+\item If $\varphi \in Hom_R(L, M)$ and $\psi \in Hom_R(M, N)$ then $\psi \circ \varphi \in Hom_R(L, N)$
+\item With addition as above and multiplication defined as function composition, $Hom_R(M, M)$ is a ring with $1$. When $R$ is commutative $Hom_R(M, M)$ is an $R$-algebra.
+\end{enumerate}
+
+Now with the definition and machinery in place to work the $R$-module homomorphisms, we can discuss quotient modules \cite[\S 10.2, p. 348]{dummit}:
+
+\par
+\textbf{Proposition.} Let $R$ be a ring, let $M$ be an $R$-module and let $N$ be a submodule of $M$. The (additive, abelian) quotient group $M/N$ can be made into an $R$-module by defining an action of elements of $R$ by
+\begin{align*}
+r(x+N) = (rx) + N \; \; \text{for all } r \in R, x+N \in M/N
+\end{align*}
+
+The natural projection map $\pi: M \to M/N$ defined by $\pi(x) = x + N$ is an $R$-module homomorphism with kernel $N$.
+
+\par
+Now we will also present equivalents of the isomorphism theorems for modules \cite[\S 10.2, p. 345]{dummit}:
+
+\par
+\textbf{Theorem.} Isomorphism Theorems
+\begin{enumerate}
+\item (\textit{The First Isomorphism Theorem for Modules}) Let $M, N$ be $R$-modules and let $\varphi: M \to N$ be an $R$-module homomorphism. Then ker$\varphi$ is a submodule of $M$ and $M/\text{ker}\varphi \cong \varphi(M)$
+\item (\textit{The Second Isomorphism Theorem}) Let $A, B$ be submodules of the $R$-module $M$. Then $(A+B)/B \cong A/(A \cap B)$
+\item (\textit{The Third Isomorphism Theorem}) Let $M$ be an $R$-module, and let $A$ and $B$ be submodules of $M$ with $A \subset B$. Then $(M/A)/(B/A) \cong M/B$
+\item (\textit{The Fourth Isomorphism Theorem}) Let $N$ be a submodule of the $R$-module $M$. There is a bijection between the submodules of $M$ which contain $N$ and the submodules of $M/N$. The correspondence is given by $A \longleftrightarrow A/N$, for all $A \supset N$. This correspondence commutes with the process of taking sums and intersections (i.e., there is a lattice isomorphism between the lattice of submodules of $M/N$ and the lattice of submodules of $M$ which contain $N$).
+\end{enumerate}
+
+\subsubsection{Generation of Modules, Direct Sums, and Free Modules}
+
+Now we introduce some definitions regarding submodules generated by subsets as well as finite sums of submodules \cite[\S 10.3, p. 351]{dummit}:
+
+\par
+\textbf{Definition.} Let $M$ be an $R$-module and let $N_1, \ldots, N_n$ be submodules of $M$.
+\begin{enumerate}
+\item The \textit{sum} of $N_1, \ldots, N_n$ is the set of all finite sums of elements from the sets $N_i: \{a_1 + a_2 + \cdots + a_n \  | \ a_i \in N_i \text{ for all } i\}$. Denote this sum by $N_1 + \cdots + N_n$
+\item For any subset $A$ of $M$ let
+\begin{align*}
+RA = \{r_1 a_1 + r_2a_2 + \cdots + r_ma_m \ | \ r_1, \ldots, r_m \in R, a_1, \ldots, a_m \in A, m \in \mathbb{Z}^+\}
+\end{align*}
+
+If $A$ is the finite set $\{a_1, a_2, \ldots, a_n\}$ we shall write $Ra_1 + Ra_2 + \cdots + Ra_n$ for $RA$. Call $RA$ the \textit{submodule of M generated by A}. If $N$ is a submodule of $M$ (possibly $N = M$) and $N = RA$, for some subset $A$ of $M$, we call $A$ a \textit{set of generators} or \textit{generating set} for $N$, and we say $N$ is \textit{generated by} $A$
+
+\item A submodule $N$ of $M$ (possibly $N = M$) is \textit{finitely generated} if there is some finite subset $A$ of $M$ such that $N = RA$, that is, if $N$ is generated by some finite subset
+
+\item A submodule $N$ of $M$ (possibly $N = M$) is \textit{cyclic} if there exists an element $a \in M$ such that $N = Ra$, that is, if $N$ is generated by one element:
+
+\begin{align*}
+N = Ra = \{ra \ | \ r \in R\}
+\end{align*}
+\end{enumerate} 
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\subsection{Vector Spaces}
+
+
+\subsubsection{Definitions and Basic Theory}
+
+Vector spaces follow very nicely from our above discussion of modules, as the definition of each vector space property is the same as the module-theoretic definition with the added assumption that $R$ is a field. Hence, in the definitions above, we can replace ``module'' with ``vector space'' to get the equivalent definitions. Now we will discuss some notions distinct from modules \cite[\S 11.1, p. 409]{dummit}:
+
+\par
+\textbf{Definition.} \begin{enumerate}
+\item A subset $S$ of $V$ is called a set of \textit{linearly independent} vectors if an equation $\alpha_1 v_1 + \alpha_2 v_2 + \cdots + \alpha_n v_n = 0$ with $\alpha_1, \alpha_2, \ldots, \alpha_n \in F$ and $v_1, v_2, \ldots, v_n \in S$ implies $\alpha_1 = \alpha_2 = \cdots = \alpha_n = 0$
+\item A \textit{basis} of a vector space $V$ is an ordered set of linearly independent vectors which span $V$. In particular two bases will be considered different even if one is simply a rearrangement of the other. This is sometimes referred to as an \textit{ordered basis}.
+\end{enumerate}
+
+\textbf{Proposition.} Assume the set $\mathcal{A} = \{v_1, v_2, \ldots, v_n\}$ spans the vector space $V$ but no proper subset of $\mathcal{A}$ spans $V$. Then $\mathcal{A}$ is a basis of $V$. In particular, any finitely generated (i.e., finitely spanned) vector space over $F$ is a free $F$-module
+
+\par
+\textbf{Corollary.} Assume the finite set $\mathcal{A}$ spans the vector space $V$. Then $\mathcal{A}$ contains a basis of $V$.
+
+\newpage
+\subsubsection{The Matrix of a Linear Transformation}
+
+We have that $M_{\mathcal{B}}^{\mathcal{E}}(\varphi) = (a_{ij})$ is the $m \times n$ matrix whose $i, j$ entry is $\alpha_{ij}$. Then for $v \in V$, we can write $v$ in terms of the basis $\mathcal{B}$ as follows $$v = \sum_{i=1}^n \alpha_i v_i, \ \alpha_i \in F$$Then the image of $v$ under $\varphi$ is given by $$\varphi(v) = \sum_{i=1}^m \beta_i w_i$$Thus we have the following definition \cite[\S 11.2, p. 415]{dummit}:
+
+\par
+\textbf{Definition.} The $m \times n$ matrix $A = (a_{ij})$ associated to the linear transformation $\varphi$ above is said to \textit{represent} the linear transformation $\varphi$ with respect to the bases $\mathcal{B}, \mathcal{E}$. Similarly $\varphi$ is the linear transformation represented by $A$ with respect to the bases $\mathcal{B}, \mathcal{E}$.
+
+
+\subsubsection{Dual Vector Spaces}
+
+We will begin with the definition of dual spaces \cite[\S 11.3, p. 431]{dummit}:
+
+\par
+\textbf{Definition.}
+\begin{enumerate}
+\item For $V$ any vector space over $F$ let $V^* = Hom_F(V,F)$ be the space of linear transformation from $V$ to $F$, called the \textit{dual space} of $V$. Elements of $V^*$ are called \textit{linear functionals}.
+\item If $\mathcal{B} = \{v_1, v_2, \ldots, v_n\}$ is a basis of the finite dimensional space $V$, define $v_1^8 \in V^*$ for each $i \in \{1, 2, \ldots, n\}$ by its action on the basis $\mathcal{B}$:
+\begin{align*}
+v_i^*(v_j) = \begin{cases} 
+      1, \text{ if } i = j \\
+      0, \text{ if } i \neq j 
+   \end{cases}
+\end{align*}
+\end{enumerate}
+
+We can now use the notation we've just introduced in order to discuss some properties of $V^*$ \cite[\S 11.3, p. 432]{dummit}:
+
+\par
+\textbf{Proposition.} With notation as above, $\{v_1^*, v_2^*, \ldots, v_n^*\}$ is a basis of $V^*$. In particular, if $V$ is finite dimensional then $V^*$ has the same dimension as $V$.
+
+\par
+\textbf{Definition.} The basis $\{v_1^*, v_2^*, \ldots, v_n^*\}$ of $V^*$ is called the \textit{dual basis} to $\{v_1, v_2, \ldots, v_n\}$
+
+\par
+\textbf{Definition.} The dual of $V^*$, namely $V^{**}$, is called the \textit{double dual} or \textit{second dual} of $V$.
+
+The dual space to $V^*$, $V^{**}$, can be related back to $V$ through a linear transformation which is reflected in the following theorem \cite[\S 11.3, p. 433]{dummit}:
+
+\par
+\textbf{Theorem.} There is a natural injective linear transformation from $V$ to $V^{**}$. If $V$ is finite dimensional then this linear transformation is an isomorphism.
+
+\par
+Hence, we can relate $V$ both to its dual space and the dual of its dual space.
+
+\subsubsection{Determinants}
+
+We can start with the definition of what a determinant is, as well as how to compute it,
+
+\par
+\textbf{Definition.} An $n \times n$ \textit{determinant function} on $R$ is any function $$\text{det}: M_{n \times n}(R) \to R$$that satisfies the following two axioms:
+\begin{enumerate}
+\item det is an $n$-multilinear alternating form on $R^n (= V)$, where the $n$-tuples are the $n$ columns of the matrices in $M_{n \times n}(R)$
+\item $\text{det}(I) = 1$ where $I$ is the $n \times n$ identity matrix
+\end{enumerate}
+
+\par
+\textbf{Theorem.} There is a unique $n \times n$ determinant function on $R$ and it can be computed for any $n \times n$ matrix $(\alpha_{ij})$ by the formula:
+\begin{align*}
+\text{det}(\alpha_{ij}) = \sum_{\sigma \in S_n} \epsilon(\sigma) \alpha_{\sigma(1)1}\alpha_{\sigma(2)2}\cdots \alpha_{\sigma(n)n}
+\end{align*}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+\subsection{Modules over Principal Ideal Domains}
+
+\subsubsection{Jordan Canonical Form}
+
+Jordan Canonical Form allows us to ``simplify'' matrices, putting them into a form that is as close to a diagonal matrix as possible \cite[\S 11.3, p. 431]{dummit}:
+
+\par
+\textbf{Definition.}
+\begin{enumerate}
+\item A matrix is said to be in \textit{Jordan canonical form} if it is a block diagonal matrix with Jordan blocks along the diagonal
+\item A \textit{Jordan canonical form} for a linear transformation $T$ is a matrix representing $T$ which is in Jordan canonical form
+\end{enumerate}
+
+\par
+\textbf{Theorem.} Let $V$ be a finite dimensional vector space over the field $F$ and let $T$ be a linear transformation of $V$. Assume $F$ contains all the eigenvalues of $T$/
+\begin{enumerate}
+\item There is a basis for $V$ with respect to which the matrix for $T$ is in Jordan canonical form, i.e., is a block diagonal matrix whose diagonal blocks are the Jordan blocks for the elementary divisors of $V$
+\item The Jordan canonical form for $T$ is unique up to a permutation of the Jordan blocks along the diagonal
+\end{enumerate}
+
+\subsection{Lang Topics}
+
+\subsubsection{The Group of Homomorphisms}
+
+We have that a pair of homomorphisms is said to be exact if $$X \xrightarrow{\varphi} Y \xrightarrow{\psi} Z$$ if $\text{img}(\varphi) = \ker(\psi)$. We can now present a relationship between exact sequences of modules and of the associated homomorphism groups \cite[\S 2.2, p. 122]{lang}:
+
+\par
+\textbf{Proposition.} A sequence 
+$$X' \xrightarrow{\lambda} X \to X'' \to 0$$ is exact if and only if the sequence $$Hom_A(X', Y) \leftarrow Hom_A(X, Y) \leftarrow  Hom_A(X'', Y) \leftarrow 0$$ is exact for all $Y$.
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+
+
+\newpage
+\begin{thebibliography}{9}
+
+\bibitem{dummit}
+Dummit, David Steven., and Richard M. Foote. \textit{Abstract Algebra}. 3rd ed., John Wiley \& Sons, 2004. 
+
+\bibitem{lang}
+Lang, Serge. \textit{Algebra}. Springer-Verlag New York Inc., 2012. 
+
+\end{thebibliography}
+
+
+\end{document}

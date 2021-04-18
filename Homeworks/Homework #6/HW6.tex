@@ -1,0 +1,198 @@
+\documentclass[11pt, reqno]{amsart}
+\usepackage[margin=1in]{geometry}    
+\geometry{letterpaper}       
+%\geometry{landscape}                % Activate for for rotated page geometry
+\usepackage[parfill]{parskip}    % Activate to begin paragraphs with an empty line rather than an indent
+\usepackage{amsfonts, amscd, amssymb, amsthm, amsmath}
+\usepackage{pdfsync}  %leaves makers for tex searching
+\usepackage{enumerate}
+\usepackage[pdftex,bookmarks]{hyperref}
+
+
+
+%%% Theorems %%%--------------------------------------------------------- 
+\theoremstyle{plain}
+	\newtheorem{thm}{Theorem}[section]
+	\newtheorem{lemma}[thm]{Lemma}
+	\newtheorem{prop}[thm]{Proposition}
+	\newtheorem{cor}[thm]{Corollary}
+\theoremstyle{definition}
+	\newtheorem*{defn}{Definition}
+	\newtheorem{remark}[thm]{Remark}
+\theoremstyle{example}
+	\newtheorem*{example}{Example}
+
+
+%%% Environments %%%--------------------------------------------------------- 
+\newenvironment{ans}{\medskip \paragraph*{\emph{Answer}.}}{\hfill \break  $~\!\!$ \dotfill \medskip }
+\newenvironment{sketch}{\medskip \paragraph*{\emph{Proof sketch}.}}{ \medskip }
+\newenvironment{summary}{\medskip \paragraph*{\emph{Summary}.}}{  \hfill \break  \rule{1.5cm}{0.4pt} \medskip }
+\newcommand\Ans[1]{\hfill \emph{Answer:} {#1}}
+
+
+%%% Pictures %%%--------------------------------------------------------- 
+%%% If you need to draw pictures, tikzpicture is one good option. Here are some basic things I always use:
+\usepackage{tikz}
+\usetikzlibrary{arrows}
+\usetikzlibrary{shapes}
+\tikzstyle{V}=[draw, fill =black, circle, inner sep=0pt, minimum size=2pt]
+\newcommand\TikZ[1]{\begin{matrix}\begin{tikzpicture}#1\end{tikzpicture}\end{matrix}}
+
+
+
+
+
+%%% Color  %%%---------------------------------------------------------
+\usepackage{color}
+\newcommand{\NOTE}[1]{{\color{blue}#1}}
+\newcommand{\blue}[1]{{\color{blue}#1}}
+\newcommand{\red}[1]{{\color{red}#1}}
+\newcommand{\MOVED}[1]{{\color{gray}#1}}
+
+
+%%% Alphabets %%%---------------------------------------------------------
+%%% Some shortcuts for my commonly used special alphabets and characters.
+\def\cA{\mathcal{A}}\def\cB{\mathcal{B}}\def\cC{\mathcal{C}}\def\cD{\mathcal{D}}\def\cE{\mathcal{E}}\def\cF{\mathcal{F}}\def\cG{\mathcal{G}}\def\cH{\mathcal{H}}\def\cI{\mathcal{I}}\def\cJ{\mathcal{J}}\def\cK{\mathcal{K}}\def\cL{\mathcal{L}}\def\cM{\mathcal{M}}\def\cN{\mathcal{N}}\def\cO{\mathcal{O}}\def\cP{\mathcal{P}}\def\cQ{\mathcal{Q}}\def\cR{\mathcal{R}}\def\cS{\mathcal{S}}\def\cT{\mathcal{T}}\def\cU{\mathcal{U}}\def\cV{\mathcal{V}}\def\cW{\mathcal{W}}\def\cX{\mathcal{X}}\def\cY{\mathcal{Y}}\def\cZ{\mathcal{Z}}
+
+\def\AA{\mathbb{A}} \def\BB{\mathbb{B}} \def\CC{\mathbb{C}} \def\DD{\mathbb{D}} \def\EE{\mathbb{E}} \def\FF{\mathbb{F}} \def\GG{\mathbb{G}} \def\HH{\mathbb{H}} \def\II{\mathbb{I}} \def\JJ{\mathbb{J}} \def\KK{\mathbb{K}} \def\LL{\mathbb{L}} \def\MM{\mathbb{M}} \def\NN{\mathbb{N}} \def\OO{\mathbb{O}} \def\PP{\mathbb{P}} \def\QQ{\mathbb{Q}} \def\RR{\mathbb{R}} \def\SS{\mathbb{S}} \def\TT{\mathbb{T}} \def\UU{\mathbb{U}} \def\VV{\mathbb{V}} \def\WW{\mathbb{W}} \def\XX{\mathbb{X}} \def\YY{\mathbb{Y}} \def\ZZ{\mathbb{Z}}  
+
+\def\fa{\mathfrak{a}} \def\fb{\mathfrak{b}} \def\fc{\mathfrak{c}} \def\fd{\mathfrak{d}} \def\fe{\mathfrak{e}} \def\ff{\mathfrak{f}} \def\fg{\mathfrak{g}} \def\fh{\mathfrak{h}} \def\fj{\mathfrak{j}} \def\fk{\mathfrak{k}} \def\fl{\mathfrak{l}} \def\fm{\mathfrak{m}} \def\fn{\mathfrak{n}} \def\fo{\mathfrak{o}} \def\fp{\mathfrak{p}} \def\fq{\mathfrak{q}} \def\fr{\mathfrak{r}} \def\fs{\mathfrak{s}} \def\ft{\mathfrak{t}} \def\fu{\mathfrak{u}} \def\fv{\mathfrak{v}} \def\fw{\mathfrak{w}} \def\fx{\mathfrak{x}} \def\fy{\mathfrak{y}} \def\fz{\mathfrak{z}}
+\def\fgl{\mathfrak{gl}}  \def\fsl{\mathfrak{sl}}  \def\fso{\mathfrak{so}}  \def\fsp{\mathfrak{sp}}  
+\def\GL{\mathrm{GL}} \def\SL{\mathrm{SL}}  \def\SP{\mathrm{SL}}
+
+\def\<{\langle} \def\>{\rangle}
+\def\({\<\!\<}\def\){\>\!\>}
+\def\ad{\mathrm{ad}} 
+\def\Aut{\mathrm{Aut}}
+\def\dim{\mathrm{dim}} 
+\def\End{\mathrm{End}} 
+\def\ev{\mathrm{ev}} 
+\def\half{\hbox{$\frac12$}}
+\def\img{\mathrm{img}}
+\def\Hom{\mathrm{Hom}} 
+\def\Fn{\mathrm{Fn}} 
+\def\Fr{\mathcal{F}\mathrm{r}}
+\def\hgt{\mathrm{ht}} 
+\def\id{\mathrm{id}} 
+\def\qtr{\mathrm{qtr}} 
+\def\sgn{\mathrm{sgn}}
+\def\supp{\mathrm{supp}}
+\def\tr{\mathrm{tr}} 
+\def\Tor{\mathrm{Tor}} 
+\def\vep{\varepsilon}
+\def\f{\varphi}
+
+% Arrows:
+\newcommand\xdhrightarrow[2][]{%
+  \mathrel{\ooalign{$\xrightarrow[#1\mkern4mu]{#2\mkern4mu}$\cr%
+  \hidewidth$\rightarrow\mkern4mu$}}
+}
+%\newcommand\dhrightarrow{%
+%  \mathrel{\ooalign{$\rightarrow$\cr%
+%  $\mkern3.5mu\rightarrow$}}
+%}
+\def\dhrightarrow{\twoheadrightarrow}
+\def\dhleftarrow{\twoheadleftarrow}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\def\HW{6}
+\def\DUE{3/26/2021}
+
+\title[Homework \HW]{Homework \HW \\
+Math B4900\\
+\small Due: \DUE}
+\author{}
+%\date{}                                           % Activate to display a given date or no date
+
+\begin{document}
+%\maketitle %%% COMMENT THIS OUT and UNCOMMENT the following to give yourself a good assignment header:
+\begin{flushright}
+Chris Hayduk\\
+Math B4900\\
+Homework \HW\\
+\DUE
+\end{flushright}
+
+
+Let $A$ be a ring with 1, and let $M$ be an $A$-module.
+\begin{enumerate}[1.]
+\item Investigate whether or not the left regular module for $\FF_2 S_2$ is decomposable. If so, give the decomposition. If not, why not? What simple submodules does it contain, and what do the corresponding quotients look like? \\
+{[Recall that you decomposed $\CC S_2$ in Homework 5.  Also note that $\FF_2 S_2$ is small---it has only 4 elements.]}
+
+\begin{proof}
+Observe that $A$ is an $F-$algebra.
+\end{proof}
+
+\item Prove that $M$ is simple if and only if $Am = M$ for any non-zero $m \in M$. 
+
+
+\item Let $M$ be a free module with basis $\cB$ and let $I$ be an ideal of $A$. We showed on Homework 4 that $IM$ is a submodule of $M$, and it follows similarly that $Im$ is a submodule of $M$ for any $m \in M$.\footnote{This follows considering $M' = Am$, which is a submodule of $M$. Then since $1 \in A$, we have $IA = A$, so that $IM' = (IA)m = Im$ is also a submodule. Or, you know, just check it directly.}
+
+\textbf{Prove that as $A$-modules, we have 
+$$M/IM \cong \bigoplus_{b \in \cB} Ab/Ib.$$}
+{[\emph{Hint:} Since $M \cong \Fr(\cB)$ is free, we know it decomposes similarly to the right-hand side of this expression. So what's the most natural homomorphism from $M$ to $\bigoplus_{b \in \cB} Ab/Ib$? What's its kernel? (You may assume the isomorphism theorems, as found in Lang \S III.1 and D \& F \S 10.2.) See also, D\& F, Exercises 10.2.11 and 10.2.12.]}
+
+
+\item  \textbf{Ranks of free modules.}
+\begin{enumerate}
+\item \textbf{Rank is well-defined for commutative rings.\footnote{D\&F Exercise 10.3.2.} } Show that if $A$ is a commutative ring with 1, that $A^m \cong A^n$ if and only if $n=m$.\\
+{[Hint: Let $I$ be a maximal ideal of $A$ (what kind of ring does that make $A/I$?). Now consider $A^m/IA^m$, as in Problem 3. Recall that we showed earlier in the semester that two finite-dimensional \emph{vector spaces} were isomorphic if and only if they had the same dimension.]}
+\item \textbf{Rank is not well-defined in general.\footnote{D\&F Exercise 10.3.27.} }
+Let $M$ be the $\ZZ$-module  
+$$M = \ZZ \times \ZZ \times \cdots 
+	= \{(n_1, n_2, \dots ) ~|~ n_i \in \ZZ\}.$$
+Note the difference here between this and  $N = \bigoplus_{i \in \ZZ_{>0}} \ZZ$, which is the submodule of $M$ where all but finitely many $n_i$ are 0. In particular, $N$ is free, but $M$ is not (see D\&F Exercise 10.3.24). 
+
+Let 
+$$A = \End_\ZZ(M) = \{ \text{ $\ZZ$-module homomorphisms $\f: M \to M$ }\},$$
+where, as usual, addition is defined point-wise (i.e.\ $(\f + \psi)(a) = \f(a) + \psi(a)$) and multiplication is defined by function composition (i.e.\ $\f\psi = \f \circ \psi$). See also D\&F Exercise 7.1.30. 
+
+Define $\f_1, \f_2 \in R$ by 
+$$\f_1(n_1, n_2, n_3, \dots) = (n_1, n_3, n_5, \dots) \quad \text{and} \quad 
+	\f_2(n_1, n_2, n_3, \dots) = (n_2, n_4, n_6, \dots).$$
+
+
+
+\begin{enumerate}[(i)]
+\item \textbf{Show that $\{\f_1, \f_2\}$ is a free basis of the the left regular module of $A$.}\\
+{[\emph{Hnit:} Define $\psi_1, \psi_2 \in R$ by 
+$$\psi_1(n_1, n_2, n_3, \dots) = (n_1, 0, n_2, 0, n_3, \dots) \quad \text{and} \quad 
+	\psi_2(n_1, n_2, n_3, \dots) = (0, n_1, 0, n_2, 0, \dots).$$
+Verify that 
+$$\f_i \psi_i = 1, \quad \f_1 \psi_2 = 0 = \f_2 \psi_1, \quad \text{ and } \quad 
+	\psi_1 \f_1 + \psi_2 \f_2 = 1.$$
+	Use these relations to prove that $\f_1, \f_2$ are independent and generate $A$ as a left $A$-module.]}
+\item Use the previous part to \textbf{prove that $A \cong A^2$ as $A$-modules}. Deduce that $A \cong A^n$ as $A$-modules for all $n \in \ZZ_{>0}$. 
+\end{enumerate}
+
+\end{enumerate}
+\item In class, we showed that for any $A$-module $X$, we have $\Hom_A(A,X) \cong A$ as groups (or as $A$-modules if $A$ is commutative). It is \emph{not} necessarily true that $\Hom_A(X,A) \cong A$. 
+
+\medskip
+
+Now  suppose $A$ is commutative and let $\cB$ be a finite set of size $n$. 
+
+\smallskip
+\centerline{\textbf{Prove that $\Hom_A(\Fr(\cB), A) \cong \Fr(\cB)$ as $A$-modules.}} (Namely,  just like any finite-dimensional vector space is isomorphic its dual, we have any free module of finite rank is also isomorphic to its dual.) We say $\Fr(\cB)$ is \emph{self-dual} (up to isomorphism). {[\emph{Hint:} Reasonable tactics include either showing that $\Hom_A(\Fr(\cB), A)$ is free  of rank $n$ and using 4(a); or using the last proposition from Lecture 10.]}
+\end{enumerate}
+
+\vfill
+
+
+\hrule
+\emph{\small To receive credit for this assignment, include the following in your solutions [edited appropriately]:}
+
+\smallskip
+
+\textbf{Academic integrity statement:} I \emph{[violated/did not violate]} the CUNY Academic Integrity Policy in completing this assignment. \hfill \emph{[enter your full name as a digital signature here]}
+
+\medskip
+\hrule
+
+\vfill
+
+
+\end{document}

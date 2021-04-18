@@ -1,0 +1,235 @@
+\documentclass[11pt, reqno]{amsart}
+\usepackage[margin=1in]{geometry}    
+\geometry{letterpaper}       
+%\geometry{landscape}                % Activate for for rotated page geometry
+\usepackage[parfill]{parskip}    % Activate to begin paragraphs with an empty line rather than an indent
+\usepackage{amsfonts, amscd, amssymb, amsthm, amsmath}
+\usepackage{pdfsync}  %leaves makers for tex searching
+\usepackage{enumerate}
+\usepackage[pdftex,bookmarks]{hyperref}
+
+
+
+%%% Theorems %%%--------------------------------------------------------- 
+\theoremstyle{plain}
+	\newtheorem{thm}{Theorem}[section]
+	\newtheorem{lemma}[thm]{Lemma}
+	\newtheorem{prop}[thm]{Proposition}
+	\newtheorem{cor}[thm]{Corollary}
+\theoremstyle{definition}
+	\newtheorem*{defn}{Definition}
+	\newtheorem{remark}[thm]{Remark}
+\theoremstyle{example}
+	\newtheorem*{example}{Example}
+
+
+%%% Environments %%%--------------------------------------------------------- 
+\newenvironment{ans}{\medskip \paragraph*{\emph{Answer}.}}{\hfill \break  $~\!\!$ \dotfill \medskip }
+\newenvironment{sketch}{\medskip \paragraph*{\emph{Proof sketch}.}}{ \medskip }
+\newenvironment{summary}{\medskip \paragraph*{\emph{Summary}.}}{  \hfill \break  \rule{1.5cm}{0.4pt} \medskip }
+\newcommand\Ans[1]{\hfill \emph{Answer:} {#1}}
+
+
+%%% Pictures %%%--------------------------------------------------------- 
+%%% If you need to draw pictures, tikzpicture is one good option. Here are some basic things I always use:
+\usepackage{tikz}
+\usetikzlibrary{arrows}
+\usetikzlibrary{shapes}
+\tikzstyle{V}=[draw, fill =black, circle, inner sep=0pt, minimum size=2pt]
+\newcommand\TikZ[1]{\begin{matrix}\begin{tikzpicture}#1\end{tikzpicture}\end{matrix}}
+
+
+
+
+
+%%% Color  %%%---------------------------------------------------------
+\usepackage{color}
+\newcommand{\NOTE}[1]{{\color{blue}#1}}
+\newcommand{\blue}[1]{{\color{blue}#1}}
+\newcommand{\red}[1]{{\color{red}#1}}
+\newcommand{\MOVED}[1]{{\color{gray}#1}}
+
+
+%%% Alphabets %%%---------------------------------------------------------
+%%% Some shortcuts for my commonly used special alphabets and characters.
+\def\cA{\mathcal{A}}\def\cB{\mathcal{B}}\def\cC{\mathcal{C}}\def\cD{\mathcal{D}}\def\cE{\mathcal{E}}\def\cF{\mathcal{F}}\def\cG{\mathcal{G}}\def\cH{\mathcal{H}}\def\cI{\mathcal{I}}\def\cJ{\mathcal{J}}\def\cK{\mathcal{K}}\def\cL{\mathcal{L}}\def\cM{\mathcal{M}}\def\cN{\mathcal{N}}\def\cO{\mathcal{O}}\def\cP{\mathcal{P}}\def\cQ{\mathcal{Q}}\def\cR{\mathcal{R}}\def\cS{\mathcal{S}}\def\cT{\mathcal{T}}\def\cU{\mathcal{U}}\def\cV{\mathcal{V}}\def\cW{\mathcal{W}}\def\cX{\mathcal{X}}\def\cY{\mathcal{Y}}\def\cZ{\mathcal{Z}}
+
+\def\AA{\mathbb{A}} \def\BB{\mathbb{B}} \def\CC{\mathbb{C}} \def\DD{\mathbb{D}} \def\EE{\mathbb{E}} \def\FF{\mathbb{F}} \def\GG{\mathbb{G}} \def\HH{\mathbb{H}} \def\II{\mathbb{I}} \def\JJ{\mathbb{J}} \def\KK{\mathbb{K}} \def\LL{\mathbb{L}} \def\MM{\mathbb{M}} \def\NN{\mathbb{N}} \def\OO{\mathbb{O}} \def\PP{\mathbb{P}} \def\QQ{\mathbb{Q}} \def\RR{\mathbb{R}} \def\SS{\mathbb{S}} \def\TT{\mathbb{T}} \def\UU{\mathbb{U}} \def\VV{\mathbb{V}} \def\WW{\mathbb{W}} \def\XX{\mathbb{X}} \def\YY{\mathbb{Y}} \def\ZZ{\mathbb{Z}}  
+
+\def\fa{\mathfrak{a}} \def\fb{\mathfrak{b}} \def\fc{\mathfrak{c}} \def\fd{\mathfrak{d}} \def\fe{\mathfrak{e}} \def\ff{\mathfrak{f}} \def\fg{\mathfrak{g}} \def\fh{\mathfrak{h}} \def\fj{\mathfrak{j}} \def\fk{\mathfrak{k}} \def\fl{\mathfrak{l}} \def\fm{\mathfrak{m}} \def\fn{\mathfrak{n}} \def\fo{\mathfrak{o}} \def\fp{\mathfrak{p}} \def\fq{\mathfrak{q}} \def\fr{\mathfrak{r}} \def\fs{\mathfrak{s}} \def\ft{\mathfrak{t}} \def\fu{\mathfrak{u}} \def\fv{\mathfrak{v}} \def\fw{\mathfrak{w}} \def\fx{\mathfrak{x}} \def\fy{\mathfrak{y}} \def\fz{\mathfrak{z}}
+\def\fgl{\mathfrak{gl}}  \def\fsl{\mathfrak{sl}}  \def\fso{\mathfrak{so}}  \def\fsp{\mathfrak{sp}}  
+\def\GL{\mathrm{GL}} \def\SL{\mathrm{SL}}  \def\SP{\mathrm{SL}}
+
+\def\<{\langle} \def\>{\rangle}
+\def\({\<\!\<}\def\){\>\!\>}
+\def\ad{\mathrm{ad}} 
+\def\Aut{\mathrm{Aut}}
+\def\dim{\mathrm{dim}} 
+\def\End{\mathrm{End}} 
+\def\ev{\mathrm{ev}} 
+\def\half{\hbox{$\frac12$}}
+\def\img{\mathrm{img}}
+\def\Hom{\mathrm{Hom}} 
+\def\Fn{\mathrm{Fn}} 
+\def\Fr{\mathcal{F}\mathrm{r}}
+\def\hgt{\mathrm{ht}} 
+\def\id{\mathrm{id}} 
+\def\qtr{\mathrm{qtr}} 
+\def\sgn{\mathrm{sgn}}
+\def\supp{\mathrm{supp}}
+\def\tr{\mathrm{tr}} 
+\def\Tor{\mathrm{Tor}} 
+\def\vep{\varepsilon}
+\def\f{\varphi}
+
+
+
+\def\Obj{\mathrm{Obj}}
+\def\normeq{\unlhd}
+\def\Set{{\cS\mathrm{et}}}
+\def\Fin{{\cF\mathrm{inSet}}}
+\def\Set{{\cS\mathrm{et}}}
+\def\Grp{{\cG\mathrm{rp}}}
+\def\Ab{{\cA\mathrm{b}}}
+\def\Mod{{\cM\mathrm{od}}}
+\def\ab{\mathrm{ab}}
+
+% Arrows:
+\newcommand\xdhrightarrow[2][]{%
+  \mathrel{\ooalign{$\xrightarrow[#1\mkern4mu]{#2\mkern4mu}$\cr%
+  \hidewidth$\rightarrow\mkern4mu$}}
+}
+%\newcommand\dhrightarrow{%
+%  \mathrel{\ooalign{$\rightarrow$\cr%
+%  $\mkern3.5mu\rightarrow$}}
+%}
+\def\dhrightarrow{\twoheadrightarrow}
+\def\dhleftarrow{\twoheadleftarrow}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\def\HW{7}
+\def\DUE{4/16/2021}
+
+\title[Homework \HW]{Homework \HW \\
+Math B4900\\
+\small Due: \DUE}
+\author{}
+\date{}                                           % Activate to display a given date or no date
+
+\begin{document}
+%\maketitle %%% COMMENT THIS OUT and UNCOMMENT the following to give yourself a good assignment header:
+\begin{flushright}
+Chris Hayduk\\
+Math B4900\\
+Homework \HW\\
+\DUE
+\end{flushright}
+
+
+\begin{enumerate}[1.]
+\item \textbf{Projective and injective modules.} 
+\begin{enumerate}
+\item Recall that every additive group $G$ is a $\ZZ$-module by the natural action 
+$$n \cdot g = \begin{cases} g + \cdots + g \text{($n$ times)} & \text{ if $n \ge 0$,}\\
+			-(g + \cdots + g) \text{($|n|$ times)} & \text{ if $n < 0$.}\end{cases}$$
+Suppose $G$ is finite. Decide whether or not $G$ is projective and/or injective, and prove it.
+
+\begin{proof}
+Observe that, since $G$ is a finite group, we have that every element $g \in G$ must have finite order. This is true because, since the group is finite, it cannot be the case that $ng$ is different for every $n$. So we have $j, k$ such that $jg = kg$ where $j \neq k$. Thus,
+\begin{align*}
+&jg = kg\\
+\iff &jg - kg = e\\
+\iff &(j - k)g = e
+\end{align*}
+
+But note that in any free $\ZZ$-module, there are no non-zero elements of finite order. Since $G$ has elements of finite order, it is not a submodule of any free module. Hence, $G$ is not projective.\\
+
+
+\end{proof}
+
+\item Classify the finitely generated projective $\ZZ$-modules. {[\emph{Hint:} Can a projective $\ZZ$-module have any elements of finite (additive) order?]}
+\end{enumerate}
+
+\item  \textbf{Categories.} Given two categories $\cC$ and $\cD$. We say two functors $\cF: \cC \to \cD$ and $\cG: \cD \to \cC$ are \emph{adjoint} if for all $X \in \Obj(\cC)$ and $Y \in \Obj(\cD)$, we have a natural bijection 
+	$$\Hom_{\cC}(\cF Y,X) \leftrightarrow \Hom_{\cD}(Y,\cG X).$$
+	Specifically, we say $\cF$ is \emph{left adjoint to $\cG$}, and $\cG$ is \emph{right adjoint to $\cF$}. 
+	
+	
+Now fix a ring $A$ and consider the map
+$$\cF: \Set \to \Mod_A \quad \text{ defined by } \quad S \mapsto \Fr(S)$$ 
+(the map from the category of sets to the category of $A$-modules that sends a set $S$ to the free $A$-module $\Fr(S)$ 
+
+\begin{enumerate}
+\item Briefly check that a morphism $\f \in \Hom_\Set(S, T)$ extends to a well-defined $R$-module homomorphism 
+$$\Phi: \Fr(S) \to \Fr(T) \quad \text{defined by} \quad 
+	\sum_{s \in S \atop \text{(fin)}} r_s s \mapsto \sum_{s \in S \atop \text{(fin)}} r_s \f(s),$$ 
+making $\cF$ into a functor.  
+\item Let  $ \cG: \Mod_A \to \Set$ be the forgetful functor from $A$-modules to sets ($\cG$ sends a module to its underlying set, and sends an $A$-module homomorphism to the corresponding map of underlying sets). Reframe the universal property of free modules into a statement about an adjoint relationship between $\cF$ and $\cG$. 
+\end{enumerate}
+
+\item \textbf{Representations of $FG$.}  Let $G$ be a group and $F$ be a field.
+
+\begin{enumerate}
+\item Show that if $G$ is abelian, then every simple $FG$-module is one-dimensional.\\
+{[\emph{Hint.} Let $V$ be a simple $FG$-module (which is therefore a vector space over $F$). Fix $x \in G$ and let $v$ be a non-zero weight vector (how do you know such a thing exists)? Show that $g\cdot v$ is also a weight vector for all $g \in G$.]}
+\item For an infinite group $G$, we define $FG$ as the vector space with basis $G$ (i.e.\ the elements are \emph{finite} linear combinations of group elements), with multiplication just as in the finite case. However, while the structure is similar, some of the theorems are different. For example, Maschke's theorem doesn't necessarily hold.
+
+For example, let $G = \<x\>$ be the infinite cyclic group. 
+\begin{enumerate}
+\item Follow the definition: describe the set $\CC G$. 
+\item Verify that 
+$$\rho: \CC G \to M_2(\CC) \quad \text{ defined by } \quad x \mapsto \begin{pmatrix}1 & 1 \\ 0 & 1 \end{pmatrix}$$
+extends to a well-defined representation. Compute $\rho$ applied to $x^{-2}$, $x^{-1}$, 1, $x^2$, and $3x^{-1} + 2 - x^2$. 
+\item Let $M = \CC^2$ be the associated module (i.e.\ for all $a \in \CC G$ and $m \in M$, we let  $a \cdot m = \rho(a)m$). Show that $M$ has a unique 1-dimensional submodule, and hence is not completely decomposable. 
+\item Where, exactly, does the proof of Maschke's theorem fail in this case? (Namely, $F$ has characteristic 0, but $M$ has a submodule that doesn't have a direct sum complement. What went wrong?)
+
+\end{enumerate}
+
+\end{enumerate}
+
+\item \textbf{Noetherian modules.} 
+\begin{enumerate}
+\item Let $A$ be a ring with 1, and let $M$ be an $A$-module. Show that if $M$ is Noetherian, then any surjective endomorphism $f \in \End_A(M)$ is an automorphism. Is the same true if $M$ is not Noetherian? If so, why? If not, give a counterexample.
+ 
+\item Let $R$ and $S$ be rings with 1, and let $M$ be an $R$-module. Define 
+$$A = \begin{pmatrix} R & M \\ 0 & S \end{pmatrix} := \left\{\left.\begin{pmatrix}r & m \\ 0 & s \end{pmatrix} ~\right|~ r \in R, s \in S, m \in M\right\}.$$
+with
+
+\begin{enumerate}
+\item Verify that $A$ is a ring with matrix addition and multiplication as usual. \\
+{\small [\emph{Hint:} You should be primarily concerned with whether these operations are well-defined. The rest of the axioms will hold mechanically (i.e.\ so long as the operations are well-defined, the proofs that we did in the case where the coefficients came from commutative rings follow exactly the same in this case), and do not need to be proven explicitly.]}
+\item Classify the left ideals of $A$. \\
+{\small [\emph{Hint:} Your answer will be in terms of submodules of $M$ and/or ideals of $R$ and/or $S$. The rest of this hint is all about getting a handle on the additive and multiplicative structures in $A$ to look for subsets closed under addition and left multiplication by $A$. Note that we can identify $R$, $M$, and $S$ with the subsets 
+$$\hat{R} =  \begin{pmatrix} R & 0 \\ 0 & 0 \end{pmatrix}, \quad \hat{M} = \begin{pmatrix} 0 & M \\ 0 & 0 \end{pmatrix}, \quad \text{ and } \quad 
+	\hat{S} = \begin{pmatrix} 0 & 0 \\ 0 & S \end{pmatrix},$$
+	respectively. In particular, check for yourself that $R \cong \hat{R}$ and $S \cong \hat{S}$ as rings, and $M \cong \hat{M}$ as an $R$-module with action 
+	$r \cdot \begin{pmatrix} 0 & m \\ 0 & 0 \end{pmatrix} = \begin{pmatrix} r & 0 \\ 0 & 0 \end{pmatrix}\begin{pmatrix} 0 & m \\ 0 & 0 \end{pmatrix}$. Now, you should have that under this identification, $A = R + M  + S$ (with the intersections of the sum of any to with the third being 0), so that for any $a \in A$, we have $a = r + m + s$ for some $r \in R$, $m \in M$, and $s \in S$; this tells you about the additive structure of any subset. For the multiplicative structure, finish a (setwise) multiplicative table like the following:
+	$$\begin{array}{|c||c|c|c|}\hline&R&M&S\\\hline\hline R&&&\\\hline M&&&\\\hline S&&&\\\hline\end{array}$$
+For example, since $RM = M$, we would put an $M$ in the first row, second column. 
+]}
+\item Show that if $R$, $S$, and $M$ are all Noetherian ($R$ and $S$ as rings, $M$ as an $R$-module), then $A$ is Noetherian.
+\end{enumerate}
+
+\end{enumerate}
+\end{enumerate}
+
+\vfill
+
+
+\hrule
+\emph{\small To receive credit for this assignment, include the following in your solutions [edited appropriately]:}
+
+\smallskip
+
+\textbf{Academic integrity statement:} I \emph{[violated/did not violate]} the CUNY Academic Integrity Policy in completing this assignment. \hfill \emph{[enter your full name as a digital signature here]}
+
+\medskip
+\hrule
+
+\vfill
+
+
+\end{document}
