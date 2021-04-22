@@ -147,10 +147,14 @@ Observe that, since $G$ is a finite group, we have that every element $g \in G$ 
 
 But note that in any free $\ZZ$-module, there are no non-zero elements of finite order. Since $G$ has elements of finite order, it is not a submodule of any free module. Hence, $G$ is not projective.\\
 
-
+$G$ is injective.
 \end{proof}
 
 \item Classify the finitely generated projective $\ZZ$-modules. {[\emph{Hint:} Can a projective $\ZZ$-module have any elements of finite (additive) order?]}
+
+\begin{proof}
+A projective $\ZZ$-module cannot have any non-zero elements of finite order.
+\end{proof}
 \end{enumerate}
 
 \item  \textbf{Categories.} Given two categories $\cC$ and $\cD$. We say two functors $\cF: \cC \to \cD$ and $\cG: \cD \to \cC$ are \emph{adjoint} if for all $X \in \Obj(\cC)$ and $Y \in \Obj(\cD)$, we have a natural bijection 
@@ -167,7 +171,28 @@ $$\cF: \Set \to \Mod_A \quad \text{ defined by } \quad S \mapsto \Fr(S)$$
 $$\Phi: \Fr(S) \to \Fr(T) \quad \text{defined by} \quad 
 	\sum_{s \in S \atop \text{(fin)}} r_s s \mapsto \sum_{s \in S \atop \text{(fin)}} r_s \f(s),$$ 
 making $\cF$ into a functor.  
+
+\begin{proof}
+Since $S$ forms a basis for $\Fr(S)$, every element in $\Fr(S)$ can be written as a linear combination of elements of $S$ acted upon by elements of the ring $A$. Hence, $\Phi$ defined as above is well-defined because, for every element in $\Fr(S)$ we can express it as a linear combination of elements in $S$ for which $\varphi$ is defined. In addition, $T$ forms a basis for $\Fr(T)$ and so the image of any element of $\Fr(S)$ under $\Phi$ will be a linear combination of terms in $T$ being acted upon by elements of $A$, so each element in the image must be in $\Fr(T)$. Thus, $\Phi$ is a well-defined morphism from $\Fr(S)$ to $\Fr(T)$.\\
+
+Now to check the homomorphism properties. Fix $r \in A$ and $x, y \in \Fr(S)$. Then,
+\begin{align*}
+\Phi(rx + y) &= \Phi(r \sum_{s \in S \atop \text{(fin)}} r_{s_x} s +  \sum_{s \in S \atop \text{(fin)}} r_{s} s)\\
+&=  \Phi(\sum_{s \in S \atop \text{(fin)}} (rr_{s_x} + r_{s_y})s)\\
+&= \sum_{s \in S \atop \text{(fin)}} (rr_{s_x} + r_{s_y}) \varphi(s)\\
+&= r \sum_{s \in S \atop \text{(fin)}} r_{s_x} \varphi(s) + \sum_{s \in S \atop \text{(fin)}} r_{s_y} \varphi(s)\\
+&= r\Phi(x) + \Phi(y)
+\end{align*}
+
+as required.
+\end{proof}
+
 \item Let  $ \cG: \Mod_A \to \Set$ be the forgetful functor from $A$-modules to sets ($\cG$ sends a module to its underlying set, and sends an $A$-module homomorphism to the corresponding map of underlying sets). Reframe the universal property of free modules into a statement about an adjoint relationship between $\cF$ and $\cG$. 
+
+\begin{proof}
+
+\end{proof}
+
 \end{enumerate}
 
 \item \textbf{Representations of $FG$.}  Let $G$ be a group and $F$ be a field.
@@ -175,6 +200,9 @@ making $\cF$ into a functor.
 \begin{enumerate}
 \item Show that if $G$ is abelian, then every simple $FG$-module is one-dimensional.\\
 {[\emph{Hint.} Let $V$ be a simple $FG$-module (which is therefore a vector space over $F$). Fix $x \in G$ and let $v$ be a non-zero weight vector (how do you know such a thing exists)? Show that $g\cdot v$ is also a weight vector for all $g \in G$.]}
+\begin{proof}
+Suppose that $G$ is abelian. Let $V$ be a simple $FG$-module. Fix $x \in G$ and let $v$ be a non-zero weight vector.
+\end{proof}
 \item For an infinite group $G$, we define $FG$ as the vector space with basis $G$ (i.e.\ the elements are \emph{finite} linear combinations of group elements), with multiplication just as in the finite case. However, while the structure is similar, some of the theorems are different. For example, Maschke's theorem doesn't necessarily hold.
 
 For example, let $G = \<x\>$ be the infinite cyclic group. 
@@ -194,6 +222,10 @@ extends to a well-defined representation. Compute $\rho$ applied to $x^{-2}$, $x
 \begin{enumerate}
 \item Let $A$ be a ring with 1, and let $M$ be an $A$-module. Show that if $M$ is Noetherian, then any surjective endomorphism $f \in \End_A(M)$ is an automorphism. Is the same true if $M$ is not Noetherian? If so, why? If not, give a counterexample.
  
+\begin{proof}
+Suppose $M$ is Noetherian and $f \in \End_A(M)$ is a surjective endomorphism.
+\end{proof}
+
 \item Let $R$ and $S$ be rings with 1, and let $M$ be an $R$-module. Define 
 $$A = \begin{pmatrix} R & M \\ 0 & S \end{pmatrix} := \left\{\left.\begin{pmatrix}r & m \\ 0 & s \end{pmatrix} ~\right|~ r \in R, s \in S, m \in M\right\}.$$
 with
@@ -224,7 +256,7 @@ For example, since $RM = M$, we would put an $M$ in the first row, second column
 
 \smallskip
 
-\textbf{Academic integrity statement:} I \emph{[violated/did not violate]} the CUNY Academic Integrity Policy in completing this assignment. \hfill \emph{[enter your full name as a digital signature here]}
+\textbf{Academic integrity statement:} I \emph{did not violate} the CUNY Academic Integrity Policy in completing this assignment. \hfill \emph{Chris Hayduk}
 
 \medskip
 \hrule

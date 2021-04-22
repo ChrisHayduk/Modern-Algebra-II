@@ -1,7 +1,7 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.22 (MiKTeX 21.2) (preloaded format=pdflatex 2021.3.4)  19 APR 2021 00:04
+This is pdfTeX, Version 3.141592653-2.6-1.40.22 (MiKTeX 21.2) (preloaded format=pdflatex 2021.3.4)  20 APR 2021 19:28
 entering extended mode
-**./HW7.tex
-(HW7.tex
+**./HW8.tex
+(HW8.tex
 LaTeX2e <2020-10-01> patch level 4
 L3 programming layer <2021-02-18> xparse <2020-03-03>
 (C:\MiKTeX\tex/latex/amscls\amsart.cls
@@ -646,8 +646,8 @@ File: pgflibraryshapes.multipart.code.tex 2020/12/27 v3.1.8b (3.1.8b)
 File: l3backend-pdftex.def 2021-03-02 L3 backend support: PDF output (pdfTeX)
 \l__color_backend_stack_int=\count302
 \l__pdf_internal_box=\box81
-) (HW7.aux)
-\openout1 = `HW7.aux'.
+) (HW8.aux)
+\openout1 = `HW8.aux'.
 
 LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 122.
 LaTeX Font Info:    ... okay on input line 122.
@@ -714,7 +714,7 @@ File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 
 Configuring pdfsync
 \PDFSYNC@ut=\write4
-\openout4 = `HW7.pdfsync'.
+\openout4 = `HW8.pdfsync'.
 
 \PDFSYNCf@li@=\count303
 \PDFSYNC@rder=\count304
@@ -742,9 +742,9 @@ Package: gettitlestring 2019/12/15 v1.6 Cleanup title references (HO)
 LaTeX Info: Redefining \ref on input line 122.
 LaTeX Info: Redefining \pageref on input line 122.
 LaTeX Info: Redefining \nameref on input line 122.
- (HW7.out) (HW7.out)
+ (HW8.out) (HW8.out)
 \@outlinefile=\write5
-\openout5 = `HW7.out'.
+\openout5 = `HW8.out'.
 
 
 (C:\MiKTeX\tex/context/base/mkii\supp-pdf.mkii
@@ -764,47 +764,28 @@ LaTeX Info: Redefining \nameref on input line 122.
 Package: epstopdf-base 2020-01-24 v2.11 Base part for package epstopdf
 Package epstopdf-base Info: Redefining graphics rule for `.eps' on input line 4
 85.
-)
-Underfull \hbox (badness 10000) in paragraph at lines 148--149
-
- []
-
-
-Package amsmath Warning: Foreign command \atop;
-(amsmath)                \frac or \genfrac should be used instead
-(amsmath)                 on input line 172.
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 176--177
-
- []
-
-[1{C:/Users/chris/AppData/Local/MiKTeX/pdftex/config/pdftex.map}] [2] [3]
-[4] (HW7.aux)
-Package rerunfilecheck Info: File `HW7.out' has not changed.
+) [1{C:/Users/chris/AppData/Local/MiKTeX/pdftex/config/pdftex.map}] (HW8.aux)
+Package rerunfilecheck Info: File `HW8.out' has not changed.
 (rerunfilecheck)             Checksum: D41D8CD98F00B204E9800998ECF8427E;0.
  ) 
 Here is how much of TeX's memory you used:
- 23023 strings out of 479334
- 427453 string characters out of 2873605
- 754848 words of memory out of 3000000
- 39900 multiletter control sequences out of 15000+200000
- 412322 words of font info for 62 fonts, out of 3000000 for 9000
+ 23005 strings out of 479334
+ 427305 string characters out of 2873605
+ 740849 words of memory out of 3000000
+ 39895 multiletter control sequences out of 15000+200000
+ 411268 words of font info for 57 fonts, out of 3000000 for 9000
  1302 hyphenation exceptions out of 8191
- 113i,20n,116p,673b,595s stack positions out of 5000i,500n,10000p,200000b,50000s
+ 113i,15n,116p,616b,363s stack positions out of 5000i,500n,10000p,200000b,50000s
 <C:/MiKTeX/fonts/type1/public/amsfonts/cm/cmbx10.pfb><C:/MiKTeX/fonts/type1/p
-ublic/amsfonts/cm/cmex10.pfb><C:/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi10.p
-fb><C:/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi6.pfb><C:/MiKTeX/fonts/type1/p
-ublic/amsfonts/cm/cmmi8.pfb><C:/MiKTeX/fonts/type1/public/amsfonts/cm/cmr10.pfb
-><C:/MiKTeX/fonts/type1/public/amsfonts/cm/cmr6.pfb><C:/MiKTeX/fonts/type1/publ
-ic/amsfonts/cm/cmr8.pfb><C:/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy10.pfb><C
-:/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy6.pfb><C:/MiKTeX/fonts/type1/public
-/amsfonts/cm/cmsy8.pfb><C:/MiKTeX/fonts/type1/public/amsfonts/cm/cmti10.pfb><C:
-/MiKTeX/fonts/type1/public/amsfonts/symbols/msam10.pfb><C:/MiKTeX/fonts/type1/p
-ublic/amsfonts/symbols/msbm10.pfb>
-Output written on HW7.pdf (4 pages, 167086 bytes).
+ublic/amsfonts/cm/cmmi10.pfb><C:/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi8.pf
+b><C:/MiKTeX/fonts/type1/public/amsfonts/cm/cmr10.pfb><C:/MiKTeX/fonts/type1/pu
+blic/amsfonts/cm/cmr8.pfb><C:/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy10.pfb>
+<C:/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy8.pfb><C:/MiKTeX/fonts/type1/publ
+ic/amsfonts/cm/cmti10.pfb><C:/MiKTeX/fonts/type1/public/amsfonts/symbols/msam10
+.pfb><C:/MiKTeX/fonts/type1/public/amsfonts/symbols/msbm10.pfb>
+Output written on HW8.pdf (1 page, 104361 bytes).
 PDF statistics:
- 105 PDF objects out of 1000 (max. 8388607)
- 24 named destinations out of 1000 (max. 500000)
+ 65 PDF objects out of 1000 (max. 8388607)
+ 11 named destinations out of 1000 (max. 500000)
  13 words of extra memory for PDF output out of 10000 (max. 10000000)
 

@@ -1,0 +1,172 @@
+\documentclass[11pt, reqno]{amsart}
+\usepackage[margin=1in]{geometry}    
+\geometry{letterpaper}       
+%\geometry{landscape}                % Activate for for rotated page geometry
+\usepackage[parfill]{parskip}    % Activate to begin paragraphs with an empty line rather than an indent
+\usepackage{amsfonts, amscd, amssymb, amsthm, amsmath}
+\usepackage{pdfsync}  %leaves makers for tex searching
+\usepackage{enumerate}
+\usepackage[pdftex,bookmarks]{hyperref}
+
+
+
+%%% Theorems %%%--------------------------------------------------------- 
+\theoremstyle{plain}
+	\newtheorem{thm}{Theorem}[section]
+	\newtheorem{lemma}[thm]{Lemma}
+	\newtheorem{prop}[thm]{Proposition}
+	\newtheorem{cor}[thm]{Corollary}
+\theoremstyle{definition}
+	\newtheorem*{defn}{Definition}
+	\newtheorem{remark}[thm]{Remark}
+\theoremstyle{example}
+	\newtheorem*{example}{Example}
+
+
+%%% Environments %%%--------------------------------------------------------- 
+\newenvironment{ans}{\medskip \paragraph*{\emph{Answer}.}}{\hfill \break  $~\!\!$ \dotfill \medskip }
+\newenvironment{sketch}{\medskip \paragraph*{\emph{Proof sketch}.}}{ \medskip }
+\newenvironment{summary}{\medskip \paragraph*{\emph{Summary}.}}{  \hfill \break  \rule{1.5cm}{0.4pt} \medskip }
+\newcommand\Ans[1]{\hfill \emph{Answer:} {#1}}
+
+
+%%% Pictures %%%--------------------------------------------------------- 
+%%% If you need to draw pictures, tikzpicture is one good option. Here are some basic things I always use:
+\usepackage{tikz}
+\usetikzlibrary{arrows}
+\usetikzlibrary{shapes}
+\tikzstyle{V}=[draw, fill =black, circle, inner sep=0pt, minimum size=2pt]
+\newcommand\TikZ[1]{\begin{matrix}\begin{tikzpicture}#1\end{tikzpicture}\end{matrix}}
+
+
+
+
+
+%%% Color  %%%---------------------------------------------------------
+\usepackage{color}
+\newcommand{\NOTE}[1]{{\color{blue}#1}}
+\newcommand{\blue}[1]{{\color{blue}#1}}
+\newcommand{\red}[1]{{\color{red}#1}}
+\newcommand{\MOVED}[1]{{\color{gray}#1}}
+
+
+%%% Alphabets %%%---------------------------------------------------------
+%%% Some shortcuts for my commonly used special alphabets and characters.
+\def\cA{\mathcal{A}}\def\cB{\mathcal{B}}\def\cC{\mathcal{C}}\def\cD{\mathcal{D}}\def\cE{\mathcal{E}}\def\cF{\mathcal{F}}\def\cG{\mathcal{G}}\def\cH{\mathcal{H}}\def\cI{\mathcal{I}}\def\cJ{\mathcal{J}}\def\cK{\mathcal{K}}\def\cL{\mathcal{L}}\def\cM{\mathcal{M}}\def\cN{\mathcal{N}}\def\cO{\mathcal{O}}\def\cP{\mathcal{P}}\def\cQ{\mathcal{Q}}\def\cR{\mathcal{R}}\def\cS{\mathcal{S}}\def\cT{\mathcal{T}}\def\cU{\mathcal{U}}\def\cV{\mathcal{V}}\def\cW{\mathcal{W}}\def\cX{\mathcal{X}}\def\cY{\mathcal{Y}}\def\cZ{\mathcal{Z}}
+
+\def\AA{\mathbb{A}} \def\BB{\mathbb{B}} \def\CC{\mathbb{C}} \def\DD{\mathbb{D}} \def\EE{\mathbb{E}} \def\FF{\mathbb{F}} \def\GG{\mathbb{G}} \def\HH{\mathbb{H}} \def\II{\mathbb{I}} \def\JJ{\mathbb{J}} \def\KK{\mathbb{K}} \def\LL{\mathbb{L}} \def\MM{\mathbb{M}} \def\NN{\mathbb{N}} \def\OO{\mathbb{O}} \def\PP{\mathbb{P}} \def\QQ{\mathbb{Q}} \def\RR{\mathbb{R}} \def\SS{\mathbb{S}} \def\TT{\mathbb{T}} \def\UU{\mathbb{U}} \def\VV{\mathbb{V}} \def\WW{\mathbb{W}} \def\XX{\mathbb{X}} \def\YY{\mathbb{Y}} \def\ZZ{\mathbb{Z}}  
+
+\def\fa{\mathfrak{a}} \def\fb{\mathfrak{b}} \def\fc{\mathfrak{c}} \def\fd{\mathfrak{d}} \def\fe{\mathfrak{e}} \def\ff{\mathfrak{f}} \def\fg{\mathfrak{g}} \def\fh{\mathfrak{h}} \def\fj{\mathfrak{j}} \def\fk{\mathfrak{k}} \def\fl{\mathfrak{l}} \def\fm{\mathfrak{m}} \def\fn{\mathfrak{n}} \def\fo{\mathfrak{o}} \def\fp{\mathfrak{p}} \def\fq{\mathfrak{q}} \def\fr{\mathfrak{r}} \def\fs{\mathfrak{s}} \def\ft{\mathfrak{t}} \def\fu{\mathfrak{u}} \def\fv{\mathfrak{v}} \def\fw{\mathfrak{w}} \def\fx{\mathfrak{x}} \def\fy{\mathfrak{y}} \def\fz{\mathfrak{z}}
+\def\fgl{\mathfrak{gl}}  \def\fsl{\mathfrak{sl}}  \def\fso{\mathfrak{so}}  \def\fsp{\mathfrak{sp}}  
+\def\GL{\mathrm{GL}} \def\SL{\mathrm{SL}}  \def\SP{\mathrm{SL}}
+
+\def\<{\langle} \def\>{\rangle}
+\def\({\<\!\<}\def\){\>\!\>}
+\def\ad{\mathrm{ad}} 
+\def\Aut{\mathrm{Aut}}
+\def\dim{\mathrm{dim}} 
+\def\End{\mathrm{End}} 
+\def\ev{\mathrm{ev}} 
+\def\half{\hbox{$\frac12$}}
+\def\img{\mathrm{img}}
+\def\Hom{\mathrm{Hom}} 
+\def\Fn{\mathrm{Fn}} 
+\def\Fr{\mathcal{F}\mathrm{r}}
+\def\hgt{\mathrm{ht}} 
+\def\id{\mathrm{id}} 
+\def\qtr{\mathrm{qtr}} 
+\def\sgn{\mathrm{sgn}}
+\def\supp{\mathrm{supp}}
+\def\tr{\mathrm{tr}} 
+\def\Tor{\mathrm{Tor}} 
+\def\vep{\varepsilon}
+\def\f{\varphi}
+
+
+
+\def\Obj{\mathrm{Obj}}
+\def\normeq{\unlhd}
+\def\Set{{\cS\mathrm{et}}}
+\def\Fin{{\cF\mathrm{inSet}}}
+\def\Set{{\cS\mathrm{et}}}
+\def\Grp{{\cG\mathrm{rp}}}
+\def\Ab{{\cA\mathrm{b}}}
+\def\Mod{{\cM\mathrm{od}}}
+\def\ab{\mathrm{ab}}
+
+% Arrows:
+\newcommand\xdhrightarrow[2][]{%
+  \mathrel{\ooalign{$\xrightarrow[#1\mkern4mu]{#2\mkern4mu}$\cr%
+  \hidewidth$\rightarrow\mkern4mu$}}
+}
+%\newcommand\dhrightarrow{%
+%  \mathrel{\ooalign{$\rightarrow$\cr%
+%  $\mkern3.5mu\rightarrow$}}
+%}
+\def\dhrightarrow{\twoheadrightarrow}
+\def\dhleftarrow{\twoheadleftarrow}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\def\HW{8}
+\def\DUE{4/23/2021}
+
+\title[Homework \HW]{Homework \HW \\
+Math B4900\\
+\small Due: \DUE}
+\author{}
+%\date{}                                           % Activate to display a given date or no date
+
+\begin{document}
+%\maketitle %%% COMMENT THIS OUT and UNCOMMENT the following to give yourself a good assignment header:
+\begin{flushright}
+Chris Hayduk\\
+Math B4900\\
+Homework \HW\\
+\DUE
+\end{flushright}
+
+Let $A$ be a ring with 1.
+\begin{enumerate}[1.]
+\item Prove that if every $A$-module is free, then $A$ is a division ring. {[\emph{Caution:} this proof may involve a lot of machinery. Give it time, and ample brainstorming of the tools you have so far.]}
+\begin{proof}
+Suppose $A$ is a ring with $1$ and that every $A$-module is free.
+\end{proof}
+\item Classify the semisimple $\ZZ$-modules. {[\emph{Hint.} What are the simple $\ZZ$-modules?]}
+\item Let $M$ be a semisimple $A$-module. Prove that the following are equivalent: 
+\begin{enumerate}[(i)]
+\item $M$ is finitely-generated;
+\item $M$ is Noetherian;
+\item $M$ is Artinian;
+$M$ is a finite direct sum of simple modules. 
+\end{enumerate}
+
+
+\item 
+\begin{enumerate}[(a)]
+\item Let $R$ and $S$ be rings such that $M_m(R) \cong M_n(S)$ for some $m, n \in \ZZ_{\ge 1}$. For this imply that $m = n$ and $R \cong S$? If so, why? If not, give a counter-example. 
+\item We call $A$ a \emph{full matrix ring} if $A \cong M_n(R)$ for some ring $R$ and some $n \in \ZZ_{\ge 1}$. Is the homomorphic image of a matrix ring necessarily itself a matrix ring? If so, prove it. If not, give a counterexample.  
+
+
+\end{enumerate}
+\end{enumerate}
+
+\vfill
+
+
+\hrule
+\emph{\small To receive credit for this assignment, include the following in your solutions [edited appropriately]:}
+
+\smallskip
+
+\textbf{Academic integrity statement:} I \emph{did not violate} the CUNY Academic Integrity Policy in completing this assignment. \hfill \emph{Chris Hayduk}
+
+\medskip
+\hrule
+
+\vfill
+
+
+\end{document}
