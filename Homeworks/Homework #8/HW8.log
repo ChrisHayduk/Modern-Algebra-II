@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.22 (MiKTeX 21.2) (preloaded format=pdflatex 2021.3.4)  20 APR 2021 19:28
+This is pdfTeX, Version 3.141592653-2.6-1.40.22 (MiKTeX 21.2) (preloaded format=pdflatex 2021.3.4)  23 APR 2021 23:53
 entering extended mode
 **./HW8.tex
 (HW8.tex
@@ -764,28 +764,60 @@ LaTeX Info: Redefining \nameref on input line 122.
 Package: epstopdf-base 2020-01-24 v2.11 Base part for package epstopdf
 Package epstopdf-base Info: Redefining graphics rule for `.eps' on input line 4
 85.
-) [1{C:/Users/chris/AppData/Local/MiKTeX/pdftex/config/pdftex.map}] (HW8.aux)
+)
+Underfull \hbox (badness 10000) in paragraph at lines 135--136
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 137--138
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 139--140
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 147--148
+
+ []
+
+[1{C:/Users/chris/AppData/Local/MiKTeX/pdftex/config/pdftex.map}]
+Underfull \hbox (badness 10000) in paragraph at lines 167--168
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 169--170
+
+ []
+
+[2] [3] (HW8.aux)
 Package rerunfilecheck Info: File `HW8.out' has not changed.
 (rerunfilecheck)             Checksum: D41D8CD98F00B204E9800998ECF8427E;0.
  ) 
 Here is how much of TeX's memory you used:
- 23005 strings out of 479334
- 427305 string characters out of 2873605
- 740849 words of memory out of 3000000
+ 23008 strings out of 479334
+ 427324 string characters out of 2873605
+ 751849 words of memory out of 3000000
  39895 multiletter control sequences out of 15000+200000
  411268 words of font info for 57 fonts, out of 3000000 for 9000
  1302 hyphenation exceptions out of 8191
- 113i,15n,116p,616b,363s stack positions out of 5000i,500n,10000p,200000b,50000s
+ 113i,20n,116p,953b,615s stack positions out of 5000i,500n,10000p,200000b,50000s
 <C:/MiKTeX/fonts/type1/public/amsfonts/cm/cmbx10.pfb><C:/MiKTeX/fonts/type1/p
-ublic/amsfonts/cm/cmmi10.pfb><C:/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi8.pf
-b><C:/MiKTeX/fonts/type1/public/amsfonts/cm/cmr10.pfb><C:/MiKTeX/fonts/type1/pu
-blic/amsfonts/cm/cmr8.pfb><C:/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy10.pfb>
-<C:/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy8.pfb><C:/MiKTeX/fonts/type1/publ
-ic/amsfonts/cm/cmti10.pfb><C:/MiKTeX/fonts/type1/public/amsfonts/symbols/msam10
-.pfb><C:/MiKTeX/fonts/type1/public/amsfonts/symbols/msbm10.pfb>
-Output written on HW8.pdf (1 page, 104361 bytes).
+ublic/amsfonts/cm/cmmi10.pfb><C:/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi6.pf
+b><C:/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi8.pfb><C:/MiKTeX/fonts/type1/pu
+blic/amsfonts/cm/cmr10.pfb><C:/MiKTeX/fonts/type1/public/amsfonts/cm/cmr6.pfb><
+C:/MiKTeX/fonts/type1/public/amsfonts/cm/cmr8.pfb><C:/MiKTeX/fonts/type1/public
+/amsfonts/cm/cmsy10.pfb><C:/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy8.pfb><C:
+/MiKTeX/fonts/type1/public/amsfonts/cm/cmti10.pfb><C:/MiKTeX/fonts/type1/public
+/amsfonts/symbols/msam10.pfb><C:/MiKTeX/fonts/type1/public/amsfonts/symbols/msb
+m10.pfb>
+Output written on HW8.pdf (3 pages, 136405 bytes).
 PDF statistics:
- 65 PDF objects out of 1000 (max. 8388607)
- 11 named destinations out of 1000 (max. 500000)
+ 83 PDF objects out of 1000 (max. 8388607)
+ 14 named destinations out of 1000 (max. 500000)
  13 words of extra memory for PDF output out of 10000 (max. 10000000)
 
