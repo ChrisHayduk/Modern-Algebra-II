@@ -1,0 +1,273 @@
+\documentclass[11pt, reqno]{amsart}
+\usepackage[margin=1in]{geometry}    
+\geometry{letterpaper}       
+%\geometry{landscape}                % Activate for for rotated page geometry
+\usepackage[parfill]{parskip}    % Activate to begin paragraphs with an empty line rather than an indent
+\usepackage{amsfonts, amscd, amssymb, amsthm, amsmath}
+\usepackage{pdfsync}  %leaves makers for tex searching
+\usepackage{enumerate}
+\usepackage[pdftex,bookmarks]{hyperref}
+
+
+
+%%% Theorems %%%--------------------------------------------------------- 
+\theoremstyle{plain}
+	\newtheorem{thm}{Theorem}[section]
+	\newtheorem{lemma}[thm]{Lemma}
+	\newtheorem{prop}[thm]{Proposition}
+	\newtheorem{cor}[thm]{Corollary}
+\theoremstyle{definition}
+	\newtheorem*{defn}{Definition}
+	\newtheorem{remark}[thm]{Remark}
+\theoremstyle{example}
+	\newtheorem*{example}{Example}
+
+
+%%% Environments %%%--------------------------------------------------------- 
+\newenvironment{ans}{\medskip \paragraph*{\emph{Answer}.}}{\hfill \break  $~\!\!$ \dotfill \medskip }
+\newenvironment{sketch}{\medskip \paragraph*{\emph{Proof sketch}.}}{ \medskip }
+\newenvironment{summary}{\medskip \paragraph*{\emph{Summary}.}}{  \hfill \break  \rule{1.5cm}{0.4pt} \medskip }
+\newcommand\Ans[1]{\hfill \emph{Answer:} {#1}}
+
+
+%%% Pictures %%%--------------------------------------------------------- 
+%%% If you need to draw pictures, tikzpicture is one good option. Here are some basic things I always use:
+\usepackage{tikz}
+\usetikzlibrary{arrows}
+\usetikzlibrary{shapes}
+\tikzstyle{V}=[draw, fill =black, circle, inner sep=0pt, minimum size=2pt]
+\tikzstyle{bV}=[draw, fill =black, circle, inner sep=0pt, minimum size=4pt]
+\newcommand\TikZ[1]{\begin{matrix}\begin{tikzpicture}#1\end{tikzpicture}\end{matrix}}
+
+
+
+
+
+%%% Color  %%%---------------------------------------------------------
+\usepackage{color}
+\newcommand{\NOTE}[1]{{\color{blue}#1}}
+\newcommand{\blue}[1]{{\color{blue}#1}}
+\newcommand{\red}[1]{{\color{red}#1}}
+\newcommand{\MOVED}[1]{{\color{gray}#1}}
+\definecolor{dred}{rgb}{.8,0,.1}
+\definecolor{dgreen}{rgb}{0,.6,.1}
+\definecolor{purple}{rgb}{.6,0,.8}
+\definecolor{dorange}{rgb}{.8,.25,0}
+\definecolor{dyellow}{rgb}{.95,.85,0}
+\definecolor{alert}{rgb}{.8,.25,0}
+
+\newcommand{\gV}[1]{\TikZ{\node[thick, dgreen, rounded corners, draw] at (0,0){#1};}}
+\newcommand{\pV}[1]{\TikZ{\node[thick, purple, rounded corners, draw] at (0,0){#1};}}
+
+
+%%% Alphabets %%%---------------------------------------------------------
+%%% Some shortcuts for my commonly used special alphabets and characters.
+\def\cA{\mathcal{A}}\def\cB{\mathcal{B}}\def\cC{\mathcal{C}}\def\cD{\mathcal{D}}\def\cE{\mathcal{E}}\def\cF{\mathcal{F}}\def\cG{\mathcal{G}}\def\cH{\mathcal{H}}\def\cI{\mathcal{I}}\def\cJ{\mathcal{J}}\def\cK{\mathcal{K}}\def\cL{\mathcal{L}}\def\cM{\mathcal{M}}\def\cN{\mathcal{N}}\def\cO{\mathcal{O}}\def\cP{\mathcal{P}}\def\cQ{\mathcal{Q}}\def\cR{\mathcal{R}}\def\cS{\mathcal{S}}\def\cT{\mathcal{T}}\def\cU{\mathcal{U}}\def\cV{\mathcal{V}}\def\cW{\mathcal{W}}\def\cX{\mathcal{X}}\def\cY{\mathcal{Y}}\def\cZ{\mathcal{Z}}
+
+\def\AA{\mathbb{A}} \def\BB{\mathbb{B}} \def\CC{\mathbb{C}} \def\DD{\mathbb{D}} \def\EE{\mathbb{E}} \def\FF{\mathbb{F}} \def\GG{\mathbb{G}} \def\HH{\mathbb{H}} \def\II{\mathbb{I}} \def\JJ{\mathbb{J}} \def\KK{\mathbb{K}} \def\LL{\mathbb{L}} \def\MM{\mathbb{M}} \def\NN{\mathbb{N}} \def\OO{\mathbb{O}} \def\PP{\mathbb{P}} \def\QQ{\mathbb{Q}} \def\RR{\mathbb{R}} \def\SS{\mathbb{S}} \def\TT{\mathbb{T}} \def\UU{\mathbb{U}} \def\VV{\mathbb{V}} \def\WW{\mathbb{W}} \def\XX{\mathbb{X}} \def\YY{\mathbb{Y}} \def\ZZ{\mathbb{Z}}  
+
+\def\fa{\mathfrak{a}} \def\fb{\mathfrak{b}} \def\fc{\mathfrak{c}} \def\fd{\mathfrak{d}} \def\fe{\mathfrak{e}} \def\ff{\mathfrak{f}} \def\fg{\mathfrak{g}} \def\fh{\mathfrak{h}} \def\fj{\mathfrak{j}} \def\fk{\mathfrak{k}} \def\fl{\mathfrak{l}} \def\fm{\mathfrak{m}} \def\fn{\mathfrak{n}} \def\fo{\mathfrak{o}} \def\fp{\mathfrak{p}} \def\fq{\mathfrak{q}} \def\fr{\mathfrak{r}} \def\fs{\mathfrak{s}} \def\ft{\mathfrak{t}} \def\fu{\mathfrak{u}} \def\fv{\mathfrak{v}} \def\fw{\mathfrak{w}} \def\fx{\mathfrak{x}} \def\fy{\mathfrak{y}} \def\fz{\mathfrak{z}}
+\def\fgl{\mathfrak{gl}}  \def\fsl{\mathfrak{sl}}  \def\fso{\mathfrak{so}}  \def\fsp{\mathfrak{sp}}  
+\def\GL{\mathrm{GL}} \def\SL{\mathrm{SL}}  \def\SP{\mathrm{SL}}
+
+\def\<{\langle} \def\>{\rangle}
+\def\({\<\!\<}\def\){\>\!\>}
+\def\ad{\mathrm{ad}} 
+\def\Aut{\mathrm{Aut}}
+\def\dim{\mathrm{dim}} 
+\def\End{\mathrm{End}} 
+\def\ev{\mathrm{ev}} 
+\def\half{\hbox{$\frac12$}}
+\def\img{\mathrm{img}}
+\def\Ind{\mathrm{Ind}}
+\def\Hom{\mathrm{Hom}} 
+\def\Fn{\mathrm{Fn}} 
+\def\Fr{\mathcal{F}\mathrm{r}}
+\def\hgt{\mathrm{ht}} 
+\def\id{\mathrm{id}} 
+\def\qtr{\mathrm{qtr}} 
+\def\sgn{\mathrm{sgn}}
+\def\supp{\mathrm{supp}}
+\def\tr{\mathrm{tr}} 
+\def\Tor{\mathrm{Tor}} 
+\def\vep{\varepsilon}
+\def\f{\varphi}
+
+
+
+\def\Obj{\mathrm{Obj}}
+\def\normeq{\unlhd}
+\def\Set{{\cS\mathrm{et}}}
+\def\Fin{{\cF\mathrm{inSet}}}
+\def\Set{{\cS\mathrm{et}}}
+\def\Grp{{\cG\mathrm{rp}}}
+\def\Ab{{\cA\mathrm{b}}}
+\def\Mod{{\cM\mathrm{od}}}
+\def\ab{\mathrm{ab}}
+
+% Arrows:
+\newcommand\xdhrightarrow[2][]{%
+  \mathrel{\ooalign{$\xrightarrow[#1\mkern4mu]{#2\mkern4mu}$\cr%
+  \hidewidth$\rightarrow\mkern4mu$}}
+}
+%\newcommand\dhrightarrow{%
+%  \mathrel{\ooalign{$\rightarrow$\cr%
+%  $\mkern3.5mu\rightarrow$}}
+%}
+\def\dhrightarrow{\twoheadrightarrow}
+\def\dhleftarrow{\twoheadleftarrow}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\def\HW{9}
+\def\DUE{4/30/2021}
+
+\title[Homework \HW]{Homework \HW \\
+Math B4900\\
+\small Due: \DUE}
+\author{}
+%\date{}                                           % Activate to display a given date or no date
+
+\begin{document}
+\maketitle %%% COMMENT THIS OUT and UNCOMMENT the following to give yourself a good assignment header:
+%\begin{flushright}
+%YOUR NAME HERE\\
+%Math B4900\\
+%Homework \HW\\
+%\DUE
+%\end{flushright}
+
+
+Let $A$ be a ring with 1.
+\begin{enumerate}[1.]
+\item Let $M$ be a completely reducible $A$-module. Show that for any submodule $N \subseteq M$, we have $M/N$ is completely reducible as well. Moreover, if 
+$$M \cong \bigoplus_{\lambda \in \Lambda}M_\lambda, \quad \text{then} \quad 
+	M/N \cong \bigoplus_{\lambda \in \Gamma}M_\lambda,$$
+	for some $\Gamma \subseteq \Lambda$.
+
+{[\emph{Hint:} if $M \cong \bigoplus_{\lambda \in \Lambda}M_\lambda$ (with $M_\lambda$ simple), then, more simply, $M = \sum_{\lambda \in \Lambda} M_\lambda$ (identifying $M_\lambda$ with $\hat{M}_\lambda$). Show that $M/N = \sum_\lambda (M_\lambda + N)/N$ (write out the cosets!), and then use the second isomorphism theorem on each piece. Finally, check that, for all $\mu \in \Lambda$, we have 
+$$(M_\mu +N)/N \cap \sum_{\lambda \neq \mu} (M_\lambda + N)/N = 0.]$$}
+
+\item Let $\{z_\lambda ~|~ \lambda \in \Lambda\}$ be the centrally primitive idempotents in a semisimple ring $A$, and let $U_\lambda$ be the simple $A$-module corresponding to $\lambda \in \Lambda$. Let $M$ be an $A$-module (not necessarily the left-regular module. Use Artin-Wedderburn to show that $z_\lambda M \cong \bigoplus_{i \in \cI} U_\lambda$ (i.e.\ $z_\lambda$ projects onto a (not necessarily finite) direct sum of a bunch of copies of $U_\lambda$---called the \emph{$\lambda$-isotypic component} of $M$). 
+
+\item Let $V = \CC^2 = \CC\{v_1, v_2\}$. Let  $\CC D_8$ act on $V^{\otimes 4} = V \otimes V \otimes V\otimes V$ by identifying the copies of $V$ with the vertices of the square, and applying the corresponding factor permutation:
+$${\def\arraystretch{1.3}
+\begin{array}{l}
+r \cdot (v_{i_1} \otimes v_{i_2} \otimes v_{i_3} \otimes v_{i_4}) = v_{i_2} \otimes v_{i_3} \otimes v_{i_4} \otimes v_{i_1}\\
+\text{and} \\
+s \cdot (v_{i_1} \otimes v_{i_2} \otimes v_{i_3} \otimes v_{i_4}) = v_{i_2} \otimes v_{i_1} \otimes v_{i_4} \otimes v_{i_3}\end{array}}
+\qquad\qquad 
+\TikZ{
+\draw (0,0) node[V, label={above left, inner sep=1pt}:{\tiny$i_1$}]{} to 
+	(1,0) node[V, label={above right, inner sep=1pt}:{\tiny$i_2$}]{} to 
+	(1,-1) node[V, label={below right, inner sep=1pt}:{\tiny$i_3$}]{} to 
+	 (0,-1) node[V, label={below left, inner sep=1pt}:{\tiny$i_4$}]{} to (0,0);
+\draw[densely dotted, thick, blue] (.5,.2) to (.5,-1.2) node[below]{\tiny $s$};
+\draw[<-, red, bend left=50] (1.5,-.1) to node[right]{\tiny$r$} (1.5,-.9);
+}
+$$
+(where $i_1, i_2, i_3, i_4 \in \{1,2\}$). For example, $r$ fixes $v_1 \otimes v_1 \otimes v_1 \otimes v_1$, but  $r \cdot v_1 \otimes v_2 \otimes v_1\otimes v_1 =  v_2 \otimes v_1 \otimes v_1\otimes v_1$.
+
+
+Use the primitive central idempotents of $\CC D_8$ to decompose $V^{\otimes 4}$ into its isotypic components (you computed these idempotents in HW 5; you should also know which corresponds to which simple representations of $\CC D_8$). Then make a dimension argument to classify the decomposition of $V^{\otimes 4}$ up to isomorphism---and make a complete decomposition if you can. \\ $\quad$ \hfill {[\emph{See p.\ 2 for some help.}]}
+
+
+\item Let $S_3 \le S_4$ in the usual way, and let $\cW$ be the reflection representation. Compute  the action of $s_1 = (12)$, $s_2 = (23)$, and $s_3 = (34)$ on $\Ind_{\CC S_3}^{\CC S_4}(\cW)$. \hfill {[\emph{Hint:} Stay organized!]}
+\end{enumerate}
+
+
+
+\vfill
+
+
+\hrule
+\emph{\small To receive credit for this assignment, include the following in your solutions [edited appropriately]:}
+
+\smallskip
+
+\textbf{Academic integrity statement:} I \emph{[violated/did not violate]} the CUNY Academic Integrity Policy in completing this assignment. \hfill \emph{[enter your full name as a digital signature here]}
+
+\medskip
+\hrule
+
+\vfill
+
+\pagebreak
+
+\emph{Help with \#3:} This is a big computational problem. But with a little bit of care, it won't be too bad. One tip is to encode a basis vector like $v_{i_1} \otimes v_{i_2} \otimes v_{i_3} \otimes v_{i_4}$ as $i_1i_2i_3i_4$. For example, $v_1 \otimes v_2 \otimes v_1\otimes v_1$ becomes $1211$, and $r \cdot 1211 = 2111$. Another trick you have up your sleeve is action graphs; namely, the action of $\CC D_8$ on $V^{\otimes 4}$ is a linear extension of the action of $D_8$ on $\{i_1i_2i_3i_4 ~|~ i_\ell \in \{1,2\}\}$. For example, one part of your action graph will look like 
+$$\TikZ{
+	\node (1112) at (0,2) {1112}; 
+	\node (1121) at (2,2) {1121}; 
+	\node (1211) at (2,0) {1211}; 
+	\node (2111) at (0,0) {2111}; 
+	\draw[->] (1112) to node[above]{$r$} (1121);
+	\draw[->] (1121) to node[right]{$r$} (1211);
+	\draw[->] (1211) to node[below]{$r$} (2111);
+	\draw[->] (2111) to node[left]{$r$} (1112);
+	\draw[<->, bend right] (1112) to node[below]{$s$} (1121);
+	\draw[<->, bend left] (2111) to node[above]{$s$} (1211);
+}.$$
+Next, your job is to compute $z_j V^{\otimes 4}$ for each $j = 1, \dots, 5$. But since the simple tensors $\{i_1i_2i_3i_4 ~|~ i_\ell \in \{1,2\}\}$ form a spanning set of $V^{\otimes 4}$; the action of $z_j$ on this set, $\{z_j \cdot i_1i_2i_3i_4 ~|~ i_\ell \in \{1,2\}\}$, sill form a spanning set of  $z_j V^{\otimes 4}$. To compute $z_j V^{\otimes 4}$, you just need to compute $z_j \cdot i_1i_2i_3i_4$ for each set of $i_\ell \in \{1,2\}$, and taking the span of the result. 
+
+
+Now, recall that the coefficients in $z_1$ correspond to setting $r=1$ and $s=1$; the coefficients in $z_2$ correspond to setting $r=-1$ and $s=1$;  and so on\dots; so the first four of these computations essentially amount to walking around the vertices of this graph, assigning $\pm 1$ coefficients by what edge we walk along, and then summing up the result. So for example, the computation of $z_2$ acting on $1112$ looks like (starting from the upper-left corner, corresponding to the action of $1$, and moving out)
+
+\centerline{$\TikZ{
+	\node[thick, dgreen, rounded corners, draw, label={below right, inner sep=1pt, dgreen}:{\tiny$+$}] 
+			(1112) at (0,0) {\color{black}1112}; 
+	\node[thick, purple, rounded corners, draw, label={below right, inner sep=1pt, purple}:{\tiny$-$}]
+			(1121) at (2,0) {\color{black}1121}; 
+	\node[thick, dgreen, rounded corners, draw, label={below right, inner sep=1pt, dgreen}:{\tiny$+$}]
+			(1211) at (4,0) {\color{black}1211}; 
+	\node[thick, purple, rounded corners, draw, label={below right, inner sep=1pt, purple}:{\tiny$-$}]
+			(2111) at (6,0) {\color{black}2111};  
+	\node[thick, dgreen, rounded corners, draw, label={above right, inner sep=1pt, dgreen}:{\tiny$+$}]
+			(1121b) at (0,-2) {\color{black}1121}; 
+	\node[thick, purple, rounded corners, draw, label={above right, inner sep=1pt, purple}:{\tiny$-$}]
+			(1211b) at (2,-2) {\color{black}1211}; 
+	\node[thick, dgreen, rounded corners, draw, label={above right, inner sep=1pt, dgreen}:{\tiny$+$}]
+			(2111b) at (4,-2) {\color{black}2111}; 
+	\node[thick, purple, rounded corners, draw, label={above right, inner sep=1pt, purple}:{\tiny$-$}]
+			(1112b) at (6,-2) {\color{black}1112};
+	\node[black] (1) at (0,.5) {$1$}; 
+	\node[black] (r) at (2,.5) {$r$}; 
+	\node[black] (rr) at (4,.5) {$r^2$}; 
+	\node[black] (rrr) at (6,.5) {$r^3$};  
+	\node[black] (s) at (0,-2.5) {$s$}; 
+	\node[black] (rs) at (2,-2.5) {$rs$}; 
+	\node[black] (rrs) at (4,-2.5) {$r^2s$}; 
+	\node[black] (rrrs) at (6,-2.5) {$r^3s$};
+	\draw[thick, red, ->] (1112) to node[above]{\tiny$r$} (1121);
+	\draw[thick, red, ->] (1121) to node[above]{\tiny$r$} (1211);
+	\draw[thick, red, ->] (1211) to node[above]{\tiny$r$} (2111);
+	\draw[thick, blue, ->, bend right] (1112) to node[left]{\tiny$s$} (1121b);
+	\draw[thick, red, ->] (1121b) to node[below]{\tiny$r$} (1211b);
+	\draw[thick, red, ->] (1211b) to node[below]{\tiny$r$} (2111b);
+	\draw[thick, red, ->] (2111b) to node[below]{\tiny$r$} (1112b);
+	\node[inner sep = 2pt] (s) at (-1,.5) {\tiny start}; \draw [->, bend right] (s) to (1112);
+} \quad\begin{array}{l} \text{so } z_2 \cdot 1112 = \frac{1}{8}\left(\gV{1112} - \pV{1121}+\gV{1211}-\pV{2111}\right.\\\hspace{1.2in}\left.+\gV{1121}-\pV{1211}+\gV{2111}-\pV{1112}\right) = 0.)\end{array}$}
+
+
+
+Continue computing the actions of the $z_j$ on the basis vectors, organize your computations by orbits. 
+For example, setting 
+$$b_1 = 1112, \quad b_2 = 1121, \quad b_3 = 1211, \quad \text{and} \quad  b_4 = 2111,$$
+we have 
+\begin{align*}
+z_1 b_i &= \frac{1}{4}(b_1 + b_2 + b_3 + b_4) & \text{ for }i=1,2,3,4;\\
+z_2 b_i &= 0 \quad \text{ and } \quad z_4 b_i = 0& \text{ for }i=1,2,3,4;\\
+z_3 b_1& = z_3 b_3 = -z_3 b_2 = -z_3 b_4 = \frac{1}{4}(b_1 - b_2 + b_3 - b_4); &\\
+z_5 b_1& = -z_5 b_3 = \frac{1}{2}(b_1 - b_3); \quad \text{ and } \quad
+z_5 b_2 = -z_5 b_4 = \frac{1}{2}(b_2 - b_4).
+\end{align*}
+So 
+\begin{align*}
+z_1V^{\otimes 4} & \text{ contains } b_1 + b_2 + b_3 + b_4;\\
+z_3V^{\otimes 4} & \text{ contains } b_1 - b_2 + b_3 - b_4; \quad \text{ and}\\
+z_5V^{\otimes 4}  & \text{ contains } b_1 - b_3 \text{ and } b_2 - b_4.
+\end{align*} 
+(We have accounted for 4 of 16 dim'ns in $V^{\otimes 4}$, so we're now 1/4 done with this computation!)
+
+\end{document}

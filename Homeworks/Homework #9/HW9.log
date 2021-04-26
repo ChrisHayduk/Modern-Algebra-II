@@ -1,7 +1,7 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.22 (MiKTeX 21.2) (preloaded format=pdflatex 2021.3.4)  24 APR 2021 13:51
+This is pdfTeX, Version 3.141592653-2.6-1.40.22 (MiKTeX 21.2) (preloaded format=pdflatex 2021.3.4)  25 APR 2021 15:01
 entering extended mode
-**./HW4.tex
-(HW4.tex
+**./HW9.tex
+(HW9.tex
 LaTeX2e <2020-10-01> patch level 4
 L3 programming layer <2021-02-18> xparse <2020-03-03>
 (C:\MiKTeX\tex/latex/amscls\amsart.cls
@@ -646,34 +646,34 @@ File: pgflibraryshapes.multipart.code.tex 2020/12/27 v3.1.8b (3.1.8b)
 File: l3backend-pdftex.def 2021-03-02 L3 backend support: PDF output (pdfTeX)
 \l__color_backend_stack_int=\count302
 \l__pdf_internal_box=\box81
-) (HW4.aux)
-\openout1 = `HW4.aux'.
+)
+No file HW9.aux.
+\openout1 = `HW9.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 108.
-LaTeX Font Info:    ... okay on input line 108.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 108.
-LaTeX Font Info:    ... okay on input line 108.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 108.
-LaTeX Font Info:    ... okay on input line 108.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 108.
-LaTeX Font Info:    ... okay on input line 108.
-LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 108.
-LaTeX Font Info:    ... okay on input line 108.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 108.
-LaTeX Font Info:    ... okay on input line 108.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 108.
-LaTeX Font Info:    ... okay on input line 108.
-LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 108.
-LaTeX Font Info:    ... okay on input line 108.
-LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 108.
-LaTeX Font Info:    ... okay on input line 108.
-LaTeX Font Info:    Trying to load font information for U+msa on input line 108
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 133.
+LaTeX Font Info:    ... okay on input line 133.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 133.
+LaTeX Font Info:    ... okay on input line 133.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 133.
+LaTeX Font Info:    ... okay on input line 133.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 133.
+LaTeX Font Info:    ... okay on input line 133.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 133.
+LaTeX Font Info:    ... okay on input line 133.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 133.
+LaTeX Font Info:    ... okay on input line 133.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 133.
+LaTeX Font Info:    ... okay on input line 133.
+LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 133.
+LaTeX Font Info:    ... okay on input line 133.
+LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 133.
+LaTeX Font Info:    ... okay on input line 133.
+LaTeX Font Info:    Trying to load font information for U+msa on input line 133
 .
-
 (C:\MiKTeX\tex/latex/amsfonts\umsa.fd
 File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 )
-LaTeX Font Info:    Trying to load font information for U+msb on input line 108
+LaTeX Font Info:    Trying to load font information for U+msb on input line 133
 .
  (C:\MiKTeX\tex/latex/amsfonts\umsb.fd
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
@@ -714,7 +714,7 @@ File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 
 Configuring pdfsync
 \PDFSYNC@ut=\write4
-\openout4 = `HW4.pdfsync'.
+\openout4 = `HW9.pdfsync'.
 
 \PDFSYNCf@li@=\count303
 \PDFSYNC@rder=\count304
@@ -727,7 +727,7 @@ Configuring pdfsync
 **** pdfsync.sty: Synchronizing at \everyvbox
 \PDFSYNCeveryvb@x=\toks45
 **** pdfsync.sty: started
-Package hyperref Info: Link coloring OFF on input line 108.
+Package hyperref Info: Link coloring OFF on input line 133.
 (C:\MiKTeX\tex/latex/hyperref\nameref.sty
 Package: nameref 2021-04-02 v2.47 Cross-referencing by name of section
 
@@ -739,12 +739,11 @@ Package: gettitlestring 2019/12/15 v1.6 Cleanup title references (HO)
 )
 \c@section@level=\count305
 )
-LaTeX Info: Redefining \ref on input line 108.
-LaTeX Info: Redefining \pageref on input line 108.
-LaTeX Info: Redefining \nameref on input line 108.
- (HW4.out) (HW4.out)
+LaTeX Info: Redefining \ref on input line 133.
+LaTeX Info: Redefining \pageref on input line 133.
+LaTeX Info: Redefining \nameref on input line 133.
 \@outlinefile=\write5
-\openout5 = `HW4.out'.
+\openout5 = `HW9.out'.
 
 
 (C:\MiKTeX\tex/context/base/mkii\supp-pdf.mkii
@@ -764,33 +763,41 @@ LaTeX Info: Redefining \nameref on input line 108.
 Package: epstopdf-base 2020-01-24 v2.11 Base part for package epstopdf
 Package epstopdf-base Info: Redefining graphics rule for `.eps' on input line 4
 85.
-)
-Underfull \vbox (badness 1721) has occurred while \output is active []
+) [1{C:/Users/chris/AppData/Local/MiKTeX/pdftex/config/pdftex.map}] [2] (HW9.au
+x)
 
- [1{C:/Users/chris/AppData/Local/MiKTeX/pdftex/config/pdftex.map}] [2] (HW4.aux
-)
-Package rerunfilecheck Info: File `HW4.out' has not changed.
-(rerunfilecheck)             Checksum: D41D8CD98F00B204E9800998ECF8427E;0.
+LaTeX Warning: Label(s) may have changed. Rerun to get cross-references right.
+
+
+Package rerunfilecheck Warning: File `HW9.out' has changed.
+(rerunfilecheck)                Rerun to get outlines right
+(rerunfilecheck)                or use package `bookmark'.
+
+Package rerunfilecheck Info: Checksums for `HW9.out':
+(rerunfilecheck)             Before: <no file>
+(rerunfilecheck)             After:  D41D8CD98F00B204E9800998ECF8427E;0.
  ) 
 Here is how much of TeX's memory you used:
- 23162 strings out of 479334
- 430391 string characters out of 2873605
- 754646 words of memory out of 3000000
- 40052 multiletter control sequences out of 15000+200000
- 411268 words of font info for 57 fonts, out of 3000000 for 9000
+ 23286 strings out of 479334
+ 432396 string characters out of 2873605
+ 797839 words of memory out of 3000000
+ 40186 multiletter control sequences out of 15000+200000
+ 412222 words of font info for 61 fonts, out of 3000000 for 9000
  1302 hyphenation exceptions out of 8191
- 113i,28n,116p,616b,1108s stack positions out of 5000i,500n,10000p,200000b,50000s
+ 113i,39n,116p,616b,1024s stack positions out of 5000i,500n,10000p,200000b,50000s
 <C:/MiKTeX/fonts/type1/public/amsfonts/cm/cmbx10.pfb><C:/MiKTeX/fonts/type1/p
 ublic/amsfonts/cm/cmex10.pfb><C:/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi10.p
-fb><C:/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi8.pfb><C:/MiKTeX/fonts/type1/p
-ublic/amsfonts/cm/cmr10.pfb><C:/MiKTeX/fonts/type1/public/amsfonts/cm/cmr8.pfb>
-<C:/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy10.pfb><C:/MiKTeX/fonts/type1/pub
-lic/amsfonts/cm/cmsy6.pfb><C:/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy8.pfb><
-C:/MiKTeX/fonts/type1/public/amsfonts/cm/cmti10.pfb><C:/MiKTeX/fonts/type1/publ
-ic/amsfonts/symbols/msbm10.pfb>
-Output written on HW4.pdf (2 pages, 127582 bytes).
+fb><C:/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi7.pfb><C:/MiKTeX/fonts/type1/p
+ublic/amsfonts/cm/cmmi8.pfb><C:/MiKTeX/fonts/type1/public/amsfonts/cm/cmr10.pfb
+><C:/MiKTeX/fonts/type1/public/amsfonts/cm/cmr5.pfb><C:/MiKTeX/fonts/type1/publ
+ic/amsfonts/cm/cmr6.pfb><C:/MiKTeX/fonts/type1/public/amsfonts/cm/cmr7.pfb><C:/
+MiKTeX/fonts/type1/public/amsfonts/cm/cmr8.pfb><C:/MiKTeX/fonts/type1/public/am
+sfonts/cm/cmsy10.pfb><C:/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy7.pfb><C:/Mi
+KTeX/fonts/type1/public/amsfonts/cm/cmsy8.pfb><C:/MiKTeX/fonts/type1/public/ams
+fonts/cm/cmti10.pfb><C:/MiKTeX/fonts/type1/public/amsfonts/symbols/msbm10.pfb>
+Output written on HW9.pdf (2 pages, 172505 bytes).
 PDF statistics:
- 73 PDF objects out of 1000 (max. 8388607)
- 11 named destinations out of 1000 (max. 500000)
+ 84 PDF objects out of 1000 (max. 8388607)
+ 7 named destinations out of 1000 (max. 500000)
  13 words of extra memory for PDF output out of 10000 (max. 10000000)
 
