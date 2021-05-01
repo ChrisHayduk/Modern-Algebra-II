@@ -131,13 +131,13 @@ Math B4900\\
 %\date{}                                           % Activate to display a given date or no date
 
 \begin{document}
-\maketitle %%% COMMENT THIS OUT and UNCOMMENT the following to give yourself a good assignment header:
-%\begin{flushright}
-%YOUR NAME HERE\\
-%Math B4900\\
-%Homework \HW\\
-%\DUE
-%\end{flushright}
+%\maketitle %%% COMMENT THIS OUT and UNCOMMENT the following to give yourself a good assignment header:
+\begin{flushright}
+Chris Hayduk\\
+Math B4900\\
+Homework \HW\\
+\DUE
+\end{flushright}
 
 
 Let $A$ be a ring with 1.
@@ -149,6 +149,54 @@ $$M \cong \bigoplus_{\lambda \in \Lambda}M_\lambda, \quad \text{then} \quad
 
 {[\emph{Hint:} if $M \cong \bigoplus_{\lambda \in \Lambda}M_\lambda$ (with $M_\lambda$ simple), then, more simply, $M = \sum_{\lambda \in \Lambda} M_\lambda$ (identifying $M_\lambda$ with $\hat{M}_\lambda$). Show that $M/N = \sum_\lambda (M_\lambda + N)/N$ (write out the cosets!), and then use the second isomorphism theorem on each piece. Finally, check that, for all $\mu \in \Lambda$, we have 
 $$(M_\mu +N)/N \cap \sum_{\lambda \neq \mu} (M_\lambda + N)/N = 0.]$$}
+
+\begin{proof}
+Since $M$ is completely reducible, we have that $M \cong \bigoplus_{\lambda \in \Lambda}M_\lambda$ where $M_{\lambda}$ is simple. This is equivalent to $M = \sum_{\lambda \in \Lambda} M_{\lambda}$ with $\left(\sum_{\lambda \in \Lambda - \mu} M_{\lambda} \right) \cap M_{\mu} = 0$. Hence, for any $m \in M$, we have that $m = \sum_{\lambda \in \Lambda} m_{\lambda}$ uniquely.\\
+
+Let $N \subset M$. Then,
+\begin{align*}
+M/N &= \left(\sum_{\lambda \in \Lambda} M_{\lambda} \right)/N\\
+&= \{m + N \ | \ m \in \sum_{\lambda \in \Lambda \text{; finite}} M_{\lambda}\}
+\end{align*}
+
+Thus, for $m + N \in M/N$, we have,
+\begin{align*}
+m + N &= \sum_{\lambda \text{; finite}} m_{\lambda} + N\\
+&= \sum_{\lambda \text{; finite}} m_{\lambda} + \sum_{\lambda; m_{\lambda} \neq 0} N\\
+&= \{\sum_{\lambda \text{; } m_{\lambda} \neq 0} n_{\lambda} \ | \ n_{\lambda} \in N\}\\
+&= N\\
+&= \sum_{\lambda \text{; finite}} (m_{\lambda} + N) \in (M_{\lambda} + N)/N
+\end{align*}
+
+The above derivation thus gives us that $M/N = \sum_{\lambda} (M_{\lambda} + N)/N$. Now, applying the second isomorphism theorem for modules, we have that,
+\begin{align*}
+M/N &= \sum_{\lambda} (M_{\lambda} + N)/N\\
+&= \sum_{\lambda} M_{\lambda}/(M_{\lambda} \cap N)
+\end{align*}
+
+Observe that, since each $M_{\lambda}$ is simple, we have that $M_{\lambda} \cap N = 0$ if $M_{\lambda} \not\subset N$ and $M_{\lambda} \cap N = M_{\lambda}$ if $M_{\lambda} \subset N$. These are the only two possible values for $M_{\lambda} \cap N$. Thus, for a fixed $M_{\lambda}$, we have either that,
+\begin{align*}
+M_{\lambda}/(M_{\lambda} \cap N) &= M_{\lambda}/0\\
+&= \{m_{\lambda} + 0 \ | \ m_{\lambda} \in M_{\lambda}\}\\
+&= M_{\lambda}
+\end{align*}
+
+or,
+\begin{align*}
+M_{\lambda}/(M_{\lambda} \cap N) &= M_{\lambda}/M_{\lambda}\\
+&= 0
+\end{align*}
+
+Thus, we have that $\sum_{\lambda} M_{\lambda}/(M_{\lambda} \cap N)$ corresponds to some subset $\Gamma \subset \Lambda$, since the terms are either $M_{\lambda}$ for some $\lambda$ or $0$. This gives us that,
+\begin{align*}
+M/N &= \sum_{\lambda} (M_{\lambda} + N)/N\\
+&= \sum_{\lambda} M_{\lambda}/(M_{\lambda} \cap N)\\
+&= \sum_{\lambda \in \Gamma} M_{\lambda}\\
+&\cong \bigoplus_{\lambda \in \Gamma}M_\lambda
+\end{align*}
+
+as required.
+\end{proof}
 
 \item Let $\{z_\lambda ~|~ \lambda \in \Lambda\}$ be the centrally primitive idempotents in a semisimple ring $A$, and let $U_\lambda$ be the simple $A$-module corresponding to $\lambda \in \Lambda$. Let $M$ be an $A$-module (not necessarily the left-regular module. Use Artin-Wedderburn to show that $z_\lambda M \cong \bigoplus_{i \in \cI} U_\lambda$ (i.e.\ $z_\lambda$ projects onto a (not necessarily finite) direct sum of a bunch of copies of $U_\lambda$---called the \emph{$\lambda$-isotypic component} of $M$). 
 
@@ -173,11 +221,74 @@ $$
 
 Use the primitive central idempotents of $\CC D_8$ to decompose $V^{\otimes 4}$ into its isotypic components (you computed these idempotents in HW 5; you should also know which corresponds to which simple representations of $\CC D_8$). Then make a dimension argument to classify the decomposition of $V^{\otimes 4}$ up to isomorphism---and make a complete decomposition if you can. \\ $\quad$ \hfill {[\emph{See p.\ 2 for some help.}]}
 
+\begin{proof}
+We have that $M = V \otimes V \otimes V \otimes V = \CC\{v_{i_1} \otimes v_{i_2} \otimes v_{i_3} \otimes v_{i_4} \ | \ v_{i_j} \text{ is a basis vector of } V\}$. We can think about each element of $V$ as a length 4 word with alphabet $\{1,2\}$. For example, we have $v_1 \otimes v_1 \otimes v_2 \otimes v_1 \mapsto 1121$. In addition, we have $\dim(M) = \dim(V)^4 = 16$.
+\end{proof}
 
 \item Let $S_3 \le S_4$ in the usual way, and let $\cW$ be the reflection representation. Compute  the action of $s_1 = (12)$, $s_2 = (23)$, and $s_3 = (34)$ on $\Ind_{\CC S_3}^{\CC S_4}(\cW)$. \hfill {[\emph{Hint:} Stay organized!]}
 \end{enumerate}
 
+\begin{proof}
+We have that $S_3 = \{1, (12), (23), (13), (123), (132)\}$ and $S_4 = \{1, (ab), (abc), (abcd), (ab)(cd) \ | \ a,b,c,d \in \{1,2,3,4\} \text{ distinct}\}$. By Lagrange's theorem, we have that $|S_4 : S_3| = |S_4|/|S_3| = 4!/3! = 4$. Thus, there should be $4$ left costs of $S_3$ in $S_4$. We will compute these cosets using the transpositions: $1, (14), (24), (34)$. This gives us,
+\begin{align*}
+1\{1, (12), (23), (13), (123), (132)\} &= \{1, (12), (23), (13), (123), (132)\}\\
+(14)\{1, (12), (23), (13), (123), (132)\} &= \{(14), (124), (14)(23), (134), (1234), (1324)\}\\
+(24)\{1, (12), (23), (13), (123), (132)\} &= \{(24), (142), (234), (24)(13), (1423), (1342)\}\\
+(34)\{1, (12), (23), (13), (123), (132)\} &= \{(34), (34)(12), (243), (143), (1243), (1432)\}
+\end{align*}
 
+So $a_1 = 1, a_2 = (14), a_3 = (24), a_4 = (34)$.\\
+
+Observe that $S_4$ is generated by $\langle (1234), (12) \rangle$, and so for each $a_i$, we will compute $(1234)a_i = a_j \sigma$ and $(12)a_i = a_k \tau$ for some $j,k \in \{1,2,3,4\}$ and some $\sigma, \tau \in S_3$:
+\begin{align*}
+(1234)a_1 &= (1234) \cdot 1 = 1 \cdot (1234) = a_1 \cdot (1234)\\
+(1234)a_2 &= (1234) \cdot (14) = (234) = a_3 \cdot (23)\\
+(1234)a_3 &= (1234) \cdot (24) = (21)(34) = (34)(12) = a_4 \cdot (12)\\
+(1234)a_4 &= (1234) \cdot (34) = (312) = (123) = a_1 \cdot (123)\\
+(12)a_1 &= (12) \cdot 1 = 1 \cdot (12) = a_1 \cdot (12)\\
+(12)a_2 &= (12) \cdot (14) = (142) = (24) \cdot (12) = a_3 \cdot (12)\\
+(12)a_3 &= (12) \cdot (24) = (241) = (124) = (14) \cdot (12) = a_2 \cdot (12)\\
+(12)a_4 &= (12) \cdot (34) = (12)(34) = (34)(12) = a_4 \cdot (12)
+\end{align*}
+
+Now let us fix any $0 \neq \alpha \in \mathbb{C}$ as our basis. Then $\CC S_4 \otimes_{\CC S_3}$ has basis,
+\begin{align*}
+v_1 = a_1 \otimes \alpha, \; \; v_2 = a_2 \otimes \alpha, \; \; v_3 = a_3 \otimes \alpha, \; \; v_4 = a_4 \otimes \alpha
+\end{align*}
+
+By the previous computations, on this basis we have,
+\begin{align*}
+(12)v_1 = (12)a_1 \otimes \alpha &= a_1 \otimes (12)\alpha\\
+&= a_1 \otimes (-\alpha) = -a_1 \otimes \alpha = -v_1
+\end{align*}
+
+\begin{align*}
+(12)v_2 = (12)a_2 \otimes \alpha &= a_3 \otimes (12)\alpha\\
+&= a_3 \otimes (-\alpha) = -a_1 \otimes \alpha = -v_3
+\end{align*}
+
+\begin{align*}
+(12)v_3 = (12)a_3 \otimes \alpha &= a_2 \otimes (12)\alpha\\
+&= a_2 \otimes (-\alpha) = -a_2 \otimes \alpha = -v_2
+\end{align*}
+
+\begin{align*}
+(12)v_4 = (12)a_4 \otimes \alpha &= a_4 \otimes (12)\alpha\\
+&= a_4 \otimes (-\alpha) = -a_4 \otimes \alpha = -v_4
+\end{align*}
+
+So $(12)v_1 = -v_1$, $(12)v_2 = -v_3$, $(12)v_3 = -v_2$, and $(12)v_4 = -v_4$. This yields,
+\begin{align*}
+\rho((12)) = \begin{pmatrix}
+-1 & 0 & 0 & 0\\
+0 & 0 & -1 & 0\\
+0 & -1 & 0 & 0\\
+0 & 0 & 0 & -1
+\end{pmatrix}
+\end{align*}
+
+Now we will compute the action of $(1234)$ on 
+\end{proof}
 
 \vfill
 
@@ -187,7 +298,7 @@ Use the primitive central idempotents of $\CC D_8$ to decompose $V^{\otimes 4}$ 
 
 \smallskip
 
-\textbf{Academic integrity statement:} I \emph{[violated/did not violate]} the CUNY Academic Integrity Policy in completing this assignment. \hfill \emph{[enter your full name as a digital signature here]}
+\textbf{Academic integrity statement:} I \emph{did not violate} the CUNY Academic Integrity Policy in completing this assignment. \hfill \emph{Christopher Hayduk}
 
 \medskip
 \hrule
