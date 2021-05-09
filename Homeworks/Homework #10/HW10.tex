@@ -1,0 +1,257 @@
+\documentclass[11pt, reqno]{amsart}
+\usepackage[margin=1in]{geometry}    
+\geometry{letterpaper}       
+%\geometry{landscape}                % Activate for for rotated page geometry
+\usepackage[parfill]{parskip}    % Activate to begin paragraphs with an empty line rather than an indent
+\usepackage{amsfonts, amscd, amssymb, amsthm, amsmath}
+\usepackage{pdfsync}  %leaves makers for tex searching
+\usepackage{enumerate}
+\usepackage[pdftex,bookmarks]{hyperref}
+
+
+
+%%% Theorems %%%--------------------------------------------------------- 
+\theoremstyle{plain}
+	\newtheorem{thm}{Theorem}[section]
+	\newtheorem{lemma}[thm]{Lemma}
+	\newtheorem{prop}[thm]{Proposition}
+	\newtheorem{cor}[thm]{Corollary}
+\theoremstyle{definition}
+	\newtheorem*{defn}{Definition}
+	\newtheorem{remark}[thm]{Remark}
+\theoremstyle{example}
+	\newtheorem*{example}{Example}
+
+
+%%% Environments %%%--------------------------------------------------------- 
+\newenvironment{ans}{\medskip \paragraph*{\emph{Answer}.}}{\hfill \break  $~\!\!$ \dotfill \medskip }
+\newenvironment{sketch}{\medskip \paragraph*{\emph{Proof sketch}.}}{ \medskip }
+\newenvironment{summary}{\medskip \paragraph*{\emph{Summary}.}}{  \hfill \break  \rule{1.5cm}{0.4pt} \medskip }
+\newcommand\Ans[1]{\hfill \emph{Answer:} {#1}}
+
+
+%%% Pictures %%%--------------------------------------------------------- 
+%%% If you need to draw pictures, tikzpicture is one good option. Here are some basic things I always use:
+\usepackage{tikz}
+\usetikzlibrary{arrows}
+\usetikzlibrary{shapes}
+\tikzstyle{V}=[draw, fill =black, circle, inner sep=0pt, minimum size=2pt]
+\tikzstyle{bV}=[draw, fill =black, circle, inner sep=0pt, minimum size=4pt]
+\newcommand\TikZ[1]{\begin{matrix}\begin{tikzpicture}#1\end{tikzpicture}\end{matrix}}
+
+
+
+
+
+%%% Color  %%%---------------------------------------------------------
+\usepackage{color}
+\newcommand{\NOTE}[1]{{\color{blue}#1}}
+\newcommand{\blue}[1]{{\color{blue}#1}}
+\newcommand{\red}[1]{{\color{red}#1}}
+\newcommand{\MOVED}[1]{{\color{gray}#1}}
+\definecolor{dred}{rgb}{.8,0,.1}
+\definecolor{dgreen}{rgb}{0,.6,.1}
+\definecolor{purple}{rgb}{.6,0,.8}
+\definecolor{dorange}{rgb}{.8,.25,0}
+\definecolor{dyellow}{rgb}{.95,.85,0}
+\definecolor{alert}{rgb}{.8,.25,0}
+
+\newcommand{\gV}[1]{\TikZ{\node[thick, dgreen, rounded corners, draw] at (0,0){#1};}}
+\newcommand{\pV}[1]{\TikZ{\node[thick, purple, rounded corners, draw] at (0,0){#1};}}
+
+
+%%% Alphabets %%%---------------------------------------------------------
+%%% Some shortcuts for my commonly used special alphabets and characters.
+\def\cA{\mathcal{A}}\def\cB{\mathcal{B}}\def\cC{\mathcal{C}}\def\cD{\mathcal{D}}\def\cE{\mathcal{E}}\def\cF{\mathcal{F}}\def\cG{\mathcal{G}}\def\cH{\mathcal{H}}\def\cI{\mathcal{I}}\def\cJ{\mathcal{J}}\def\cK{\mathcal{K}}\def\cL{\mathcal{L}}\def\cM{\mathcal{M}}\def\cN{\mathcal{N}}\def\cO{\mathcal{O}}\def\cP{\mathcal{P}}\def\cQ{\mathcal{Q}}\def\cR{\mathcal{R}}\def\cS{\mathcal{S}}\def\cT{\mathcal{T}}\def\cU{\mathcal{U}}\def\cV{\mathcal{V}}\def\cW{\mathcal{W}}\def\cX{\mathcal{X}}\def\cY{\mathcal{Y}}\def\cZ{\mathcal{Z}}
+
+\def\AA{\mathbb{A}} \def\BB{\mathbb{B}} \def\CC{\mathbb{C}} \def\DD{\mathbb{D}} \def\EE{\mathbb{E}} \def\FF{\mathbb{F}} \def\GG{\mathbb{G}} \def\HH{\mathbb{H}} \def\II{\mathbb{I}} \def\JJ{\mathbb{J}} \def\KK{\mathbb{K}} \def\LL{\mathbb{L}} \def\MM{\mathbb{M}} \def\NN{\mathbb{N}} \def\OO{\mathbb{O}} \def\PP{\mathbb{P}} \def\QQ{\mathbb{Q}} \def\RR{\mathbb{R}} \def\SS{\mathbb{S}} \def\TT{\mathbb{T}} \def\UU{\mathbb{U}} \def\VV{\mathbb{V}} \def\WW{\mathbb{W}} \def\XX{\mathbb{X}} \def\YY{\mathbb{Y}} \def\ZZ{\mathbb{Z}}  
+
+\def\fa{\mathfrak{a}} \def\fb{\mathfrak{b}} \def\fc{\mathfrak{c}} \def\fd{\mathfrak{d}} \def\fe{\mathfrak{e}} \def\ff{\mathfrak{f}} \def\fg{\mathfrak{g}} \def\fh{\mathfrak{h}} \def\fj{\mathfrak{j}} \def\fk{\mathfrak{k}} \def\fl{\mathfrak{l}} \def\fm{\mathfrak{m}} \def\fn{\mathfrak{n}} \def\fo{\mathfrak{o}} \def\fp{\mathfrak{p}} \def\fq{\mathfrak{q}} \def\fr{\mathfrak{r}} \def\fs{\mathfrak{s}} \def\ft{\mathfrak{t}} \def\fu{\mathfrak{u}} \def\fv{\mathfrak{v}} \def\fw{\mathfrak{w}} \def\fx{\mathfrak{x}} \def\fy{\mathfrak{y}} \def\fz{\mathfrak{z}}
+\def\fgl{\mathfrak{gl}}  \def\fsl{\mathfrak{sl}}  \def\fso{\mathfrak{so}}  \def\fsp{\mathfrak{sp}}  
+\def\GL{\mathrm{GL}} \def\SL{\mathrm{SL}}  \def\SP{\mathrm{SL}}
+
+\def\<{\langle} \def\>{\rangle}
+\def\({\<\!\<}\def\){\>\!\>}
+\def\ad{\mathrm{ad}} 
+\def\Aut{\mathrm{Aut}}
+\def\dim{\mathrm{dim}} 
+\def\End{\mathrm{End}} 
+\def\ev{\mathrm{ev}} 
+\def\half{\hbox{$\frac12$}}
+\def\img{\mathrm{img}}
+\def\Ind{\mathrm{Ind}}
+\def\Hom{\mathrm{Hom}} 
+\def\Fn{\mathrm{Fn}} 
+\def\Fr{\mathcal{F}\mathrm{r}}
+\def\hgt{\mathrm{ht}} 
+\def\id{\mathrm{id}} 
+\def\qtr{\mathrm{qtr}} 
+\def\sgn{\mathrm{sgn}}
+\def\supp{\mathrm{supp}}
+\def\tr{\mathrm{tr}} 
+\def\Tor{\mathrm{Tor}} 
+\def\vep{\varepsilon}
+\def\f{\varphi}
+
+\usepackage{mathabx}
+\def\acts{\lefttorightarrow}
+
+
+
+\def\Obj{\mathrm{Obj}}
+\def\normeq{\unlhd}
+\def\Set{{\cS\mathrm{et}}}
+\def\Fin{{\cF\mathrm{inSet}}}
+\def\Set{{\cS\mathrm{et}}}
+\def\Grp{{\cG\mathrm{rp}}}
+\def\Ab{{\cA\mathrm{b}}}
+\def\Mod{{\cM\mathrm{od}}}
+\def\ab{\mathrm{ab}}
+
+\def\Fix{\mathrm{Fix}}
+ \def\triv{\mathrm{triv}}
+ 
+% Arrows:
+\newcommand\xdhrightarrow[2][]{%
+  \mathrel{\ooalign{$\xrightarrow[#1\mkern4mu]{#2\mkern4mu}$\cr%
+  \hidewidth$\rightarrow\mkern4mu$}}
+}
+%\newcommand\dhrightarrow{%
+%  \mathrel{\ooalign{$\rightarrow$\cr%
+%  $\mkern3.5mu\rightarrow$}}
+%}
+\def\dhrightarrow{\twoheadrightarrow}
+\def\dhleftarrow{\twoheadleftarrow}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\def\HW{10}
+\def\DUE{5/14/2021}
+
+\title[Homework \HW]{Homework \HW \\
+Math B4900\\
+\small Due: \DUE}
+\author{}
+%\date{}                                           % Activate to display a given date or no date
+
+\begin{document}
+%\maketitle %%% COMMENT THIS OUT and UNCOMMENT the following to give yourself a good assignment header:
+\begin{flushright}
+Chris Hayduk\\
+Math B4900\\
+Homework \HW\\
+\DUE
+\end{flushright}
+
+
+Let $A$ be a ring with 1.
+\begin{enumerate}[I ]
+\item \textbf{Lie algebras.}
+\begin{enumerate}[1.]
+ \item For $x, y \in M_n(\CC)$, show that the binary operation $[x,y] = xy - yx$ is bilinear, skew symmetric, and satisfies the Jacobi identity. 
+
+\item Show that $\fsl_n(\CC) \subseteq M_n(\CC)$ is, indeed, a closed Lie algebra. \\
+{[Namely, that if $\tr(x) = \tr(y) = 0$, then $\tr(xy-yx) = 0$ and $\tr(x + \alpha y) = 0$ for all $\alpha \in \CC$.]}
+
+
+\item Let $L(d)$ be the simple $\fsl_2(\CC)$-module with dimension $d+1$. Show that for all $d \ge 1$, 
+$$L(d) \otimes L(1) \cong L(d-1) \oplus L(d+1).$$
+{[Recall that we have a canonical action of a Lie algebra $\fg$ on the tensor product of two of its modules (see Hopf algebras).]}
+
+\end{enumerate}
+ 
+\item 
+\textbf{Characters.} Let $G$ be a finite group, and let $A = \CC G$. 
+\begin{enumerate}[1.]
+\item \textbf{Characters and tensor products.} Let 
+$$\rho: A \to \End(U) \quad \text{ and } \psi: A \to \End(V)$$
+be finite-dimensional representations of $A$ (so that $U$ and $V$ are $A$-modules). Let $\cB = \{e_1, \dots, e_m\}$ and $\cB' =\{f_1, \dots, f_n\}$ be ordered bases of $U$ and $V$, respectively. 
+
+For $g \in G$, suppose 
+$$\rho(g) = \sum_{i,j=1}^m \alpha_{i,j}E_{i,j}  = 
+	\begin{pmatrix} 
+			\alpha_{1,1} & \cdots & \alpha_{1,m} \\ 
+			\vdots & \ddots& \vdots \\
+			\alpha_{m,1} & \cdots & \alpha_{m,m} \end{pmatrix} \quad \text{and} \quad 
+	\psi(g) = \sum_{i,j=1}^m \beta_{i,j}E_{i,j}  = 
+	\begin{pmatrix} 
+			\beta_{1,1} & \cdots & \beta_{1,n} \\ 
+			\vdots & \ddots& \vdots \\
+			\beta_{n,1} & \cdots & \beta_{n,n} \end{pmatrix},$$
+with respect to the bases $\cB$ and $\cB'$, respectively. Namely, 
+$$g \cdot e_i = \sum_{\ell=1}^m \alpha_{\ell,i}e_\ell \quad \text{and} \quad g \cdot f_i = \sum_{\ell=1}^n \beta_{\ell,i}f_\ell,$$
+for all $i$. Recall that $\cB \times \cB' = \{e_i \otimes f_j\}$ forms a basis of $U \otimes V$, and put the lexicographic order on it (i.e.\ $\cB \times \cB' = \{e_1 \otimes f_1, e_1 \otimes f_1, \dots, e_1\otimes f_n, e_2 \otimes f_1, \dots, e_m \otimes f_n\}$).
+\begin{enumerate}[(a)]
+\item Compute the action of $g$ on each $e_i \otimes f_j$ for each $i,j$; and give the matrix for $(\rho \otimes \psi)(g)$, with respect to the ordered basis $\cB \times \cB'$, where $\rho \otimes \psi$ is the representation associated to the canonical action of $FG$ on $U \otimes V$.
+\item If 
+\begin{enumerate}[\quad]
+\item $\chi_\rho$ is the character associated to $\rho$, 
+\item $\chi_\psi$ is the character associated to $\psi$, and
+\item $\chi_{\rho\otimes\psi}$ is the character associated to $\rho\otimes \psi$, 
+\end{enumerate}
+use the previous part to prove that $\chi_{\rho\otimes\psi} = \chi_\rho \chi_\psi$.
+
+\item Conclude that the set of characters of $\CC G$ forms a subring of $\mathrm{Cl}(\CC G)$. Does this ring have an identity?
+\end{enumerate}
+
+\item Let $\rho: \CC G \to \End(U)$ be a finite-dimensional representation with character $\chi$. Let $\rho_1, \dots, \rho_r$ be the distinct simple representations of $\CC G$, $V_i$ be the corresponding simple modules, $z_i$ be the corresponding primitive central idempotents, and let $\chi_i$ be their characters. Let $U_i = z_i U  \cong V_i^{\oplus m_i}$ be the isotypic component of $U$ corresponding to $V_i$. Show that $\dim(U_i) = \<\chi,\chi_i\>$. \\
+{[\emph{Hint:} This should be a very short jump from things we proved in class.]}
+
+
+
+
+\item \textbf{Burnside's Lemma.}\label{permutation action} Let $G$ act on a set $\Omega$, and let $\Omega_1, \dots, \Omega_\ell$ be the orbits of $\Omega$. Define $U = \CC \Omega$ (the vector space with basis $\Omega$) and extend the action $G \acts \Omega$ linearly to an action $\CC G \acts U$. Let $\rho: \CC G \to \End(U)$ be the associated representation, and $\chi$ be the associated character. 
+
+Fix $g \in G$. Define 
+$$\Fix(g) = \{ x \in \Omega ~|~ (12) \cdot x = x\} $$
+to be the number of fixed points under the action of $g$ on $\Omega$.  {[For example, if $G = S_4$ acts on naturally $\Omega = \{1,2,3, 4\}$, and $g = (12)$, then $\{ x \in \Omega ~|~ (12) \cdot x = x\} = \{3, 4\}$. See below for more examples.]} 
+\begin{enumerate}[(a)]
+\item Argue that $\chi(g) = |\Fix(g)|$.
+\item Let $U_i = \CC \Omega_i$. Argue briefly that $U \cong U_1 \oplus \cdots \oplus U_\ell$. For each $i$, let $v_i = \sum_{x \in \Omega_i} x$; show that if $gu = u$ for all $g \in G$ then $u \in \CC\{v_1, \dots, v_\ell\}$ (i.e.\ $\CC\{v_1, \dots, v_\ell\}$ is the isotypic component of $U$ corresponding to the trivial module). 
+{[\emph{Hint:} For the second statement, it suffices to look at one $U_i$ at a time: show that for $u_i \in U_i$,  if $g \cdot u_i = u_i$, then $u_i = \alpha v_i$. To do this, use the fact the $G$ acts transitively on $\Omega_i$.]}
+\item Prove that $\ell|G| = \sum_{g \in G} |\Fix(G)|$.\\
+{[This is the statement that's called \emph{Burnside's Lemma}, though it is due to Frobenius. \emph{Hint:} Compute $\<\chi, \triv\>$, where $\triv$ is the character corresponding to the trivial representation (i.e.\ $\triv: g \mapsto 1$ for all $g \in G$).]} 
+\item Compare/contrast Burnside's Lemma to the Orbit-Stabilizer Theorem.
+\end{enumerate}
+\end{enumerate}
+\end{enumerate}
+
+\vfill
+\pagebreak
+
+Examples for \ref{permutation action}: 
+\begin{enumerate}
+\item The group $S_n$ acts naturally on $\Omega = \{1, \dots, n\}$; the resulting representation is the permutation representation of $S_n$. Specifically, when $n = 3$, the fixed points of each element $g \in S_3$ are given by 
+$$\def\arraystretch{1.3}\begin{array}{|c||c|c|c|c|c|c|}\hline
+h & 1 & (12) & (23) & (13) & (123) & (132) \\\hline\hline
+\Fix(h) &1,2,3 & 3 & 2 & 1 & \text{none}& \text{none}\\\hline
+|\Fix(h)| & 3 & 1 & 1 & 1 & 0 & 0\\\hline
+\end{array}$$
+Here, $S_3$ acts transitively on $\Omega$, so has exactly $\ell = 1$ orbits. And indeed, $3 + 1 + 1 + 1 = 6 = \ell|S_3|$. 
+
+\item Let $Z_6 = \<g\>$ act on $\Omega = \{e_1, \dots,  e_6\}$ by 
+$$\TikZ{[xscale=1.2] \foreach \x/\y in {1/0,2/1,3/0}{\node (\x) at (\x,\y) {$\mathbf{e_\x}$};} 
+	\draw[->] (1) to [bend left] node[above left]{$g$} (2);
+	\draw[->] (2) to [bend left] node[above right]{$g$} (3);
+	\draw[->] (3) to [bend left] node[above]{$g$} (1);
+	\foreach \x/\y in {4/1.5, 5/2.5}{\node (\x) at (\y,-1.5) {$\mathbf{e_\x}$};} 
+	\draw[<->] (4) to node[above]{$g$} (5); 
+	\node (6) at (2.5,-3) {$\mathbf{e_6}$}; \draw[->] (6) ..  controls +(-.75,-.5) and +(-.75,.5) .. node[left]{$g$}(6);
+	}\ .
+\qquad\qquad\text{Then} \quad  \rho(g) = \begin{pmatrix} 0 & 0 & 1 & 0& 0& 0\\1 & 0 & 0& 0& 0& 0\\0&1&0& 0& 0& 0\\0 & 0 & 0 & 0 & 1& 0\\ 0 & 0 & 0 & 1 & 0 & 0 \\ 0 & 0 & 0 & 0 & 0 & 1\end{pmatrix}. \qquad
+$$
+Here, the orbits are $\Omega_1 = \{e_1, e_2, e_3\}$, $\Omega_2 = \{e_4, e_5\}$, and $\Omega_3 = \{e_6\}$ (since the group is generated by $g$ alone), and 
+$$U \cong U_1 \oplus U_2 \oplus U_3, \quad \text{where} \quad U_1=\CC\{e_1, e_2, e_3\},\ U_2=\CC\{e_4, e_5\},\ U_3 = \{e_6\}.$$
+And $v_1 = e_1 + e_2 + e_3$, $v_2 = e_4 + e_5$, and $v_3 = e_6$ generate the isotypic component corresponding to the trivial module inside of $U$. 
+
+Further, the fixed points of each element of $Z_6$ are given by 
+$$\def\arraystretch{1.3}\begin{array}{|c||c|c|c|c|c|c|}\hline
+h & 1 & g & g^2 & g^3 & g^4 & g^5 \\\hline\hline
+\Fix(h) & \Omega & e_6 & e_4, e_5, e_6 & e_1, e_2, e_3, e_6 & e_4, e_5, e_6 & e_6\\\hline
+|\Fix(h)| & 6 & 1 & 3 &4 & 3 & 1\\\hline
+\end{array}$$
+Indeed, the number of orbits here is $\ell = 3$, and $6+1+3+4+3+1 = 3*6 = \ell|Z_6|$. 
+\end{enumerate}
+\end{document}
