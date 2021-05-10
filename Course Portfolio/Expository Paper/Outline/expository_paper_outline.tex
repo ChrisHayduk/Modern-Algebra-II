@@ -1,0 +1,224 @@
+\documentclass[11pt, a4paper, oneside]{article}
+\usepackage[margin=1in]{geometry}    
+\geometry{letterpaper}       
+%\geometry{landscape}                % Activate for for rotated page geometry
+\usepackage[parfill]{parskip}    % Deactivate to begin paragraphs with an indent rather than an empty line
+\usepackage{amsfonts, amscd, amssymb, amsthm, amsmath}
+\usepackage{pdfsync}  %leaves makers for tex searching
+\usepackage{enumerate}
+\usepackage{multicol}
+\usepackage[pdftex,bookmarks]{hyperref}
+\usepackage{enumitem}
+
+
+\setlength\parindent{0pt}
+
+%%% Theorems %%%--------------------------------------------------------- 
+\theoremstyle{plain}
+	\newtheorem{thm}{Theorem}[section]
+	\newtheorem{lemma}[thm]{Lemma}
+	\newtheorem{prop}[thm]{Proposition}
+	\newtheorem{cor}[thm]{Corollary}
+\theoremstyle{definition}
+	\newtheorem*{defn}{Definition}
+	\newtheorem{remark}{Remark}
+\theoremstyle{example}
+	\newtheorem*{example}{Example}
+
+
+%%% Environments %%%--------------------------------------------------------- 
+\newenvironment{ans}{\color{black}\medskip \paragraph*{\emph{Answer}.}}{\hfill \break  $~\!\!$ \dotfill \medskip }
+\newenvironment{sketch}{\medskip \paragraph*{\emph{Proof sketch}.}}{ \medskip }
+\newenvironment{summary}{\medskip \paragraph*{\emph{Summary}.}}{  \hfill \break  \rule{1.5cm}{0.4pt} \medskip }
+\newcommand\Ans[1]{\color{black}\hfill \emph{Answer:} {#1}}
+
+
+%%% Pictures %%%--------------------------------------------------------- 
+%%% If you need to draw pictures, tikzpicture is one good option. Here are some basic things I always use:
+\usepackage{tikz}
+\usetikzlibrary{arrows}
+\tikzstyle{V}=[draw, fill =black, circle, inner sep=0pt, minimum size=2pt]
+\newcommand\TikZ[1]{\begin{matrix}\begin{tikzpicture}#1\end{tikzpicture}\end{matrix}}
+
+
+
+%%% Color  %%%---------------------------------------------------------
+\usepackage{color}
+\newcommand{\blue}[1]{{\color{blue}#1}}
+\newcommand{\NOTE}[1]{{\color{blue}#1}}
+\newcommand{\MOVED}[1]{{\color{gray}#1}}
+
+
+%%% Alphabets %%%---------------------------------------------------------
+%%% Some shortcuts for my commonly used special alphabets and characters.
+\def\cA{\mathcal{A}}\def\cB{\mathcal{B}}\def\cC{\mathcal{C}}\def\cD{\mathcal{D}}\def\cE{\mathcal{E}}\def\cF{\mathcal{F}}\def\cG{\mathcal{G}}\def\cH{\mathcal{H}}\def\cI{\mathcal{I}}\def\cJ{\mathcal{J}}\def\cK{\mathcal{K}}\def\cL{\mathcal{L}}\def\cM{\mathcal{M}}\def\cN{\mathcal{N}}\def\cO{\mathcal{O}}\def\cP{\mathcal{P}}\def\cQ{\mathcal{Q}}\def\cR{\mathcal{R}}\def\cS{\mathcal{S}}\def\cT{\mathcal{T}}\def\cU{\mathcal{U}}\def\cV{\mathcal{V}}\def\cW{\mathcal{W}}\def\cX{\mathcal{X}}\def\cY{\mathcal{Y}}\def\cZ{\mathcal{Z}}
+
+\def\AA{\mathbb{A}} \def\BB{\mathbb{B}} \def\CC{\mathbb{C}} \def\DD{\mathbb{D}} \def\EE{\mathbb{E}} \def\FF{\mathbb{F}} \def\GG{\mathbb{G}} \def\HH{\mathbb{H}} \def\II{\mathbb{I}} \def\JJ{\mathbb{J}} \def\KK{\mathbb{K}} \def\LL{\mathbb{L}} \def\MM{\mathbb{M}} \def\NN{\mathbb{N}} \def\OO{\mathbb{O}} \def\PP{\mathbb{P}} \def\QQ{\mathbb{Q}} \def\RR{\mathbb{R}} \def\SS{\mathbb{S}} \def\TT{\mathbb{T}} \def\UU{\mathbb{U}} \def\VV{\mathbb{V}} \def\WW{\mathbb{W}} \def\XX{\mathbb{X}} \def\YY{\mathbb{Y}} \def\ZZ{\mathbb{Z}}  
+
+\def\fa{\mathfrak{a}} \def\fb{\mathfrak{b}} \def\fc{\mathfrak{c}} \def\fd{\mathfrak{d}} \def\fe{\mathfrak{e}} \def\ff{\mathfrak{f}} \def\fg{\mathfrak{g}} \def\fh{\mathfrak{h}} \def\fj{\mathfrak{j}} \def\fk{\mathfrak{k}} \def\fl{\mathfrak{l}} \def\fm{\mathfrak{m}} \def\fn{\mathfrak{n}} \def\fo{\mathfrak{o}} \def\fp{\mathfrak{p}} \def\fq{\mathfrak{q}} \def\fr{\mathfrak{r}} \def\fs{\mathfrak{s}} \def\ft{\mathfrak{t}} \def\fu{\mathfrak{u}} \def\fv{\mathfrak{v}} \def\fw{\mathfrak{w}} \def\fx{\mathfrak{x}} \def\fy{\mathfrak{y}} \def\fz{\mathfrak{z}}
+\def\fgl{\mathfrak{gl}}  \def\fsl{\mathfrak{sl}}  \def\fso{\mathfrak{so}}  \def\fsp{\mathfrak{sp}}  
+\def\GL{\mathrm{GL}} \def\SL{\mathrm{SL}}  \def\SP{\mathrm{SL}}
+
+\def\<{\langle} \def\>{\rangle}
+\usepackage{mathabx}
+\def\acts{\lefttorightarrow}
+\def\ad{\mathrm{ad}} 
+\def\Aut{\mathrm{Aut}}
+\def\Ann{\mathrm{Ann}}
+\def\dim{\mathrm{dim}} 
+\def\End{\mathrm{End}} 
+\def\ev{\mathrm{ev}} 
+\def\Fr{\mathcal{F}\mathrm{r}}
+\def\half{\hbox{$\frac12$}}
+\def\Hom{\mathrm{Hom}} 
+\def\id{\mathrm{id}} 
+\def\sgn{\mathrm{sgn}}  
+\def\supp{\mathrm{supp}}  
+\def\Tor{\mathrm{Tor}}
+\def\tr{\mathrm{tr}} 
+\def\vep{\varepsilon}
+\def\f{\varphi}
+
+
+\def\Obj{\mathrm{Obj}}
+\def\normeq{\unlhd}
+\def\Set{{\cS\mathrm{et}}}
+\def\Fin{{\cF\mathrm{inSet}}}
+\def\Set{{\cS\mathrm{et}}}
+\def\Grp{{\cG\mathrm{rp}}}
+\def\Ab{{\cA\mathrm{b}}}
+\def\Mod{{\cM\mathrm{od}}}
+\def\ab{\mathrm{ab}}
+\def\lcm{\mathrm{lcm}}
+\def\ZZn{\ZZ/n\ZZ}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{document}
+\title{Expository Paper Outline: Lie Algebra - Representations of $sl(2; \CC)$}
+\author{Chris Hayduk}
+\date{May 9, 2021}
+\maketitle
+
+\begin{abstract}
+Abstract goes here
+\end{abstract}
+
+\newpage
+\section{Lie Groups}
+
+\subsection{Introduction}
+
+General description of Lie Groups: 
+\begin{enumerate}
+\item \cite{liegroupwiki}
+
+\item \cite[Section 1.1]{stillwell}
+
+\item \cite[Section 1.6]{stillwell}
+\end{enumerate}
+
+Basic definitions of Lie Groups:
+\begin{enumerate}
+\item \cite{liegroupwiki}
+
+\item \cite[Section 1.1]{hall}
+
+\item \cite[Section 1.5]{hall}
+\end{enumerate}
+
+\subsection{Matrix Lie Groups}
+
+Matrix lie group examples: \cite[Section 1.2]{hall} 
+
+Exponential of a matrix:
+\begin{enumerate}
+\item \cite[Section 2.1]{hall}
+
+\item \cite[Section 2.2]{hall} - Example 2.5
+
+\end{enumerate} 
+
+\newpage
+\section{Lie Algebras}
+
+\subsection{Introduction}
+
+Overview of Lie Algebras: \cite{liealgebrawiki}
+
+Motivation for Lie Algebras: \cite[Section 8.1]{fulton}
+
+\subsection{Basic Definitions}
+
+Definitions and examples:
+\begin{enumerate}
+\item \cite[Section 8.1]{fulton}
+
+\item \cite[Section 3.1]{hall}
+\end{enumerate}
+
+\subsection{Lie Algebra of a Matrix Lie Group}
+
+Definitions and theorem: \cite[Section 3.3]{hall}
+
+Examples: \cite[Section 3.4]{hall}
+
+\subsection{The Exponential Map}
+
+Define exponential map: \cite[Section 3.7]{hall}
+
+State theorems regarding exponential map: \cite[Section 3.7]{hall}
+
+Compute the exponential map onto SO(2): \cite[Section 4.1]{stillwell}
+
+
+\subsection{Classification of Lie Algebras}
+
+\cite[Chapter 9]{fulton}
+
+\newpage
+
+\section{Representations of $sl(2; \CC)$}
+
+Discuss complexification of $su(2)$ and that $su(2)$ is isomorphic to $so(3)$: \cite[Section 4.6]{hall}
+
+Discuss physical significance of the representations:
+\begin{enumerate}
+\item \cite[Section 4.6]{hall}
+
+\item \cite[Section 5]{liegroupwiki}
+
+\item \cite[Section 4.4]{liealgebrawiki}
+\end{enumerate}
+
+Basis of $sl(2; \CC)$: \cite[Section 4.6]{hall}
+
+Characterize irreducible representations: \cite[Section 11.1]{fulton}
+
+\newpage
+\section{Conclusion}
+
+Summarize key ideas here.
+
+\newpage
+\begin{thebibliography}{9}
+
+\bibitem{fulton}
+Fulton, William, and Joe Harris. \textit{Representation Theory: A First Course}. Springer, 2004. 
+
+\bibitem{hall}
+Hall, Brian C. \textit{Lie Groups, Lie Algebras, and Representations: An Elementary Introduction}. Springer, 2016.  
+
+\bibitem{liealgebrawiki}
+“Lie Algebra.” \textit{Wikipedia}, Wikimedia Foundation, 16 Apr. 2021, \\ en.wikipedia.org/wiki/Lie\_algebra. 
+
+\bibitem{liegroupwiki}
+“Lie Group.” \textit{Wikipedia}, Wikimedia Foundation, 21 Apr. 2021, \\ en.wikipedia.org/wiki/Lie\_algebra. 
+
+\bibitem{stillwell}
+Stillwell, John. \textit{Naive Lie Theory}. Springer, 2012. 
+
+\end{thebibliography}
+\end{document}
