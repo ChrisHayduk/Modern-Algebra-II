@@ -97,7 +97,7 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \def\HW{5}
-\def\DUE{04/06/2021}
+\def\DUE{05/25/2021}
 
 \title[Homework \HW]{Homework \HW \\
 Math A4900/44900\\
@@ -109,7 +109,7 @@ Math A4900/44900\\
 \begin{flushright}
 Chris Hayduk\\
 Math B4900\\
-Course Summary: First Draft\\
+Course Summary\\
 \DUE
 \end{flushright}
 
@@ -343,22 +343,101 @@ Jordan Canonical Form allows us to ``simplify'' matrices, putting them into a fo
 \item A \textit{Jordan canonical form} for a linear transformation $T$ is a matrix representing $T$ which is in Jordan canonical form
 \end{enumerate}
 
+That is, a matrix $J$ is in Jordan canonical form if it is constructed as follows,
+\begin{align*}
+J = \begin{bmatrix}
+J_1 & \;     & \; \\
+\;  & \ddots & \; \\ 
+\;  & \;     & J_p\end{bmatrix}
+\end{align*}
+
+where each block $J_i$ is a square matrix of the form,
+\begin{align*}
+J_i = \begin{bmatrix}
+\lambda_i & 1            & \;     & \;  \\
+\;        & \lambda_i    & \ddots & \;  \\
+\;        & \;           & \ddots & 1   \\
+\;        & \;           & \;     & \lambda_i       
+\end{bmatrix}
+\end{align*}
+
 \par
-\textbf{Theorem.} Let $V$ be a finite dimensional vector space over the field $F$ and let $T$ be a linear transformation of $V$. Assume $F$ contains all the eigenvalues of $T$/
+\textbf{Theorem.} Let $V$ be a finite dimensional vector space over the field $F$ and let $T$ be a linear transformation of $V$. Assume $F$ contains all the eigenvalues of $T$:
 \begin{enumerate}
 \item There is a basis for $V$ with respect to which the matrix for $T$ is in Jordan canonical form, i.e., is a block diagonal matrix whose diagonal blocks are the Jordan blocks for the elementary divisors of $V$
 \item The Jordan canonical form for $T$ is unique up to a permutation of the Jordan blocks along the diagonal
 \end{enumerate}
 
-\subsection{Lang Topics}
+\subsection{The Group of Homomorphisms}
 
-\subsubsection{The Group of Homomorphisms}
+We have that a pair of homomorphisms is said to be exact if $$X \xrightarrow{\varphi} Y \xrightarrow{\psi} Z$$ if $\text{img}(\varphi) = \ker(\psi)$. This definition may seem a bit esoteric, so we'll present an example here in order to illustrate things better:
+\begin{align*}
+\ZZ \xrightarrow{2x} \ZZ \xrightarrow{x \mod 2} \ZZ/2\ZZ
+\end{align*}
 
-We have that a pair of homomorphisms is said to be exact if $$X \xrightarrow{\varphi} Y \xrightarrow{\psi} Z$$ if $\text{img}(\varphi) = \ker(\psi)$. We can now present a relationship between exact sequences of modules and of the associated homomorphism groups \cite[\S 2.2, p. 122]{lang}:
+We see that the map $2x$ has the image $2\ZZ$. Moreover, the kernel of $x \mod 2$ is precisely $2\ZZ$ as well because every even integer modulo 2 is equal to $0$. Hence, we have that this sequence is exact.
+
+\par
+We can now define a special case of an exact sequence \cite[\S 10.5, p.379]{dummit}:
+
+\par
+\textbf{Definition:} The exact sequence $$0 \rightarrow A \xrightarrow{\psi} B \xrightarrow{\phi} \rightarrow C \rightarrow 0$$ is called a \textit{short exact sequence}.
+
+\par
+We can extend our exact sequence from above to a short exact sequence as follows,
+\begin{align*}
+0 \rightarrow \ZZ \xrightarrow{2x} \ZZ \xrightarrow{x \mod 2} \ZZ/2\ZZ \rightarrow 0
+\end{align*}
+
+\par
+We can now present two similar relationships between exact sequences of modules and of the associated homomorphism groups \cite[\S 2.2, p. 122]{lang}:
 
 \par
 \textbf{Proposition.} A sequence 
-$$X' \xrightarrow{\lambda} X \to X'' \to 0$$ is exact if and only if the sequence $$Hom_A(X', Y) \leftarrow Hom_A(X, Y) \leftarrow  Hom_A(X'', Y) \leftarrow 0$$ is exact for all $Y$.
+$$X' \xrightarrow{\lambda} X \to X'' \to 0$$ is exact if and only if the sequence $$\Hom_A(X', Y) \leftarrow \Hom_A(X, Y) \leftarrow  \Hom_A(X'', Y) \leftarrow 0$$ is exact for all $Y$.
+
+\par
+Similarly, we have,
+
+\par
+\textbf{Proposition.} A sequence $$0 \rightarrow Y' \rightarrow Y \rightarrow Y'',$$ is exact if and only if $$0 \rightarrow \Hom_A(X, Y') \rightarrow \Hom_A(X, Y) \rightarrow \Hom_A(X, Y'')$$ is exact for all $X$.
+
+\par
+In addition, we have the notion of a split short exact sequence \cite[Lec 10, p.6]{dau}:
+
+\par
+\textbf{Definition:} An SES $0 \rightarrow X \xrightarrow{f} Y \xrightarrow{g} Z \rightarrow 0$ of $A$-modules is said to be \textit{split} if there is \textit{some} $Z' \subset Y$ satisfying,
+\begin{enumerate}
+\item $Y = f(X) + Z'$
+\item $f(X) \cap Z' = 0$, and
+\item $g|_{Z'}$ is an isomorphism.
+\end{enumerate}
+
+So $Y \cong f(X) \oplus Z'$, and that isomorphism preserves the splitting.
+
+\par
+From the same lecture, we have two examples demonstrating a difference between split and non-split short exact sequences, given by \cite[Lec 10, p.7]{dau}:,
+\begin{align}
+0 \rightarrow \ZZ \xrightarrow{x \mapsto (x,0)} \ZZ \oplus \ZZ/n\ZZ \xrightarrow{(x,y) \mapsto y} \ZZ/n\ZZ \rightarrow 0
+\end{align}
+
+and,
+
+\begin{align}
+0 \rightarrow \ZZ \xrightarrow{x \mapsto nz} \ZZ \xrightarrow{x \mapsto x + n\ZZ} \ZZ/n\ZZ \rightarrow 0
+\end{align}
+
+are both exact, but (1) is split and (2) is not.
+
+\newpage
+\subsection{Module Decompositions}
+
+\subsubsection{Finding Module Decompositions}
+
+\subsubsection{Decomposition of $\CC S_3$}
+
+\subsubsection{Failing to Find Module Decompositions}
+
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -372,6 +451,9 @@ $$X' \xrightarrow{\lambda} X \to X'' \to 0$$ is exact if and only if the sequenc
 
 \bibitem{dummit}
 Dummit, David Steven., and Richard M. Foote. \textit{Abstract Algebra}. 3rd ed., John Wiley \& Sons, 2004. 
+
+\bibitem{dau}
+Daugherty, Zajj. \textit{Math B4900: Modern Algebra II}, Lecture Notes, 2021.
 
 \bibitem{lang}
 Lang, Serge. \textit{Algebra}. Springer-Verlag New York Inc., 2012. 

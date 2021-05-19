@@ -1,0 +1,574 @@
+\documentclass[11pt, reqno]{amsart}
+\usepackage[margin=1in]{geometry}    
+\geometry{letterpaper}       
+%\geometry{landscape}                % Activate for for rotated page geometry
+\usepackage[parfill]{parskip}    % Deactivate to begin paragraphs with an indent rather than an empty line
+\usepackage{amsfonts, amscd, amssymb, amsthm, amsmath}
+\usepackage{pdfsync}  %leaves makers for tex searching
+\usepackage{enumerate}
+\usepackage{multicol}
+\usepackage[pdftex,bookmarks]{hyperref}
+
+
+
+
+%%% Theorems %%%--------------------------------------------------------- 
+\theoremstyle{plain}
+	\newtheorem{thm}{Theorem}[section]
+	\newtheorem{lemma}[thm]{Lemma}
+	\newtheorem{prop}[thm]{Proposition}
+	\newtheorem{cor}[thm]{Corollary}
+\theoremstyle{definition}
+	\newtheorem*{defn}{Definition}
+	\newtheorem{remark}{Remark}
+\theoremstyle{example}
+	\newtheorem*{example}{Example}
+
+
+%%% Environments %%%--------------------------------------------------------- 
+\newenvironment{ans}{\color{black}\medskip \paragraph*{\emph{Answer}.}}{\hfill \break  $~\!\!$ \dotfill \medskip }
+\newenvironment{sketch}{\medskip \paragraph*{\emph{Proof sketch}.}}{ \medskip }
+\newenvironment{summary}{\medskip \paragraph*{\emph{Summary}.}}{  \hfill \break  \rule{1.5cm}{0.4pt} \medskip }
+\newcommand\Ans[1]{\color{black}\hfill \emph{Answer:} {#1}}
+
+
+%%% Pictures %%%--------------------------------------------------------- 
+%%% If you need to draw pictures, tikzpicture is one good option. Here are some basic things I always use:
+\usepackage{tikz}
+\usetikzlibrary{arrows}
+\tikzstyle{V}=[draw, fill =black, circle, inner sep=0pt, minimum size=2pt]
+\newcommand\TikZ[1]{\begin{matrix}\begin{tikzpicture}#1\end{tikzpicture}\end{matrix}}
+
+
+
+%%% Color  %%%---------------------------------------------------------
+\usepackage{color}
+\newcommand{\blue}[1]{{\color{blue}#1}}
+\newcommand{\NOTE}[1]{{\color{blue}#1}}
+\newcommand{\MOVED}[1]{{\color{gray}#1}}
+
+
+%%% Alphabets %%%---------------------------------------------------------
+%%% Some shortcuts for my commonly used special alphabets and characters.
+\def\cA{\mathcal{A}}\def\cB{\mathcal{B}}\def\cC{\mathcal{C}}\def\cD{\mathcal{D}}\def\cE{\mathcal{E}}\def\cF{\mathcal{F}}\def\cG{\mathcal{G}}\def\cH{\mathcal{H}}\def\cI{\mathcal{I}}\def\cJ{\mathcal{J}}\def\cK{\mathcal{K}}\def\cL{\mathcal{L}}\def\cM{\mathcal{M}}\def\cN{\mathcal{N}}\def\cO{\mathcal{O}}\def\cP{\mathcal{P}}\def\cQ{\mathcal{Q}}\def\cR{\mathcal{R}}\def\cS{\mathcal{S}}\def\cT{\mathcal{T}}\def\cU{\mathcal{U}}\def\cV{\mathcal{V}}\def\cW{\mathcal{W}}\def\cX{\mathcal{X}}\def\cY{\mathcal{Y}}\def\cZ{\mathcal{Z}}
+
+\def\AA{\mathbb{A}} \def\BB{\mathbb{B}} \def\CC{\mathbb{C}} \def\DD{\mathbb{D}} \def\EE{\mathbb{E}} \def\FF{\mathbb{F}} \def\GG{\mathbb{G}} \def\HH{\mathbb{H}} \def\II{\mathbb{I}} \def\JJ{\mathbb{J}} \def\KK{\mathbb{K}} \def\LL{\mathbb{L}} \def\MM{\mathbb{M}} \def\NN{\mathbb{N}} \def\OO{\mathbb{O}} \def\PP{\mathbb{P}} \def\QQ{\mathbb{Q}} \def\RR{\mathbb{R}} \def\SS{\mathbb{S}} \def\TT{\mathbb{T}} \def\UU{\mathbb{U}} \def\VV{\mathbb{V}} \def\WW{\mathbb{W}} \def\XX{\mathbb{X}} \def\YY{\mathbb{Y}} \def\ZZ{\mathbb{Z}}  
+
+\def\fa{\mathfrak{a}} \def\fb{\mathfrak{b}} \def\fc{\mathfrak{c}} \def\fd{\mathfrak{d}} \def\fe{\mathfrak{e}} \def\ff{\mathfrak{f}} \def\fg{\mathfrak{g}} \def\fh{\mathfrak{h}} \def\fj{\mathfrak{j}} \def\fk{\mathfrak{k}} \def\fl{\mathfrak{l}} \def\fm{\mathfrak{m}} \def\fn{\mathfrak{n}} \def\fo{\mathfrak{o}} \def\fp{\mathfrak{p}} \def\fq{\mathfrak{q}} \def\fr{\mathfrak{r}} \def\fs{\mathfrak{s}} \def\ft{\mathfrak{t}} \def\fu{\mathfrak{u}} \def\fv{\mathfrak{v}} \def\fw{\mathfrak{w}} \def\fx{\mathfrak{x}} \def\fy{\mathfrak{y}} \def\fz{\mathfrak{z}}
+\def\fgl{\mathfrak{gl}}  \def\fsl{\mathfrak{sl}}  \def\fso{\mathfrak{so}}  \def\fsp{\mathfrak{sp}}  
+\def\GL{\mathrm{GL}} \def\SL{\mathrm{SL}}  \def\SP{\mathrm{SL}}
+
+\def\<{\langle} \def\>{\rangle}
+\usepackage{mathabx}
+\def\acts{\lefttorightarrow}
+\def\ad{\mathrm{ad}} 
+\def\Aut{\mathrm{Aut}}
+\def\Ann{\mathrm{Ann}}
+\def\dim{\mathrm{dim}} 
+\def\End{\mathrm{End}} 
+\def\ev{\mathrm{ev}} 
+\def\Fr{\mathcal{F}\mathrm{r}}
+\def\half{\hbox{$\frac12$}}
+\def\Hom{\mathrm{Hom}} 
+\def\id{\mathrm{id}} 
+\def\sgn{\mathrm{sgn}}  
+\def\supp{\mathrm{supp}}  
+\def\Tor{\mathrm{Tor}}
+\def\tr{\mathrm{tr}} 
+\def\vep{\varepsilon}
+\def\f{\varphi}
+
+
+\def\Obj{\mathrm{Obj}}
+\def\normeq{\unlhd}
+\def\Set{{\cS\mathrm{et}}}
+\def\Fin{{\cF\mathrm{inSet}}}
+\def\Set{{\cS\mathrm{et}}}
+\def\Grp{{\cG\mathrm{rp}}}
+\def\Ab{{\cA\mathrm{b}}}
+\def\Mod{{\cM\mathrm{od}}}
+\def\ab{\mathrm{ab}}
+\def\lcm{\mathrm{lcm}}
+\def\ZZn{\ZZ/n\ZZ}
+
+
+\newcommand{\ProblemID}[2]{{\def\arraystretch{1.5}
+	\begin{tabular}{|lr|}\hline
+	Problem: & \bf #1\\\hline
+	No.\ stars:& \bf #2\\\hline\end{tabular}}}
+
+
+\newcommand{\Rubric}[1]{$~$\\\vfill \hfill{\def\arraystretch{1.75}\begin{tabular} {|c|c|} \hline
+#1 & Points Possible  \\ \hline \hline
+complete & \hspace{3mm} 0 \hspace{3mm} 1 \hspace{3mm} 2 \hspace{3mm} 
+			3 \hspace{3mm} 4 \hspace{3mm} 5 \hspace{3mm} \\ \hline
+mathematically valid & \hspace{3mm} 0 \hspace{3mm} 1 \hspace{3mm} 2 \hspace{3mm} 
+			3 \hspace{3mm} 4 \hspace{3mm} 5 \hspace{3mm} \\ \hline
+readable/fluent & \hspace{3mm} 0 \hspace{3mm} 1 \hspace{3mm} 2 \hspace{3mm} 
+			3 \hspace{3mm} 4 \hspace{3mm} 5 \hspace{3mm} \\ \hline
+Total:& \qquad\qquad\qquad(out of 15)\\
+\hline
+\end{tabular}}
+\pagebreak}
+
+
+
+
+\def\NAME{Chris Hayduk}%replace "YOUR-NAME" with your full name.
+
+
+
+\title{Final proofs portfolio}
+\author{}
+\usepackage{fancyhdr}
+\pagestyle{fancy}
+\fancyhf{}
+\rhead{\NAME}
+\lhead{Final proofs portfolio}
+\rfoot{\thepage}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+
+\begin{document}
+\begin{flushright}
+\NAME
+\\\smallskip
+Math B4900\\
+Final proofs portfolio\\
+May 25, 2020
+\end{flushright}
+
+\vspace{1in}
+{\def\arraystretch{1.5}
+\begin{center}
+\begin{tabular}{|c|c||c|c|}\hline
+\textbf{Problem} & $\quad$\textbf{$\star$s}$\quad$ & \textbf{Points} & \textbf{Tot}\\\hline\hline
+	% Include lines per problem that you complete (adding more if needed),
+	% replacing "0X" with the problem number, and 
+	% ??? with the number of stars. For example,
+	% 4A 	& 2 	&&\\\hline
+	1C 	& 2 	&&\\\hline
+	2B 	& 2 	&&\\\hline
+	3B 	& 1 	&&\\\hline
+	5A 	& 2 	&&\\\hline
+	6A 	& 2 	&&\\\hline
+	6C 	& 2 	&&\\\hline
+	8B 	& 1 	&&\\\hline
+	8C 	& 2 	&&\\\hline
+	9A 	& 2 	&&\\\hline
+	%%%
+\hline&&&$\qquad\qquad$\\\hline
+\end{tabular}
+\end{center}}
+
+
+\vfill
+
+
+
+
+\pagebreak
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%% Copy and past one of these %%%%%%%%%
+%%%%%%%%% for each problem you rewrite %%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+\hbox{\begin{minipage}{5in}
+\noindent {\bf Statement:} 
+Let $F$ be a field and $V$ be a vector space over $F$. Fix $\f \in \End(V)$. For $\lambda \in F$, prove that the weight space $V_\lambda$ and the generalized weight space $V^\lambda$ are both subspaces of $V$. 
+\end{minipage} \hspace{.3in} {\begin{minipage}{1.1in}
+\ProblemID
+		{1C}%PUT PROBLEM NUMBER HERE, e.g. 4A in place of 0X.
+		{2}%PUT NUMBER OF STARS HERE, e.g. 2 in place of 0.
+\end{minipage}}}
+
+\begin{proof}
+Let $F$ be a field and $V$ be a vector space over $F$. Fix $\lambda \in F$. By definition, every $v \in V_{\lambda}$ is also an element of $V$. Hence, we have $V_{\lambda} \subset V$. Now observe that $\lambda 0 = 0$ for any $\lambda \in F$. Hence, $0 \in V_{\lambda}$ and thus $V_\lambda$ is non-empty. Now, by the submodule criterion, we just need to show that $x + ry \in V_{\lambda}$ for all $r \in F$ and for all $x, y \in V_{\lambda}$. Let us start by applying $\varphi$ to this element and using the properties of the linearity of $\varphi$,
+\begin{align*}
+\varphi(x + ry) &= \varphi(x) + r\varphi(y)\\
+&= \lambda x + r \lambda y\\
+&= \lambda (x + ry)
+\end{align*}
+
+Hence, $x + ry \in V_{\lambda}$ and so $V_{\lambda}$ is a subspace of $V$.\\
+
+By definition, every $v \in V^{\lambda}$ is also an element of $V$. Hence, we have $V^{\lambda} \subset V$. Now observe that, for any $\lambda \in F$,
+\begin{align*}
+&\f(v) = \lambda 0 = 0v = 0\\
+\iff &(\f - \lambda \cdot \id)(0) = 0
+\end{align*} 
+
+Hence, $0 \in V^{\lambda}$ and thus $V^\lambda$ is non-empty. Again, by the submodule criterion, we just need to show that $x + ry \in V^{\lambda}$ for all $r \in F$ and for all $x, y \in V^{\lambda}$. Since, $x, y \in V^{\lambda}$, we have that 
+\begin{align*}
+(\f - \lambda \cdot \id)^{\ell}(x) &= 0\\
+(\f - \lambda \cdot \id)^{m}(y) &= 0
+\end{align*}
+
+Let $k = \max\{\ell, m\}$. Then by the fact that if $(\f - \lambda \cdot \id)^m (v) = 0$, then $(\f - \lambda \cdot \id)^n v = 0$ for all integers $n \ge m$ and by the fact that linear combinations and compositions of linear functions are linear, we have that,
+\begin{align*}
+(\f - \lambda \cdot \id)^k (x + ry) &= (\f - \lambda \cdot \id)^k(x) + r (\f - \lambda \cdot \id)^k(y)\\
+&= 0 + r0\\
+&= 0
+\end{align*}
+
+Hence, $x + ry \in V^{\lambda}$ and so $V^{\lambda}$ is also a subspace of $V$.
+\end{proof}
+
+\Rubric{}
+
+\newpage
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%% Copy and past one of these %%%%%%%%%
+%%%%%%%%% for each problem you rewrite %%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\hbox{\begin{minipage}{5in}
+\noindent {\bf Statement:} 
+Prove that determinant is invariant under change of basis. {[The details required in this proof are outlined in Homework 2; be sure to hit all the beats highlighted in that problem statement.]} 
+\end{minipage} \hspace{.3in} {\begin{minipage}{1.1in}
+\ProblemID
+		{2B}%PUT PROBLEM NUMBER HERE, e.g. 4A in place of 0X.
+		{2}%PUT NUMBER OF STARS HERE, e.g. 2 in place of 0.
+\end{minipage}}}
+
+\begin{proof}
+Note that for $I_n$, we have that $\alpha_{ii} = 1$ for all $1 \leq i \leq n$ and $\alpha_{ij} = 0$ for all $i \neq j$. Hence, in the definition of the determinant, we must have that the only non-zero term in the summation is the one corresponding to the identity $\sigma = 1$. This gives us,
+\begin{align*}
+\det(I_n) &= \sgn(1)\alpha_{1,1}\alpha_{2,2}\cdots\alpha_{n,n}\\
+&= 1 \cdot 1 \cdot 1 \cdots 1\\
+&= 1
+\end{align*}
+
+Now let $A \in \GL_n(F)$. Then $A$ is invertible with inverse $A^{-1}$. But $A^{-1}$ is also invertible with inverse $A$, so $A^{-1} \in \GL_n(F)$. Hence, by fact (2) on the Lecture 4 worksheet, we have $\det(A^{-1}), \det(A)^{-1} \neq 0$. Furthermore, since $\GL_n(F) \subset M_n(F)$, we have that $A, A^{-1} \in M_n(F)$ and so we can apply fact (3) from the Lecture 4 worksheet. Thus, we have that,
+\begin{align*}
+\det(AA^{-1}) &= \det(I_n)\\
+&= 1\\
+&= \det(A)\det(A^{-1})
+\end{align*}
+
+Since $\det(A)\det(A^{-1}) = 1$, we have that $\det(A^{-1}) = \det(A)^{-1}$.\\
+
+Now let $B \in \GL_n(F)$. Consider $\det(ABA^{-1})$ and using fact (3) along with the associativity of matrix multiplication, we get,
+\begin{align*}
+\det((AB)A^{-1}) &= \det(AB)\det(A^{-1})\\
+&= \det(A)\det(B)\det(A^{-1})
+\end{align*}
+
+By our initial derivation, we have that $\det(A^{-1}) = \det(A)^{-1}$ and so, by the fact that $F$ is a field and hence commutative, we have,
+\begin{align*}
+\det((AB)A^{-1}) &= \det(A)\det(B)\det(A^{-1})\\
+&= \det(A)\det(B)\det(A)^{-1}\\
+&= \det(A)\det(A)^{-1}\det(B)\\
+&= 1 \cdot \det(B)\\
+&= \det(B)
+\end{align*}
+
+Thus, if we let $A$ be the matrix of the determinant under basis $\mathcal{A}$, and let $P$ be the change of basis matrix from $\mathcal{A}$ to some basis $\mathcal{B}$. Then $P^{-1}AP = B$, where $B$ is the matrix of the determinant under basis $\mathcal{B}$. However, from the above we get,
+\begin{align*}
+\det(P^{-1}AP) &= \det(A)\\
+&= \det(B)
+\end{align*}
+
+Hence, the determinant is invariant under change of basis.
+\end{proof}
+
+\Rubric{}
+
+\newpage
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%% Copy and past one of these %%%%%%%%%
+%%%%%%%%% for each problem you rewrite %%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\hbox{\begin{minipage}{5in}
+\noindent {\bf Statement:} 
+Let $X \in M_n(\CC)$, let $\Lambda$ be the set of eigenvalues for $X$, and let $m_\lambda$ be the multiplicity of $\lambda \in \Lambda$. Show 
+$$\tr(X) = \sum_{\lambda \in \Lambda} \lambda m_\lambda
+	\quad \text{ and } \quad 
+	\det(X) = \prod _{\lambda \in \Lambda} \lambda^{m_\lambda}.$$
+\end{minipage} \hspace{.3in} {\begin{minipage}{1.1in}
+\ProblemID
+		{3B}%PUT PROBLEM NUMBER HERE, e.g. 4A in place of 0X.
+		{1}%PUT NUMBER OF STARS HERE, e.g. 2 in place of 0.
+\end{minipage}}}
+
+\begin{proof}
+Since $\CC$ is an algebraically closed field and $X \in M_n(\CC)$, we have that there is some $J$ in Jordan canonical form such that $J \sim X$. That is, there is some choice of basis under which $X$ can be written in Jordan canonical form. Trace is invariant under choice of basis, so we have that $\tr(X) = \tr(J)$. Note that in Jordan canonical form, the eigenvalues of $X$ are placed along the diagonal. Thus, the diagonal of $J$ contains all of the eigenvalues of $X$. Moreover, the multiplicity of an eigenvalue is given by the number of rows in which it appears in the matrix $J$. Hence, we must have that,
+\begin{align*}
+\tr(X) &= \tr(J)\\
+&= \sum_{\lambda \in \Lambda} \lambda m_{\lambda}
+\end{align*}
+
+as required.
+
+
+Similarly to the above, we have $\det(X) = \det(J)$. Now consider the characteristic polynomial of $J$. This is given by,
+
+\begin{align*}
+c_J(x) &= \det(J - x \cdot \id)\\
+&= \prod_{\lambda \in \Lambda} (\lambda - x)^{m_{\lambda}}
+\end{align*}
+
+If we plug in $0$ for $x$, we get,
+\begin{align*}
+c_J(0) &= \det(J - 0 \cdot \id)\\
+&= \det(J)\\
+&= \prod_{\lambda \in \Lambda} (\lambda)^{m_{\lambda}}
+\end{align*}
+
+Hence, we have that,
+\begin{align*}
+\det(X) &= \det(J)\\
+&= \prod_{\lambda \in \Lambda} (\lambda)^{m_{\lambda}}
+\end{align*}
+
+as required.
+\end{proof}
+
+\Rubric{}
+
+\newpage
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%% Copy and past one of these %%%%%%%%%
+%%%%%%%%% for each problem you rewrite %%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\hbox{\begin{minipage}{5in}
+\noindent {\bf Statement:} 
+Prove that $\Hom_A(*,M)$ is an exact functor. Namely, show that if $0 \hookrightarrow X \xrightarrow{f} Y \xrightarrow{g} Z \to 0$ is a split exact sequence of $A$-modules, then so is 
+$$0 \hookrightarrow \Hom_A(M,X) \xrightarrow{F} \Hom_A(M, Y) \xrightarrow{G} \Hom_A(M,Z) \to 0,$$
+where $F(\f) = f \circ \f$ and $G(\f) = g \circ \f$. {[You may use any other propositions or theorems from Lecture 10 or before.]}
+\end{minipage} \hspace{.3in} {\begin{minipage}{1.1in}
+\ProblemID
+		{5A}%PUT PROBLEM NUMBER HERE, e.g. 4A in place of 0X.
+		{2}%PUT NUMBER OF STARS HERE, e.g. 2 in place of 0.
+\end{minipage}}}
+
+\begin{proof}
+By Proposition 2.2 in Section 3 of Lang, we have that,
+\begin{align*}
+0 \hookrightarrow \Hom_A(M,X) \xrightarrow{F} \Hom_A(M, Y) \xrightarrow{G} \Hom_A(M,Z)
+\end{align*}
+
+is exact. Moreover, we can assert that 
+\begin{align*}
+0 \hookrightarrow \Hom_A(M,X) \xrightarrow{F} \Hom_A(M, Y) \xrightarrow{G} \Hom_A(M,Z) \hookrightarrow 0
+\end{align*}
+
+is a short exact sequence because $\text{Im}(G) = \Hom_A(M,Z)$ and $\ker(0) = \Hom_A(M,Z)$. Now define $\mu: \Hom_A(M,Z) \to \Hom_A(M, Y)$ by $\mu(\varphi) = \varphi^{-1} \circ g^{-1}$ and define $\lambda: \Hom_A(M, Y) \to \Hom_A(M,X)$ by $\lambda(\varphi) = \varphi^{-1} \circ f^{-1}$. Then 
+\begin{align*}
+G\mu &= g \circ \varphi \circ \varphi^{-1} \circ g^{-1}\\
+&= \id
+\end{align*}
+
+and 
+\begin{align*}
+\lambda f &= \varphi^{-1} \circ f^{-1} \circ f \circ \varphi\\
+&= \id
+\end{align*}
+
+Hence, by the Proposition from Lecture 10 part B, we have that our short exact sequence is also split, with $\mu$ and $\lambda$ as the splitting homomorphisms.
+\end{proof}
+
+\Rubric{}
+
+\newpage
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%% Copy and past one of these %%%%%%%%%
+%%%%%%%%% for each problem you rewrite %%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\hbox{\begin{minipage}{5in}
+\noindent {\bf Statement:} 
+Prove that $M$ is simple if and only if $Am = M$ for any non-zero $m \in M$. 
+\end{minipage} \hspace{.3in} {\begin{minipage}{1.1in}
+\ProblemID
+		{6A}%PUT PROBLEM NUMBER HERE, e.g. 4A in place of 0X.
+		{2}%PUT NUMBER OF STARS HERE, e.g. 2 in place of 0.
+\end{minipage}}}
+
+\begin{proof}
+Suppose $M$ is simple. Then the only submodules of $M$ are $0$ and itself. By the footnote on Homework 6, we have that $Am$ is a submodule of $M$. Since $M$ is simple, we have that either $Am = 0$ and $Am = M$. However, we know that $m \neq 0$. Since $A$ is a ring with $1$, we have that $1m = m \in Am$ and so $Am \neq 0$. Thus, we must have that $Am = m$ for any non-zero $m \in M$.\\
+
+Now suppose that $Am = M$ for any non-zero $m \in M$. Let $N \subset M$ be a submodule and suppose $N \neq 0$. Thus there is some $m \in N \setminus \{0\} \subset M \setminus \{0\}$ . Now since $Am = M$ for every non-zero $m \in M$, we must have that $Am = M$ for this particular choice of $m$. Since $N$ is a submodule and closed under the action of $A$ on $N$, we must have that $N = M$. Thus, $M$ is simple.
+\end{proof}
+
+\Rubric{}
+
+\newpage
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\hbox{\begin{minipage}{5in}
+\noindent {\bf Statement:} 
+Show that if $A$ is a commutative ring with 1, that $A^m \cong A^n$ if and only if $n=m$.
+\end{minipage} \hspace{.3in} {\begin{minipage}{1.1in}
+\ProblemID
+		{6C}%PUT PROBLEM NUMBER HERE, e.g. 4A in place of 0X.
+		{2}%PUT NUMBER OF STARS HERE, e.g. 2 in place of 0.
+\end{minipage}}}
+
+\begin{proof}
+Suppose $A$ is is a commutative ring with $1$ and suppose that $A^m \cong A^n$. Let $I$ be a maximal ideal of $A$. Since $A^m \cong A^n$, we have that $IA^m \cong IA^n$, and so $A^m/IA^m \cong A^n/IA^n$. Moreover, from Q3 on Homework 6, we have that,
+\begin{align*}
+A^m/IA^m &\cong \oplus_{b \in \mathcal{B}} Ab/Ib\\
+A^n/IA^n &\cong \oplus_{c \in \mathcal{C}} Ac/Ic
+\end{align*}
+
+Thus, we have that $\oplus_{b \in \mathcal{B}} Ab/Ib \cong \oplus_{c \in \mathcal{C}} Ac/Ic$.\\
+
+Since $I$ is a maximal ideal of $A$, by Proposition 12 in Section 7.4, we have that $Ab/Ib$ and $Ac/Ic$ are fields for every $b,c$.\\
+
+Now suppose $n = m$. Then we must have $A^m = A^n$ and so $A^m \cong A^n$ by the identity map.
+\end{proof}
+
+\Rubric{}
+
+\newpage
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\hbox{\begin{minipage}{5in}
+\noindent {\bf Statement:} 
+Classify the semisimple $\ZZ$-modules.
+\end{minipage} \hspace{.3in} {\begin{minipage}{1.1in}
+\ProblemID
+		{8B}%PUT PROBLEM NUMBER HERE, e.g. 4A in place of 0X.
+		{1}%PUT NUMBER OF STARS HERE, e.g. 2 in place of 0.
+\end{minipage}}}
+
+\begin{proof}
+Note that a $\ZZ$ module is simple if it is of the form $\ZZ/I$ where $I$ is a maximal ideal. The ideals of $\ZZ$ are precisely the sets of all integers divisible by a fixed integer $n$. That is, $n\ZZ$ is an ideal for all $n \in \ZZ$. Recall that an ideal $n\ZZ$ of $\ZZ$ is maximal if there are no other ideals of the form $k\ZZ$ such that $n\ZZ \subset k\ZZ \subset \ZZ$. Observe that if $n$ is a composite integer, then we can write $n = p_1p_2 \cdots p_{\ell}$ for primes in $\ZZ$. That is, for any $p_j$ in that expansion, we have that $p_j$ divides $n$ and thus all multiples of $n$. Hence, $n\ZZ \subset p_j \ZZ$ for any prime $p_j$ in that expansion. Moreover, for every prime we must have that there is no integer $m$ such that $p_j \ZZ \subset m \ZZ$, otherwise $m$ would divide $p_j$ and hence $p_j$ would not be prime. Thus, the maximal ideals of $\ZZ$ are precisely of the form $p\ZZ$ where $p$ is a prime.\\
+
+Now we have that the simple modules of $\ZZ$ are of the form $\ZZ/p\ZZ$ for all primes $p \in \ZZ$. Since semisimple modules are direct sums of simple modules, we have that any semisimple module of $\ZZ$ is of the form:
+\begin{align*}
+p_1 \ZZ \oplus p_2 \ZZ \oplus \cdots \oplus p_{\ell} \ZZ
+\end{align*}
+
+for some primes $p_1, \ldots, p_{\ell}$ (not necessarily distinct).
+\end{proof}
+
+\Rubric{}
+
+\newpage
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\hbox{\begin{minipage}{5in}
+\noindent {\bf Statement:} 
+Let $M$ be a semisimple $A$-module. Prove that the following are equivalent: 
+\begin{enumerate}[(i)]
+\item $M$ is finitely-generated;
+\item $M$ is Noetherian;
+\item $M$ is Artinian;
+\item $M$ is a finite direct sum of simple modules. 
+\end{enumerate}
+\end{minipage} \hspace{.3in} {\begin{minipage}{1.1in}
+\ProblemID
+		{8C}%PUT PROBLEM NUMBER HERE, e.g. 4A in place of 0X.
+		{2}%PUT NUMBER OF STARS HERE, e.g. 2 in place of 0.
+\end{minipage}}}
+
+\begin{proof}
+First we will show that (i) is equivalent to (ii). Suppose $M$ is finitely generated. Then there exist $m_1, m_2, \ldots, m_n \in M$ such that for any $x \in M$, there exist $a_1, a_2, \ldots, a_n \in A$ with $x = a_1m_1 + a_2m_2 + \cdots + a_nm_n$. Since every element of a submodule of $M$ is also an element of $M$, then it must be true that every element of a submodule $N$ of $M$ is finitely generated as well. Hence, $M$ is Noetherian. Now suppose $M$ is Noetherian. Then every submodule of $M$ is finitely generated. In particular, since $M$ is a submodule of itself, it must be finitely generated. Thus, (i) and (ii) are equivalent.\\
+
+Now we will show the equivalence of (i) and (iv). Suppose $M$ is semisimple and finitely generated. Then $M$ is the direct sum of simple modules and, since (i) is equivalent to (ii), each of those submodules is finitely generated. Since the generators of $M$ are finite, they can old by combined in a finite number of ways. Hence, there must be finitely many submodules which are finitely generated. Hence, $M$ is a finite direct sum of simple modules. Now let us assume that $M$ is a finite direct sum of simple modules and work towards the other directions. Every simple module is cyclic and hence generated by one element. The union of these generators forms a basis for $M$ since $M$ is a direct sum of these simple modules. Since there are a finite number of these simple modules, then $M$ is finitely-generated by this union as required. Hence, by this and our previous work, (i), (ii), and (iv) are equivalent.\\
+
+Now we will show the equivalent of (iii) and (iv). Suppose $M$ is semisimple and Artinian. Then the sequence of submodules of $M$
+\begin{align*}
+M_1 \supset M_2 \supset \ldots
+\end{align*}
+stabilizes. That is, there exists an integer $N$ such that if $n \geq N$ then $M_n = M_{n+1}$. Since no simple module can have a submodule, then $M_N$ is the only simple module in this chain. Observe that since $M$ is semisimple, it must be the direct sum of simple submodules. There must be only finitely many of these simple submodules (why?), so $M$ is a finite direct sum of simple modules. Now let us assume that $M$ is semisimple and a finite direct sum of simple modules and work in reverse.
+\end{proof}
+
+\Rubric{}
+
+\newpage
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\hbox{\begin{minipage}{5in}
+\noindent {\bf Statement:} 
+Let $M$ be a completely reducible $A$-module. Show that for any submodule $N \subseteq M$, we have $M/N$ is completely reducible as well. Moreover, if 
+$$M \cong \bigoplus_{\lambda \in \Lambda}M_\lambda, \quad \text{then} \quad 
+	M/N \cong \bigoplus_{\lambda \in \Gamma}M_\lambda,$$
+	for some $\Gamma \subseteq \Lambda$.
+\end{minipage} \hspace{.3in} {\begin{minipage}{1.1in}
+\ProblemID
+		{9A}%PUT PROBLEM NUMBER HERE, e.g. 4A in place of 0X.
+		{2}%PUT NUMBER OF STARS HERE, e.g. 2 in place of 0.
+\end{minipage}}}
+
+\begin{proof}
+Since $M$ is completely reducible, we have that $M \cong \bigoplus_{\lambda \in \Lambda}M_\lambda$ where $M_{\lambda}$ is simple. This is equivalent to $M = \sum_{\lambda \in \Lambda} M_{\lambda}$ with $\left(\sum_{\lambda \in \Lambda - \mu} M_{\lambda} \right) \cap M_{\mu} = 0$. Hence, for any $m \in M$, we have that $m = \sum_{\lambda \in \Lambda} m_{\lambda}$ uniquely.\\
+
+Let $N \subset M$. Then,
+\begin{align*}
+M/N &= \left(\sum_{\lambda \in \Lambda} M_{\lambda} \right)/N\\
+&= \{m + N \ | \ m \in \sum_{\lambda \in \Lambda \text{; finite}} M_{\lambda}\}
+\end{align*}
+
+Thus, for $m + N \in M/N$, we have,
+\begin{align*}
+m + N &= \sum_{\lambda \text{; finite}} m_{\lambda} + N\\
+&= \sum_{\lambda \text{; finite}} m_{\lambda} + \sum_{\lambda; m_{\lambda} \neq 0} N\\
+&= \{\sum_{\lambda \text{; } m_{\lambda} \neq 0} n_{\lambda} \ | \ n_{\lambda} \in N\}\\
+&= N\\
+&= \sum_{\lambda \text{; finite}} (m_{\lambda} + N) \in (M_{\lambda} + N)/N
+\end{align*}
+
+The above derivation thus gives us that $M/N = \sum_{\lambda} (M_{\lambda} + N)/N$. Now, applying the second isomorphism theorem for modules, we have that,
+\begin{align*}
+M/N &= \sum_{\lambda} (M_{\lambda} + N)/N\\
+&= \sum_{\lambda} M_{\lambda}/(M_{\lambda} \cap N)
+\end{align*}
+
+Observe that, since each $M_{\lambda}$ is simple, we have that $M_{\lambda} \cap N = 0$ if $M_{\lambda} \not\subset N$ and $M_{\lambda} \cap N = M_{\lambda}$ if $M_{\lambda} \subset N$. These are the only two possible values for $M_{\lambda} \cap N$. Thus, for a fixed $M_{\lambda}$, we have either that,
+\begin{align*}
+M_{\lambda}/(M_{\lambda} \cap N) &= M_{\lambda}/0\\
+&= \{m_{\lambda} + 0 \ | \ m_{\lambda} \in M_{\lambda}\}\\
+&= M_{\lambda}
+\end{align*}
+
+or,
+\begin{align*}
+M_{\lambda}/(M_{\lambda} \cap N) &= M_{\lambda}/M_{\lambda}\\
+&= 0
+\end{align*}
+
+Thus, we have that $\sum_{\lambda} M_{\lambda}/(M_{\lambda} \cap N)$ corresponds to some subset $\Gamma \subset \Lambda$, since the terms are either $M_{\lambda}$ for some $\lambda$ or $0$. This gives us that,
+\begin{align*}
+M/N &= \sum_{\lambda} (M_{\lambda} + N)/N\\
+&= \sum_{\lambda} M_{\lambda}/(M_{\lambda} \cap N)\\
+&= \sum_{\lambda \in \Gamma} M_{\lambda}\\
+&\cong \bigoplus_{\lambda \in \Gamma}M_\lambda
+\end{align*}
+
+as required.
+\end{proof}
+
+\Rubric{}
+
+\end{document}

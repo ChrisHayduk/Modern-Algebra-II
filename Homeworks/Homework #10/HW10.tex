@@ -151,10 +151,52 @@ Let $A$ be a ring with 1.
 \item \textbf{Lie algebras.}
 \begin{enumerate}[1.]
  \item For $x, y \in M_n(\CC)$, show that the binary operation $[x,y] = xy - yx$ is bilinear, skew symmetric, and satisfies the Jacobi identity. 
+ 
+ \begin{proof}
+ We have,
+ \begin{align*}
+ [rx,y] &= (rx)y - y(rx)\\
+ &= r(xy) - r(yx)\\
+ &= r[x,y]
+ \end{align*}
+ 
+ and,
+ \begin{align*}
+ [x,y \cdot s] &= x(y \cdot s) - (y \cdot s)x\\
+ &= (xy) \cdot s - (yx) \cdot s\\
+ &= [x,y] \cdot s
+ \end{align*}
+ 
+ Thus, the operator is bilinear. Now note that,
+ \begin{align*}
+ [x, y] &= xy - yx\\
+ &= - (yx - xy)\\
+ &= [y, x]
+ \end{align*}
+ 
+ Hence, the operator is skew symmetric. Lastly, for $x, y, z \in M_n(\CC)$,
+ \begin{align*}
+ [x, [y,z]] + [y, [z,x]] + [z, [x,y]] &= [x, yz - zy] + [y, zx - xz] + [z, xy - yx]\\
+ &= x(yz-zy) - (yz-zy)x + y(zx-xz) - (zx-xz)y\\
+ &+ z(xy-yx) - (xy-yx)z\\
+ &= xyz - xzy - yzx + zyx + yzx - yxz - zxy + xzy + zxy - zyx - xyz + yxz\\
+ &= 0
+ \end{align*}
+ 
+ Thus the operator satisfies the Jacobi identity.
+ \end{proof}
 
 \item Show that $\fsl_n(\CC) \subseteq M_n(\CC)$ is, indeed, a closed Lie algebra. \\
 {[Namely, that if $\tr(x) = \tr(y) = 0$, then $\tr(xy-yx) = 0$ and $\tr(x + \alpha y) = 0$ for all $\alpha \in \CC$.]}
 
+\begin{proof}
+Let $x, y \in \fsl_n(\CC)$. Note that $\tr(xy) = \sum_{i,j} x_{ij} y_{ij}$ and $\tr(xy) = tr(yx)$. We have that, for fixed $i, j$, that $(xy)_{ij} = \sum_k = x_{ik}y_{kj}$. Lastly, we also have that $\tr(xy - yx) = \tr(xy) - \tr(yx)$. Thus, using all of the above formulas, we have,
+\begin{align*}
+\tr(xy - yx) &= \tr(xy) - \tr(yx)\\
+&= \tr(xy) - \tr(xy)\\
+&= 0
+\end{align*}
+\end{proof}
 
 \item Let $L(d)$ be the simple $\fsl_2(\CC)$-module with dimension $d+1$. Show that for all $d \ge 1$, 
 $$L(d) \otimes L(1) \cong L(d-1) \oplus L(d+1).$$
@@ -185,6 +227,39 @@ $$g \cdot e_i = \sum_{\ell=1}^m \alpha_{\ell,i}e_\ell \quad \text{and} \quad g \
 for all $i$. Recall that $\cB \times \cB' = \{e_i \otimes f_j\}$ forms a basis of $U \otimes V$, and put the lexicographic order on it (i.e.\ $\cB \times \cB' = \{e_1 \otimes f_1, e_1 \otimes f_1, \dots, e_1\otimes f_n, e_2 \otimes f_1, \dots, e_m \otimes f_n\}$).
 \begin{enumerate}[(a)]
 \item Compute the action of $g$ on each $e_i \otimes f_j$ for each $i,j$; and give the matrix for $(\rho \otimes \psi)(g)$, with respect to the ordered basis $\cB \times \cB'$, where $\rho \otimes \psi$ is the representation associated to the canonical action of $FG$ on $U \otimes V$.
+
+\begin{proof}
+Fix $i \in \{1, \ldots, m\}$ and $j \in \{1, \ldots, n\}$. Then we have,
+\begin{align*}
+g \cdot e_i \otimes f_j &= (g \cdot e_i) \otimes (g \cdot f_j)\\
+&= \left(\sum_{\ell=1}^m \alpha_{\ell,i}e_\ell \right) \otimes \left( \sum_{\ell=1}^n \beta_{\ell,i}f_\ell \right)
+\end{align*}
+
+In addition, the matrix for $(\rho \otimes \psi)(g)$ is given by,
+\begin{align*}
+(\rho \otimes \psi)(g) &= \rho(g) \otimes \psi(g)\\
+&= \begin{pmatrix} 
+			\alpha_{1,1} & \cdots & \alpha_{1,m} \\ 
+			\vdots & \ddots& \vdots \\
+			\alpha_{m,1} & \cdots & \alpha_{m,m} \end{pmatrix} \otimes \begin{pmatrix} 
+			\beta_{1,1} & \cdots & \beta_{1,n} \\ 
+			\vdots & \ddots& \vdots \\
+			\beta_{n,1} & \cdots & \beta_{n,n} \end{pmatrix}\\
+&= \begin{pmatrix} 
+			\alpha_{1,1} \psi(g) & \cdots & \alpha_{1,m} \psi(g) \\ 
+			\vdots & \ddots& \vdots \\
+			\alpha_{m,1} \psi(g) & \cdots & \alpha_{m,m} \psi(g) \end{pmatrix}\\
+&= \begin{pmatrix} 
+			\alpha_{1,1} \beta_{1,1} & \alpha_{1,1} \beta_{1,2} & \cdots & \alpha_{1,1} \beta_{1,n} & \alpha_{1,2} \beta_{1,1} & \cdots & \alpha_{1,m} \beta_{1,n} \\ 
+			\vdots & \ddots& & & & & \vdots \\
+			\alpha_{m,1} \beta_{1,1} & \alpha_{m,1} \beta_{1,2} & \cdots & \alpha_{m,1} \beta_{1,n} & \alpha_{m,2} \beta_{1,1} & \cdots & \alpha_{m,m} \beta_{1,n}\\
+			\vdots & & & & & & \vdots \\
+			\alpha_{m,1} \beta{n, 1} & \alpha_{m,1} \beta_{n,2} & \cdots & \alpha_{m,1} \beta_{n,n} & \alpha_{m,2} \beta_{n,1} & \cdots & \alpha_{m,m} \beta_{n,n} \end{pmatrix}
+\end{align*}
+
+So our new matrix has dimension $mn$.
+\end{proof}
+
 \item If 
 \begin{enumerate}[\quad]
 \item $\chi_\rho$ is the character associated to $\rho$, 
@@ -193,7 +268,45 @@ for all $i$. Recall that $\cB \times \cB' = \{e_i \otimes f_j\}$ forms a basis o
 \end{enumerate}
 use the previous part to prove that $\chi_{\rho\otimes\psi} = \chi_\rho \chi_\psi$.
 
+\begin{proof}
+Fix $g \in G$. Then,
+\begin{align*}
+\chi_\rho(g) &= \tr(\rho(g))\\
+&= \sum_{i = 1}^m \alpha_{ii}
+\end{align*}
+
+and,
+\begin{align*}
+\chi_\psi(g) &= \tr(\psi(g))\\
+&= \sum_{i=1}^n \beta_{ii}
+\end{align*}
+
+Thus, we have,
+\begin{align*}
+\chi_\rho(g) \chi_\psi(g) &= (\chi_{\rho} \chi_{\psi})(g)\\
+&= \sum_{i = 1}^m \alpha_{ii} \cdot \sum_{j = 1}^n\beta_{jj}\\
+&= \sum_{i=1}^m \sum_{j=1}^n = \alpha_{ii} \beta_{jj}
+\end{align*}
+
+Lastly, using the matrix derived in part (a), we have,
+\begin{align*}
+\chi_{\rho\otimes\psi}(g) &= \tr( \alpha_{1,1} \psi(g) + \alpha_{2, 2} \psi(g) + \cdots + \alpha_{m,m} \psi(g))\\
+&= \tr( \alpha_{1,1} \psi(g)) + \tr(\alpha_{2, 2} \psi(g)) + \cdots + \tr(\alpha_{m,m} \psi(g))\\
+&= \alpha_{1,1} \tr(\psi(g)) + \alpha_{2,2} \tr(\psi(g)) + \cdots + \alpha_{m,m} \tr(\psi(g))\\
+&= \alpha_{1,1} \sum_{i=1}^n \beta_{ii} + \alpha_{2,2} \sum_{i=1}^n \beta_{ii} + \cdots + \alpha_{m,m} \sum_{i=1}^n \beta_{ii}\\
+&= \sum_{i=1}^m \sum_{j=1}^n = \alpha_{ii} \beta_{jj}\\
+&= \chi_\rho(g) \chi_\psi(g)
+\end{align*}
+
+as required.
+\end{proof}
+
 \item Conclude that the set of characters of $\CC G$ forms a subring of $\mathrm{Cl}(\CC G)$. Does this ring have an identity?
+
+\begin{proof}
+Since $\rho$, $\psi$ were arbitrary, we have that the set of characters of $\CC G$ is closed under multiplication.
+\end{proof}
+
 \end{enumerate}
 
 \item Let $\rho: \CC G \to \End(U)$ be a finite-dimensional representation with character $\chi$. Let $\rho_1, \dots, \rho_r$ be the distinct simple representations of $\CC G$, $V_i$ be the corresponding simple modules, $z_i$ be the corresponding primitive central idempotents, and let $\chi_i$ be their characters. Let $U_i = z_i U  \cong V_i^{\oplus m_i}$ be the isotypic component of $U$ corresponding to $V_i$. Show that $\dim(U_i) = \<\chi,\chi_i\>$. \\
@@ -205,15 +318,37 @@ use the previous part to prove that $\chi_{\rho\otimes\psi} = \chi_\rho \chi_\ps
 \item \textbf{Burnside's Lemma.}\label{permutation action} Let $G$ act on a set $\Omega$, and let $\Omega_1, \dots, \Omega_\ell$ be the orbits of $\Omega$. Define $U = \CC \Omega$ (the vector space with basis $\Omega$) and extend the action $G \acts \Omega$ linearly to an action $\CC G \acts U$. Let $\rho: \CC G \to \End(U)$ be the associated representation, and $\chi$ be the associated character. 
 
 Fix $g \in G$. Define 
-$$\Fix(g) = \{ x \in \Omega ~|~ (12) \cdot x = x\} $$
+$$\Fix(g) = \{ x \in \Omega ~|~ g \cdot x = x\} $$
 to be the number of fixed points under the action of $g$ on $\Omega$.  {[For example, if $G = S_4$ acts on naturally $\Omega = \{1,2,3, 4\}$, and $g = (12)$, then $\{ x \in \Omega ~|~ (12) \cdot x = x\} = \{3, 4\}$. See below for more examples.]} 
 \begin{enumerate}[(a)]
 \item Argue that $\chi(g) = |\Fix(g)|$.
+\begin{proof}
+Let $\rho$ be the representation of the action on $U$ with respect to its basis $\omega$. Then $\rho$ is a permutation matrix. Let $e_i, e_j \in \Omega$. Then the $ij$-th entry in $\rho$ is nonzero iff $e_j=g \cdot e_i$. Thus, the nonzero diagonal elements correspond to the fixed points of $g$ on $\Omega$ because, if a diagonal element $i, i$ is nonzero, then we have $e_i = g \cdot e_i$ as required. Thus, the trace of $\rho$ will be equal to the number of fixed points in $g$. But $\chi$ is exactly $\tr(\rho)$, and so we have $\chi(g) = |\Fix(g)|$ as required.
+\end{proof}
 \item Let $U_i = \CC \Omega_i$. Argue briefly that $U \cong U_1 \oplus \cdots \oplus U_\ell$. For each $i$, let $v_i = \sum_{x \in \Omega_i} x$; show that if $gu = u$ for all $g \in G$ then $u \in \CC\{v_1, \dots, v_\ell\}$ (i.e.\ $\CC\{v_1, \dots, v_\ell\}$ is the isotypic component of $U$ corresponding to the trivial module). 
 {[\emph{Hint:} For the second statement, it suffices to look at one $U_i$ at a time: show that for $u_i \in U_i$,  if $g \cdot u_i = u_i$, then $u_i = \alpha v_i$. To do this, use the fact the $G$ acts transitively on $\Omega_i$.]}
+\begin{proof}
+We have that,
+\begin{align*}
+U_1 \oplus \cdots \oplus U_{\ell} &= \CC \Omega_1 \oplus \cdots \oplus \CC \Omega_{\ell}\\
+&= \CC \Omega_1 \times \cdots \times \CC \Omega_{\ell}\\
+&= \CC (\Omega_1 \times \cdots \times \Omega_{\ell})\\
+&= \CC \Omega
+\end{align*}
+
+Thus, we have that $U \cong U_1 \oplus \cdots U_{\ell}$.\\
+
+Now fix $i$ and let $u_i \in U_i$. Suppose $g \cdot u_i = u_i$.
+\end{proof}
 \item Prove that $\ell|G| = \sum_{g \in G} |\Fix(G)|$.\\
 {[This is the statement that's called \emph{Burnside's Lemma}, though it is due to Frobenius. \emph{Hint:} Compute $\<\chi, \triv\>$, where $\triv$ is the character corresponding to the trivial representation (i.e.\ $\triv: g \mapsto 1$ for all $g \in G$).]} 
+\begin{proof}
+
+\end{proof}
 \item Compare/contrast Burnside's Lemma to the Orbit-Stabilizer Theorem.
+\begin{ans}
+Burnside's Lemma is the complement to the Orbit Stabilizer Theorem.
+\end{ans}
 \end{enumerate}
 \end{enumerate}
 \end{enumerate}
