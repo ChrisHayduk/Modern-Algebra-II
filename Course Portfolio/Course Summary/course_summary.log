@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.22 (MiKTeX 21.2) (preloaded format=pdflatex 2021.3.4)  19 MAY 2021 17:04
+This is pdfTeX, Version 3.141592653-2.6-1.40.22 (MiKTeX 21.2) (preloaded format=pdflatex 2021.3.4)  23 MAY 2021 01:10
 entering extended mode
 **./course_summary.tex
 (course_summary.tex
@@ -1095,15 +1095,21 @@ phism the-o-rems for mod-ules [[], \TS1/cmr/m/n/10.95 §\OT1/cmr/m/n/10.95 10.2,
  p. 345]: 
  []
 
-[3] [4] [5] [6] [7] [8] [9] (course_summary.aux)
+[3] [4] [5] [6] [7] [8] [9] [10] [11]
+Overfull \hbox (1.46973pt too wide) in paragraph at lines 626--627
+[][][]\OT1/cmr/m/n/10.95 Some ex-am-ples in-clude: the $[][]0$ mod-ule, sim-ple
+ mod-ules, and com-pletely de-com-pos-able mod-ules 
+ []
+
+[12] [13] [14] (course_summary.aux)
 Package rerunfilecheck Info: File `course_summary.out' has not changed.
-(rerunfilecheck)             Checksum: E516F9BB6A74A54363FE3D203F5B588A;1392.
+(rerunfilecheck)             Checksum: 0CF9387E59800746343D050DC35B6556;2228.
  ) 
 Here is how much of TeX's memory you used:
- 22326 strings out of 479334
- 388250 string characters out of 2873605
- 679858 words of memory out of 3000000
- 39165 multiletter control sequences out of 15000+200000
+ 22384 strings out of 479334
+ 388821 string characters out of 2873605
+ 681885 words of memory out of 3000000
+ 39171 multiletter control sequences out of 15000+200000
  417141 words of font info for 74 fonts, out of 3000000 for 9000
  1302 hyphenation exceptions out of 8191
  113i,26n,116p,1049b,482s stack positions out of 5000i,500n,10000p,200000b,50000s
@@ -1117,14 +1123,14 @@ ljfour/jknappen/ec/dpi600\tcrm1095.pk><C:/MiKTeX/fonts/type1/public/amsfonts/cm
 nts/type1/public/amsfonts/cm/cmmi10.pfb><C:/MiKTeX/fonts/type1/public/amsfonts/
 cm/cmmi6.pfb><C:/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi8.pfb><C:/MiKTeX/fon
 ts/type1/public/amsfonts/cm/cmr10.pfb><C:/MiKTeX/fonts/type1/public/amsfonts/cm
-/cmr8.pfb><C:/MiKTeX/fonts/type1/public/amsfonts/cm/cmr9.pfb><C:/MiKTeX/fonts/t
-ype1/public/amsfonts/cm/cmsy10.pfb><C:/MiKTeX/fonts/type1/public/amsfonts/cm/cm
-sy8.pfb><C:/MiKTeX/fonts/type1/public/amsfonts/cm/cmti10.pfb><C:/MiKTeX/fonts/t
-ype1/public/amsfonts/cm/cmti9.pfb><C:/MiKTeX/fonts/type1/public/amsfonts/symbol
-s/msbm10.pfb>
-Output written on course_summary.pdf (9 pages, 221007 bytes).
+/cmr6.pfb><C:/MiKTeX/fonts/type1/public/amsfonts/cm/cmr8.pfb><C:/MiKTeX/fonts/t
+ype1/public/amsfonts/cm/cmr9.pfb><C:/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy
+10.pfb><C:/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy8.pfb><C:/MiKTeX/fonts/typ
+e1/public/amsfonts/cm/cmti10.pfb><C:/MiKTeX/fonts/type1/public/amsfonts/cm/cmti
+9.pfb><C:/MiKTeX/fonts/type1/public/amsfonts/symbols/msbm10.pfb>
+Output written on course_summary.pdf (14 pages, 274076 bytes).
 PDF statistics:
- 285 PDF objects out of 1000 (max. 8388607)
- 73 named destinations out of 1000 (max. 500000)
- 77 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 410 PDF objects out of 1000 (max. 8388607)
+ 125 named destinations out of 1000 (max. 500000)
+ 117 words of extra memory for PDF output out of 10000 (max. 10000000)
 
