@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.22 (MiKTeX 21.2) (preloaded format=pdflatex 2021.3.4)  17 MAY 2021 18:45
+This is pdfTeX, Version 3.141592653-2.6-1.40.22 (MiKTeX 21.2) (preloaded format=pdflatex 2021.3.4)  24 MAY 2021 18:38
 entering extended mode
 **"./Final Portfolio - Chris Hayduk.tex"
 (Final Portfolio - Chris Hayduk.tex
@@ -1209,7 +1209,7 @@ Overfull \hbox (2.40045pt too wide) in paragraph at lines 353--354
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 382--382
+Underfull \hbox (badness 10000) in paragraph at lines 372--372
 
  []
 
@@ -1227,19 +1227,8 @@ Package fancyhdr Warning: \footskip is too small (12.0pt):
 (fancyhdr)                \setlength{\footskip}{13.0pt}.
 
 [7]
-Overfull \hbox (2.40045pt too wide) in paragraph at lines 397--398
-[][][][] 
- []
+Underfull \vbox (badness 10000) has occurred while \output is active []
 
-
-Underfull \hbox (badness 10000) in paragraph at lines 401--402
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 406--406
-
- []
 
 
 Package fancyhdr Warning: \headheight is too small (8.0pt): 
@@ -1255,22 +1244,17 @@ Package fancyhdr Warning: \footskip is too small (12.0pt):
 (fancyhdr)                \setlength{\footskip}{13.0pt}.
 
 [8]
-Overfull \hbox (1.97462pt too wide) in paragraph at lines 421--422
+Overfull \hbox (2.40045pt too wide) in paragraph at lines 387--388
 [][][][] 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 431--432
+Underfull \hbox (badness 10000) in paragraph at lines 391--392
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 433--434
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 438--438
+Underfull \hbox (badness 10000) in paragraph at lines 396--396
 
  []
 
@@ -1288,17 +1272,17 @@ Package fancyhdr Warning: \footskip is too small (12.0pt):
 (fancyhdr)                \setlength{\footskip}{13.0pt}.
 
 [9]
-Overfull \hbox (1.83775pt too wide) in paragraph at lines 453--454
+Overfull \hbox (1.97462pt too wide) in paragraph at lines 411--412
 [][][][] 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 457--458
+Underfull \hbox (badness 10000) in paragraph at lines 426--427
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 467--467
+Underfull \hbox (badness 10000) in paragraph at lines 431--431
 
  []
 
@@ -1316,22 +1300,17 @@ Package fancyhdr Warning: \footskip is too small (12.0pt):
 (fancyhdr)                \setlength{\footskip}{13.0pt}.
 
 [10]
-Overfull \hbox (1.97462pt too wide) in paragraph at lines 488--489
+Overfull \hbox (1.83775pt too wide) in paragraph at lines 446--447
 [][][][] 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 492--493
+Underfull \hbox (badness 10000) in paragraph at lines 450--451
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 494--495
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 503--503
+Underfull \hbox (badness 10000) in paragraph at lines 460--460
 
  []
 
@@ -1349,12 +1328,22 @@ Package fancyhdr Warning: \footskip is too small (12.0pt):
 (fancyhdr)                \setlength{\footskip}{13.0pt}.
 
 [11]
-Overfull \hbox (2.40045pt too wide) in paragraph at lines 521--522
+Overfull \hbox (1.97462pt too wide) in paragraph at lines 481--482
 [][][][] 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 525--526
+Underfull \hbox (badness 10000) in paragraph at lines 485--486
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 487--488
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 489--490
 
  []
 
@@ -1372,7 +1361,7 @@ Package fancyhdr Warning: \footskip is too small (12.0pt):
 (fancyhdr)                \setlength{\footskip}{13.0pt}.
 
 [12]
-Underfull \hbox (badness 10000) in paragraph at lines 572--572
+Underfull \hbox (badness 10000) in paragraph at lines 494--494
 
  []
 
@@ -1389,19 +1378,60 @@ Package fancyhdr Warning: \footskip is too small (12.0pt):
 (fancyhdr)                Make it at least 13.0pt, for example:
 (fancyhdr)                \setlength{\footskip}{13.0pt}.
 
-[13] (Final Portfolio - Chris Hayduk.aux)
+[13]
+Overfull \hbox (2.40045pt too wide) in paragraph at lines 512--513
+[][][][] 
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 516--517
+
+ []
+
+
+Package fancyhdr Warning: \headheight is too small (8.0pt): 
+(fancyhdr)                Make it at least 13.0pt, for example:
+(fancyhdr)                \setlength{\headheight}{13.0pt}.
+(fancyhdr)                You might also make \topmargin smaller to compensate:
+
+(fancyhdr)                \addtolength{\topmargin}{-5.0pt}.
+
+
+Package fancyhdr Warning: \footskip is too small (12.0pt): 
+(fancyhdr)                Make it at least 13.0pt, for example:
+(fancyhdr)                \setlength{\footskip}{13.0pt}.
+
+[14]
+Underfull \hbox (badness 10000) in paragraph at lines 563--563
+
+ []
+
+
+Package fancyhdr Warning: \headheight is too small (8.0pt): 
+(fancyhdr)                Make it at least 13.0pt, for example:
+(fancyhdr)                \setlength{\headheight}{13.0pt}.
+(fancyhdr)                You might also make \topmargin smaller to compensate:
+
+(fancyhdr)                \addtolength{\topmargin}{-5.0pt}.
+
+
+Package fancyhdr Warning: \footskip is too small (12.0pt): 
+(fancyhdr)                Make it at least 13.0pt, for example:
+(fancyhdr)                \setlength{\footskip}{13.0pt}.
+
+[15] (Final Portfolio - Chris Hayduk.aux)
 Package rerunfilecheck Info: File `"Final Portfolio - Chris Hayduk".out' has no
 t changed.
 (rerunfilecheck)             Checksum: D41D8CD98F00B204E9800998ECF8427E;0.
  ) 
 Here is how much of TeX's memory you used:
- 22094 strings out of 479334
- 384518 string characters out of 2873605
- 678870 words of memory out of 3000000
+ 22096 strings out of 479334
+ 384532 string characters out of 2873605
+ 682870 words of memory out of 3000000
  38991 multiletter control sequences out of 15000+200000
  416154 words of font info for 71 fonts, out of 3000000 for 9000
  1302 hyphenation exceptions out of 8191
- 113i,32n,116p,982b,510s stack positions out of 5000i,500n,10000p,200000b,50000s
+ 113i,32n,116p,2198b,510s stack positions out of 5000i,500n,10000p,200000b,50000s
  <C:\Users\chris\AppData\Local\MiKTeX\fonts/pk/ljfour/public/mathabx/dpi657\m
 athb10.pk> <C:\Users\chris\AppData\Local\MiKTeX\fonts/pk/ljfour/public/mathabx/
 dpi657\mathx10.pk> <C:\Users\chris\AppData\Local\MiKTeX\fonts/pk/ljfour/public/
@@ -1410,14 +1440,15 @@ public/mathabx/dpi657\matha10.pk><C:/MiKTeX/fonts/type1/public/amsfonts/cm/cmbx
 10.pfb><C:/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi10.pfb><C:/MiKTeX/fonts/ty
 pe1/public/amsfonts/cm/cmmi6.pfb><C:/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi
 8.pfb><C:/MiKTeX/fonts/type1/public/amsfonts/cm/cmr10.pfb><C:/MiKTeX/fonts/type
-1/public/amsfonts/cm/cmr8.pfb><C:/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy10.
-pfb><C:/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy8.pfb><C:/MiKTeX/fonts/type1/
-public/amsfonts/cm/cmti10.pfb><C:/MiKTeX/fonts/type1/public/amsfonts/symbols/ms
-am10.pfb><C:/MiKTeX/fonts/type1/public/amsfonts/symbols/msbm10.pfb>
-Output written on "Final Portfolio - Chris Hayduk.pdf" (13 pages, 170807 bytes)
+1/public/amsfonts/cm/cmr6.pfb><C:/MiKTeX/fonts/type1/public/amsfonts/cm/cmr8.pf
+b><C:/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy10.pfb><C:/MiKTeX/fonts/type1/p
+ublic/amsfonts/cm/cmsy8.pfb><C:/MiKTeX/fonts/type1/public/amsfonts/cm/cmti10.pf
+b><C:/MiKTeX/fonts/type1/public/amsfonts/symbols/msam10.pfb><C:/MiKTeX/fonts/ty
+pe1/public/amsfonts/symbols/msbm10.pfb>
+Output written on "Final Portfolio - Chris Hayduk.pdf" (15 pages, 186987 bytes)
 .
 PDF statistics:
- 176 PDF objects out of 1000 (max. 8388607)
- 18 named destinations out of 1000 (max. 500000)
+ 195 PDF objects out of 1000 (max. 8388607)
+ 20 named destinations out of 1000 (max. 500000)
  13 words of extra memory for PDF output out of 10000 (max. 10000000)
 

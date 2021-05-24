@@ -354,29 +354,19 @@ where $F(\f) = f \circ \f$ and $G(\f) = g \circ \f$. {[You may use any other pro
 \end{minipage}}}
 
 \begin{proof}
-By Proposition 2.2 in Section 3 of Lang, we have that,
+Since $0 \hookrightarrow X \xrightarrow{f} Y \xrightarrow{g} Z$ is exact, by Proposition 2.2 from $\S$ III.2 in Lang, we have that $$0 \hookrightarrow \Hom_A(M,X) \xrightarrow{F} \Hom_A(M, Y) \xrightarrow{G} \Hom_A(M,Z)$$ is exact for all $A$-modules $M$. In order to show that $$0 \hookrightarrow \Hom_A(M,X) \xrightarrow{F} \Hom_A(M, Y) \xrightarrow{G} \Hom_A(M,Z) \to 0$$ is a short exact sequence, we thus need to show that $G$ is surjective. Fix $\varphi \in \Hom_A(M, Z)$. We want to show that there is a $\varphi' \in \Hom_A(M, Y)$ such that $g \circ \varphi' = \varphi$. Observe that since $Y \xrightarrow{g} Z$, we have that $g$ is surjective. Hence, $g$ maps onto every element of $Z$. Since the domain of $G$ is the set of all homomorphisms from $M \to Y$, we can take any valid mapping of elements in $M$ to elements in $Y$. In particular, since $g$ is surjective, we can select a mapping from $\varphi'(m) \mapsto y$ such that $g(\varphi(m)) = g(y) = z$ for any $z \in Z$. Hence, for a fixed $\varphi: M \to Z$, let us select $\varphi'$ such that $\varphi'(m) \mapsto y$ such that $g(\varphi'(m)) = \varphi(m)$ for all $m \in M$. Hence, we have that $G(\varphi')= g \circ \varphi' = \varphi$. Since $\varphi$ was arbitrary, we thus have that $G$ is surjective. Thus, $$0 \hookrightarrow \Hom_A(M,X) \xrightarrow{F} \Hom_A(M, Y) \xrightarrow{G} \Hom_A(M,Z) \to 0$$ is an exact sequence. Now we must show that the sequence above is split. Note that, by $\S 10.5$, Proposition 29 in Dummit and Foote, we have that since $0 \hookrightarrow X \xrightarrow{f} Y \xrightarrow{g} Z \to 0$ is a split sequence, then so is $0 \hookrightarrow \Hom_A(M,X) \xrightarrow{F} \Hom_A(M, Y) \xrightarrow{G} \Hom_A(M,Z) \to 0$. Hence, we have shown that this sequence is both exact and split, and so it is a split exact sequence. Since $0 \hookrightarrow X \xrightarrow{f} Y \xrightarrow{g} Z \to 0$ is a split exact sequence, there exists a function $\lambda: Y \to X$ such that $\lambda f = \id$. Let us define $\Lambda: \Hom_A(M, Y) \to \Hom_A(M, X)$ by $\varphi \mapsto \lambda \circ \varphi$. Thus, for $\varphi \in \Hom_A(M, Y)$, we have,
 \begin{align*}
-0 \hookrightarrow \Hom_A(M,X) \xrightarrow{F} \Hom_A(M, Y) \xrightarrow{G} \Hom_A(M,Z)
+(F \circ \Lambda)(\varphi) &= F(\Lambda(\varphi))\\
+&= F(\lambda \circ \varphi)\\
+&= f \circ (\lambda \circ \varphi)\\
+&= (f \circ \lambda) \circ \varphi\\
+&= \id \circ \varphi\\
+&= \varphi
 \end{align*}
 
-is exact. Moreover, we can assert that 
-\begin{align*}
-0 \hookrightarrow \Hom_A(M,X) \xrightarrow{F} \Hom_A(M, Y) \xrightarrow{G} \Hom_A(M,Z) \hookrightarrow 0
-\end{align*}
+Thus, we have that $F \circ \Lambda = \id$ and so $\Lambda$ is a splitting homomorphism and hence, $$0 \hookrightarrow \Hom_A(M,X) \xrightarrow{F} \Hom_A(M, Y) \xrightarrow{G} \Hom_A(M,Z) \to 0,$$
 
-is a short exact sequence because $\text{Im}(G) = \Hom_A(M,Z)$ and $\ker(0) = \Hom_A(M,Z)$. Now define $\mu: \Hom_A(M,Z) \to \Hom_A(M, Y)$ by $\mu(\varphi) = \varphi^{-1} \circ g^{-1}$ and define $\lambda: \Hom_A(M, Y) \to \Hom_A(M,X)$ by $\lambda(\varphi) = \varphi^{-1} \circ f^{-1}$. Then 
-\begin{align*}
-G\mu &= g \circ \varphi \circ \varphi^{-1} \circ g^{-1}\\
-&= \id
-\end{align*}
-
-and 
-\begin{align*}
-\lambda f &= \varphi^{-1} \circ f^{-1} \circ f \circ \varphi\\
-&= \id
-\end{align*}
-
-Hence, by the Proposition from Lecture 10 part B, we have that our short exact sequence is also split, with $\mu$ and $\lambda$ as the splitting homomorphisms.
+is a split exact sequence.
 \end{proof}
 
 \Rubric{}
@@ -398,7 +388,7 @@ Prove that $M$ is simple if and only if $Am = M$ for any non-zero $m \in M$.
 \end{minipage}}}
 
 \begin{proof}
-Suppose $M$ is simple. Then the only submodules of $M$ are $0$ and itself. By the footnote on Homework 6, we have that $Am$ is a submodule of $M$. Since $M$ is simple, we have that either $Am = 0$ and $Am = M$. However, we know that $m \neq 0$. Since $A$ is a ring with $1$, we have that $1m = m \in Am$ and so $Am \neq 0$. Thus, we must have that $Am = m$ for any non-zero $m \in M$.\\
+Suppose $M$ is simple. Then the only submodules of $M$ are $0$ and itself. We have that $Am$ is a submodule of $M$ for any $m \neq 0 \in M$. Since $M$ is simple, we have that either $Am = 0$ or $Am = M$. However, we know that $m \neq 0$. Since $A$ is a ring with $1$, we have that $1m = m \in Am$ and so $Am \neq 0$. Thus, we must have that $Am = M$ for any non-zero $m \in M$.\\
 
 Now suppose that $Am = M$ for any non-zero $m \in M$. Let $N \subset M$ be a submodule and suppose $N \neq 0$. Thus there is some $m \in N \setminus \{0\} \subset M \setminus \{0\}$ . Now since $Am = M$ for every non-zero $m \in M$, we must have that $Am = M$ for this particular choice of $m$. Since $N$ is a submodule and closed under the action of $A$ on $N$, we must have that $N = M$. Thus, $M$ is simple.
 \end{proof}
@@ -422,15 +412,18 @@ Show that if $A$ is a commutative ring with 1, that $A^m \cong A^n$ if and only 
 \end{minipage}}}
 
 \begin{proof}
-Suppose $A$ is is a commutative ring with $1$ and suppose that $A^m \cong A^n$. Let $I$ be a maximal ideal of $A$. Since $A^m \cong A^n$, we have that $IA^m \cong IA^n$, and so $A^m/IA^m \cong A^n/IA^n$. Moreover, from Q3 on Homework 6, we have that,
+Suppose $A$ is is a commutative ring with $1$ and suppose that $A^m \cong A^n$. Let $I$ be a maximal ideal of $A$. Since $A^m \cong A^n$, we have that $IA^m \cong IA^n$, and so $A^m/IA^m \cong A^n/IA^n$. Moreover, on Q3 of Homework 6, we proved that for a free module $M$ over a ring $A$ with basis $\mathcal{B}$ and ideal $I$, we have that,
+\begin{align*}
+M/IM \cong \bigoplus_{b \in \mathcal{B}} Ab/Ib
+\end{align*}
+
+If we fix $A$ as our ring with $A^m, A^n$ as the free modules over this ring, we can apply this result as follows,
 \begin{align*}
 A^m/IA^m &\cong \oplus_{b \in \mathcal{B}} Ab/Ib\\
 A^n/IA^n &\cong \oplus_{c \in \mathcal{C}} Ac/Ic
 \end{align*}
 
-Thus, we have that $\oplus_{b \in \mathcal{B}} Ab/Ib \cong \oplus_{c \in \mathcal{C}} Ac/Ic$.\\
-
-Since $I$ is a maximal ideal of $A$, by Proposition 12 in Section 7.4, we have that $Ab/Ib$ and $Ac/Ic$ are fields for every $b,c$.\\
+Thus, we have that $\oplus_{b \in \mathcal{B}} Ab/Ib \cong \oplus_{c \in \mathcal{C}} Ac/Ic$. Since $\oplus_{b \in \mathcal{B}} Ab/Ib$ is $|\mathcal{B}|$-dimensional and $\oplus_{c \in \mathcal{C}} Ac/Ic$ is $|\mathcal{C}|$-dimensional, we must have that $|\mathcal{B}| = |\mathcal{C}|$. But note that $\mathcal{B}$ is a basis for $A^m$ and $\mathcal{C}$ is a basis for $A^n$. We know that $A^m$ must have a basis of size $m$ and $A^n$ must have a basis of size $n$, so let us take $\mathcal{B}$ and $\mathcal{C}$ to be of these sizes, respectively. Thus, we have that $|\mathcal{B}| = |\mathcal{C}|$ implies that $n = m$, as required.\\
 
 Now suppose $n = m$. Then we must have $A^m = A^n$ and so $A^m \cong A^n$ by the identity map.
 \end{proof}
@@ -493,11 +486,9 @@ First we will show that (i) is equivalent to (ii). Suppose $M$ is finitely gener
 
 Now we will show the equivalence of (i) and (iv). Suppose $M$ is semisimple and finitely generated. Then $M$ is the direct sum of simple modules and, since (i) is equivalent to (ii), each of those submodules is finitely generated. Since the generators of $M$ are finite, they can old by combined in a finite number of ways. Hence, there must be finitely many submodules which are finitely generated. Hence, $M$ is a finite direct sum of simple modules. Now let us assume that $M$ is a finite direct sum of simple modules and work towards the other directions. Every simple module is cyclic and hence generated by one element. The union of these generators forms a basis for $M$ since $M$ is a direct sum of these simple modules. Since there are a finite number of these simple modules, then $M$ is finitely-generated by this union as required. Hence, by this and our previous work, (i), (ii), and (iv) are equivalent.\\
 
-Now we will show the equivalent of (iii) and (iv). Suppose $M$ is semisimple and Artinian. Then the sequence of submodules of $M$
-\begin{align*}
-M_1 \supset M_2 \supset \ldots
-\end{align*}
-stabilizes. That is, there exists an integer $N$ such that if $n \geq N$ then $M_n = M_{n+1}$. Since no simple module can have a submodule, then $M_N$ is the only simple module in this chain. Observe that since $M$ is semisimple, it must be the direct sum of simple submodules. There must be only finitely many of these simple submodules (why?), so $M$ is a finite direct sum of simple modules. Now let us assume that $M$ is semisimple and a finite direct sum of simple modules and work in reverse.
+Now we will show the equivalence of (iii) and (iv). We will start by showing the contrapositive of (iii) implies (iv) [not (iv) implies not (iii)]. Suppose $M$ is not a finite direct sum of simple modules. Since $M$ is semisimple, we can write it as $M \cong \oplus_{\lambda} M_{\lambda}$ where $M_{\lambda}$ is simple. Equivalently, we have $M = \sum_{\lambda \in \Lambda} M_{\lambda}$. Since we have assumed that $M$ is not a finite direct sum of simple modules, we must have that $\Lambda$ is infinite. Let $\tilde{\Lambda} = \{\lambda_1, \lambda_2, \ldots\}$ be a countable subset of $\Lambda$. Let us now define, $$N_0 = \sum_{\lambda_i = \tilde{\Lambda}} M_{\lambda_i}$$ and $$N_i = \sum_{\lambda \in \tilde{\Lambda} \setminus \{\lambda_1, \ldots, \lambda_i\}} M_{\lambda}$$ We have thus constructed an infinite descending chain of subsets of $M$ such that $$M \supset N_0 \supset N_1 \supset \cdots$$ since $N_{i+1}$ is a proper subset of $N_i$ for all $i$. Hence, we have that $M$ is not Artinian, as required.\\
+
+Now we will show that (iii) implies (iv). Again consider that, since $M$ is semisimple, we have $M \cong \oplus_{\lambda} M_{\lambda}$. Let $\tilde{\Lambda} = \{\lambda_1, \lambda_2, \ldots\} \subset \Lambda$ be a well-ordered subset, Again, we will define $N_0$ and $N_i$ exactly as above. Since we have assumed that $M$ is Artinian, we must have that the following sequence of subsets of $M$ terminates, $$N_0 \supset N_1 \supset N_2 \supset \cdots$$ Since this sequence terminates, and we have that $N_{i+1}$ is a proper subset of $N_i$ for all $i$, we must have that the above sequence is finite. Thus, $\tilde{\Lambda}$ is finite and, as a result, we have that $\Lambda$ is finite, as required. Hence, we have shown that all four properties are equivalent.
 \end{proof}
 
 \Rubric{}
