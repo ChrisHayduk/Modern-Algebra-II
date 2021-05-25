@@ -57,7 +57,7 @@
 
 \def\fa{\mathfrak{a}} \def\fb{\mathfrak{b}} \def\fc{\mathfrak{c}} \def\fd{\mathfrak{d}} \def\fe{\mathfrak{e}} \def\ff{\mathfrak{f}} \def\fg{\mathfrak{g}} \def\fh{\mathfrak{h}} \def\fj{\mathfrak{j}} \def\fk{\mathfrak{k}} \def\fl{\mathfrak{l}} \def\fm{\mathfrak{m}} \def\fn{\mathfrak{n}} \def\fo{\mathfrak{o}} \def\fp{\mathfrak{p}} \def\fq{\mathfrak{q}} \def\fr{\mathfrak{r}} \def\fs{\mathfrak{s}} \def\ft{\mathfrak{t}} \def\fu{\mathfrak{u}} \def\fv{\mathfrak{v}} \def\fw{\mathfrak{w}} \def\fx{\mathfrak{x}} \def\fy{\mathfrak{y}} \def\fz{\mathfrak{z}}
 \def\fgl{\mathfrak{gl}}  \def\fsl{\mathfrak{sl}}  \def\fso{\mathfrak{so}}  \def\fsp{\mathfrak{sp}}  
-\def\GL{\mathrm{GL}} \def\SL{\mathrm{SL}}  \def\SP{\mathrm{SL}}
+\def\GL{\mathrm{GL}} \def\SL{\mathrm{SL}} \def\SO{\mathrm{SO}} \def\SU{\mathrm{SU}}  \def\SP{\mathrm{SL}}
 
 \def\<{\langle} \def\>{\rangle}
 \usepackage{mathabx}
@@ -116,6 +116,9 @@ Course Summary\\
 \section{Introduction}
 
 Building upon last semester's topics, we begin this semester by extending many of the same notions of group actions to ring theory. Modules allow us to study the behavior of rings acting on an abelian group, similarly to groups acting on sets. Modules provide us with a generalization of the notion of vector spaces, which we can recover by restricting ourselves to only considering fields acting on abelian groups. This gives us a nice link between the more abstract topics of module theory and the more foundational topics which we have studied in linear algebra. In fact, we discuss several of these topics, such as determinants and trace of matrices, while using the more advanced machinery developed throughout our study of abstract algebra. Lastly, moving into Lang's \textit{Algebra}, we make many of the ideas surrounding modules even more rigorous. In addition, we introduce the idea of exact sequences and short exact sequences, which provide us with theorems to discuss relations between modules.
+
+\par
+In the second portion of the course, we moved to characterizing types of rings and modules, as well as how to work with them. This allowed us to construct complicated modules from simpler constituent parts, as well as to draw conclusions about the behavior of these larger modules through the properties of their constituent submodules. We also touched on new types of operators and groups, including tensor products and Lie groups. These concepts broadened the scope of examples within the class and demonstrated a variety of settings in which algebraic concepts are applicable. In particular, Lie groups and Lie algebras provided a beautiful way to connect many of the concepts that we have learned over the past two semesters to concepts in analysis, integrating the knowledge gained over the past two semesters into a broader mathematical framework.
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -677,24 +680,130 @@ We can now connect semisimplicity to projective and injective modules as follows
 
 \subsection{Matrix Rings}
 
+A matrix ring over a ring $A$ is, generally, a set of matrices with entries in a ring $A$ that itself forms a ring under matrix addition and multiplication. In this section, we develop some notions which relate matrix rings to properties of the underlying ring that forms the entries of these matrices. For example, we can make the following statement about the ideals of a matrix ring \cite[Lec. 19, p. 1]{dau}:
+
+\par
+\textbf{Theorem.} The ideals of $A = M_n(R)$ are in bijection with the ideals of $R$; namely, the ideals of $A$ are precisely those of the form $M_n(S)$ where $S$ is an ideal of $R$. In particular, if $R$ is simple, then so is $M_n(R)$.
+
+\par
+Hence, we can now simply compute the ideals for $R$ in order to retrieve the ideals for $M_n(R)$. In addition, matrix rings formed over division rings have several interesting properties \cite[Lec. 19, p. 3]{dau}:
+
+\par
+\textbf{Theorem.} Let $\Delta$ be a division ring, and let $A = M_n(\Delta)$. Then,
+\begin{enumerate}
+\item $A$ is a simple ring, and is semisimple, Artinian, and Noetherian;
+\item the natural $A$-module $V = \Delta^n$ is the unique simple $A$-module (up to isomorphism);
+\item the left-regular $A$-module is isomorphic to $V^n$; and
+\item the endomorphism ring $\End(V)$ is isomorphic to $\Delta$
+\end{enumerate}
+
+\par
+We can now examine the products of matrix rings. The following theorem provides us with tools for describing and operating with them \cite[Lec 20, p. 1]{dau}:
+
+\par
+\textbf{Theorem.} Let $A = A_1 \times \cdots \times A_{\ell}$, where $A_i = M_{n_i}(\Delta_i)$ for some integers $n_i$ and division rings $\Delta_i$.
+\begin{enumerate}
+\item Let $z_i$ be the identity of the $i$th component, so that $$A \to \hat{A}_i \; \text{defined by} \; a \mapsto z_i a$$ is the projection onto the $i$th component. Then $z_1, \ldots, z_{\ell}$ are pairwise orthogonal idempotents that sum to $1$.
+\item For any $A$-module $N$, we have $$N \cong z_1 N \oplus \cdots \oplus z_{\ell} N.$$ In particular, each $z_i N$ is an $\hat{A}_i$ module on which $\hat{A}_j$ acts trivially for every $i \neq j$.
+\item Up to isomorphism $\{\Delta_i^{n_i} \ | \ i = 1, \ldots, \ell\}$ forms a complete list of simple $A$-modules with action on $\Delta_i^{n_i}$ given by $$\hat{A}_i \cong A_i \; \text{acts naturally,} \; \text{and} \; \hat{A}_j \text{ acts by } 0 \text{ for } j \neq i$$
+\item Every $A$-module is completely decomposable, i.e. $A$ is semisimple.
+\item If $\Delta_1 \cong \cdots \cong \Delta_{\ell} \cong F$ are all the same field, then $A$ is a vector space over $F$ of dimension $\sum^{\ell}_{i=1} n^2_i$ and $\dim(Z(A)) = \ell$.
+\end{enumerate}
+
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 
 \subsection{Categories}
 
+Our brief foray into Category Theory provided us with a glimpse of an even more general theory of relationships between objects. In particular, categories consist of sets of objects, along with sets of morphisms between those objects. These can be defined as follows \cite[Lec. 15, p. 5]{dau}:
+
+\par
+A \textbf{category} $\mathcal{C}$ consists of $\Obj(\mathcal{C})$, a set of objects, and $\Hom(\mathcal{C}) = \bigsqcup_{X, Y \in \Obj(\mathcal{C})} \Hom_{\mathcal{C}}(X, Y)$, a set of morphisms between those objects. These morphisms are subject to several constraints:
+\begin{enumerate}
+\item Composition of morphisms is defined:
+\begin{align*}
+\Hom_{\mathcal{C}}(X, Y) \times \Hom_{\mathcal{C}}(Y, Z) &\to \Hom_{\mathcal{C}}(X, Z)\\
+(f, g) &\mapsto g \circ f = gf
+\end{align*}
+\item Composition of morphisms is associative: $h(gf) = (hg)f$.
+\item If $X \neq X'$ or $Y \neq Y'$, then $\Hom_{\mathcal{C}}(X, Y) \cap \Hom_{\mathcal{C}}(X', Y') = \emptyset$.
+\item Identity morphisms exist, i.e. for all $Y \in \Obj(\mathcal{C})$, there is some $1_{Y} \in \Hom_{\mathcal{C}}(Y, Y)$ such that $$1_{Y}f = f \; \; \text{and} \; \; g1_{Y} = g$$ for all $f \in \Hom_{\mathcal{C}}(X, Y)$ and $g \in \Hom_{\mathcal{C}}(Y, Z)$.
+\end{enumerate}
+
+A \textbf{subcategory} $\mathcal{D} \subset \mathcal{C}$ satisfies $\Obj(\mathcal{D}) \subset \Obj(\mathcal{C})$ and $\Hom_{\mathcal{D}}(X, Y) \subset \Hom_{\mathcal{C}}(X, Y)$ for all $X, Y \in \Obj(\mathcal{D})$.
+
+\par
+We can now show a couple examples of categories \cite[Lec. 15, p. 6]{dau}:
+\begin{enumerate}
+\item $\mathcal{S}$et is the category whose objects are sets, and whose morphisms are set maps: $$\Obj(\mathcal{S}et) = \{ \text{sets} \}, \; \; \Hom(X, Y) = \{\text{functions } f: X \to Y\}$$ The category $\mathcal{F}$inSet of finite sets is a subcategory.
+\item $\mathcal{G}$rp is the category whose objects are groups, and whose morphisms are group homomorphisms. One subcategory of $\mathcal{G}$rp is the category of abelian groups, $\mathcal{A}$b
+\end{enumerate}
+
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \subsection{Tensor Products}
 
+Tensor products allow us to define a new type of relation between vector spaces as follow \cite[Lec. 21, p. 2]{dau}:
+
+\par
+Let $F$ be a field, and let $U$ and $V$ be vector space over $F$. Define the \textbf{tensor product} of $U$ and $V$ over $F$ as the linear span of \textbf{simple tensors} $u \otimes v$ (where $u \in U, v \in V$), $$U \otimes V = F\{u \otimes v | u\in U, v \in V\}$$ modulo ``bilinear'' relations:
+\begin{align*}
+&(\alpha u) \otimes v = \alpha (u \otimes v) = u \otimes (\alpha v)\\
+&(u_1 + u_2) \otimes v = u_1 \otimes v + u_2 \otimes v\\
+&u \otimes (v_1 + v_2) = u \otimes v_1 + u \otimes v_2
+\end{align*}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \subsection{Lie Groups and Lie Algebras}
+
+A Lie group is group which is also a differentiable manifold. Hence, the group is continuous and the group multiplication is differentiable. Some important examples are the classical Lie groups \cite[Lec 22, p. 1]{dau}:
+\begin{enumerate}
+\item general linear group $\GL_n(F) = \{x \in M_n(F) \ | \ \det(x) \neq 0\}$
+\item special linear group $\SL_n(F) = \{x \in M_n(F) \ | \ \det(x) = 1\}$
+\item special orthogonal group $\SO_n(F) = \{x \in \SL_n(F) \ | \ x^{-1} = x^t\}$
+\item special unitary group $\SU_n(F) = \{x \in \SL_n(F) \ | \ x^{-1} = x^*\}$
+\end{enumerate}
+
+We can now define a Lie algebra as well  \cite[Lec 22, p. 2]{dau}:
+
+\par
+The tangent space to $1$ in a Lie group $G$ admits an algebraic structure, resulting in a Lie algebra: a vector space $\mathfrak{g}$ over $F$ with a (bilinear) bracket $[,] : \mathfrak{g} \otimes \mathfrak{g} \to \mathfrak{g}$ satisfying
+\begin{enumerate}[label=\alph*)]
+\item (skew symmetry) $[x, y] = -[y, x]$, and
+\item (Jacobi identity $[x, [y, z]] + [y,[z,x]] + [z,[x,y]] = 0$
+\end{enumerate}
+
+for all $x,y,z \in \mathfrak{g}$ (not associative). Lie algebras can be thought of as infinitesimal symmetry motions.
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \subsection{Characters}
 
+We will define characters as follows \cite[Lec 23, p. 1]{dau}:
 
+\par
+Let $G$ be a finite group and $F$ a field. Let $\rho: FG \to \End(V)$ be a finite-dimensional representation (equivalently, let $V = F^n$ be an $FG$-module). The \textbf{character} of the representation $\rho$ is
+\begin{align*}
+\chi_{\rho}: FG \to F \; \; \text{defined by} \; \; a \mapsto \tr(\rho(a)).
+\end{align*}
+
+Equivalently, $\chi_{V}$ is the character associated to the module $V$. We can now present some properties as characters \cite[Lec 23, p. 2]{dau}:
+
+\par
+\textbf{Proposition.} Let $\rho: FG \to \End(V)$ be a finite-dimensional representation of a finite group $G$, and let $\chi_{\rho}$ be the associated character.
+\begin{enumerate}
+\item $\chi_{\rho}$ is linear, i.e. for all $a, b \in FG$ and $\alpha \in F$, we have,
+\begin{align*}
+\chi_{\rho}(a + b) = \chi_{\rho}(a) + \chi_{\rho}(b) \; \; \text{and} \; \; \chi_{\rho}(\alpha a) = \alpha \chi_{\rho}(a)
+\end{align*}
+\item $\chi_{\rho}$ is a class function on $G$, meaning that it is uniform on conjugacy classes of $G$ (i.e. for all $g, h \in G$, we have $\chi_{\rho}(ghg^{-1}) = \chi_{\rho}(h)$
+\item the degree of $\chi_{\rho}$ is $\deg(\chi_{\rho}) = \deg(\rho) = \chi_{\rho}(1)$.
+\end{enumerate}
+
+In addition,
+
+\par
+\textbf{Proposition.} The character of the (direct) sum is the sum of the characters: $$\chi_{\rho_1 \oplus \cdots \oplus \rho_{\ell}} = \chi_1 + \cdots + \chi_{\ell}$$
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -702,7 +811,8 @@ We can now connect semisimplicity to projective and injective modules as follows
 
 \section{Conclusion and Reflection}
 
-
+\par
+After two semesters of rigorous work in Algebra, I can say quite confidently that I have learned more about this field than I ever thought possible for myself. About 10 years ago, I received a C+ in high school Honors Algebra - my worst grade to date. Then, in college, I struggled to wrap my head around the concepts presented in my first Linear Algebra course and left it feeling like I did not fully grasp the material. I entered Algebra last semester excited to learn, but apprehensive due to my previous experiences with the much simpler iterations of this subject. In spite of this apprehension, over the ensuing 9 months, I have developed a deep appreciation for this beautiful area of mathematics and how it integrates into the broader mathematical fabric. In particular, as a fan of analysis, our brief study of Lie groups and Lie algebras was incredible for helping me to integrate and synthesize much of the work we have discussed about groups, algebras, and representation theory. At the same time, in my Stochastic Processes class, we began diving deep into random walks on groups, again drawing upon many of the concepts learned during these past two semesters. These two topics in particular helped me to appreciate not only how far my understanding of Algebra had come since the days of struggling with high school Algebra, but also to understand the power of applying algebraic techniques and concepts to other areas of math. I hope to continue to dive deep into Algebra over the coming years, exploring its applications to other areas of math, as well as to other subjects entirely.
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
