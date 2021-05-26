@@ -123,11 +123,16 @@ Let $A$ be a ring with 1, and let $M$ be an $A$-module.
 {[Recall that you decomposed $\CC S_2$ in Homework 5.  Also note that $\FF_2 S_2$ is small---it has only 4 elements.]}
 
 \begin{proof}
-Observe that $A$ is an $F-$algebra.
+Observe that $A$ a group algebra with $A = FG$ where $F = \FF_2$ and $G = S_2$. Hence, $A$ is an algebra over a field ($F$-algebra). Thus, any $A$-module is a vector space. The dimension of our model $M = A$ is given by $\dim(M) = 2$ since the basis of $M$ is given by $S_2 = \{1, (12)\}$. So if $M \cong U \oplus V$, then we must have that $\dim(U) = 1$ and $\dim(V) = 1$. Thus, our goal is to classify the $1$-dimensional submodules of $M$. That is, we want to find $U = \FF_2 u$ with $0 \neq u \in \FF_2 S_2$ satisfying $(12) \cdot u = \lambda u$ for some $\lambda \in \FF_2$.
 \end{proof}
 
 \item Prove that $M$ is simple if and only if $Am = M$ for any non-zero $m \in M$. 
 
+\begin{proof}
+Suppose $M$ is simple. Then the only submodules of $M$ are $0$ and itself. We have that $Am$ is a submodule of $M$ for any $m \neq 0 \in M$. Since $M$ is simple, we have that either $Am = 0$ or $Am = M$. However, we know that $m \neq 0$. Since $A$ is a ring with $1$, we have that $1m = m \in Am$ and so $Am \neq 0$. Thus, we must have that $Am = M$ for any non-zero $m \in M$.\\
+
+Now suppose that $Am = M$ for any non-zero $m \in M$. Let $N \subset M$ be a submodule and suppose $N \neq 0$. Thus there is some $m \in N \setminus \{0\} \subset M \setminus \{0\}$ . Now since $Am = M$ for every non-zero $m \in M$, we must have that $Am = M$ for this particular choice of $m$. Since $N$ is a submodule and closed under the action of $A$ on $N$, we must have that $N = M$. Thus, $M$ is simple.
+\end{proof}
 
 \item Let $M$ be a free module with basis $\cB$ and let $I$ be an ideal of $A$. We showed on Homework 4 that $IM$ is a submodule of $M$, and it follows similarly that $Im$ is a submodule of $M$ for any $m \in M$.\footnote{This follows considering $M' = Am$, which is a submodule of $M$. Then since $1 \in A$, we have $IA = A$, so that $IM' = (IA)m = Im$ is also a submodule. Or, you know, just check it directly.}
 
@@ -135,11 +140,39 @@ Observe that $A$ is an $F-$algebra.
 $$M/IM \cong \bigoplus_{b \in \cB} Ab/Ib.$$}
 {[\emph{Hint:} Since $M \cong \Fr(\cB)$ is free, we know it decomposes similarly to the right-hand side of this expression. So what's the most natural homomorphism from $M$ to $\bigoplus_{b \in \cB} Ab/Ib$? What's its kernel? (You may assume the isomorphism theorems, as found in Lang \S III.1 and D \& F \S 10.2.) See also, D\& F, Exercises 10.2.11 and 10.2.12.]}
 
+\begin{proof}
+Since $M$ is a free module, we have that $$M \cong \bigoplus_{b \in \cB} A$$ Let $I \subset A$ be an ideal of $A$. Recall that $IM$ is a submodule of $M$, where $$IM := \{\sum_{a \in I, m \in M, \text{finite}} a_m\} = \{a_1m_1 + \cdots + a_{\ell}m_{\ell} | a_i \in I, m_i \in M, \ell \in \ZZ_{\geq 0}\}$$ We want to show that $M/IM \cong \bigoplus_{b \in \cB} Ab/Ib$. Note that $$M \cong \bigoplus_{b \in \cB} A \cong \bigoplus_{b \in \cB} Ab$$ since $A \cong Ab$ because of the free action. Plugging this into the original equation we want to show gives us that we now want to show,
+\begin{align*}
+\left(\bigoplus_{b \in \cB} A_b \right)/\left(I \bigoplus_{b \in \cB} Ab \right) \cong \bigoplus_{b \in \cB} Ab/Ib
+\end{align*}
+
+We want to apply the First Isomorphism Theorem here, so let us construct a map $\varphi: \bigoplus_{b \in \cB} Ab \to \bigoplus_{b \in \cB} Ab/Ib$ which is an $A$-module homomorphism. Moreover, we wish to construct $\varphi$ such that it is surjective and that $\ker(\varphi) = I \bigoplus_{b \in \cB} Ab$. Note that we can write $$\bigoplus_{b \in \cB} Ab = \{(a_b)_{b \in \cB} | a_b \in Ab, a_b = 0 \text{ for all but finitely many } b \in \cB\}$$ So let us define $\varphi((a_b)_{b \in \cB}) = (a_b + Ib)_{b \in \cB}$.
+
+
+\end{proof}
 
 \item  \textbf{Ranks of free modules.}
 \begin{enumerate}
 \item \textbf{Rank is well-defined for commutative rings.\footnote{D\&F Exercise 10.3.2.} } Show that if $A$ is a commutative ring with 1, that $A^m \cong A^n$ if and only if $n=m$.\\
 {[Hint: Let $I$ be a maximal ideal of $A$ (what kind of ring does that make $A/I$?). Now consider $A^m/IA^m$, as in Problem 3. Recall that we showed earlier in the semester that two finite-dimensional \emph{vector spaces} were isomorphic if and only if they had the same dimension.]}
+
+\begin{proof}
+Suppose $A$ is is a commutative ring with $1$ and suppose that $A^m \cong A^n$. Let $I$ be a maximal ideal of $A$. Since $A^m \cong A^n$, we have that $IA^m \cong IA^n$, and so $A^m/IA^m \cong A^n/IA^n$. Moreover, on Q3, we proved that for a free module $M$ over a ring $A$ with basis $\mathcal{B}$ and ideal $I$, we have that,
+\begin{align*}
+M/IM \cong \bigoplus_{b \in \mathcal{B}} Ab/Ib
+\end{align*}
+
+If we fix $A$ as our ring with $A^m, A^n$ as the free modules over this ring, we can apply this result as follows,
+\begin{align*}
+A^m/IA^m &\cong \oplus_{b \in \mathcal{B}} Ab/Ib\\
+A^n/IA^n &\cong \oplus_{c \in \mathcal{C}} Ac/Ic
+\end{align*}
+
+Thus, we have that $\oplus_{b \in \mathcal{B}} Ab/Ib \cong \oplus_{c \in \mathcal{C}} Ac/Ic$. Since $\oplus_{b \in \mathcal{B}} Ab/Ib$ is $|\mathcal{B}|$-dimensional and $\oplus_{c \in \mathcal{C}} Ac/Ic$ is $|\mathcal{C}|$-dimensional, we must have that $|\mathcal{B}| = |\mathcal{C}|$. But note that $\mathcal{B}$ is a basis for $A^m$ and $\mathcal{C}$ is a basis for $A^n$. We know that $A^m$ must have a basis of size $m$ and $A^n$ must have a basis of size $n$, so let us take $\mathcal{B}$ and $\mathcal{C}$ to be of these sizes, respectively. Thus, we have that $|\mathcal{B}| = |\mathcal{C}|$ implies that $n = m$, as required.\\
+
+Now suppose $n = m$. Then we must have $A^m = A^n$ and so $A^m \cong A^n$ by the identity map.
+\end{proof}
+
 \item \textbf{Rank is not well-defined in general.\footnote{D\&F Exercise 10.3.27.} }
 Let $M$ be the $\ZZ$-module  
 $$M = \ZZ \times \ZZ \times \cdots 
@@ -150,7 +183,7 @@ Let
 $$A = \End_\ZZ(M) = \{ \text{ $\ZZ$-module homomorphisms $\f: M \to M$ }\},$$
 where, as usual, addition is defined point-wise (i.e.\ $(\f + \psi)(a) = \f(a) + \psi(a)$) and multiplication is defined by function composition (i.e.\ $\f\psi = \f \circ \psi$). See also D\&F Exercise 7.1.30. 
 
-Define $\f_1, \f_2 \in R$ by 
+Define $\f_1, \f_2 \in A$ by 
 $$\f_1(n_1, n_2, n_3, \dots) = (n_1, n_3, n_5, \dots) \quad \text{and} \quad 
 	\f_2(n_1, n_2, n_3, \dots) = (n_2, n_4, n_6, \dots).$$
 
@@ -165,7 +198,49 @@ Verify that
 $$\f_i \psi_i = 1, \quad \f_1 \psi_2 = 0 = \f_2 \psi_1, \quad \text{ and } \quad 
 	\psi_1 \f_1 + \psi_2 \f_2 = 1.$$
 	Use these relations to prove that $\f_1, \f_2$ are independent and generate $A$ as a left $A$-module.]}
+	
+	
+\begin{proof}
+We have that,
+\begin{align*}
+\varphi_1 \circ \psi_1 (n_1, n_2, n_3, \ldots) &= \varphi_1 (n_1, 0, n_2, 0, n_3, \ldots)\\
+&= (n_1, n_2, n_3, \ldots)
+\end{align*}
+
+and,
+\begin{align*}
+\varphi_2 \circ \psi_2 (n_1, n_2, n_3, \ldots) &= \varphi_2(0, n_1, 0, n_2, 0, \ldots)\\
+&= (n_1, n_2, n_3, \ldots)
+\end{align*}
+
+Thus, $\varphi_i \psi_i = 1$. Moreover,
+\begin{align*}
+\varphi_1 \circ \psi_2 (n_1, n_2, n_3, \ldots) &= \varphi_1(0, n_1, 0, n_2, 0, \ldots)\\
+&= (0, 0, 0, \ldots)
+\end{align*}
+
+and,
+\begin{align*}
+\varphi_2 \circ \psi_1 (n_1, n_2, n_3, \ldots) &= \varphi_2(n_1, 0, n_2, 0, n_3, \ldots)\\
+&= (0, 0, 0, \ldots)
+\end{align*}
+
+As a result, we have $\varphi_1 \psi_2 = 0 = \varphi_2 \psi_1$. Lastly, we check,
+\begin{align*}
+(\psi_1 \varphi_1 + \psi_2\varphi_2)(n_1, n_2, n_3, \ldots) &= \psi_1 \varphi_1(n_1, n_2, n_3, \ldots) + \psi_2\varphi_2(n_1, n_2, n_3, \ldots)\\
+&= \psi_1(n_1, n_3, n_5, \ldots) + \psi_2(n_2, n_4, n_6, \ldots)\\
+&= (n_1, 0, n_3, 0, n_5, \ldots) + (0, n_2, 0, n_4, 0, n_6, \ldots)\\
+&= (n_1, n_2, n_3, \ldots)
+\end{align*}
+
+Thus, we have $\psi_1 \varphi_1 + \psi_2 \varphi_2 = 1$. Hence, $\varphi_1$ and $\varphi_2$ are independent and span $\End_{\ZZ}(M)$. Hence $\{\varphi_1, \varphi_2\}$ is a free basis of the left regular module of $A$.
+\end{proof}
+	
 \item Use the previous part to \textbf{prove that $A \cong A^2$ as $A$-modules}. Deduce that $A \cong A^n$ as $A$-modules for all $n \in \ZZ_{>0}$. 
+
+\begin{proof}
+We have that $A = A1$ as an $A$-module and $A^2 = A\{\varphi_1, \varphi_2\}$ as an $A$-module. But $1$ and $\{\varphi_1, \varphi_2\}$ are both free bases for the left regular module, and so $A \cong A^2$ as $A$-modules.
+\end{proof}
 \end{enumerate}
 
 \end{enumerate}
@@ -177,6 +252,11 @@ Now  suppose $A$ is commutative and let $\cB$ be a finite set of size $n$.
 
 \smallskip
 \centerline{\textbf{Prove that $\Hom_A(\Fr(\cB), A) \cong \Fr(\cB)$ as $A$-modules.}} (Namely,  just like any finite-dimensional vector space is isomorphic its dual, we have any free module of finite rank is also isomorphic to its dual.) We say $\Fr(\cB)$ is \emph{self-dual} (up to isomorphism). {[\emph{Hint:} Reasonable tactics include either showing that $\Hom_A(\Fr(\cB), A)$ is free  of rank $n$ and using 4(a); or using the last proposition from Lecture 10.]}
+
+\begin{proof}
+
+\end{proof}
+
 \end{enumerate}
 
 \vfill
